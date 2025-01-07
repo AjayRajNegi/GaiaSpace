@@ -33,7 +33,6 @@ const EarthCanvas: React.FC = () => {
 
   return (
     <>
-      {/* <Suspense fallback={<div>Hello</div>}> */}
       <div className="canvasMain">
         <div className="Hello">
           <div className="testing">
@@ -73,7 +72,6 @@ const EarthCanvas: React.FC = () => {
         </div>
         <div className="Hello">Hello</div>
       </div>
-      {/* </Suspense> */}
     </>
   );
 };

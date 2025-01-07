@@ -1,9 +1,6 @@
 "use-client";
 import dynamic from "next/dynamic";
-
-const EarthCanvas = dynamic(() => import("./EarthCanvas/EarthCanvas"), {
-  ssr: false,
-});
+import EarthCanvas from "./EarthCanvas/EarthCanvas";
 
 export default function Home() {
   return (
@@ -12,3 +9,7 @@ export default function Home() {
     </>
   );
 }
+
+// const EarthCanvas = dynamic(() => import("./EarthCanvas/EarthCanvas"), {
+//   ssr: false,
+// });
