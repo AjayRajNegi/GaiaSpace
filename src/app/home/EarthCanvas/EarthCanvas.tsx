@@ -7,8 +7,8 @@ import Atmosphere from "./Atmosphere";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useSpring, animated } from "@react-spring/three";
-import React, { useMemo, Suspense, useState, FC } from "react";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
+import React, { useMemo, Suspense, useState } from "react";
 
 const EarthCanvas: React.FC = () => {
   const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>([

@@ -84,9 +84,13 @@ void main()
     #include <colorspace_fragment>
 }`;
 
-const Earth = ({ sunDirection }) => {
-  const sphereRef = useRef();
-  const shaderMaterialRef = useRef();
+interface EarthProps {
+  sunDirection: THREE.Vector3;
+}
+const Earth: React.FC<EarthProps> = ({ sunDirection }) => {
+  // References
+  const sphereRef = useRef<THREE.Mesh>(null);
+  const shaderMaterialRef = useRef<THREE.ShaderMaterial>(null);
 
   // Load textures
   const earthDayTexture = useTexture("/static/earth/day.jpg");
@@ -95,6 +99,7 @@ const Earth = ({ sunDirection }) => {
     "/static/earth/specularClouds.jpg"
   );
 
+  // Update texture properties
   useMemo(() => {
     [earthDayTexture, earthNightTexture, earthSpecularCloudsTexture].forEach(
       (texture) => {
@@ -104,11 +109,14 @@ const Earth = ({ sunDirection }) => {
     );
   }, [earthDayTexture, earthNightTexture, earthSpecularCloudsTexture]);
 
+  // Update uniforms and rotation
   useFrame(() => {
     if (sphereRef.current) {
-      sphereRef.current.rotation.y += 0.001;
+      sphereRef.current.rotation.y += 0.001; // Rotate the sphere
     }
-    shaderMaterialRef.current.uniforms.uSunDirection.value.copy(sunDirection);
+    if (shaderMaterialRef.current) {
+      shaderMaterialRef.current.uniforms.uSunDirection.value.copy(sunDirection); // Update sun direction
+    }
   });
 
   return (
@@ -117,8 +125,8 @@ const Earth = ({ sunDirection }) => {
       <shaderMaterial
         ref={shaderMaterialRef}
         toneMapped={false}
-        vertexShader={earthVertexShader}
-        fragmentShader={earthFragmentShader}
+        vertexShader={earthVertexShader} // Replace with your imported vertex shader
+        fragmentShader={earthFragmentShader} // Replace with your imported fragment shader
         uniforms={{
           uDayTexture: { value: earthDayTexture },
           uNightTexture: { value: earthNightTexture },
