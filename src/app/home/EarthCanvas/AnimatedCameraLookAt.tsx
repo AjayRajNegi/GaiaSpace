@@ -1,8 +1,13 @@
 "use client";
 import { useSpring } from "@react-spring/three";
 import { useThree, useFrame } from "@react-three/fiber";
+import { FC } from "react";
 
-const AnimatedCameraLookAt = ({ target }) => {
+interface AnimatedCameraLookAtProps {
+  target: [number, number, number];
+}
+
+const AnimatedCameraLookAt: FC<AnimatedCameraLookAtProps> = ({ target }) => {
   const { camera } = useThree();
   const spring = useSpring({
     targetX: target[0],

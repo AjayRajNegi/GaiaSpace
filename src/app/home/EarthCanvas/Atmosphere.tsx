@@ -55,11 +55,17 @@ void main()
     vNormal = modelNormal;
     vPosition = modelPosition.xyz;
 }`;
-const Atmosphere = ({ sunDirection }) => {
-  const atmosphereRef = useRef();
+
+interface AtmosphereProps {
+  sunDirection: THREE.Vector3;
+}
+const Atmosphere: React.FC<AtmosphereProps> = ({ sunDirection }) => {
+  const atmosphereRef = useRef<THREE.ShaderMaterial>(null);
 
   useFrame(() => {
-    atmosphereRef.current.uniforms.uSunDirection.value.copy(sunDirection);
+    if (atmosphereRef.current) {
+      atmosphereRef.current.uniforms.uSunDirection.value.copy(sunDirection);
+    }
   });
 
   return (

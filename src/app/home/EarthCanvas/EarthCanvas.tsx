@@ -7,11 +7,13 @@ import Atmosphere from "./Atmosphere";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useSpring, animated } from "@react-spring/three";
-import React, { useMemo, Suspense, useState } from "react";
+import React, { useMemo, Suspense, useState, FC } from "react";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 
-const EarthCanvas = () => {
-  const [lookAtTarget, setLookAtTarget] = useState([1, 7, 1]);
+const EarthCanvas: React.FC = () => {
+  const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>([
+    1, 7, 1,
+  ]);
   const [scaleTarget, setScaleTarget] = useState(3.5);
 
   const handleChangeView = () => {
