@@ -2,14 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 export default function LoadingScreen() {
   return (
-    <div className="h-screen w-full text-white flex justify-center items-center flex-col">
+    <div className="h-screen w-full text-white flex justify-center items-center flex-col load">
       <Image
-        src="/SPACE.png"
+        src="/SPACE.webp"
         alt="Background"
         layout="fill" // Fills the container
         objectFit="cover" // Ensures it covers the area of the div
         objectPosition="center" // Centers the image
       />
+
       <div className="z-10 flex justify-center items-center flex-col">
         <h1 className="font-bold text-6xl text-white">LOADING PAGE</h1>
         <Link href="/home" prefetch={true}>
