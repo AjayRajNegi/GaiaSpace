@@ -2,13 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 export default function LoadingScreen() {
   return (
-    <div className="h-screen w-full text-white flex justify-center items-center flex-col load">
+    <div className="h-screen w-full text-white flex just  ify-center items-center flex-col load">
       <Image
         src="/SPACE.webp"
         alt="Background"
-        layout="fill" // Fills the container
-        objectFit="cover" // Ensures it covers the area of the div
-        objectPosition="center" // Centers the image
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        quality={75}
+        priority
       />
 
       <div className="z-10 flex justify-center items-center flex-col">
