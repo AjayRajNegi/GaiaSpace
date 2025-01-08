@@ -9,6 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 import React, { useMemo, Suspense, useState } from "react";
+import Head from "next/head";
 
 const EarthCanvas: React.FC = () => {
   const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>([
@@ -33,6 +34,26 @@ const EarthCanvas: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <link
+          rel="preload"
+          href="/static/earth/day.webp"
+          as="image"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          href="/static/earth/night.webp"
+          as="image"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          href="/static/earth/specularClouds.webp"
+          as="image"
+          type="image/webp"
+        />
+      </Head>
       <div className="canvasMain">
         <div className="Hello">
           <div className="testing">

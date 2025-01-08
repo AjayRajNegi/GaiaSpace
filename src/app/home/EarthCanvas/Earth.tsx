@@ -93,10 +93,10 @@ const Earth: React.FC<EarthProps> = ({ sunDirection }) => {
   const shaderMaterialRef = useRef<THREE.ShaderMaterial>(null);
 
   // Load textures
-  const earthDayTexture = useTexture("/static/earth/day.jpg");
-  const earthNightTexture = useTexture("/static/earth/night.jpg");
+  const earthDayTexture = useTexture("/static/earth/day.webp");
+  const earthNightTexture = useTexture("/static/earth/night.webp");
   const earthSpecularCloudsTexture = useTexture(
-    "/static/earth/specularClouds.jpg"
+    "/static/earth/specularClouds.webp"
   );
 
   // Update texture properties
