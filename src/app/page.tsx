@@ -1,30 +1,34 @@
 import Link from "next/link";
-
 import Image from "next/image";
-import Head from "next/head";
+import Script from "next/script";
+
 export default function LoadingScreen() {
   return (
     <>
-      <Head>
-        <link
-          rel="preload"
-          href="/static/earth/day.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/static/earth/night.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/static/earth/specularClouds.webp"
-          as="image"
-          type="image/webp"
-        />
-      </Head>
+      <Script
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+        const linkDay = document.createElement('link');
+        linkDay.rel = 'preload';
+        linkDay.as = 'image';
+        linkDay.href = '/static/earth/day.webp';
+        document.head.appendChild(linkDay);
+
+        const linkNight = document.createElement('link');
+        linkNight.rel = 'preload';
+        linkNight.as = 'image';
+        linkNight.href = '/static/earth/night.webp';
+        document.head.appendChild(linkNight);
+
+        const linkClouds = document.createElement('link');
+        linkClouds.rel = 'preload';
+        linkClouds.as = 'image';
+        linkClouds.href = '/static/earth/specularClouds.webp';
+        document.head.appendChild(linkClouds);
+      `,
+        }}
+      />
       <div className="h-screen w-full text-white flex just  ify-center items-center flex-col load">
         <Image
           src="/SPACE.webp"

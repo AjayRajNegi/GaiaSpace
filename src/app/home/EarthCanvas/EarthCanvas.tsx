@@ -10,6 +10,7 @@ import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 import React, { useMemo, Suspense, useState } from "react";
 import Head from "next/head";
+import Script from "next/script";
 
 const EarthCanvas: React.FC = () => {
   const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>([
@@ -34,26 +35,30 @@ const EarthCanvas: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <link
-          rel="preload"
-          href="/static/earth/day.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/static/earth/night.webp"
-          as="image"
-          type="image/webp"
-        />
-        <link
-          rel="preload"
-          href="/static/earth/specularClouds.webp"
-          as="image"
-          type="image/webp"
-        />
-      </Head>
+      <Script
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            const linkDay = document.createElement('link');
+            linkDay.rel = 'preload';
+            linkDay.as = 'image';
+            linkDay.href = '/static/earth/day.webp';
+            document.head.appendChild(linkDay);
+
+            const linkNight = document.createElement('link');
+            linkNight.rel = 'preload';
+            linkNight.as = 'image';
+            linkNight.href = '/static/earth/night.webp';
+            document.head.appendChild(linkNight);
+
+            const linkClouds = document.createElement('link');
+            linkClouds.rel = 'preload';
+            linkClouds.as = 'image';
+            linkClouds.href = '/static/earth/specularClouds.webp';
+            document.head.appendChild(linkClouds);
+          `,
+        }}
+      />
       <div className="canvasMain">
         <div className="Hello">
           <div className="testing">
