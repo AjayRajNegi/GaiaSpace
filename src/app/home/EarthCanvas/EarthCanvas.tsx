@@ -2,13 +2,13 @@
 import Sun from "./Sun";
 import Earth from "./Earth";
 import * as THREE from "three";
-import { motion, useAnimationFrame } from "motion/react";
 import Atmosphere from "./Atmosphere";
 import { Stars } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
+import { motion, useAnimationFrame } from "motion/react";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
-import React, { useMemo, Suspense, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
 const EarthCanvas: React.FC = () => {
   //To check whether the screen is of small devices
