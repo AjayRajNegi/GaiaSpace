@@ -2,26 +2,58 @@
 import Sun from "./Sun";
 import Earth from "./Earth";
 import * as THREE from "three";
-import { motion } from "motion/react";
+import { motion, useAnimationFrame } from "motion/react";
 import Atmosphere from "./Atmosphere";
 import { Stars } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
-import React, { useMemo, Suspense, useState } from "react";
-import Head from "next/head";
-import Script from "next/script";
+import React, { useMemo, Suspense, useState, useEffect } from "react";
+
+const isMobile = () => {
+  if (typeof window !== "undefined") {
+    return window.innerWidth <= 1024;
+  }
+  return false;
+};
 
 const EarthCanvas: React.FC = () => {
-  const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>([
-    1, 7, 1,
-  ]);
-  const [scaleTarget, setScaleTarget] = useState(3.5);
+  //Constant to Change the coordinates of camera lookAt
+  //const n =6;
+  const lookAtTargetCoordinates: [number, number, number] = isMobile()
+    ? [1, 6, 1]
+    : [1, 7, 1];
+  const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>(
+    lookAtTargetCoordinates
+  );
+  //Constant to Change the scale of mesh
+  const meshScale = isMobile() ? 2.5 : 3.5;
+  const [scaleTarget, setScaleTarget] = useState(meshScale);
+  const [isMobileScreen, setIsMobileScreen] = useState(true);
+
+  useEffect(() => {
+    console.log("Hello");
+    console.log(isMobile());
+    if (isMobile()) {
+      setIsMobileScreen(true);
+      //console.log(isMobileScreen);
+    } else {
+      setIsMobileScreen(false);
+      //console.log(isMobileScreen);
+    }
+  });
 
   const handleChangeView = () => {
+    console.log(lookAtTarget);
     setLookAtTarget([0, 0, 0]);
-    setScaleTarget(1.5);
+    isMobile() ? setScaleTarget(0.8) : setScaleTarget(1.5);
+    console.log(scaleTarget);
+    console.log(isMobileScreen);
   };
+  // useAnimationFrame(() => {
+  //   //console.log("hello");
+  //   //console.log(window.innerWidth);
+  // });
 
   const { scale } = useSpring({
     scale: scaleTarget,
@@ -42,7 +74,7 @@ const EarthCanvas: React.FC = () => {
               initial={{ x: -200, opacity: 1 }}
               animate={{ x: 200, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              onAnimationStart={() => console.log("Start asdf ")}
+              onAnimationStart={() => console.log("Start animation ")}
               onAnimationComplete={() => {
                 handleChangeView();
                 console.log("End");
