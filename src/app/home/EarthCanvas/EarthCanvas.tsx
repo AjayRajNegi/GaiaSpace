@@ -10,50 +10,42 @@ import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 import React, { useMemo, Suspense, useState, useEffect } from "react";
 
-const isMobile = () => {
-  if (typeof window !== "undefined") {
-    return window.innerWidth <= 1024;
-  }
-  return false;
-};
-
 const EarthCanvas: React.FC = () => {
+  //To check whether the screen is of small devices
+  const isMobile = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth <= 1024;
+    }
+    return false;
+  }, []);
+
   //Constant to Change the coordinates of camera lookAt
-  //const n =6;
-  const lookAtTargetCoordinates: [number, number, number] = isMobile()
+  const initialLookAtTarget: [number, number, number] = isMobile
     ? [1, 6, 1]
     : [1, 7, 1];
-  const [lookAtTarget, setLookAtTarget] = useState<[number, number, number]>(
-    lookAtTargetCoordinates
-  );
   //Constant to Change the scale of mesh
-  const meshScale = isMobile() ? 2.5 : 3.5;
-  const [scaleTarget, setScaleTarget] = useState(meshScale);
-  const [isMobileScreen, setIsMobileScreen] = useState(true);
+  const initialScaleTarget = isMobile ? 2.5 : 3.5;
 
-  useEffect(() => {
-    console.log("Hello");
-    console.log(isMobile());
-    if (isMobile()) {
-      setIsMobileScreen(true);
-      //console.log(isMobileScreen);
-    } else {
-      setIsMobileScreen(false);
-      //console.log(isMobileScreen);
+  const [lookAtTarget, setLookAtTarget] =
+    useState<[number, number, number]>(initialLookAtTarget);
+  const [scaleTarget, setScaleTarget] = useState(initialScaleTarget);
+  const [isChangingView, setIsChangingView] = useState(false);
+
+  useAnimationFrame(() => {
+    if (isChangingView) {
+      const scaleRatio = (window.innerWidth / 786) * 0.75;
+      const clampedScale = Math.min(Math.max(scaleRatio, 0.75), 1.5);
+      setScaleTarget((prev) => (prev !== clampedScale ? clampedScale : prev));
     }
   });
-
-  const handleChangeView = () => {
-    console.log(lookAtTarget);
-    setLookAtTarget([0, 0, 0]);
-    isMobile() ? setScaleTarget(0.8) : setScaleTarget(1.5);
-    console.log(scaleTarget);
-    console.log(isMobileScreen);
+  const handleAnimationComplete = () => {
+    handleChangeView();
+    console.log("End");
   };
-  // useAnimationFrame(() => {
-  //   //console.log("hello");
-  //   //console.log(window.innerWidth);
-  // });
+  const handleChangeView = () => {
+    setLookAtTarget([0, 0, 0]);
+    setIsChangingView(true);
+  };
 
   const { scale } = useSpring({
     scale: scaleTarget,
@@ -74,11 +66,7 @@ const EarthCanvas: React.FC = () => {
               initial={{ x: -200, opacity: 1 }}
               animate={{ x: 200, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              onAnimationStart={() => console.log("Start animation ")}
-              onAnimationComplete={() => {
-                handleChangeView();
-                console.log("End");
-              }}
+              onAnimationComplete={handleAnimationComplete}
               className="loading"
             >
               Testing
