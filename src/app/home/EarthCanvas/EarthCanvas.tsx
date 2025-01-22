@@ -49,7 +49,7 @@ const EarthCanvas: React.FC = () => {
 
   const { scale } = useSpring({
     scale: scaleTarget,
-    config: { duration: 1000, tension: 170, friction: 25 },
+    config: { duration: 988, tension: 170, friction: 25 },
   });
 
   const sunDirection = useMemo(
