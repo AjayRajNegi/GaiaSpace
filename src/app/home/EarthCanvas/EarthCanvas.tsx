@@ -77,7 +77,7 @@ const EarthCanvas: React.FC = () => {
           <Canvas camera={{ position: [12, 5, 10], fov: 25 }}>
             <AnimatedCameraLookAt target={lookAtTarget} />
             <animated.mesh scale={scale}>
-              <Stars
+              {/* <Stars
                 radius={1}
                 depth={50}
                 count={5000}
@@ -85,7 +85,7 @@ const EarthCanvas: React.FC = () => {
                 saturation={0}
                 fade
                 speed={0.5}
-              />
+              /> */}
               <Earth sunDirection={sunDirection} />
               <Sun sunDirection={sunDirection} />
               <Atmosphere sunDirection={sunDirection} />

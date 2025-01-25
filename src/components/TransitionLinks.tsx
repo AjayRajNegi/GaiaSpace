@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 interface TransitionLinksProps extends LinkProps {
   children: ReactNode;
   href: string;
+  className?: string;
 }
 
 function sleep(ms: number): Promise<void> {
@@ -15,6 +16,7 @@ function sleep(ms: number): Promise<void> {
 export default function TransitionLinks({
   children,
   href,
+  className,
   ...props
 }: TransitionLinksProps) {
   const router = useRouter();
