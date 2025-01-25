@@ -16,7 +16,7 @@ export default function LoadingScreen() {
           ];
           preloadImages.forEach(({ src, crossorigin }) => {
             const link = document.createElement('link');
-            link.rel = 'preload';
+            link.rel = 'prefetch';
             link.as = 'image';
             link.href = src;
             link.crossOrigin = crossorigin;
