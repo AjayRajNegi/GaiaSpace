@@ -23,6 +23,8 @@ body,
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
 }
+
+/* ------------------------------CSS for EarthCanvas---------------------------------- */
 .canvasMain {
   position: relative;
   height: 300vh;
@@ -58,14 +60,15 @@ body,
   background-color: black;
   color: white;
 }
-
+/* ------------------------------CSS for loader---------------------------------- */
+/* ------------------------------CSS for page-transition---------------------------------- */
 .page-transition {
   opacity: 0;
   background: black;
-  transform: translatey(80px);
+  transform: translatey(-80px);
   filter: blur(12px);
 }
-
+/* ------------------------------CSS for page-transition---------------------------------- */
 /* ------------------------------CSS for loader---------------------------------- */
 .loader-container {
   position: fixed;
