@@ -9,15 +9,20 @@ export default function LoadingScreen() {
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-      const preloadImages = ['/static/earth/day.webp', '/static/earth/night.webp', '/static/earth/specularClouds.webp'];
-      preloadImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-      });
-    `,
+          const preloadImages = [
+            { src: '/static/earth/day.webp', crossorigin: 'anonymous' },
+            { src: '/static/earth/night.webp', crossorigin: 'anonymous' },
+            { src: '/static/earth/specularClouds.webp', crossorigin: 'anonymous' },
+          ];
+          preloadImages.forEach(({ src, crossorigin }) => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            link.crossOrigin = crossorigin;
+            document.head.appendChild(link);
+          });
+        `,
         }}
       />
       <div className="h-screen w-full text-white flex just  ify-center items-center flex-col load">
