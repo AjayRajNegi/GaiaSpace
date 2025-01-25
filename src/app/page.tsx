@@ -43,7 +43,7 @@ export default function LoadingScreen() {
                 y="50%"
                 dy=".32em"
                 textAnchor="middle"
-                className="text-body text-[10vw] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-8px]"
+                className="text-body text-[15vw] md:text-[10vw] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-8px]"
               >
                 GaiaSpace
               </text>
@@ -53,12 +53,12 @@ export default function LoadingScreen() {
                 dy=".32em"
                 dx="2.6em"
                 textAnchor="middle"
-                className="text-body text-[10vw] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-8px]"
+                className="text-body text-[15vw] md:text-[10vw] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-8px]"
               >
                 .
               </text>
             </svg>
-            <div className=" flex justify-end mr-[18vw] mt-9">
+            <div className=" flex justify-end mr-[5vw] md:mr-[18vw] mt-1 md:mt-6">
               <TransitionLinks
                 href="/home"
                 prefetch={true}
@@ -70,7 +70,7 @@ export default function LoadingScreen() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1, ease: "easeInOut" }}
                 >
-                  <button className="px-6 py-2 font-semibold bg-indigo-900 text-white w-fit transition-all shadow-[3px_3px_0px_white] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                  <button className="px-4 md:px-6  py-1 md:py-2 font-medium text-sm md:text-lg bg-indigo-900 text-white w-fit transition-all shadow-[3px_3px_0px_white] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                     Explore
                   </button>
                 </motion.div>
