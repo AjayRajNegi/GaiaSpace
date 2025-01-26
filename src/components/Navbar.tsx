@@ -2,7 +2,6 @@
 import Link from "next/link";
 import TransitionLinks from "./TransitionLinks";
 import Image from "next/image";
-import { useState } from "react";
 import Nav from "./Nav";
 
 const navLinks = [
@@ -34,13 +33,9 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
   return (
     <>
-      <nav className="min-h-[70px] flex justify-center items-center bg-transparent">
+      <nav className="min-h-[70px] max-w-full flex justify-center items-center bg-transparent">
         {/* Navbar for large displays */}
         <div className="navbar fixed hidden md:flex items-center gap-10 text-white px-3 py-1 rounded-full z-[9999]">
           <Link href="/home" className="flex items-center gap-2">
@@ -58,11 +53,11 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Navbar for small displays */}
-        <div className="fixed flex flex-1 md:hidden items-center justify-start text-white z-[999] w-full ">
-          <div className="pr-[30%] pl-[15px]">
+        <div className="fixed max-w-full flex flex-1 md:hidden items-center justify-start text-white z-[999] w-full ">
+          <div className="w-[42%]">
             <Nav />
           </div>
-          <Link href="/home" className="flex items-center gap-2">
+          <Link href="/home" className="flex items-center gap-2 w-1/2">
             <Image src="/logo.png" alt="logo" width={20} height={20} />
             <span>GAIA</span>
           </Link>

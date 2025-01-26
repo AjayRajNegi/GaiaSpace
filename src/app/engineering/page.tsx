@@ -1,7 +1,12 @@
+import Navbar from "@/src/components/Navbar";
+
 export default function Engineering() {
   return (
-    <div className="text-white font-extrabold text-5xl flex items-center h-full justify-center bg-cyan-400">
-      Engineering
-    </div>
+    <>
+      <Navbar />
+      <div className="text-white font-extrabold text-5xl flex items-center h-full justify-center bg-cyan-400">
+        Engineering
+      </div>
+    </>
   );
 }
