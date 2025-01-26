@@ -1,7 +1,43 @@
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
+import TransitionLinks from "./TransitionLinks";
+import { usePathname } from "next/navigation";
 
-export default function Navbar() {
+const navLinks = [
+  {
+    id: 1,
+    title: "Engineering",
+    href: "/engineering",
+    src: "/EnIcon.svg",
+  },
+  {
+    id: 2,
+    title: "About Us",
+    href: "/about",
+    src: "/AboutIcon.svg",
+  },
+  {
+    id: 3,
+    title: "Careers",
+    href: "/careers",
+    src: "/CareerIcon.svg",
+  },
+  {
+    id: 4,
+    title: "Training Program",
+    href: "/training_program",
+    src: "/TrainingIcon.svg",
+  },
+  {
+    id: 5,
+    title: "Partners",
+    href: "/partners",
+    src: "/PartnerIcon.svg",
+  },
+];
+export default function Nav() {
+  const pathName = usePathname();
   const [mobileNav, setMobileNav] = useState(false);
 
   const toggleMobileNav = () => {
@@ -9,7 +45,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 inset-x-0 p-6 bg-black/30">
+    <header className="sticky top-0 inset-x-0 px-4 bg-black/30">
       <nav className="container mx-auto">
         <motion.button
           initial="hide"
@@ -27,7 +63,9 @@ export default function Navbar() {
                 y: 5,
               },
             }}
-            className="w-6 bg-white h-px block"
+            className={`w-4 ${
+              mobileNav ? "bg-black" : "bg-white"
+            } h-[0.5px] block`}
           ></motion.span>
           <motion.span
             variants={{
@@ -38,7 +76,9 @@ export default function Navbar() {
                 opacity: 0,
               },
             }}
-            className="w-6 bg-white h-px block"
+            className={`w-4 ${
+              mobileNav ? "bg-black" : "bg-white"
+            } h-[0.5px] block`}
           ></motion.span>
           <motion.span
             variants={{
@@ -50,7 +90,9 @@ export default function Navbar() {
                 y: -5,
               },
             }}
-            className="w-6 bg-white h-px block"
+            className={`w-4 ${
+              mobileNav ? "bg-black" : "bg-white"
+            } h-[0.5px] block`}
           ></motion.span>
         </motion.button>
         <AnimatePresence>
@@ -86,7 +128,7 @@ export default function Navbar() {
                 initial="hide"
                 animate="show"
                 exit="hide"
-                className="fixed inset-0 bg-blue-600 p-6 flex flex-col justify-center space-y-10 lg:hidden"
+                className="fixed inset-0 bg-white p-6 flex flex-col justify-center space-y-10 lg:hidden"
               >
                 <motion.ul
                   variants={{
@@ -99,23 +141,29 @@ export default function Navbar() {
                       opacity: 1,
                     },
                   }}
-                  className="list-none space-y-6"
+                  className="list-none space-y-3"
                 >
-                  <li>
-                    <a href="#" className="text-5xl font-semibold text-white">
-                      Link #1
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-5xl font-semibold text-white">
-                      Link #2
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-5xl font-semibold text-white">
-                      Link #3
-                    </a>
-                  </li>
+                  {navLinks.map((link) => (
+                    <li
+                      key={link.id}
+                      className={`text-2xl md:text-5xl font-semibold ${
+                        pathName === link.href
+                          ? "text-[#ad8adf]"
+                          : "text-[#7A7A7A]"
+                      } flex items-center tracking-tight`}
+                    >
+                      <img
+                        src={link.src}
+                        alt=""
+                        style={{ height: 40, width: 40 }}
+                        className={`${pathName === link.href ? "filter" : ""}`}
+                      />
+
+                      <TransitionLinks href={link.href}>
+                        {link.title}
+                      </TransitionLinks>
+                    </li>
+                  ))}
                 </motion.ul>
                 <motion.div
                   variants={{
@@ -128,7 +176,7 @@ export default function Navbar() {
                       opacity: 1,
                     },
                   }}
-                  className="w-full h-px bg-white/30"
+                  className="w-full h-px bg-black"
                 ></motion.div>
                 <motion.ul
                   variants={{
@@ -144,13 +192,13 @@ export default function Navbar() {
                   className="list-none flex justify-center gap-x-4"
                 >
                   <li>
-                    <div className="bg-white rounded-lg w-8 h-8"></div>
+                    <div className="bg-[#7A7A7A] rounded-lg w-8 h-8"></div>
                   </li>
                   <li>
-                    <div className="bg-white rounded-lg w-8 h-8"></div>
+                    <div className="bg-[#7A7A7A] rounded-lg w-8 h-8"></div>
                   </li>
                   <li>
-                    <div className="bg-white rounded-lg w-8 h-8"></div>
+                    <div className="bg-[#7A7A7A] rounded-lg w-8 h-8"></div>
                   </li>
                 </motion.ul>
               </motion.div>
