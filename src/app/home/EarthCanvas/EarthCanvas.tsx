@@ -63,8 +63,8 @@ const EarthCanvas: React.FC = () => {
         <div className="Hello">
           <div className="testing">
             <motion.div
-              initial={{ x: -200, opacity: 1 }}
-              animate={{ x: 200, opacity: 0 }}
+              initial={{ x: -100, opacity: 1 }}
+              animate={{ x: 100, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut", delay: 2 }}
               onAnimationComplete={handleAnimationComplete}
               className="loading"
