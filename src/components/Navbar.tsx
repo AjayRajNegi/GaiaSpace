@@ -38,9 +38,10 @@ export default function Navbar() {
       <nav className="min-h-[70px] max-w-full flex justify-center items-center bg-transparent">
         {/* Navbar for large displays */}
         <div className="navbar fixed hidden md:flex items-center gap-10 text-white px-3 py-1 rounded-full z-[9999]">
-          <Link href="/home" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="logo" width={20} height={20} /> GAIA
-          </Link>
+          <TransitionLinks href="/home" className="flex items-center gap-2">
+            <Image src="/logo.png" alt="logo" width={20} height={20} />
+            <span>GAIA</span>
+          </TransitionLinks>
           <ul className="flex">
             {navLinks.map((link) => (
               <li

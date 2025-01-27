@@ -58,7 +58,12 @@ export default function TransitionLinks({
   };
 
   return (
-    <Link href={href} {...props} onClick={handleTransition}>
+    <Link
+      href={href}
+      {...props}
+      onClick={handleTransition}
+      className={className}
+    >
       {children}
     </Link>
   );

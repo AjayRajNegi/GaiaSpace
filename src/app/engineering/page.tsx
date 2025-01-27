@@ -1,3 +1,4 @@
+import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
 
 export default function Engineering() {
@@ -7,6 +8,7 @@ export default function Engineering() {
       <div className="text-white font-extrabold text-5xl flex items-center h-full justify-center bg-cyan-400">
         Engineering
       </div>
+      <Footer />
     </>
   );
 }

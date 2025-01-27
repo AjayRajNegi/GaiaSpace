@@ -9,6 +9,7 @@ import { motion, useAnimationFrame } from "motion/react";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 import React, { useMemo, useState, useEffect } from "react";
+import GradientText from "@/src/components/GradientText";
 
 const EarthCanvas: React.FC = () => {
   //To check whether the screen is of small devices
@@ -43,8 +44,8 @@ const EarthCanvas: React.FC = () => {
     console.log("End");
   };
   const handleChangeView = () => {
-    setLookAtTarget([0, 0, 0]);
-    setIsChangingView(true);
+    // setLookAtTarget([0, 0, 0]);
+    // setIsChangingView(true);
   };
 
   const { scale } = useSpring({
@@ -60,9 +61,9 @@ const EarthCanvas: React.FC = () => {
   return (
     <>
       <div className="canvasMain">
-        <div className="Hello">
-          <div className="testing">
-            <motion.div
+        <div className="Hello items-center justify-start sm:justify-center pl-[4vw]">
+          <div className="testing relative -top-[30%]">
+            {/* <motion.div
               initial={{ x: -100, opacity: 1 }}
               animate={{ x: 100, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut", delay: 2 }}
@@ -70,14 +71,35 @@ const EarthCanvas: React.FC = () => {
               className="loading"
             >
               Testing
-            </motion.div>
+            </motion.div> */}
+            <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight font-semibold text-left sm:text-center ">
+              PROPELLING
+              <br />
+              <div className="flex flex-col sm:flex-row gap-0 sm:gap-[1.5vw] justify-start">
+                <p>TO AND FOR THE</p>
+                <GradientText
+                  colors={[
+                    "#40ffaa",
+                    "#4079ff",
+                    "#40ffaa",
+                    "#4079ff",
+                    "#40ffaa",
+                  ]}
+                  animationSpeed={6}
+                  showBorder={false}
+                  className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight font-semibold"
+                >
+                  BEYONDS
+                </GradientText>
+              </div>
+            </h1>
           </div>
         </div>
         <div className="canva">
           <Canvas camera={{ position: [12, 5, 10], fov: 25 }}>
             <AnimatedCameraLookAt target={lookAtTarget} />
             <animated.mesh scale={scale}>
-              {/* <Stars
+              <Stars
                 radius={1}
                 depth={50}
                 count={5000}
@@ -85,7 +107,7 @@ const EarthCanvas: React.FC = () => {
                 saturation={0}
                 fade
                 speed={0.5}
-              /> */}
+              />
               <Earth sunDirection={sunDirection} />
               <Sun sunDirection={sunDirection} />
               <Atmosphere sunDirection={sunDirection} />
