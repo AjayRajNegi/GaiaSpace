@@ -62,7 +62,7 @@ const EarthCanvas: React.FC = () => {
     <>
       <div className="canvasMain">
         <div className="Hello items-center justify-start sm:justify-center pl-[4vw]">
-          <div className="testing relative -top-[30%]">
+          <div className="testing relative -top-[20%]">
             {/* <motion.div
               initial={{ x: -100, opacity: 1 }}
               animate={{ x: 100, opacity: 0 }}

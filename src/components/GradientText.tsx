@@ -1,11 +1,21 @@
+import React, { ReactNode, CSSProperties } from "react";
+
+interface GradientTextProps {
+  children: ReactNode;
+  className?: string;
+  colors?: string[];
+  animationSpeed?: number;
+  showBorder?: boolean;
+}
+
 export default function GradientText({
   children,
   className = "",
   colors = ["#ffaa40", "#9c40ff", "#ffaa40"],
   animationSpeed = 8,
   showBorder = false,
-}) {
-  const gradientStyle = {
+}: GradientTextProps) {
+  const gradientStyle: CSSProperties = {
     backgroundImage: `linear-gradient(to right, ${colors.join(", ")})`,
     animationDuration: `${animationSpeed}s`,
   };
@@ -48,5 +58,3 @@ export default function GradientText({
     </div>
   );
 }
-
-// tailwind.config.js
