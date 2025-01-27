@@ -35,9 +35,9 @@ const navLinks = [
 export default function Navbar() {
   return (
     <>
-      <nav className=" absolute top-0 left-0 min-h-[70px] max-w-full flex justify-center items-center bg-transparent">
+      <nav className=" absolute top-0 left-0 min-h-[70px] flex justify-center items-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] -translate-x-[50%] top-[2vw] hidden md:flex items-center gap-10 text-white px-3 py-1 rounded-full z-[9999]">
+        <div className="navbar fixed left-[50%] -translate-x-[50%] top-[2vw] max-w-[640px] hidden md:flex items-center gap-10 text-white px-3 py-1 rounded-full z-[9999]">
           <TransitionLinks href="/home" className="flex items-center gap-2">
             <Image src="/logo.png" alt="logo" width={20} height={20} />
             <span>GAIA</span>
