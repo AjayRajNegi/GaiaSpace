@@ -176,3 +176,6 @@ svg text.dot {
   filter: invert(65%) sepia(45%) saturate(421%) hue-rotate(213deg)
     brightness(107%) contrast(104%);
 }
+.sd {
+  object-fit: cover;
+}

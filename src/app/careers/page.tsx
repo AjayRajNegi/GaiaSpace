@@ -25,7 +25,12 @@ export default function Careers() {
             Space, your work will directly impact how we preserve and extend the
             life of critical spacecraft.
           </h4>
-          <Image fill={true} src="/Images/careersMainImage.png" alt="asdf" />
+          <Image
+            fill={true}
+            className="sd"
+            src="/Images/careersMainImage.webp"
+            alt="asdf"
+          />
         </main>
         <section>
           <h2></h2>
