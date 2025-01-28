@@ -7,7 +7,7 @@ export default function Careers() {
     <>
       <Navbar />
       <div className="text-white  flex items-center h-full justify-center ">
-        <main className="w-full h-[100vh]">
+        <main className="w-full relative h-[100vh]">
           <h1 className="text-5xl font-bold px-[4vw] pt-[200px]">
             <span className="flex gap-[1vw]">
               Let's Shape
@@ -27,9 +27,9 @@ export default function Careers() {
           </h4>
           <Image
             fill={true}
-            className="sd"
-            src="/Images/careersMainImage.webp"
-            alt="asdf"
+            className="object-cover"
+            src="/Images/careersMainImage.avif"
+            alt="careers-background-image"
           />
         </main>
         <section>
