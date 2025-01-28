@@ -6,10 +6,10 @@ import Atmosphere from "./Atmosphere";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion, useAnimationFrame } from "motion/react";
+import GradientText from "@/src/components/GradientText";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 import React, { useMemo, useState, useEffect } from "react";
-import GradientText from "@/src/components/GradientText";
 
 const EarthCanvas: React.FC = () => {
   //To check whether the screen is of small devices

@@ -131,7 +131,7 @@ svg text.dot {
 /* ------------------------------CSS for loader---------------------------------- */
 /* ------------------------------CSS for navbar---------------------------------- */
 .navbar {
-  min-width: 700px;
+  min-width: 650px;
   background: linear-gradient(
     125deg,
     rgba(255, 255, 255, 0.1),
