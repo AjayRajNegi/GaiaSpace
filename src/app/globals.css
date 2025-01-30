@@ -74,7 +74,9 @@ body,
   background-color: black;
   display: grid;
   place-content: center;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out;
 }
 svg {
   width: 90vw;
@@ -151,7 +153,9 @@ svg text.dot {
   height: 2.5px;
   background-color: black;
   border-radius: 2px;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
     background-color 0.5s ease-in-out;
 }
 

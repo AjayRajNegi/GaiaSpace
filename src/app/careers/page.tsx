@@ -1,8 +1,21 @@
+"use client";
 import GradientText from "@/src/components/GradientText";
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
+import { useState } from "react";
+import "../globals.css";
+import Fa from "../../components/Fa";
 
 export default function Careers() {
+  const [value, setValue] = useState(0);
+  const clickHandler = () => {
+    setValue(2);
+  };
+  const clickHandler1 = () => {
+    setValue(1);
+    console.log("click");
+    console.log(value);
+  };
   return (
     <>
       <Navbar />
@@ -11,11 +24,15 @@ export default function Careers() {
           <h1 className="relative z-10 mx-[4vw] pt-[30vh] text-center text-[2.75rem] font-bold leading-[0.9] sm:text-5xl md:pt-[200px] md:text-5xl lg:text-5xl">
             <span className="block gap-[1vw] md:flex">
               Let's Shape
-              <GradientText className="font-bold">The Future Of</GradientText>
+              <GradientText className="justify-center font-bold">
+                The Future Of
+              </GradientText>
             </span>
 
             <span className="block gap-[1vw] md:flex">
-              <GradientText className="font-bold">Sustainable</GradientText>
+              <GradientText className="justify-center font-bold">
+                Sustainable
+              </GradientText>
               Space Propulsion
             </span>
           </h1>
@@ -34,14 +51,31 @@ export default function Careers() {
             />
           </div>
         </main>
-        <section className="h-[100vh] w-full bg-green-500">
-          <h2></h2>
-          <article></article>
+        <section className="mt-[4vw] h-[100vh] w-full bg-black">
+          <h2 className="flex justify-center gap-[1vw]">
+            <GradientText className="text-5xl font-semibold">
+              Internship
+            </GradientText>
+            <span className="text-5xl font-semibold">and Co-Op </span>
+          </h2>
+          <article className="mx-auto mt-[4vw] w-[85%] rounded-[2rem] border-[1px] border-gray-600">
+            <div className="mmmmm">
+              <h2 onClick={clickHandler1}>Propulsion Engineering</h2>
+              <div className={`${value === 1 ? "fly ml-5" : "ml-5 hidden"}`}>
+                Electrical Propulsion
+              </div>
+            </div>
+            <div>
+              <h2 onClick={clickHandler}>Satellite Engineering</h2>
+              <div className="ml-5">Structural Engineering</div>
+            </div>
+            <div>
+              <h2 onClick={clickHandler}>General Internship</h2>
+              <div className="ml-5">General Intern Program</div>
+            </div>
+          </article>
         </section>
-        <section>
-          <article></article>
-          <figure></figure>
-        </section>
+        <section className="w-full"></section>
         <main>
           <section></section>
           <section></section>

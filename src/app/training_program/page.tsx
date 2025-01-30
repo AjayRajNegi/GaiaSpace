@@ -1,3 +1,10 @@
+import Navbar from "@/src/components/Navbar";
+
 export default function TrainingPrograms() {
-  return <div>Training Programs</div>;
+  return (
+    <>
+      <Navbar />
+      <div className="h-full bg-pink-400">Training Programs</div>
+    </>
+  );
 }

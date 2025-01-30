@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import TransitionLinks from "./TransitionLinks";
 import Image from "next/image";
 import Nav from "./Nav";
@@ -58,10 +57,13 @@ export default function Navbar() {
           <div className="w-[42%]">
             <Nav />
           </div>
-          <Link href="/home" className="flex w-1/2 items-center gap-2">
+          <TransitionLinks
+            href="/home"
+            className="flex w-1/2 items-center gap-2"
+          >
             <Image src="/logo.png" alt="logo" width={20} height={20} />
             <span>GAIA</span>
-          </Link>
+          </TransitionLinks>
         </div>
       </nav>
     </>

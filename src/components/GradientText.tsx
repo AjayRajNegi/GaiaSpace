@@ -12,7 +12,7 @@ export default function GradientText({
   children,
   className = "",
   colors = ["#ffaa40", "#9c40ff", "#ffaa40"],
-  animationSpeed = 8,
+  animationSpeed = 4,
   showBorder = false,
 }: GradientTextProps) {
   const gradientStyle: CSSProperties = {
@@ -22,7 +22,7 @@ export default function GradientText({
 
   return (
     <div
-      className={`relative flex cursor-pointer flex-row items-center justify-center overflow-hidden backdrop-blur transition-shadow duration-500 ${className}`}
+      className={`relative flex cursor-pointer flex-row items-center overflow-hidden backdrop-blur transition-shadow duration-500 ${className}`}
     >
       {showBorder && (
         <div

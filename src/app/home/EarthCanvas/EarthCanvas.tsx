@@ -87,7 +87,7 @@ const EarthCanvas: React.FC = () => {
                   ]}
                   animationSpeed={6}
                   showBorder={false}
-                  className="text-5xl font-semibold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl"
+                  className="text-left text-5xl font-semibold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl"
                 >
                   BEYONDS
                 </GradientText>
