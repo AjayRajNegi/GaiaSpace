@@ -25,12 +25,14 @@ export default function Careers() {
             Space, your work will directly impact how we preserve and extend the
             life of critical spacecraft.
           </h4>
-          <Image
-            fill={true}
-            className="object-cover"
-            src="/Images/careersMainImage.avif"
-            alt="careers-background-image"
-          />
+          <div className="absolute bottom-0 left-0 top-[50%] md:top-0 right-0 w-full h-[55vh] md:h-full">
+            <Image
+              fill
+              className="object-cover"
+              src="/Images/careersMainImage.avif"
+              alt="careers-background-image"
+            />
+          </div>
         </main>
         <section>
           <h2></h2>
