@@ -45,7 +45,7 @@ export default function Nav() {
   };
 
   return (
-    <header className="sticky top-0 inset-x-0 px-4 bg-black/30">
+    <header className="sticky top-0 inset-x-0 px-4 bg-transparent">
       <nav className="container mx-auto">
         <motion.button
           initial="hide"
@@ -146,17 +146,20 @@ export default function Nav() {
                   {navLinks.map((link) => (
                     <li
                       key={link.id}
-                      className={`text-2xl md:text-5xl font-semibold ${
+                      className={` font-semibold ${
                         pathName === link.href
-                          ? "text-[#ad8adf]"
-                          : "text-[#7A7A7A]"
+                          ? "text-[#ad8adf] text-3xl md:text-6xl"
+                          : "text-[#7A7A7A] text-2xl md:text-5xl"
                       } flex items-center tracking-tight`}
                     >
                       <img
                         src={link.src}
                         alt=""
-                        style={{ height: 40, width: 40 }}
-                        className={`${pathName === link.href ? "filter" : ""}`}
+                        className={`${
+                          pathName === link.href
+                            ? "filter h-[50px] w-[50px]"
+                            : "h-[40px] w-[40px]"
+                        }`}
                       />
 
                       <TransitionLinks href={link.href}>

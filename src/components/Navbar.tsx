@@ -54,7 +54,7 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Navbar for small displays */}
-        <div className="fixed max-w-full flex flex-1 md:hidden items-center justify-start text-white z-[999] w-full ">
+        <div className="fixed left-0 max-w-full flex flex-1 md:hidden items-center justify-start text-white z-[999] w-full ">
           <div className="w-[42%]">
             <Nav />
           </div>
