@@ -22,18 +22,18 @@ export default function GradientText({
 
   return (
     <div
-      className={`relative flex max-w-fit flex-row items-center justify-center backdrop-blur transition-shadow duration-500 overflow-hidden cursor-pointer ${className}`}
+      className={`relative flex cursor-pointer flex-row items-center justify-center overflow-hidden backdrop-blur transition-shadow duration-500 ${className}`}
     >
       {showBorder && (
         <div
-          className="absolute inset-0 bg-cover z-0 pointer-events-none animate-gradient"
+          className="pointer-events-none absolute inset-0 z-0 animate-gradient bg-cover"
           style={{
             ...gradientStyle,
             backgroundSize: "300% 100%",
           }}
         >
           <div
-            className="absolute inset-0 bg-black rounded-[1.25rem] z-[-1]"
+            className="absolute inset-0 z-[-1] rounded-[1.25rem] bg-black"
             style={{
               width: "calc(100% - 2px)",
               height: "calc(100% - 2px)",
@@ -45,7 +45,7 @@ export default function GradientText({
         </div>
       )}
       <div
-        className="inline-block relative z-2 text-transparent bg-cover animate-gradient"
+        className="z-2 relative inline-block animate-gradient bg-cover text-transparent"
         style={{
           ...gradientStyle,
           backgroundClip: "text",

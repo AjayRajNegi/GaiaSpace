@@ -35,9 +35,9 @@ const navLinks = [
 export default function Navbar() {
   return (
     <>
-      <nav className=" absolute top-0 left-0 min-h-[70px] flex justify-center items-center bg-transparent">
+      <nav className="absolute left-0 top-0 flex min-h-[70px] items-center justify-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] -translate-x-[50%] top-[2vw] max-w-[640px] hidden md:flex items-center gap-10 text-white px-3 py-1 rounded-full z-[9999]">
+        <div className="navbar fixed left-[50%] top-[2vw] z-[9999] hidden max-w-[640px] -translate-x-[50%] items-center gap-10 rounded-full px-3 py-1 text-white md:flex">
           <TransitionLinks href="/home" className="flex items-center gap-2">
             <Image src="/logo.png" alt="logo" width={20} height={20} />
             <span>GAIA</span>
@@ -46,7 +46,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className="hover:bg-[#D5B8FF] py-1 px-3 rounded-full transition-colors duration-500"
+                className="rounded-full px-3 py-1 transition-colors duration-500 hover:bg-[#D5B8FF]"
               >
                 <TransitionLinks href={link.href}>{link.title}</TransitionLinks>
               </li>
@@ -54,11 +54,11 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Navbar for small displays */}
-        <div className="fixed left-0 max-w-full flex flex-1 md:hidden items-center justify-start text-white z-[999] w-full ">
+        <div className="fixed left-0 z-[999] flex w-full max-w-full flex-1 items-center justify-start text-white md:hidden">
           <div className="w-[42%]">
             <Nav />
           </div>
-          <Link href="/home" className="flex items-center gap-2 w-1/2">
+          <Link href="/home" className="flex w-1/2 items-center gap-2">
             <Image src="/logo.png" alt="logo" width={20} height={20} />
             <span>GAIA</span>
           </Link>

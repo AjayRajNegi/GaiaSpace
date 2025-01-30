@@ -55,13 +55,13 @@ const EarthCanvas: React.FC = () => {
 
   const sunDirection = useMemo(
     () => new THREE.Vector3(0, 0, 1).normalize(),
-    []
+    [],
   );
 
   return (
     <>
       <div className="canvasMain">
-        <div className="Hello items-center justify-start sm:justify-center pl-[4vw]">
+        <div className="Hello items-center justify-start pl-[4vw] sm:justify-center">
           <div className="testing relative -top-[20%]">
             {/* <motion.div
               initial={{ x: -100, opacity: 1 }}
@@ -72,10 +72,10 @@ const EarthCanvas: React.FC = () => {
             >
               Testing
             </motion.div> */}
-            <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight font-semibold text-left sm:text-center ">
+            <h1 className="text-left text-5xl font-semibold tracking-tight sm:text-center sm:text-4xl md:text-5xl lg:text-7xl">
               PROPELLING
               <br />
-              <div className="flex flex-col sm:flex-row gap-0 sm:gap-[1.5vw] justify-start">
+              <div className="flex flex-col justify-start gap-0 sm:flex-row sm:gap-[1.5vw]">
                 <p>TO AND FOR THE</p>
                 <GradientText
                   colors={[
@@ -87,7 +87,7 @@ const EarthCanvas: React.FC = () => {
                   ]}
                   animationSpeed={6}
                   showBorder={false}
-                  className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight font-semibold"
+                  className="text-5xl font-semibold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl"
                 >
                   BEYONDS
                 </GradientText>

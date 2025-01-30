@@ -45,13 +45,13 @@ export default function Nav() {
   };
 
   return (
-    <header className="sticky top-0 inset-x-0 px-4 bg-transparent">
+    <header className="sticky inset-x-0 top-0 bg-transparent px-4">
       <nav className="container mx-auto">
         <motion.button
           initial="hide"
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
-          className="flex flex-col space-y-1 relative z-10"
+          className="relative z-10 flex flex-col space-y-1"
         >
           <motion.span
             variants={{
@@ -65,7 +65,7 @@ export default function Nav() {
             }}
             className={`w-4 ${
               mobileNav ? "bg-black" : "bg-white"
-            } h-[0.5px] block`}
+            } block h-[0.5px]`}
           ></motion.span>
           <motion.span
             variants={{
@@ -78,7 +78,7 @@ export default function Nav() {
             }}
             className={`w-4 ${
               mobileNav ? "bg-black" : "bg-white"
-            } h-[0.5px] block`}
+            } block h-[0.5px]`}
           ></motion.span>
           <motion.span
             variants={{
@@ -92,7 +92,7 @@ export default function Nav() {
             }}
             className={`w-4 ${
               mobileNav ? "bg-black" : "bg-white"
-            } h-[0.5px] block`}
+            } block h-[0.5px]`}
           ></motion.span>
         </motion.button>
         <AnimatePresence>
@@ -128,7 +128,7 @@ export default function Nav() {
                 initial="hide"
                 animate="show"
                 exit="hide"
-                className="fixed inset-0 bg-white p-6 flex flex-col justify-center space-y-10 lg:hidden"
+                className="fixed inset-0 flex flex-col justify-center space-y-10 bg-white p-6 lg:hidden"
               >
                 <motion.ul
                   variants={{
@@ -146,10 +146,10 @@ export default function Nav() {
                   {navLinks.map((link) => (
                     <li
                       key={link.id}
-                      className={` font-semibold ${
+                      className={`font-semibold ${
                         pathName === link.href
-                          ? "text-[#ad8adf] text-3xl md:text-6xl"
-                          : "text-[#7A7A7A] text-2xl md:text-5xl"
+                          ? "text-3xl text-[#ad8adf] md:text-6xl"
+                          : "text-2xl text-[#7A7A7A] md:text-5xl"
                       } flex items-center tracking-tight`}
                     >
                       <img
@@ -157,7 +157,7 @@ export default function Nav() {
                         alt=""
                         className={`${
                           pathName === link.href
-                            ? "filter h-[50px] w-[50px]"
+                            ? "h-[50px] w-[50px] filter"
                             : "h-[40px] w-[40px]"
                         }`}
                       />
@@ -179,7 +179,7 @@ export default function Nav() {
                       opacity: 1,
                     },
                   }}
-                  className="w-full h-px bg-black"
+                  className="h-px w-full bg-black"
                 ></motion.div>
                 <motion.ul
                   variants={{
@@ -192,16 +192,16 @@ export default function Nav() {
                       opacity: 1,
                     },
                   }}
-                  className="list-none flex justify-center gap-x-4"
+                  className="flex list-none justify-center gap-x-4"
                 >
                   <li>
-                    <div className="bg-[#7A7A7A] rounded-lg w-8 h-8"></div>
+                    <div className="h-8 w-8 rounded-lg bg-[#7A7A7A]"></div>
                   </li>
                   <li>
-                    <div className="bg-[#7A7A7A] rounded-lg w-8 h-8"></div>
+                    <div className="h-8 w-8 rounded-lg bg-[#7A7A7A]"></div>
                   </li>
                   <li>
-                    <div className="bg-[#7A7A7A] rounded-lg w-8 h-8"></div>
+                    <div className="h-8 w-8 rounded-lg bg-[#7A7A7A]"></div>
                   </li>
                 </motion.ul>
               </motion.div>
