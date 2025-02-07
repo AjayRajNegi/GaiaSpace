@@ -23,6 +23,9 @@ body,
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 /* ------------------------------CSS for EarthCanvas---------------------------------- */
 .canvasMain {

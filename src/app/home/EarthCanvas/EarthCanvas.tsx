@@ -44,8 +44,8 @@ const EarthCanvas: React.FC = () => {
     console.log("End");
   };
   const handleChangeView = () => {
-    // setLookAtTarget([0, 0, 0]);
-    // setIsChangingView(true);
+    setLookAtTarget([0, 0, 0]);
+    setIsChangingView(true);
   };
 
   const { scale } = useSpring({
@@ -63,7 +63,7 @@ const EarthCanvas: React.FC = () => {
       <div className="canvasMain">
         <div className="Hello items-center justify-start pl-[4vw] sm:justify-center">
           <div className="testing relative -top-[20%]">
-            {/* <motion.div
+            <motion.div
               initial={{ x: -100, opacity: 1 }}
               animate={{ x: 100, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut", delay: 2 }}
@@ -71,7 +71,7 @@ const EarthCanvas: React.FC = () => {
               className="loading"
             >
               Testing
-            </motion.div> */}
+            </motion.div>
             <h1 className="text-left text-5xl font-semibold tracking-tight sm:text-center sm:text-4xl md:text-5xl lg:text-7xl">
               PROPELLING
               <br />

@@ -46,7 +46,7 @@ export default function TransitionLinks({
   }, [autoNavigate, href, delay, router]);
 
   const handleTransition = async (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
     e.preventDefault();
     const body = document.querySelector("body");
@@ -63,6 +63,7 @@ export default function TransitionLinks({
       {...props}
       onClick={handleTransition}
       className={className}
+      prefetch
     >
       {children}
     </Link>
