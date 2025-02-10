@@ -22,7 +22,7 @@ export default function GradientText({
 
   return (
     <div
-      className={`relative flex cursor-pointer flex-row items-center overflow-hidden backdrop-blur transition-shadow duration-500 ${className}`}
+      className={`relative flex cursor-pointer flex-row items-center overflow-hidden duration-500 ${className}`}
     >
       {showBorder && (
         <div
