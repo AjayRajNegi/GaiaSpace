@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <Navbar />
       <EarthCanvas />
+      <div className="h-screen bg-white"></div>
     </>
   );
 }

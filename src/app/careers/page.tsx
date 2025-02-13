@@ -1,32 +1,19 @@
 "use client";
-import GradientText from "@/src/components/GradientText";
-import Navbar from "@/src/components/Navbar";
-import Image from "next/image";
-import { useState } from "react";
 import "../globals.css";
-import Fa from "../../components/Fa";
+import Image from "next/image";
 import { motion } from "motion/react";
+import Navbar from "@/src/components/Navbar";
+import GradientText from "@/src/components/GradientText";
+import { AccordianCareer } from "@/src/components/AccordianCareer";
 
 export default function Careers() {
-  const [value, setValue] = useState(0);
-  const clickHandler = () => {
-    setValue(2);
-  };
-  const clickHandler1 = () => {
-    setValue(1);
-    console.log("click");
-    console.log(value);
-  };
   return (
     <>
       <Navbar />
       <div className="flex flex-col items-center justify-center text-white">
         <main className="relative h-[100vh] w-full overflow-hidden">
           <motion.h1
-            initial={{
-              y: 50,
-              opacity: 0,
-            }}
+            initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut", delay: 0.8 }}
             className="relative z-10 mx-[4vw] pt-[30vh] text-center text-[2.75rem] font-bold leading-[0.9] sm:text-5xl md:pt-[200px] md:text-5xl lg:text-5xl"
@@ -37,7 +24,6 @@ export default function Careers() {
                 The Future Of
               </GradientText>
             </span>
-
             <span className="block gap-[1vw] md:flex">
               <GradientText className="justify-center font-bold">
                 Sustainable
@@ -65,35 +51,71 @@ export default function Careers() {
             />
           </div>
         </main>
-        <section className="mt-[4vw] h-[100vh] w-full bg-black">
+
+        <section className="mt-[4vw] w-full bg-black p-10">
           <h2 className="flex justify-center gap-[1vw]">
             <GradientText className="text-5xl font-semibold">
               Internship
             </GradientText>
             <span className="text-5xl font-semibold">and Co-Op </span>
           </h2>
-          <article className="mx-auto mt-[4vw] w-[85%] rounded-[2rem] border-[1px] border-gray-600">
-            <div className="mmmmm">
-              <h2 onClick={clickHandler1}>Propulsion Engineering</h2>
-              <div className={`${value === 1 ? "fly ml-5" : "ml-5 hidden"}`}>
-                Electrical Propulsion
-              </div>
-            </div>
-            <div>
-              <h2 onClick={clickHandler}>Satellite Engineering</h2>
-              <div className="ml-5">Structural Engineering</div>
-            </div>
-            <div>
-              <h2 onClick={clickHandler}>General Internship</h2>
-              <div className="ml-5">General Intern Program</div>
-            </div>
+
+          <article className="mx-auto ml-[2vw] mr-[2vw] mt-[4vw] rounded-[2rem] border border-gray-600">
+            <AccordianCareer />
           </article>
         </section>
-        <section className="w-full"></section>
-        <main>
-          <section></section>
-          <section></section>
-        </main>
+
+        <article className="flex flex-col justify-between gap-5 p-10 pt-[100px] lg:flex-row">
+          <section className="ml-0 max-w-[100%] lg:ml-[3vw] lg:max-w-[40%]">
+            <h2 className="mb-5 text-4xl font-bold">
+              Embark On Your <br /> Journey
+            </h2>
+            <p>
+              At Gaiaspace, your growth is our priority. Here, you’ll find a
+              place where collaboration sparks innovation, ideas turn into
+              breakthroughs, and your contributions truly matter. Join a vibrant
+              team committed to shaping the future—together, we’ll reach new
+              heights.
+            </p>
+          </section>
+          <Image
+            src="/Images/CareersPageJourneySection.png"
+            height={500}
+            width={600}
+            alt="asd"
+            className="mx-auto max-w-[100%] object-cover lg:mr-[3vw] lg:max-w-[60%]"
+          ></Image>
+        </article>
+        <article className="flex w-[90%] flex-col pt-[100px] lg:flex-row">
+          <section className="flex max-w-[100%] flex-col items-center lg:max-w-[50%]">
+            <h2 className="ml-5 text-5xl font-semibold tracking-tight md:ml-0">
+              Who We're Looking For?
+            </h2>
+            <div className="mt-16 max-w-[80%] lg:max-w-[60%]">
+              <span>
+                We're always looking for exceptional talent. Send your resume
+                and with a brief introduction about yourself to <br />
+                careers@gmail.com
+              </span>
+              <div className="my-10 flex items-center justify-between">
+                <div className="w-[40%] border-t-2 border-white"></div>
+                <span className="text-3xl">OR</span>
+                <div className="w-[40%] border-t-2 border-white"></div>
+              </div>
+              <span>
+                Join our exclusive training program, designed to align your
+                skills and expertise with the rigorous standards of the global
+                space industry.
+              </span>
+            </div>
+          </section>
+          <section className="max-w-[100%] lg:max-w-[50%]">
+            <div></div>
+            <h2>
+              Dont See Your <br /> Perfect Role?
+            </h2>
+          </section>
+        </article>
       </div>
     </>
   );

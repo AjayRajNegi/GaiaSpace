@@ -29,7 +29,7 @@ body,
 
 /* ------------------------------CSS for EarthCanvas---------------------------------- */
 .canvasMain {
-  position: relative;
+  /* position: relative; */
   height: 300vh;
   width: 100%;
 }
@@ -42,7 +42,7 @@ body,
   background-color: transparent;
 }
 .canva {
-  position: absolute;
+  position: sticky;
   top: 0;
   z-index: 1;
   width: 100%;

@@ -5,13 +5,14 @@ import * as THREE from "three";
 import Atmosphere from "./Atmosphere";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { motion, useAnimationFrame } from "motion/react";
+import { motion, useAnimationFrame, useScroll } from "motion/react";
 import GradientText from "@/src/components/GradientText";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 
 const EarthCanvas: React.FC = () => {
+  const { scrollYProgress } = useScroll();
   //To check whether the screen is of small devices
   const isMobile = useMemo(() => {
     if (typeof window !== "undefined") {
@@ -61,16 +62,35 @@ const EarthCanvas: React.FC = () => {
   return (
     <>
       <div className="canvasMain">
-        <div className="Hello items-center justify-start pl-[4vw] sm:justify-center">
+        <div className="canva">
+          <Canvas camera={{ position: [12, 5, 10], fov: 25 }}>
+            <AnimatedCameraLookAt target={lookAtTarget} />
+            <animated.mesh scale={scale}>
+              {/* <Stars
+                radius={1}
+                depth={50}
+                count={5000}
+                factor={4}
+                saturation={0}
+                fade
+                speed={0.5}
+              /> */}
+              <Earth sunDirection={sunDirection} />
+              <Sun sunDirection={sunDirection} />
+              <Atmosphere sunDirection={sunDirection} />
+            </animated.mesh>
+          </Canvas>
+        </div>
+        <div className="Hello absolute top-0 items-center justify-start pl-[4vw] sm:justify-center">
           <div className="testing relative -top-[20%]">
             <motion.div
               initial={{ x: -100, opacity: 1 }}
               animate={{ x: 100, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut", delay: 2 }}
-              onAnimationComplete={handleAnimationComplete}
+              //onAnimationComplete={handleAnimationComplete}
               className="loading"
             >
-              Testing
+              {/* Testing */}
             </motion.div>
             <h1 className="text-left text-5xl font-semibold tracking-tight sm:text-center sm:text-4xl md:text-5xl lg:text-7xl">
               PROPELLING
@@ -94,25 +114,6 @@ const EarthCanvas: React.FC = () => {
               </div>
             </h1>
           </div>
-        </div>
-        <div className="canva">
-          <Canvas camera={{ position: [12, 5, 10], fov: 25 }}>
-            <AnimatedCameraLookAt target={lookAtTarget} />
-            <animated.mesh scale={scale}>
-              <Stars
-                radius={1}
-                depth={50}
-                count={5000}
-                factor={4}
-                saturation={0}
-                fade
-                speed={0.5}
-              />
-              <Earth sunDirection={sunDirection} />
-              <Sun sunDirection={sunDirection} />
-              <Atmosphere sunDirection={sunDirection} />
-            </animated.mesh>
-          </Canvas>
         </div>
         <div className="Hello">Hello</div>
       </div>
