@@ -6,6 +6,13 @@ import Navbar from "@/src/components/Navbar";
 import GradientText from "@/src/components/GradientText";
 import { AccordianCareer } from "@/src/components/AccordianCareer";
 
+const roles = [
+  { id: 1, desc: "  Passionate about space technology." },
+  { id: 2, desc: "Commited to environmental stability." },
+  { id: 3, desc: "Innovative problem-solvers." },
+  { id: 4, desc: " Collaborative team players." },
+  { id: 5, desc: "Driven to make a lasting impact." },
+];
 export default function Careers() {
   return (
     <>
@@ -66,7 +73,15 @@ export default function Careers() {
         </section>
 
         <article className="flex flex-col justify-between gap-5 p-10 pt-[100px] lg:flex-row">
-          <section className="ml-0 max-w-[100%] lg:ml-[3vw] lg:max-w-[40%]">
+          <motion.section
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { duration: 1, staggerChildren: 0.5 },
+            }}
+            className="ml-0 max-w-[100%] lg:ml-[3vw] lg:max-w-[40%]"
+          >
             <h2 className="mb-5 text-4xl font-bold">
               Embark On Your <br /> Journey
             </h2>
@@ -77,41 +92,79 @@ export default function Careers() {
               team committed to shaping the future—together, we’ll reach new
               heights.
             </p>
-          </section>
-          <Image
-            src="/Images/CareersPageJourneySection.png"
-            height={500}
-            width={600}
-            alt="asd"
-            className="mx-auto max-w-[100%] object-cover lg:mr-[3vw] lg:max-w-[60%]"
-          ></Image>
+          </motion.section>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+            className="relative mx-auto max-w-[100%] lg:mr-[3vw] lg:max-w-[60%]"
+          >
+            <Image
+              src="/Images/CareersPageJourneySection.png"
+              height={300}
+              width={600}
+              alt="Journey"
+            ></Image>
+          </motion.div>
         </article>
-        <article className="flex w-[90%] flex-col pt-[100px] lg:flex-row">
+        <article className="mb-[200px] flex w-[90%] flex-col overflow-hidden pt-[100px] lg:flex-row">
           <section className="flex max-w-[100%] flex-col items-center lg:max-w-[50%]">
             <h2 className="ml-5 text-5xl font-semibold tracking-tight md:ml-0">
-              Who We're Looking For?
+              Who <span className="text-[#7D63A4]">We're Looking</span> For?
             </h2>
             <div className="mt-16 max-w-[80%] lg:max-w-[60%]">
-              <span>
+              <motion.span
+                initial={{ opacity: 0, y: 48 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
                 We're always looking for exceptional talent. Send your resume
                 and with a brief introduction about yourself to <br />
                 careers@gmail.com
-              </span>
-              <div className="my-10 flex items-center justify-between">
-                <div className="w-[40%] border-t-2 border-white"></div>
-                <span className="text-3xl">OR</span>
-                <div className="w-[40%] border-t-2 border-white"></div>
-              </div>
-              <span>
-                Join our exclusive training program, designed to align your
-                skills and expertise with the rigorous standards of the global
-                space industry.
-              </span>
+              </motion.span>
+              <motion.div
+                initial={{ opacity: 0, y: 48 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="my-10 flex items-center justify-between"
+              >
+                <div className="w-[40%] border-t-[1px] border-[#7D63A4]"></div>
+                <span className="text-3xl text-[#7D63A4]">OR</span>
+                <div className="w-[40%] border-t-[1px] border-[#7D63A4]"></div>
+              </motion.div>
+              <motion.span
+                initial={{ opacity: 0, y: 48 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              >
+                Join our exclusive
+                <span className="ml-[4px] text-[#7D63A4]">
+                  training program
+                </span>
+                , designed to align your skills and expertise with the rigorous
+                standards of the global space industry.
+              </motion.span>
             </div>
           </section>
-          <section className="max-w-[100%] lg:max-w-[50%]">
-            <div></div>
-            <h2>
+          <section className="flex w-[100%] flex-col items-center lg:w-[50%]">
+            <div className="mt-[200px]">
+              {roles.map((item, index) => (
+                <motion.li
+                  initial={{ opacity: 0, y: 48 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                  className="mb-10 flex items-center gap-8"
+                >
+                  <Image
+                    src="/./Icon/PurpleArrowHead.png"
+                    height={30}
+                    width={30}
+                    alt="ArrowHead"
+                  />
+                  {item.desc}
+                </motion.li>
+              ))}
+            </div>
+            <h2 className="mt-10 text-4xl font-semibold">
               Dont See Your <br /> Perfect Role?
             </h2>
           </section>
