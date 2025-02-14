@@ -60,11 +60,13 @@ export default function Careers() {
         </main>
 
         <section className="mt-[4vw] w-full bg-black p-10">
-          <h2 className="flex justify-center gap-[1vw]">
-            <GradientText className="text-5xl font-semibold">
+          <h2 className="flex flex-col justify-center gap-[1vw] md:flex-row">
+            <GradientText className="mx-auto text-5xl font-semibold md:mx-0">
               Internship
             </GradientText>
-            <span className="text-5xl font-semibold">and Co-Op </span>
+            <span className="mx-auto text-5xl font-semibold md:mx-0">
+              and Co-Op
+            </span>
           </h2>
 
           <article className="mx-auto ml-[2vw] mr-[2vw] mt-[4vw] rounded-[2rem] border border-gray-600">
@@ -74,11 +76,11 @@ export default function Careers() {
 
         <article className="flex flex-col justify-between gap-5 p-10 pt-[100px] lg:flex-row">
           <motion.section
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{
               opacity: 1,
-              x: 0,
-              transition: { duration: 1, staggerChildren: 0.5 },
+              y: 0,
+              transition: { duration: 1 },
             }}
             className="ml-0 max-w-[100%] lg:ml-[3vw] lg:max-w-[40%]"
           >
@@ -94,8 +96,8 @@ export default function Careers() {
             </p>
           </motion.section>
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             className="relative mx-auto max-w-[100%] lg:mr-[3vw] lg:max-w-[60%]"
           >
             <Image
@@ -106,12 +108,33 @@ export default function Careers() {
             ></Image>
           </motion.div>
         </article>
-        <article className="mb-[200px] flex w-[90%] flex-col overflow-hidden pt-[100px] lg:flex-row">
-          <section className="flex max-w-[100%] flex-col items-center lg:max-w-[50%]">
+        <article className="mx-auto mb-[200px] flex w-[90%] flex-col overflow-hidden pt-[100px] lg:flex-row">
+          <section className="flex w-[100%] flex-col items-center lg:w-[50%]">
             <h2 className="ml-5 text-5xl font-semibold tracking-tight md:ml-0">
               Who <span className="text-[#7D63A4]">We're Looking</span> For?
             </h2>
-            <div className="mt-16 max-w-[80%] lg:max-w-[60%]">
+            <div className="mt-16">
+              {roles.map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 48 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                  className="mb-10 flex items-center gap-8"
+                >
+                  <Image
+                    src="/./Icon/PurpleArrowHead.png"
+                    height={30}
+                    width={30}
+                    alt="ArrowHead"
+                  />
+                  {item.desc}
+                </motion.li>
+              ))}
+            </div>
+          </section>
+          <section className="flex w-[100%] flex-col items-center lg:w-[50%]">
+            <div className="mt-[100px] max-w-[80%] md:mt-[200px] lg:max-w-[60%]">
               <motion.span
                 initial={{ opacity: 0, y: 48 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -144,27 +167,8 @@ export default function Careers() {
                 standards of the global space industry.
               </motion.span>
             </div>
-          </section>
-          <section className="flex w-[100%] flex-col items-center lg:w-[50%]">
-            <div className="mt-[200px]">
-              {roles.map((item, index) => (
-                <motion.li
-                  initial={{ opacity: 0, y: 48 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
-                  className="mb-10 flex items-center gap-8"
-                >
-                  <Image
-                    src="/./Icon/PurpleArrowHead.png"
-                    height={30}
-                    width={30}
-                    alt="ArrowHead"
-                  />
-                  {item.desc}
-                </motion.li>
-              ))}
-            </div>
-            <h2 className="mt-10 text-4xl font-semibold">
+
+            <h2 className="mt-10 hidden text-4xl font-semibold md:block">
               Dont See Your <br /> Perfect Role?
             </h2>
           </section>

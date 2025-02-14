@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Data {
   title: string;
@@ -89,32 +90,42 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     <div className="accordionItem px-auto px-5 pb-10 pt-5 md:px-10">
       <h2 className="flex items-center gap-6 pb-2 text-xl">
         {title}
-        <img
+        <motion.img
           alt="Arrow"
           onClick={toggle}
           src="/Icon/Arrow.png"
           style={{ width: 15, height: 15, cursor: "pointer" }}
+          animate={{ rotate: open ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
         />
       </h2>
       {desc && <span className="pl-6 text-gray-300">{desc}</span>}
 
-      {data && (
-        <div className={`desc px-14 ${open ? "block" : "hidden"}`}>
-          {data.map((item, idx) => (
-            <div key={idx} className="px-2">
-              {item.data && (
-                <MenuItem
-                  title={item.title}
-                  desc={item.desc}
-                  data={item.data}
-                  open={idx === openDropdown}
-                  toggleDropdown={() => toggleDropdown(idx)}
-                />
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {open && data && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="desc px-5 md:px-14"
+          >
+            {data.map((item, idx) => (
+              <div key={idx} className="px-2">
+                {item.data && (
+                  <MenuItem
+                    title={item.title}
+                    desc={item.desc}
+                    data={item.data}
+                    open={idx === openDropdown}
+                    toggleDropdown={() => toggleDropdown(idx)}
+                  />
+                )}
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
@@ -141,6 +152,7 @@ export const AccordianCareer = () => {
     </>
   );
 };
+
 interface MenuItemProps {
   title: string;
   desc?: string;
@@ -158,13 +170,15 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
   return (
     <div className="menuItem pt-10">
-      <h3 onClick={toggleDropdown} className="flex items-center gap-6 pb-2">
+      <h3 className="flex items-center gap-6 pb-2">
         {title}
-        <img
+        <motion.img
           alt="Arrow"
           onClick={toggleDropdown}
           src="/Icon/Arrow.png"
           style={{ width: 15, height: 15, cursor: "pointer" }}
+          animate={{ rotate: open ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
         />
       </h3>
       <span className="text-gray-300">{desc}</span>
@@ -172,16 +186,24 @@ const MenuItem: React.FC<MenuItemProps> = ({
         style={{ marginTop: "10px" }}
         className="border-[0.2px] border-gray-500"
       />
-      {open && data && (
-        <div className="submenu">
-          {data.map((subItem, index) => (
-            <div className="pt-4">
-              <h3>{subItem.title}</h3>
-              <span>{subItem.desc}</span>
-            </div>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {open && data && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="submenu"
+          >
+            {data.map((subItem, index) => (
+              <div key={index} className="pt-4">
+                <h3>{subItem.title}</h3>
+                <span>{subItem.desc}</span>
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
