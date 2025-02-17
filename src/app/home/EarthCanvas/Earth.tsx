@@ -1,6 +1,6 @@
 "use client";
 import * as THREE from "three";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useMemo } from "react";
 import { useTexture } from "@react-three/drei";
 
@@ -96,7 +96,7 @@ const Earth: React.FC<EarthProps> = ({ sunDirection }) => {
   const earthDayTexture = useTexture("/static/earth/day.webp");
   const earthNightTexture = useTexture("/static/earth/night.webp");
   const earthSpecularCloudsTexture = useTexture(
-    "/static/earth/specularClouds.webp"
+    "/static/earth/specularClouds.webp",
   );
 
   // Update texture properties
@@ -105,7 +105,7 @@ const Earth: React.FC<EarthProps> = ({ sunDirection }) => {
       (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = 8;
-      }
+      },
     );
   }, [earthDayTexture, earthNightTexture, earthSpecularCloudsTexture]);
 

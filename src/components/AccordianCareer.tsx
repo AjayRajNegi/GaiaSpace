@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 interface Data {
   title: string;
@@ -107,7 +106,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.7, type: "spring" }}
             className="desc px-5 md:px-14"
           >
             {data.map((item, idx) => (
@@ -178,7 +177,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
           src="/Icon/Arrow.png"
           style={{ width: 15, height: 15, cursor: "pointer" }}
           animate={{ rotate: open ? 90 : 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.7, type: "spring" }}
         />
       </h3>
       <span className="text-gray-300">{desc}</span>
@@ -192,7 +191,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, type: "spring" }}
             className="submenu"
           >
             {data.map((subItem, index) => (

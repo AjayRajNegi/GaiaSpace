@@ -1,13 +1,24 @@
 "use-client";
-import EarthCanvas from "./EarthCanvas/EarthCanvas";
 import Navbar from "@/src/components/Navbar";
+import Test from "./EarthCanvas/Test";
+import Star from "./EarthCanvas/Star";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <EarthCanvas />
-      <div className="h-screen bg-white"></div>
+      {/* <EarthCanvas2 /> */}
+      <div className="scroller w-full">
+        <div className="fixed top-0 z-20 h-screen w-full bg-transparent">
+          <Test />
+        </div>
+        <div className="fixed top-0 h-screen w-full">
+          <Star />
+        </div>
+        <div className="section h-screen bg-transparent text-white"></div>
+        <div className="second-section section h-screen bg-transparent text-white"></div>
+        <div className="third-section section h-screen bg-transparent text-white"></div>
+      </div>
     </>
   );
 }

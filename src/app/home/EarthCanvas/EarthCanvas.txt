@@ -3,16 +3,15 @@ import Sun from "./Sun";
 import Earth from "./Earth";
 import * as THREE from "three";
 import Atmosphere from "./Atmosphere";
-import { Stars } from "@react-three/drei";
+import { OrbitControls, Stars, useScroll } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { motion, useAnimationFrame, useScroll } from "motion/react";
+import { motion, useAnimationFrame } from "motion/react";
 import GradientText from "@/src/components/GradientText";
 import { useSpring, animated } from "@react-spring/three";
 import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
 import React, { useMemo, useState, useEffect, useRef } from "react";
 
 const EarthCanvas: React.FC = () => {
-  const { scrollYProgress } = useScroll();
   //To check whether the screen is of small devices
   const isMobile = useMemo(() => {
     if (typeof window !== "undefined") {
@@ -78,6 +77,7 @@ const EarthCanvas: React.FC = () => {
               <Earth sunDirection={sunDirection} />
               <Sun sunDirection={sunDirection} />
               <Atmosphere sunDirection={sunDirection} />
+              <axesHelper args={[5]} />
             </animated.mesh>
           </Canvas>
         </div>
@@ -87,7 +87,7 @@ const EarthCanvas: React.FC = () => {
               initial={{ x: -100, opacity: 1 }}
               animate={{ x: 100, opacity: 0 }}
               transition={{ duration: 2, ease: "easeInOut", delay: 2 }}
-              //onAnimationComplete={handleAnimationComplete}
+              onAnimationComplete={handleAnimationComplete}
               className="loading"
             >
               {/* Testing */}
@@ -122,3 +122,143 @@ const EarthCanvas: React.FC = () => {
 };
 
 export default EarthCanvas;
+
+///
+
+("use client");
+import { OrbitControls, ScrollControls } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useEffect, useMemo, useRef } from "react";
+import * as THREE from "three";
+import gsap from "gsap";
+import Earth from "./Earth";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useControls } from "leva";
+import Sun from "./Sun";
+import Atmosphere from "./Atmosphere";
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Test() {
+  const sunDirection = useMemo(
+    () => new THREE.Vector3(0, 0, 1).normalize(),
+    [],
+  );
+
+  return (
+    <Canvas camera={{ position: [15, 0, 0], fov: 25 }}>
+      <OrbitControls enableZoom={false} />
+      <ScrollControls pages={0} damping={0.5}>
+        <mesh scale={1.5}>
+          <CameraController />
+          <Earth sunDirection={sunDirection} />
+          <Sun sunDirection={sunDirection} />
+          <Atmosphere sunDirection={sunDirection} />
+        </mesh>
+      </ScrollControls>
+    </Canvas>
+  );
+}
+
+function CameraController() {
+  const { scene, camera } = useThree();
+  const isInitialized = useRef(false);
+
+  // const { cameraPosition, scenePosition, sceneRotation } = useControls({
+  //   cameraPosition: {
+  //     value: { x: 15, y: 0, z: 0 },
+  //   },
+  //   scenePosition: { x: 7.5, y: -3, z: -3 },
+  //   sceneRotation: { x: 0, y: 0, z: 0 },
+  // });
+
+  //useFrame(() => {
+  // camera.position.x = cameraPosition.x;
+  // camera.position.y = cameraPosition.y;
+  // camera.position.z = cameraPosition.z;
+  // scene.position.x = scenePosition.x;
+  // scene.position.y = scenePosition.y;
+  // scene.position.z = scenePosition.z;
+  // scene.rotation.x = sceneRotation.x;
+  // scene.rotation.y = sceneRotation.y;
+  // scene.rotation.z = sceneRotation.z;
+  //});
+  useEffect(() => {
+    console.log("Camera position before animation:", camera.position);
+    console.log("Scene position before animation:", scene.position);
+    if (!isInitialized.current) {
+      console.log(scene.position);
+      scene.position.set(7.5, -3, 0);
+      isInitialized.current = true;
+      console.log("Helloasd");
+    }
+
+    new ScrollTrigger({});
+    gsap.to(scene.position, {
+      x: 7.5,
+      y: -2.5,
+      z: -3,
+      scrollTrigger: {
+        trigger: ".second-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+      duration: 2,
+      ease: "power2.inOut",
+      onUpdate: () => camera.updateProjectionMatrix(),
+      onComplete: () => {
+        console.log(scene.position);
+      },
+    });
+
+    gsap.to(scene.rotation, {
+      x: 6,
+      y: 0,
+      z: 0,
+      scrollTrigger: {
+        trigger: ".second-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+      duration: 2,
+      ease: "power2.inOut",
+      onUpdate: () => camera.updateProjectionMatrix(),
+    });
+    gsap.to(scene.position, {
+      x: 7.5,
+      y: 0,
+      z: -4,
+      scrollTrigger: {
+        trigger: ".third-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+      duration: 2,
+      ease: "power2.inOut",
+      onUpdate: () => camera.updateProjectionMatrix(),
+    });
+
+    gsap.to(scene.rotation, {
+      x: 1.5,
+      y: 0,
+      z: 0,
+      scrollTrigger: {
+        trigger: ".third-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+      duration: 2,
+      ease: "power2.inOut",
+      onUpdate: () => camera.updateProjectionMatrix(),
+    });
+  }, [camera, scene]);
+
+  return null;
+}

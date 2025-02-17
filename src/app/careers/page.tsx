@@ -7,22 +7,28 @@ import GradientText from "@/src/components/GradientText";
 import { AccordianCareer } from "@/src/components/AccordianCareer";
 
 const roles = [
-  { id: 1, desc: "  Passionate about space technology." },
+  { id: 1, desc: "Passionate about space technology." },
   { id: 2, desc: "Commited to environmental stability." },
   { id: 3, desc: "Innovative problem-solvers." },
-  { id: 4, desc: " Collaborative team players." },
+  { id: 4, desc: "Collaborative team players." },
   { id: 5, desc: "Driven to make a lasting impact." },
 ];
+
 export default function Careers() {
   return (
     <>
       <Navbar />
       <div className="flex flex-col items-center justify-center text-white">
+        {/* Hero Section */}
         <main className="relative h-[100vh] w-full overflow-hidden">
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 0.8 }}
+            transition={{
+              duration: 1,
+              ease: [0.6, 0.05, 0.01, 0.9],
+              delay: 0.5,
+            }}
             className="relative z-10 mx-[4vw] pt-[30vh] text-center text-[2.75rem] font-bold leading-[0.9] sm:text-5xl md:pt-[200px] md:text-5xl lg:text-5xl"
           >
             <span className="block gap-[1vw] md:flex">
@@ -41,7 +47,11 @@ export default function Careers() {
           <motion.h4
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 1.5 }}
+            transition={{
+              duration: 1,
+              ease: [0.6, 0.05, 0.01, 0.9],
+              delay: 1,
+            }}
             className="relative z-30 ml-[4vw] mr-0 mt-[100px] w-[90%] text-center leading-[1] md:ml-auto md:mr-[4vw] md:mt-[50px] md:w-[500px] md:text-left"
           >
             We're looking for passionate, forward-thinking individuals to join
@@ -59,6 +69,7 @@ export default function Careers() {
           </div>
         </main>
 
+        {/* Internship Section */}
         <section className="mt-[4vw] w-full bg-black p-10">
           <h2 className="flex flex-col justify-center gap-[1vw] md:flex-row">
             <GradientText className="mx-auto text-5xl font-semibold md:mx-0">
@@ -74,13 +85,14 @@ export default function Careers() {
           </article>
         </section>
 
+        {/* Journey Section */}
         <article className="flex flex-col justify-between gap-5 p-10 pt-[100px] lg:flex-row">
           <motion.section
             initial={{ opacity: 0, y: 60 }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1 },
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.6, 0.05, 0.01, 0.9],
             }}
             className="ml-0 max-w-[100%] lg:ml-[3vw] lg:max-w-[40%]"
           >
@@ -97,7 +109,12 @@ export default function Careers() {
           </motion.section>
           <motion.div
             initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.6, 0.05, 0.01, 0.9],
+              delay: 0.2,
+            }}
             className="relative mx-auto max-w-[100%] lg:mr-[3vw] lg:max-w-[60%]"
           >
             <Image
@@ -105,21 +122,35 @@ export default function Careers() {
               height={300}
               width={600}
               alt="Journey"
-            ></Image>
+            />
           </motion.div>
         </article>
+
+        {/* Roles Section */}
         <article className="mx-auto mb-[200px] flex w-[90%] flex-col overflow-hidden pt-[100px] lg:flex-row">
           <section className="flex w-[100%] flex-col items-center lg:w-[50%]">
-            <h2 className="ml-5 text-5xl font-semibold tracking-tight md:ml-0">
+            <motion.h2
+              initial={{ opacity: 0, y: 48 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, 0.01, 0.9],
+              }}
+              className="ml-5 text-5xl font-semibold tracking-tight md:ml-0"
+            >
               Who <span className="text-[#7D63A4]">We're Looking</span> For?
-            </h2>
+            </motion.h2>
             <div className="mt-16">
               {roles.map((item, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, y: 48 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.6, 0.05, 0.01, 0.9],
+                    delay: index * 0.1,
+                  }}
                   className="mb-10 flex items-center gap-8"
                 >
                   <Image
@@ -138,7 +169,10 @@ export default function Careers() {
               <motion.span
                 initial={{ opacity: 0, y: 48 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, 0.01, 0.9],
+                }}
               >
                 We're always looking for exceptional talent. Send your resume
                 and with a brief introduction about yourself to <br />
@@ -147,7 +181,11 @@ export default function Careers() {
               <motion.div
                 initial={{ opacity: 0, y: 48 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, 0.01, 0.9],
+                  delay: 0.2,
+                }}
                 className="my-10 flex items-center justify-between"
               >
                 <div className="w-[40%] border-t-[1px] border-[#7D63A4]"></div>
@@ -157,7 +195,11 @@ export default function Careers() {
               <motion.span
                 initial={{ opacity: 0, y: 48 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, 0.01, 0.9],
+                  delay: 0.4,
+                }}
               >
                 Join our exclusive
                 <span className="ml-[4px] text-[#7D63A4]">

@@ -1,0 +1,132 @@
+Hey Deep, I am trying to build a website in react three fiber. On the homepage of the screen, I have 3D earth which i want to move when i scroll the page. Here is my current code:
+"use client";
+import Sun from "./Sun";
+import Earth from "./Earth";
+import * as THREE from "three";
+import Atmosphere from "./Atmosphere";
+import { Stars, useScroll } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { motion, useAnimationFrame } from "motion/react";
+import GradientText from "@/src/components/GradientText";
+import { useSpring, animated } from "@react-spring/three";
+import AnimatedCameraLookAt from "./AnimatedCameraLookAt";
+import React, { useMemo, useState, useEffect, useRef } from "react";
+
+const EarthCanvas: React.FC = () => {
+  //const { scrollYProgress } = useScroll();
+  const scroll = useScroll();
+
+  //To check whether the screen is of small devices
+  const isMobile = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth <= 1024;
+    }
+    return false;
+  }, []);
+
+  //Constant to Change the coordinates of camera lookAt
+  const initialLookAtTarget: [number, number, number] = isMobile
+    ? [1, 6, 1]
+    : [1, 7, 1];
+  //Constant to Change the scale of mesh
+  const initialScaleTarget = isMobile ? 2.5 : 3.5;
+
+  const [lookAtTarget, setLookAtTarget] =
+    useState<[number, number, number]>(initialLookAtTarget);
+  const [scaleTarget, setScaleTarget] = useState(initialScaleTarget);
+  const [isChangingView, setIsChangingView] = useState(false);
+
+  useAnimationFrame(() => {
+    console.log(scroll);
+    if (isChangingView) {
+      const scaleRatio = (window.innerWidth / 786) * 0.75;
+      const clampedScale = Math.min(Math.max(scaleRatio, 0.75), 1.5);
+      setScaleTarget((prev) => (prev !== clampedScale ? clampedScale : prev));
+    }
+  });
+  const handleAnimationComplete = () => {
+    handleChangeView();
+    console.log("End");
+  };
+  const handleChangeView = () => {
+    setLookAtTarget([0, 0, 0]);
+    setIsChangingView(true);
+  };
+
+  const { scale } = useSpring({
+    scale: scaleTarget,
+    config: { duration: 988, tension: 170, friction: 25 },
+  });
+
+  const sunDirection = useMemo(
+    () => new THREE.Vector3(0, 0, 1).normalize(),
+    [],
+  );
+
+  return (
+    <>
+      <div className="canvasMain">
+        <div className="canva">
+          <Canvas camera={{ position: [12, 5, 10], fov: 25 }}>
+            <AnimatedCameraLookAt target={lookAtTarget} />
+            <animated.mesh scale={scale}>
+              {/* <Stars
+                radius={1}
+                depth={50}
+                count={5000}
+                factor={4}
+                saturation={0}
+                fade
+                speed={0.5}
+              /> */}
+              <Earth sunDirection={sunDirection} />
+              <Sun sunDirection={sunDirection} />
+              <Atmosphere sunDirection={sunDirection} />
+              <axesHelper args={[5]} />
+            </animated.mesh>
+          </Canvas>
+        </div>
+        <div className="Hello absolute top-0 items-center justify-start pl-[4vw] sm:justify-center">
+          <div className="testing relative -top-[20%]">
+            <motion.div
+              initial={{ x: -100, opacity: 1 }}
+              animate={{ x: 100, opacity: 0 }}
+              transition={{ duration: 2, ease: "easeInOut", delay: 2 }}
+              //onAnimationComplete={handleAnimationComplete}
+              className="loading"
+            >
+              {/* Testing */}
+            </motion.div>
+            <h1 className="text-left text-5xl font-semibold tracking-tight sm:text-center sm:text-4xl md:text-5xl lg:text-7xl">
+              PROPELLING
+              <br />
+              <div className="flex flex-col justify-start gap-0 sm:flex-row sm:gap-[1.5vw]">
+                <p>TO AND FOR THE</p>
+                <GradientText
+                  colors={[
+                    "#40ffaa",
+                    "#4079ff",
+                    "#40ffaa",
+                    "#4079ff",
+                    "#40ffaa",
+                  ]}
+                  animationSpeed={6}
+                  showBorder={false}
+                  className="text-left text-5xl font-semibold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl"
+                >
+                  BEYONDS
+                </GradientText>
+              </div>
+            </h1>
+          </div>
+        </div>
+        <div className="Hello">Hello</div>
+      </div>
+    </>
+  );
+};
+
+export default EarthCanvas;
+
+
+Screw all of this, let us start from the scratch. We need to build homepage of my website in react three fiber where the main div spans over a height of 300vh, which has scrollable content and the canvas is of height 100vh with position sticky, relative to the main div so that the canvas will stay in the view through the 300vh height. Now, when I scroll through the main div, the 3D earth in the canvas should also change its position with respect to amount of scroll. Currently I was changing the lookAtTarget property of camera but if you have better solutions to make the transition on scroll, please do tell me. I am using perspective camera and also cannot use orbitControls. Before we begin to actual development ask me all the questions you have regarding this project and all intricacies of the project so that you have better understanding of what we are trying to build here.
