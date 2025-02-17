@@ -42,7 +42,13 @@ export default function Navbar() {
             href="/home"
             className="flex items-center gap-2"
           >
-            <Image src="/logo.png" alt="logo" width={20} height={20} />
+            <img
+              src="/logo.png"
+              alt="logo"
+              style={{ aspectRatio: 0.72 }}
+              width={20}
+              height={20}
+            />
             <span>GAIA</span>
           </TransitionLinks>
           <ul className="flex">
