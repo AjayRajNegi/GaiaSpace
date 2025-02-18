@@ -48,6 +48,8 @@ export default function Nav() {
     <header className="sticky inset-x-0 top-0 bg-transparent px-4">
       <nav className="container mx-auto">
         <motion.button
+          id="al"
+          aria-label="Name"
           initial="hide"
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
@@ -154,12 +156,13 @@ export default function Nav() {
                     >
                       <img
                         src={link.src}
-                        alt=""
+                        alt="logo"
                         className={`${
                           pathName === link.href
                             ? "h-[50px] w-[50px] filter"
                             : "h-[40px] w-[40px]"
                         }`}
+                        style={{ aspectRatio: 0.72 }}
                       />
 
                       <TransitionLinks href={link.href}>

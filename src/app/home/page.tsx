@@ -7,23 +7,23 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* <EarthCanvas2 /> */}
-
-      <div className="fixed top-0 z-10 h-screen w-full bg-transparent">
-        <Test />
-      </div>
-      <div className="fixed top-0 z-0 h-screen w-full bg-transparent">
-        <Star />
-      </div>
-      <div className="z-[100] h-screen bg-transparent text-white">
-        first-section
-      </div>
-      <div className="second-section z-[100] h-screen bg-transparent text-white">
-        second-section
-      </div>
-      <div className="third-section z-[100] h-screen bg-transparent text-white">
-        third-section
-      </div>
+      <main className="w-full">
+        <div className="fixed top-0 z-10 h-screen w-full bg-transparent">
+          <Test />
+        </div>
+        <div className="fixed top-0 z-0 h-screen w-full bg-transparent">
+          <Star />
+        </div>
+        <section className="z-[100] h-screen bg-transparent text-white">
+          first-section
+        </section>
+        <section className="second-section z-[100] h-screen bg-transparent text-white">
+          second-section
+        </section>
+        <section className="third-section z-[100] h-screen bg-transparent text-white">
+          third-section
+        </section>
+      </main>
     </>
   );
 }

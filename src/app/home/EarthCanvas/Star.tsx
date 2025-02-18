@@ -1,5 +1,5 @@
 "use client";
-import { OrbitControls, ScrollControls, Stars } from "@react-three/drei";
+import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 export default function Star() {
@@ -8,7 +8,7 @@ export default function Star() {
       <Stars
         radius={1}
         depth={50}
-        count={2500}
+        count={1500}
         factor={3}
         saturation={0}
         fade
