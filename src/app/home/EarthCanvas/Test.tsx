@@ -56,7 +56,7 @@ function CameraController() {
       scene.position,
       {
         x: 7.5,
-        y: -2.5,
+        y: -3,
         z: -3,
         duration: 2,
         ease: "power2.inOut",
