@@ -19,11 +19,11 @@ export default function Test() {
 
   return (
     <Canvas camera={{ position: [15, 0, 0], fov: 25 }}>
-      <OrbitControls
+      {/* <OrbitControls
         enableZoom={false}
         enablePan={false}
         // enableRotate={false}
-      />
+      /> */}
       <ScrollControls pages={0} damping={0.5}>
         <mesh scale={1.5}>
           <CameraController />
