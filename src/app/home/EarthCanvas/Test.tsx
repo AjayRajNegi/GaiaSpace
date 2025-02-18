@@ -21,8 +21,8 @@ export default function Test() {
     <Canvas camera={{ position: [15, 0, 0], fov: 25 }}>
       <OrbitControls
         enableZoom={false}
-        enablePan={false}
-        enableRotate={false}
+        // enablePan={false}
+        // enableRotate={false}
       />
       <ScrollControls pages={0} damping={0.5}>
         <mesh scale={1.5}>

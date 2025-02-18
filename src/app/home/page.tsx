@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       {/* <EarthCanvas2 /> */}
 
-      <div className="fixed top-0 z-20 h-screen w-full bg-transparent">
+      <div className="fixed top-0 h-screen w-full bg-transparent">
         <Test />
       </div>
       <div className="fixed top-0 h-screen w-full">
