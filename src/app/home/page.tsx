@@ -15,7 +15,7 @@ export default function Home() {
       <div className="fixed top-0 h-screen w-full">
         <Star />
       </div>
-      <div className="section h-screen text-white">first-section</div>
+      <div className="section z-30 h-screen text-white">first-section</div>
       <div className="second-section section h-screen bg-transparent text-white">
         second-section
       </div>
