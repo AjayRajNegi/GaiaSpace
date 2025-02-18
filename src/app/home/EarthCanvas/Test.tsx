@@ -25,7 +25,7 @@ export default function Test() {
         enableRotate={false}
       />
       <ScrollControls pages={0} damping={0.5}>
-        <mesh scale={0.5}>
+        <mesh scale={1.5}>
           <CameraController />
           <Earth sunDirection={sunDirection} />
           <Sun sunDirection={sunDirection} />
