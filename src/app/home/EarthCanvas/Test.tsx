@@ -1,13 +1,13 @@
 "use client";
-import * as THREE from "three";
-import { OrbitControls, ScrollControls, Stars } from "@react-three/drei";
-import { Canvas, useThree } from "@react-three/fiber";
-import { useEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
-import Earth from "./Earth";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import Sun from "./Sun";
+import Earth from "./Earth";
+import * as THREE from "three";
 import Atmosphere from "./Atmosphere";
+import { useEffect, useMemo } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { Canvas, useThree } from "@react-three/fiber";
+import { OrbitControls, ScrollControls } from "@react-three/drei";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,16 +25,7 @@ export default function Test() {
         enableRotate={false}
       />
       <ScrollControls pages={0} damping={0.5}>
-        {/* <Stars
-          radius={1}
-          depth={50}
-          count={5000}
-          factor={4}
-          saturation={0}
-          fade
-          speed={0.5}
-        /> */}
-        <mesh scale={1.5}>
+        <mesh scale={0.5}>
           <CameraController />
           <Earth sunDirection={sunDirection} />
           <Sun sunDirection={sunDirection} />

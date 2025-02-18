@@ -28,39 +28,7 @@ body,
 }
 
 /* ------------------------------CSS for EarthCanvas---------------------------------- */
-.canvasMain {
-  /* position: relative; */
-  height: 300vh;
-  width: 100%;
-}
 
-.Hello {
-  color: white;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  background-color: transparent;
-}
-.canva {
-  position: sticky;
-  top: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: transparent;
-}
-.testing {
-  z-index: 2;
-}
-.motionCanvas {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-}
-.loading {
-  background-color: black;
-  color: white;
-}
 /* ------------------------------CSS for loader---------------------------------- */
 /* ------------------------------CSS for page-transition---------------------------------- */
 .page-transition {
