@@ -4,19 +4,33 @@ import Sun from "./Sun";
 import Earth from "./Earth";
 import * as THREE from "three";
 import Atmosphere from "./Atmosphere";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollControls } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Test() {
+export default function EarthCanvas() {
+  const canvasRef = useRef(null);
   const isMobile = useMemo(() => {
     if (typeof window !== "undefined") {
       return window.innerWidth <= 768;
     }
     return false;
+  }, []);
+
+  useEffect(() => {
+    gsap.to(canvasRef.current, {
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".third-section",
+        start: "bottom bottom",
+        end: "+=100",
+        scrub: true,
+      },
+    });
   }, []);
 
   const initialScaleTarget = isMobile ? 1 : 1.5;
@@ -26,16 +40,21 @@ export default function Test() {
   );
 
   return (
-    <Canvas camera={{ position: [15, 0, 0], fov: 25 }}>
-      <ScrollControls pages={0} damping={0.5}>
-        <mesh scale={initialScaleTarget}>
-          {isMobile ? <CameraControllerMobile /> : <CameraController />}
-          <Earth sunDirection={sunDirection} />
-          <Sun sunDirection={sunDirection} />
-          <Atmosphere sunDirection={sunDirection} />
-        </mesh>
-      </ScrollControls>
-    </Canvas>
+    <div
+      ref={canvasRef}
+      className="fixed left-0 top-0 h-screen w-full opacity-100 transition-opacity duration-500"
+    >
+      <Canvas camera={{ position: [15, 0, 0], fov: 25 }}>
+        <ScrollControls pages={0} damping={0.5}>
+          <mesh scale={initialScaleTarget}>
+            {isMobile ? <CameraControllerMobile /> : <CameraController />}
+            <Earth sunDirection={sunDirection} />
+            <Sun sunDirection={sunDirection} />
+            <Atmosphere sunDirection={sunDirection} />
+          </mesh>
+        </ScrollControls>
+      </Canvas>
+    </div>
   );
 }
 
@@ -125,7 +144,7 @@ function CameraControllerMobile() {
   const { scene, camera } = useThree();
 
   useEffect(() => {
-    scene.position.set(7.5, -3, 0);
+    scene.position.set(7.5, -2.5, 0);
 
     const timeline = gsap.timeline({
       scrollTrigger: {
