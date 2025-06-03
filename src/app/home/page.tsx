@@ -1,9 +1,5 @@
-"use-client";
-import Star from "./EarthCanvas/Star";
-import Navbar from "@/src/components/Navbar";
-import EarthCanvas from "./EarthCanvas/EarthCanvas";
-import GradientText from "@/src/components/GradientText";
 import Canva from "./EarthCanvas/Canva";
+import Navbar from "@/src/components/Navbar";
 
 export default function Home() {
   return (
@@ -11,7 +7,7 @@ export default function Home() {
       <Navbar />
       <Canva />
       <section className="z-[99999] h-[200vh] w-full bg-cyan-400">
-        asdfasd
+        Section
       </section>
     </>
   );

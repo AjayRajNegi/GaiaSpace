@@ -23,9 +23,9 @@ body,
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
 }
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-} */
+}
 
 /* ------------------------------CSS for EarthCanvas---------------------------------- */
 
@@ -150,4 +150,31 @@ svg text.dot {
 .filter {
   filter: invert(65%) sepia(45%) saturate(421%) hue-rotate(213deg)
     brightness(107%) contrast(104%);
+}
+
+.ellipticalBackground {
+  background:
+    radial-gradient(
+        circle at 100% 100%,
+        #101010 0,
+        #101010 19px,
+        transparent 19px
+      )
+      0% 0%/20px 20px no-repeat,
+    radial-gradient(circle at 0 100%, #101010 0, #101010 19px, transparent 19px)
+      100% 0%/20px 20px no-repeat,
+    radial-gradient(circle at 100% 0, #101010 0, #101010 19px, transparent 19px)
+      0% 100%/20px 20px no-repeat,
+    radial-gradient(circle at 0 0, #101010 0, #101010 19px, transparent 19px)
+      100% 100%/20px 20px no-repeat,
+    linear-gradient(#101010, #101010) 50% 50% / calc(100% - 2px)
+      calc(100% - 40px) no-repeat,
+    linear-gradient(#101010, #101010) 50% 50% / calc(100% - 40px)
+      calc(100% - 2px) no-repeat,
+    radial-gradient(
+      #000000 70%,
+      rgb(202, 202, 202) 97%,
+      rgb(202, 202, 202) 100%
+    );
+  border-radius: 20px;
 }

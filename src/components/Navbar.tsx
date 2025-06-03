@@ -36,7 +36,7 @@ export default function Navbar() {
     <>
       <nav className="absolute left-0 top-0 flex min-h-[70px] items-center justify-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] top-[2vw] z-[9999] hidden max-w-[640px] -translate-x-[50%] items-center gap-10 rounded-full px-3 py-1 text-white md:flex">
+        <div className="navbar fixed left-[50%] top-[3vw] z-[9999] hidden max-w-[640px] -translate-x-[50%] items-center gap-10 rounded-full px-3 py-1 text-white md:flex">
           <TransitionLinks
             prefetch
             href="/home"
