@@ -20,7 +20,7 @@ export default function HoverCard({ title, children }: HoverCardProps) {
           isHovered ? "ellipticalBackground" : ""
         }`}
       >
-        <h2 className="mx-auto mt-[70px] w-fit text-[2.5rem] font-[600] text-[#6FCBFF]">
+        <h2 className="mx-auto w-fit pt-[70px] text-[2.5rem] font-[600] text-[#6FCBFF]">
           {title}
         </h2>
         <p className="mx-10 mt-[50px] text-center text-xl leading-6">

@@ -26,8 +26,8 @@ const navLinks = [
   },
   {
     id: 5,
-    title: "Partners",
-    href: "/partners",
+    title: "Contact Us",
+    href: "/contact",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function Navbar() {
     <>
       <nav className="absolute left-0 top-0 flex min-h-[70px] items-center justify-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] top-[3vw] z-[9999] hidden max-w-[640px] -translate-x-[50%] items-center gap-10 rounded-full px-3 py-1 text-white md:flex">
+        <div className="navbar fixed left-[50%] top-[3vw] z-[9999] hidden max-w-[680px] -translate-x-[50%] items-center gap-10 rounded-full px-3 py-1 text-white md:flex">
           <TransitionLinks
             prefetch
             href="/home"
@@ -55,9 +55,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className="rounded-full px-3 py-1 transition-colors duration-500 hover:bg-[#D5B8FF]"
+                className="underlineAnimationLi rounded-full px-3 py-1"
               >
-                <TransitionLinks href={link.href}>{link.title}</TransitionLinks>
+                <TransitionLinks
+                  className="underlineAnimationLinks"
+                  href={link.href}
+                >
+                  {link.title}
+                </TransitionLinks>
               </li>
             ))}
           </ul>
