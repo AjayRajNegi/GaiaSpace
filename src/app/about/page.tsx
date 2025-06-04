@@ -170,8 +170,35 @@ export default function About() {
             We engage with global partners to address critical challenges and
             ensure a thriving, future-ready space economy.
           </p>
-          <div className="relative -mt-[20px] h-[240px] w-full">
-            <Image src="/Images/about/partnerFrame.png" fill alt="partners" />
+          <div
+            className="relative -mt-[20px] flex h-[240px] w-full flex-row items-center justify-center gap-[50px]"
+            style={{
+              backgroundImage: `url(/Images/about/frame.png)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <Image
+              src="/Images/about/partner1.png"
+              width={150}
+              height={150}
+              alt="partners"
+              className="object-contain"
+            />
+            <Image
+              src="/Images/about/partner2.png"
+              width={110}
+              height={110}
+              alt="partners"
+              className="object-contain"
+            />
+            <Image
+              src="/Images/about/partner3.png"
+              width={150}
+              height={150}
+              alt="partners"
+              className="object-contain"
+            />
           </div>
         </motion.article>
         {/* Newsroom Section */}

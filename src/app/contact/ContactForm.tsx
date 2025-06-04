@@ -2,8 +2,10 @@ export default function ContactForm() {
   return (
     <>
       <main
-        className="mx-auto mt-20 w-[80%] rounded-xl border-[#252A41] px-[4vw] pb-20 pt-10"
-        style={{ border: "2px solid #252A41" }}
+        className="contactBackground mx-auto mt-20 w-[80%] rounded-xl border-[#252A41] px-[4vw] pb-20 pt-10"
+        style={{
+          border: "2px solid #252A41",
+        }}
       >
         <article className="mx-auto w-fit">
           <h1 className="mx-auto w-fit text-5xl font-semibold text-[#fff]">
