@@ -123,7 +123,7 @@ svg text.dot {
   display: block;
   position: relative;
   padding: 0.2em 0;
-  overflow: hidden; /* Moved here so it's not specific to only one li */
+  overflow: hidden;
 }
 
 .underlineAnimationLinks::after {
@@ -214,5 +214,14 @@ svg text.dot {
     rgba(75, 99, 116, 1) -70%,
     rgba(9, 12, 14, 1) 50%,
     rgba(75, 99, 116, 1) 170%
+  );
+}
+
+.TestimonialCard {
+  background: linear-gradient(
+    45deg,
+    rgba(33, 31, 31, 1) 0%,
+    rgba(5, 5, 6, 1) 50%,
+    rgba(33, 31, 31, 1) 100%
   );
 }

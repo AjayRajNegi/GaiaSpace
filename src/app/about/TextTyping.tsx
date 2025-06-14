@@ -14,7 +14,8 @@ export default function TextTyping({ desc, className }: TextTypingProps) {
         <motion.span
           key={i}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.25, delay: i / 50 }}
           className="mr-[0.4rem] inline-block font-roboto font-[200]"
         >

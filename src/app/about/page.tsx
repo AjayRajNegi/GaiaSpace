@@ -1,23 +1,23 @@
 "use client";
-import Navbar from "@/src/components/Navbar";
-import HoverCard from "./HoverCard";
 import Image from "next/image";
+import HoverCard from "./HoverCard";
 import { motion } from "motion/react";
 import TextTyping from "./TextTyping";
+import Navbar from "@/src/components/Navbar";
 
 export default function About() {
   return (
     <>
       <Navbar />
-      <main className="w-full bg-[#000407] pb-[100px] text-[#fff]">
-        <div className="mt-[10vw] flex min-h-[6.5rem] justify-center">
+      <main className="h-full min-h-full w-full bg-[#000407] pb-[100px] text-[#fff]">
+        <div className="flex min-h-[6.5rem] justify-center pt-[15vw]">
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 1,
               ease: [0.6, 0.05, 0.01, 0.9],
-              delay: 0.5,
+              delay: 1.5,
             }}
             className="text-center text-5xl font-bold"
           >
@@ -29,7 +29,7 @@ export default function About() {
         <section className="mx-auto w-[80%]">
           <div className="mt-[2vw] flex min-h-[4.5rem] justify-center">
             <motion.h3
-              initial={{ y: 50, opacity: 0 }}
+              initial={{ y: 0, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
                 duration: 1,
