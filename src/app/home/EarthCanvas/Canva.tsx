@@ -5,7 +5,7 @@ import EarthCanvas from "./EarthCanvas";
 export default function Canva() {
   return (
     <>
-      <main className="relative h-[300vh] overflow-hidden">
+      {/* <main className="relative h-[300vh] overflow-hidden">
         <div className="fixed top-0 z-10 h-screen w-full bg-transparent">
           <EarthCanvas />
         </div>
@@ -46,7 +46,7 @@ export default function Canva() {
         <section className="forth-section z-[100] h-screen bg-transparent text-white">
           third-section
         </section>
-      </main>
+      </main> */}
     </>
   );
 }
