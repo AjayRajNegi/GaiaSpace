@@ -1,14 +1,63 @@
-import Footer from "@/src/components/Footer";
-import Navbar from "@/src/components/Navbar";
+import Basic from "@/src/components/home/Basic";
 
 export default function Engineering() {
   return (
     <>
-      <Navbar />
-      <div className="text-white font-extrabold text-5xl flex items-center h-full justify-center bg-cyan-400">
-        Engineering
-      </div>
-      <Footer />
+      {/* <Navbar /> */}
+      <main className="relative bg-white">
+        {/* Earth */}
+        <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
+          <Basic />
+        </section>
+
+        {/* =========== Absolute Components Blocks =========== */}
+
+        {/* Flights Simulator */}
+        <div className="lines-simulation fixed top-1/2 left-0 z-40 opacity-0">
+          <div className="flex justify-between">
+            <div>Passengers Anually</div>
+            <div>No. of flights</div>
+          </div>
+          <div className="text-center">
+            Annual passengers Scale: ~600 million
+          </div>
+        </div>
+        {/* Satellites */}
+        <div className="satellite fixed top-1/2 left-0 z-40 opacity-0">
+          <p>Meet our satellite constellation ATLAS !</p>
+          <h1 style={{ fontSize: "55px" }}>
+            Space-powered intelligence for tomorrow&apos;s airspace.
+          </h1>
+        </div>
+
+        {/* =========== Screens =========== */}
+
+        <section className="hero_pin relative h-[100vh] overflow-hidden pt-0">
+          <div className="content absolute top-[30%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
+            <h1 className="text-7xl font-bold tracking-tighter">
+              Welcome To The New World
+            </h1>
+            <p className="text-lg">
+              AI agents that actually bring value to businesses and elevate
+              workers productivity.
+            </p>
+            <button className="cta_btn">Get started.</button>
+          </div>
+        </section>
+        <section className="after_hero relative min-h-[100vh] bg-sky-300">
+          <div>
+            <h2>Now we scroll normally</h2>
+            <p>This is standard document flow.</p>
+          </div>
+        </section>
+        <section className="last relative min-h-[200vh] bg-sky-600">
+          <div>
+            <h2>Now we scroll normally</h2>
+            <p>This is standard document flow.</p>
+          </div>
+        </section>
+      </main>
+      {/* <Footer /> */}
     </>
   );
 }
