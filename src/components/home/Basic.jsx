@@ -169,105 +169,105 @@ export default function Basic() {
 
     //====================== Animations ======================//
     gsap.registerPlugin(ScrollTrigger);
-    // Hero section animation
-    // const heroTimeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".hero_pin",
-    //     start: "top top",
-    //     end: "+=80%",
-    //     scrub: 3,
-    //     pin: true,
-    //     anticipatePin: 1,
-    //   },
-    // });
+    //Hero section animation
+    const heroTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero_pin",
+        start: "top top",
+        end: "+=80%",
+        scrub: 3,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
 
-    // heroTimeline
-    //   .to(".content", {
-    //     filter: "blur(40px)",
-    //     autoAlpha: 0,
-    //     scale: 0.5,
-    //     duration: 2,
-    //     ease: "power1.inOut",
-    //   })
-    //   .to(
-    //     camera.position,
-    //     {
-    //       x: 0,
-    //       y: 0,
-    //       z: 500,
-    //       duration: 2,
-    //       ease: "power1.inOut",
-    //     },
-    //     "<",
-    //   );
+    heroTimeline
+      .to(".content", {
+        filter: "blur(40px)",
+        autoAlpha: 0,
+        scale: 0.5,
+        duration: 2,
+        ease: "power1.inOut",
+      })
+      .to(
+        camera.position,
+        {
+          x: 0,
+          y: 0,
+          z: 500,
+          duration: 2,
+          ease: "power1.inOut",
+        },
+        "<",
+      );
 
-    // // Lines simulation animation
-    // const linesTimeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".after_hero",
-    //     //start: "top 80%",
-    //     //end: "bottom 40%",
-    //     end: "bottom 40%",
-    //     scrub: 3,
-    //   },
-    // });
+    // Lines simulation animation
+    const linesTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".after_hero",
+        //start: "top 80%",
+        //end: "bottom 40%",
+        end: "bottom 40%",
+        scrub: 3,
+      },
+    });
 
-    // linesTimeline
-    //   .fromTo(
-    //     ".lines-simulation",
-    //     { opacity: 0 },
-    //     {
-    //       opacity: 1,
-    //       duration: 0.5,
-    //       ease: "power1.inOut",
-    //     },
-    //   )
-    //   .to(".lines-simulation", {
-    //     opacity: 1,
-    //     duration: 0.5,
-    //     ease: "power1.inOut",
-    //   })
-    //   .to(".lines-simulation", {
-    //     opacity: 0,
-    //     duration: 0.5,
-    //     ease: "power1.inOut",
-    //   });
+    linesTimeline
+      .fromTo(
+        ".lines-simulation",
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power1.inOut",
+        },
+      )
+      .to(".lines-simulation", {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power1.inOut",
+      })
+      .to(".lines-simulation", {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power1.inOut",
+      });
 
-    // // Satellite and final camera animation
-    // const satelliteTimeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".last",
-    //     start: "top 80%",
-    //     end: "bottom 20%",
-    //     scrub: 3,
-    //   },
-    // });
+    // Satellite and final camera animation
+    const satelliteTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".last",
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 3,
+      },
+    });
 
-    // satelliteTimeline
-    //   .fromTo(
-    //     ".satellite",
-    //     { opacity: 0 },
-    //     {
-    //       opacity: 1,
-    //       duration: 0.5,
-    //       ease: "power1.inOut",
-    //     },
-    //   )
-    //   .to(
-    //     camera.position,
-    //     {
-    //       x: -80,
-    //       y: 80,
-    //       z: 200,
-    //       duration: 2,
-    //       ease: "power1.inOut",
-    //     },
-    //     "<",
-    //   )
-    //   .to(".satellite", {
-    //     opacity: 0,
-    //     duration: 0.5,
-    //   });
+    satelliteTimeline
+      .fromTo(
+        ".satellite",
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power1.inOut",
+        },
+      )
+      .to(
+        camera.position,
+        {
+          x: -80,
+          y: 80,
+          z: 200,
+          duration: 2,
+          ease: "power1.inOut",
+        },
+        "<",
+      )
+      .to(".satellite", {
+        opacity: 0,
+        duration: 0.5,
+      });
 
     // Scene rotation
     gsap.ticker.add((time) => {
