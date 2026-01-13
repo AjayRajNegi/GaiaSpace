@@ -4,7 +4,7 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 import ReactLenis from "lenis/react";
 import { useRef } from "react";
 
@@ -33,7 +33,7 @@ export const SmoothScrollHero = () => {
 
 const Nav = () => {
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-black px-6 py-3 text-white">
+    <nav className="fixed top-0 right-0 left-0 z-50 flex items-center justify-between bg-black px-6 py-3 text-white">
       {/* <SiSpacex className="text-3xl mix-blend-difference" /> */}
       <button
         onClick={() => {
@@ -62,7 +62,7 @@ const Hero = () => {
 
       <ParallaxImages />
 
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
+      <div className="absolute right-0 bottom-0 left-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
     </div>
   );
 };
@@ -185,7 +185,7 @@ const Schedule = () => {
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-zinc-50"
+        className="mb-20 text-4xl font-black text-zinc-50 uppercase"
       >
         Launch Schedule
       </motion.h1>
@@ -218,9 +218,9 @@ const ScheduleItem = ({
     >
       <div>
         <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-        <p className="text-sm uppercase text-zinc-500">{date}</p>
+        <p className="text-sm text-zinc-500 uppercase">{date}</p>
       </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
+      <div className="flex items-center gap-1.5 text-end text-sm text-zinc-500 uppercase">
         <p>{location}</p>
         {/* <FiMapPin /> */}
       </div>

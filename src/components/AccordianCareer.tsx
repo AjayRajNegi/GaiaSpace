@@ -86,7 +86,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   };
 
   return (
-    <div className="accordionItem px-auto px-5 pb-10 pt-5 md:px-10">
+    <div className="accordionItem px-auto px-5 pt-5 pb-10 md:px-10">
       <h2 className="flex items-center gap-6 pb-2 text-xl">
         {title}
         <motion.img

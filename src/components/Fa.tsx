@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const sections = [
   { id: 1, title: "Section 1", content: "This is the content of Section 1." },

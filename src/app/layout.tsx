@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Roboto } from "next/font/google";
-import Navbar from "../components/Navbar";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700"],
