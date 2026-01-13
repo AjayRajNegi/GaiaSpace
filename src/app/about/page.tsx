@@ -9,7 +9,7 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="h-full min-h-full w-full bg-[#000407] pb-[100px] text-[#fff]">
+      <main className="h-full min-h-full w-full bg-[#000407] pb-[100px] text-blue-700">
         <div className="flex min-h-[6.5rem] justify-center pt-[15vw]">
           <motion.h1
             initial={{ y: 50, opacity: 0 }}
@@ -55,7 +55,7 @@ export default function About() {
             data-driven insights to shape a safer and more efficient future."
           />
           <TextTyping
-            className="mx-auto mt-[2vw] w-fit text-justify font-roboto text-[1.9rem] font-thin leading-[2.3rem]"
+            className="font-roboto mx-auto mt-[2vw] w-fit text-justify text-[1.9rem] leading-[2.3rem] font-thin"
             desc="Unlocking the Future of Space potential for Economic and Technical
             Advancement."
           />
@@ -91,11 +91,11 @@ export default function About() {
               </HoverCard>
             </motion.div>
           </div>
-          <p className="mx-auto mt-[50px] w-fit font-roboto text-[1.7rem] font-thin leading-[2.3rem]">
+          <p className="font-roboto mx-auto mt-[50px] w-fit text-[1.7rem] leading-[2.3rem] font-thin">
             <span className="text-[#6FCBFF]">Together,</span> we'll traverse the
             space frontier, forging a better future.
           </p>
-          <h5 className="mx-auto mt-[30px] w-fit font-roboto text-[1.7rem] font-thin">
+          <h5 className="font-roboto mx-auto mt-[30px] w-fit text-[1.7rem] font-thin">
             The People Behind The Mission
           </h5>
         </section>
@@ -112,7 +112,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="h-[350px] w-[300px] rounded-xl bg-[#202020]"
                 >
-                  <h4 className="mx-auto w-fit font-roboto text-3xl font-thin">
+                  <h4 className="font-roboto mx-auto w-fit text-3xl font-thin">
                     {name}
                   </h4>
                   <p className="mx-auto w-fit text-xl font-medium">
@@ -139,7 +139,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="h-[350px] w-[300px] rounded-xl bg-[#202020]"
                 >
-                  <h4 className="mx-auto w-fit font-roboto text-3xl font-thin">
+                  <h4 className="font-roboto mx-auto w-fit text-3xl font-thin">
                     {name}
                   </h4>
                   <p className="mx-auto w-fit text-xl font-medium">
@@ -160,8 +160,8 @@ export default function About() {
           className="mx-[4vw] mt-[50px]"
         >
           <h3 className="font-roboto text-3xl font-thin">
-            Our <span className="uppercase text-[#6FCBFF]">Partners</span> and
-            <span className="uppercase text-[#6FCBFF]"> Investors</span>
+            Our <span className="text-[#6FCBFF] uppercase">Partners</span> and
+            <span className="text-[#6FCBFF] uppercase"> Investors</span>
           </h3>
           <h1 className="my-[20px] text-6xl font-bold">
             We like to partner with visionaries
@@ -216,10 +216,10 @@ export default function About() {
                 width={500}
                 alt="newsroom1"
               />
-              <p className="mt-5 font-roboto text-2xl font-thin">
+              <p className="font-roboto mt-5 text-2xl font-thin">
                 20 Mar, 2025
               </p>
-              <p className="w-[500px] text-wrap font-roboto text-2xl font-thin leading-6 transition-colors duration-200 hover:text-[#6FCBFF]">
+              <p className="font-roboto w-[500px] text-2xl leading-6 font-thin text-wrap transition-colors duration-200 hover:text-[#6FCBFF]">
                 Uttaranchal University signs an MoU with GAIA Space Pvt. Ltd
               </p>
             </motion.div>
@@ -234,10 +234,10 @@ export default function About() {
                 width={500}
                 alt="newsroom1"
               />
-              <p className="mt-5 font-roboto text-2xl font-thin">
+              <p className="font-roboto mt-5 text-2xl font-thin">
                 20 Mar, 2025
               </p>
-              <p className="w-[500px] text-wrap font-roboto text-2xl font-thin leading-6 transition-colors duration-200 hover:text-[#6FCBFF]">
+              <p className="font-roboto w-[500px] text-2xl leading-6 font-thin text-wrap transition-colors duration-200 hover:text-[#6FCBFF]">
                 Interactive session with the founder of GAIA Space Pvt. Ltd
               </p>
             </motion.div>

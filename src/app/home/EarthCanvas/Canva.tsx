@@ -5,7 +5,7 @@ import EarthCanvas from "./EarthCanvas";
 export default function Canva() {
   return (
     <>
-      {/* <main className="relative h-[300vh] overflow-hidden">
+      <main className="relative h-[300vh] overflow-hidden">
         <div className="fixed top-0 z-10 h-screen w-full bg-transparent">
           <EarthCanvas />
         </div>
@@ -17,7 +17,7 @@ export default function Canva() {
             <h1 className="text-left text-5xl font-semibold tracking-tight sm:text-center sm:text-4xl md:text-5xl lg:text-7xl">
               PROPELLING
               <br />
-              <div className="flex flex-col justify-start gap-0 sm:flex-row sm:gap-[1.5vw]">
+              <div className="flex flex-col justify-start gap-0 sm:flex-row sm:gap-[1.5vw] text-white">
                 <p>TO AND FOR THE</p>
                 <GradientText
                   colors={[
@@ -46,7 +46,7 @@ export default function Canva() {
         <section className="forth-section z-[100] h-screen bg-transparent text-white">
           third-section
         </section>
-      </main> */}
+      </main>
     </>
   );
 }
