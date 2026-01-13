@@ -25,7 +25,7 @@ export default function LoadingScreen() {
         `,
         }}
       />
-      <div className="h-screen w-full text-white flex just  ify-center items-center flex-col load">
+      <div className="just ify-center load flex h-screen w-full flex-col items-center text-white">
         {/* <Image
           src="/SPACE.webp"
           alt="Background"
@@ -37,7 +37,7 @@ export default function LoadingScreen() {
           className="z-10"
         /> */}
 
-        <div className="flex justify-center items-center flex-col">
+        <div className="flex flex-col items-center justify-center">
           <div className="loader-container">
             <svg>
               <text
@@ -45,7 +45,7 @@ export default function LoadingScreen() {
                 y="50%"
                 dy=".32em"
                 textAnchor="middle"
-                className="text-body text-[15vw] md:text-[10vw] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-8px]"
+                className="text-body text-[15vw] tracking-[-2px] md:text-[10vw] md:tracking-[-4px] lg:tracking-[-8px]"
               >
                 GaiaSpace
               </text>
@@ -55,17 +55,17 @@ export default function LoadingScreen() {
                 dy=".32em"
                 dx="2.6em"
                 textAnchor="middle"
-                className="text-body text-[15vw] md:text-[10vw] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-8px]"
+                className="text-body text-[15vw] tracking-[-2px] md:text-[10vw] md:tracking-[-4px] lg:tracking-[-8px]"
               >
                 .
               </text>
             </svg>
-            <div className="hidden ">
+            <div className="hidden">
               <TransitionLinks
-                href="/home"
+                href="/engineering"
                 prefetch={true}
                 autoNavigate={true}
-                delay={8000}
+                delay={2000}
               >
                 Home
               </TransitionLinks>
