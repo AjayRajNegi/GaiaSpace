@@ -15,12 +15,18 @@ export default function Engineering() {
         {/* =========== Absolute Components Blocks =========== */}
 
         {/* Flights Simulator */}
-        <div className="lines-simulation fixed top-1/2 left-0 z-40 opacity-0">
-          <div className="flex justify-between">
-            <div>Passengers Anually</div>
-            <div>No. of flights</div>
+        <div className="lines-simulation text-secondary fixed top-[45%] left-1/2 z-40 -translate-x-1/2 opacity-0">
+          <div className="flex min-w-[1200px] justify-between">
+            <div>
+              <p className="text-h2">600 million</p>
+              <p className="text-h5 text-primary">Passengers Anually</p>
+            </div>
+            <div>
+              <p className="text-h2 text-end">~2M</p>
+              <p className="text-h5 text-primary">No. of flights anually</p>
+            </div>
           </div>
-          <div className="text-center">
+          <div className="mt-[200px] text-center">
             Annual passengers Scale: ~600 million
           </div>
         </div>
@@ -45,13 +51,13 @@ export default function Engineering() {
             {/* <button className="cta_btn">Get started.</button> */}
           </div>
         </section>
-        <section className="after_hero relative min-h-[100vh] bg-sky-300">
+        <section className="after_hero relative min-h-[100vh]">
           <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
           </div>
         </section>
-        <section className="last relative min-h-[200vh] bg-sky-600">
+        <section className="last relative min-h-[200vh]">
           <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>

@@ -193,8 +193,8 @@ export default function Basic() {
         camera.position,
         {
           x: 0,
-          y: 0,
-          z: 500,
+          y: -30,
+          z: 700,
           duration: 2,
           ease: "power1.inOut",
         },
