@@ -144,28 +144,28 @@ export default function Basic() {
     }
 
     //====================== Clouds ======================//
-    const globe = globeEl.current;
+    // const globe = globeEl.current;
 
-    const CLOUDS_IMG_URL = "/textures/earth/clouds.png";
-    const CLOUDS_ALT = 0.006;
-    const CLOUDS_ROTATION_SPEED = -0.02;
+    // const CLOUDS_IMG_URL = "/textures/earth/clouds.png";
+    // const CLOUDS_ALT = 0.006;
+    // const CLOUDS_ROTATION_SPEED = -0.02;
 
-    new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
-      const clouds = new THREE.Mesh(
-        new THREE.SphereGeometry(
-          globe.getGlobeRadius() * (1 + CLOUDS_ALT),
-          75,
-          75,
-        ),
-        new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
-      );
-      globe.scene().add(clouds);
+    // new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
+    //   const clouds = new THREE.Mesh(
+    //     new THREE.SphereGeometry(
+    //       globe.getGlobeRadius() * (1 + CLOUDS_ALT),
+    //       75,
+    //       75,
+    //     ),
+    //     new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
+    //   );
+    //   globe.scene().add(clouds);
 
-      (function rotateClouds() {
-        clouds.rotation.y += (CLOUDS_ROTATION_SPEED * Math.PI) / 180;
-        requestAnimationFrame(rotateClouds);
-      })();
-    });
+    //   (function rotateClouds() {
+    //     clouds.rotation.y += (CLOUDS_ROTATION_SPEED * Math.PI) / 180;
+    //     requestAnimationFrame(rotateClouds);
+    //   })();
+    // });
 
     //====================== Animations ======================//
     gsap.registerPlugin(ScrollTrigger);
@@ -280,7 +280,7 @@ export default function Basic() {
     <Globe
       ref={globeEl}
       animateIn={false}
-      globeImageUrl="/textures/earth/day.jpg"
+      globeImageUrl="/textures/earth/earth-night.jpg"
       showAtmosphere={true}
       backgroundColor="rgba(0,0,0,0)"
       rendererConfig={{
@@ -290,23 +290,18 @@ export default function Basic() {
       hexPolygonUseDots={true}
       hexPolygonResolution={2}
       onGlobeReady={handleGlobeReady}
-      arcsData={routes}
-      arcStartLat={(d) => +d.srcAirport.lat}
-      arcStartLng={(d) => +d.srcAirport.lng}
-      arcEndLat={(d) => +d.dstAirport.lat}
-      arcEndLng={(d) => +d.dstAirport.lng}
-      arcDashLength={0}
-      arcDashGap={1}
-      arcDashInitialGap={() => Math.random()}
-      arcDashAnimateTime={4000}
-      arcsTransitionDuration={0}
-      arcStroke={null}
-      arcColor={() => "#88602333"}
-      pointsData={airports}
-      pointColor={() => "orange"}
-      pointAltitude={0}
-      pointRadius={0.02}
-      pointsMerge={true}
+      // arcsData={routes}
+      // arcStartLat={(d) => +d.srcAirport.lat}
+      // arcStartLng={(d) => +d.srcAirport.lng}
+      // arcEndLat={(d) => +d.dstAirport.lat}
+      // arcEndLng={(d) => +d.dstAirport.lng}
+      // arcDashLength={0.5}
+      // arcDashGap={1}
+      // arcDashInitialGap={() => Math.random()}
+      // arcDashAnimateTime={4000}
+      // arcsTransitionDuration={0}
+      // arcStroke={null}
+      // arcColor={() => "#88602333"}
     />
   );
 }

@@ -35,15 +35,14 @@ export default function Engineering() {
         {/* =========== Screens =========== */}
 
         <section className="hero_pin relative h-[100vh] overflow-hidden pt-0">
-          <div className="content absolute top-[30%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
-            <h1 className="text-primary text-h2 tracking-tighter">
-              Worldwide ATS Intelligence
+          <div className="content absolute top-[40%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
+            <h1 className="text-secondary text-h1 leading-0 tracking-tight text-shadow-2xs">
+              PROPELLING TO THE BEYOND
             </h1>
-            <p className="text- text-base">
-              AI agents that actually bring value to businesses and elevate
-              workers productivity.
+            <p className="text-primary text-h6 pt-3 text-shadow-2xs">
+              Together, we can shape a stronger, more adaptable space.
             </p>
-            <button className="cta_btn">Get started.</button>
+            {/* <button className="cta_btn">Get started.</button> */}
           </div>
         </section>
         <section className="after_hero relative min-h-[100vh] bg-sky-300">
