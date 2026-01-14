@@ -1,10 +1,12 @@
 import Basic from "@/src/components/home/Basic";
+import Navbar from "@/src/components/Navbar";
 
 export default function Engineering() {
   return (
     <>
       {/* <Navbar /> */}
-      <main className="relative bg-red-200">
+      <Navbar />
+      <main className="bg-background relative">
         {/* Earth */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
           <Basic />

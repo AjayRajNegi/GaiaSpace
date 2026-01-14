@@ -287,6 +287,8 @@ export default function Basic() {
         antialias: true,
         alpha: true,
       }}
+      hexPolygonUseDots={true}
+      hexPolygonResolution={2}
       onGlobeReady={handleGlobeReady}
       arcsData={routes}
       arcStartLat={(d) => +d.srcAirport.lat}
