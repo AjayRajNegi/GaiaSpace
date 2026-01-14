@@ -5,7 +5,7 @@ import TransitionLinks from "../components/TransitionLinks";
 export default function LoadingScreen() {
   return (
     <>
-      <Script
+      {/* <Script
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -24,8 +24,8 @@ export default function LoadingScreen() {
           });
         `,
         }}
-      />
-      <div className="just ify-center load flex h-screen w-full flex-col items-center text-white">
+      /> */}
+      <div className="load flex h-screen w-full flex-col items-center justify-center text-white">
         {/* <Image
           src="/SPACE.webp"
           alt="Background"
