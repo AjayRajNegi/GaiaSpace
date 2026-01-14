@@ -110,6 +110,11 @@ export default function Basic() {
       setRoutes(filteredRoutes);
     });
   }, []);
+  useEffect(() => {
+    if (!globeEl.current) return;
+    const camera = globeEl.current.camera();
+    camera.position.set(0, 110, 150);
+  }, []);
 
   const handleGlobeReady = () => {
     if (!globeEl.current) return;
