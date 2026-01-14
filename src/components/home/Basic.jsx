@@ -237,7 +237,7 @@ export default function Basic() {
     const satelliteTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".last",
-        start: "top 80%",
+        start: "top top",
         end: "bottom 20%",
         scrub: 3,
       },
@@ -256,8 +256,8 @@ export default function Basic() {
       .to(
         camera.position,
         {
-          x: -80,
-          y: 80,
+          x: -100,
+          y: 90,
           z: 200,
           duration: 2,
           ease: "power1.inOut",

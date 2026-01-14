@@ -3,7 +3,7 @@ import TransitionLinks from "./TransitionLinks";
 import Image from "next/image";
 import Nav from "./Nav";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   {
@@ -39,7 +39,7 @@ export default function Navbar() {
     <>
       <nav className="absolute top-0 left-0 flex min-h-[70px] items-center justify-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] z-[9999] hidden h-[70px] w-full -translate-x-[50%] items-center justify-between px-10 pt-5 text-white backdrop-blur-3xl md:flex">
+        <div className="navbar fixed left-[50%] z-[999] hidden h-[70px] w-full -translate-x-[50%] items-center justify-between px-10 pt-5 text-white backdrop-blur-3xl md:flex">
           <TransitionLinks
             prefetch
             href="/home"

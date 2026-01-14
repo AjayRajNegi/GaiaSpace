@@ -31,11 +31,24 @@ export default function Engineering() {
           </div>
         </div>
         {/* Satellites */}
-        <div className="satellite fixed top-1/2 left-0 z-40 opacity-0">
-          <p>Meet our satellite constellation ATLAS !</p>
-          <h1 style={{ fontSize: "55px" }}>
-            Space-powered intelligence for tomorrow&apos;s airspace.
-          </h1>
+        <div className="satellite fixed top-[30%] left-1/2 z-40 w-[1300] -translate-x-1/2 opacity-0">
+          <p className="text-h5 text-primary">
+            Meet our satellite constellation ATLAS !
+          </p>
+          <h2 className="text-h2 text-secondary mt-6 leading-14 font-medium">
+            Space-powered intelligence <br /> for tomorrow&apos;s airspace.
+          </h2>
+          <div className="mt-8">
+            <p className="border-primary text-secondary text-h6 mt-4 border-l-2 px-4 leading-6">
+              Global, uninterrupted airspace activity tracking
+            </p>
+            <p className="border-primary text-secondary text-h6 mt-4 border-l-2 px-4 leading-6">
+              Safer and optimized airspace operations
+            </p>
+            <p className="border-primary text-secondary text-h6 mt-4 border-l-2 px-4 leading-6">
+              Economic & Efficiency Benefits
+            </p>
+          </div>
         </div>
 
         {/* =========== Screens =========== */}
@@ -58,6 +71,12 @@ export default function Engineering() {
           </div>
         </section>
         <section className="last relative min-h-[200vh]">
+          <div>
+            <h2>Now we scroll normally</h2>
+            <p>This is standard document flow.</p>
+          </div>
+        </section>
+        <section className="relative z-[99] min-h-[200vh] bg-black">
           <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
