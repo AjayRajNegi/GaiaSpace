@@ -4,7 +4,7 @@ export default function Engineering() {
   return (
     <>
       {/* <Navbar /> */}
-      <main className="relative bg-white">
+      <main className="relative bg-red-200">
         {/* Earth */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
           <Basic />
@@ -34,10 +34,10 @@ export default function Engineering() {
 
         <section className="hero_pin relative h-[100vh] overflow-hidden pt-0">
           <div className="content absolute top-[30%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
-            <h1 className="text-7xl font-bold tracking-tighter">
-              Welcome To The New World
+            <h1 className="text-primary text-h2 tracking-tighter">
+              Worldwide ATS Intelligence
             </h1>
-            <p className="text-lg">
+            <p className="text- text-base">
               AI agents that actually bring value to businesses and elevate
               workers productivity.
             </p>
