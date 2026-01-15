@@ -103,12 +103,18 @@ export function CustomScrollbar({
     <div className="py-10">
       <div
         ref={trackRef}
-        className="relative mx-auto h-[.5] w-full rounded-full bg-gray-700"
+        className="relative mx-auto flex h-[.5] w-full justify-between rounded-full bg-gray-700"
       >
         <div
           ref={scrollerRef}
-          className="bg-primary absolute -top-1 left-0 h-3 w-3 cursor-pointer rounded-full shadow-[0px_0px_212px_1px_rgba(111,203,255,1)]"
+          className="bg-primary absolute -top-1 left-0 h-3 w-3 cursor-pointer rounded-full shadow-[0px_0px_212px_1px_rgba(111,203,255,1)] ring-2 ring-white"
         />
+        <div className="bg-highlight absolute -top-3 left-5 h-2 w-2 rounded-full" />
+        <div className="bg-highlight absolute -top-3 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full" />
+        <div className="bg-highlight absolute -top-3 right-5 h-2 w-2 rounded-full" />
+        <div>year 1</div>
+        <div>year 2</div>
+        <div>year 3</div>
       </div>
     </div>
   );
