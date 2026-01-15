@@ -11,7 +11,7 @@ gsap.registerPlugin(useGSAP, Draggable, ScrollToPlugin);
 export function CustomScrollbar({
   scrollContainerRef,
 }: {
-  scrollContainerRef: React.RefObject<HTMLDivElement> | null;
+  scrollContainerRef: React.RefObject<HTMLDivElement | null> | null;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -100,10 +100,10 @@ export function CustomScrollbar({
   );
 
   return (
-    <div className="p-10">
+    <div className="py-10">
       <div
         ref={trackRef}
-        className="relative mx-auto h-[.5] w-[90%] rounded-full bg-gray-700"
+        className="relative mx-auto h-[.5] w-full rounded-full bg-gray-700"
       >
         <div
           ref={scrollerRef}
