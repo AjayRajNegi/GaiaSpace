@@ -85,7 +85,7 @@ export default function Engineering() {
 
         {/* Propulsion */}
         <section className="relative z-[99] min-h-[200vh] bg-black">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto flex max-h-[600px] max-w-7xl justify-between py-20">
             {/* Left */}
             <div className="w-1/2">
               <h3 className="text-h4 text-secondary w-[70%] leading-10 font-thin">
@@ -106,7 +106,7 @@ export default function Engineering() {
                     <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
                       Advancing Core Propulsion Techonologies
                     </AccordionTrigger>
-                    <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
+                    <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-[300] text-balance">
                       <p>
                         We design and deliver state-of-the-art ABEP, electric,
                         and green propellant chemical thrusters to extend
@@ -158,7 +158,76 @@ export default function Engineering() {
               </div>
             </div>
             {/* Right */}
-            <div></div>
+            <div className="grid max-h-[410px] grid-cols-2 grid-rows-2 gap-2.5">
+              {/* GIT-RF */}
+              <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+                <h6 className="text-secondary text-xs font-light">
+                  Electric Propulsion
+                </h6>
+                <div className="mx-auto w-fit">
+                  <img src="/images/home/GIT-RF.avif" className="h-[125px]" />
+                  <p className="text-secondary -mt-2 text-center text-xs font-light">
+                    GIT-RF
+                  </p>
+                </div>
+                <p className="text-secondary flex items-end pr-2 text-sm font-light">
+                  <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
+                    Know more
+                  </button>
+                </p>
+              </div>
+              {/* HPGP */}
+              <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+                <h6 className="text-secondary text-xs font-light">
+                  High Performance Green Propulsion
+                </h6>
+                <div className="mx-auto w-fit">
+                  <img src="/images/home/HPGP.avif" className="h-[125px]" />
+                  <p className="text-secondary -mt-2 text-center text-xs font-light">
+                    HPGP
+                  </p>
+                </div>
+                <p className="text-secondary flex items-end pr-2 text-sm font-light">
+                  <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
+                    Know more
+                  </button>
+                </p>
+              </div>
+              {/* HyRocEn */}
+              <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+                <h6 className="text-secondary text-xs font-light">
+                  Hybrid Propulsion
+                </h6>
+                <div className="mx-auto w-fit">
+                  <img src="/images/home/HyRocEn.avif" className="h-[125px]" />
+                  <p className="text-secondary -mt-2 text-center text-xs font-light">
+                    HyRocEn
+                  </p>
+                </div>
+                <p className="text-secondary flex items-end pr-2 text-sm font-light">
+                  <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
+                    Know more
+                  </button>
+                </p>
+              </div>
+              {/* VAC-LP */}
+              <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+                <h6 className="text-secondary text-xs font-light">
+                  Liquid Propulsion
+                </h6>
+                <div className="mx-auto w-fit">
+                  <img src="/images/home/VAC-LP.avif" className="h-[125px]" />
+                  <p className="text-secondary -mt-2 text-center text-xs font-light">
+                    VAC-LP
+                  </p>
+                </div>
+                <p className="text-secondary flex items-end pr-2 text-sm font-light">
+                  <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
+                    Know more
+                  </button>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
