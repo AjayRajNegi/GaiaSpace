@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Basic from "@/src/components/home/Basic";
+import { Roadmap } from "@/src/components/home/Roadmap";
 import Navbar from "@/src/components/Navbar";
 
 export default function Engineering() {
@@ -59,6 +60,7 @@ export default function Engineering() {
 
         {/* =========== Screens =========== */}
 
+        {/* Main */}
         <section className="hero_pin relative h-[100vh] overflow-hidden pt-0">
           <div className="content absolute top-[40%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
             <h1 className="text-secondary text-h1 leading-0 tracking-tight text-shadow-2xs">
@@ -70,12 +72,16 @@ export default function Engineering() {
             {/* <button className="cta_btn">Get started.</button> */}
           </div>
         </section>
+
+        {/* Flights */}
         <section className="after_hero relative min-h-[100vh]">
           <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
           </div>
         </section>
+
+        {/* Satellites */}
         <section className="last relative min-h-[300vh]">
           <div>
             <h2>Now we scroll normally</h2>
@@ -83,8 +89,9 @@ export default function Engineering() {
           </div>
         </section>
 
-        {/* Propulsion */}
+        {/* Propulsion  & Roadmap*/}
         <section className="relative z-[99] min-h-[200vh] bg-black">
+          {/* Propulsion */}
           <div className="mx-auto flex max-h-[600px] max-w-7xl justify-between py-20">
             {/* Left */}
             <div className="w-1/2">
@@ -229,6 +236,9 @@ export default function Engineering() {
               </div>
             </div>
           </div>
+
+          {/* Roadmap */}
+          <Roadmap />
         </section>
       </main>
       {/* <Footer /> */}
