@@ -1,4 +1,5 @@
 import { CTA } from "@/src/components/CTA";
+import Footer from "@/src/components/Footer";
 import Basic from "@/src/components/home/Basic";
 import { Benefits } from "@/src/components/home/Benefits";
 import { Propulsion } from "@/src/components/home/Propulsion";
@@ -87,14 +88,17 @@ export default function Engineering() {
         </section>
 
         {/* Propulsion  & Roadmap*/}
-        <section className="relative z-[99] bg-black pb-[500px]">
+        <section className="relative z-[99] bg-black">
           {/* Propulsion */}
           <Propulsion />
           {/* Roadmap */}
           <Roadmap />
           {/* Benefits */}
           <Benefits />
+          {/* CTA */}
           <CTA />
+          {/* Footer */}
+          <Footer />
         </section>
       </main>
 

@@ -1,74 +1,93 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <>
-      <main className="text-white w-full">
-        <div className="hidden lg:flex w-[90%] mx-auto flex-col">
-          <section className="flex justify-around">
+      <main className="text-secondary mx-auto mt-10 w-full max-w-7xl">
+        <div className="mx-auto hidden flex-col lg:flex">
+          <section className="flex justify-between">
             <div>
               <div className="flex gap-2">
-                <Image src="/logo.png" alt="logo" width={30} height={30} />
-                <h1 className="text-[32px] font-semibold">GAIASPACE</h1>
+                <Image
+                  src="/icon/GIcon.png"
+                  alt="GIcon"
+                  height={30}
+                  width={50}
+                />
+                <h1 className="text-h3 font-[300]">GAIASPACE</h1>
               </div>
-              <div className="mt-8 text-[#B9B3B3]">
-                The purpose of a FAQ is generally to provide <br /> information
-                on frequent questions or <br />
-                concerns.
+              <div className="text-secondary/70 mt-8 text-xs">
+                A Space and Satellite frontier, bringing you vast <br /> abyss
+                of universe with technology
               </div>
-              <div className="flex gap-[0.65rem] mt-6 ">
+              <div className="mt-6 flex gap-[0.65rem]">
                 <Image
                   src="/Icon/TwitterIcon.png"
                   alt="logo"
-                  width={35}
-                  height={35}
+                  width={40}
+                  height={40}
                 />
                 <Image
                   src="/Icon/FacebookIcon.png"
                   alt="logo"
-                  width={35}
-                  height={35}
+                  width={40}
+                  height={40}
                 />
                 <Image
                   src="/Icon/InstaIcon.png"
                   alt="logo"
-                  width={35}
-                  height={35}
-                />
-                <Image
-                  src="/Icon/GithubIcon.png"
-                  alt="logo"
-                  width={35}
-                  height={35}
+                  width={40}
+                  height={40}
                 />
               </div>
             </div>
-            <div className="flex flex-col">
-              <h3>Company</h3>
-              <a href="">Service</a>
-              <a href="">Resources</a>
-              <a href="">About Us</a>
+            {/* Navigation */}
+            <div className="flex flex-col gap-3">
+              <h3 className="text-h6">Navigation</h3>
+              <Link href="" className="text-secondary/70 text-sm">
+                Service
+              </Link>
+              <Link href="" className="text-secondary/70 text-sm">
+                Resources
+              </Link>
+              <Link href="" className="text-secondary/70 text-sm">
+                About Us
+              </Link>
             </div>
-            <div className="flex flex-col">
-              <h3>Help</h3>
-              <a href="">Customer Support</a>
-              <a href="">Terms & Conditions</a>
-              <a href="">Privacy Policy</a>
+            {/* Help */}
+            <div className="flex flex-col gap-3">
+              <h3 className="text-h6">Help</h3>
+              <Link href="" className="text-secondary/70 text-sm">
+                Contact Us
+              </Link>
+              <Link href="" className="text-secondary/70 text-sm">
+                Careers
+              </Link>
+              <Link href="" className="text-secondary/70 text-sm">
+                Privacy Policy
+              </Link>
             </div>
+            {/* Newsletter */}
             <div className="flex flex-col">
               <h3>Subscribe to Newsletter</h3>
-              <div>
-                <input type="text" placeholder="Enter email address" />
-                <p>Join</p>
+              <div className="border-secondary mt-3 flex overflow-hidden rounded-lg border-[1]">
+                <input
+                  type="text"
+                  placeholder="Enter email address"
+                  className="bg-secondary w-2/3 pl-4 text-black"
+                />
+                <p className="w-1/3 bg-black px-5 py-4 text-center">Join</p>
               </div>
             </div>
           </section>
-          <section>
-            <hr />
-            <p>© Copyright 2024, All Rights Reserved by GaiaSpace</p>
+          <section className="border-secondary/70 mt-6 border-t-[1] text-center">
+            <p className="mt-5 mb-10">
+              © Copyright 2024, All Rights Reserved by GaiaSpace
+            </p>
           </section>
         </div>
-        <div className="lg:hidden text-white">
+        <div className="text-white lg:hidden">
           <section>
             <div>
               <Image src="/logo.png" alt="logo" width={20} height={20} />
@@ -84,7 +103,7 @@ export default function Footer() {
           <section>
             <div className="flex flex-col">
               <h3>Company</h3>
-              <a href="">Service</a>
+              <Link href="">Service</Link>
               <a href="">Resources</a>
               <a href="">About Us</a>
             </div>
