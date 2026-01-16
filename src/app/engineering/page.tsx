@@ -1,3 +1,4 @@
+import { CTA } from "@/src/components/CTA";
 import Basic from "@/src/components/home/Basic";
 import { Benefits } from "@/src/components/home/Benefits";
 import { Propulsion } from "@/src/components/home/Propulsion";
@@ -59,10 +60,10 @@ export default function Engineering() {
         {/* Main */}
         <section className="hero_pin relative h-[100vh] overflow-hidden pt-0">
           <div className="content absolute top-[40%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
-            <h1 className="text-secondary text-h1 leading-0 tracking-tight text-shadow-2xs">
+            <h1 className="text-secondary text-h1 text-shadown-lg leading-0 tracking-tight">
               PROPELLING TO THE BEYOND
             </h1>
-            <p className="text-primary text-h6 pt-3 text-shadow-2xs">
+            <p className="text-primary text-h6 text-shadown-lg pt-3">
               Together, we can shape a stronger, more adaptable space.
             </p>
             {/* <button className="cta_btn">Get started.</button> */}
@@ -93,8 +94,10 @@ export default function Engineering() {
           <Roadmap />
           {/* Benefits */}
           <Benefits />
+          <CTA />
         </section>
       </main>
+
       {/* <Footer /> */}
     </>
   );

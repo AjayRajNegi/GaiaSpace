@@ -12,7 +12,7 @@ export function Roadmap() {
   }, []);
 
   return (
-    <div className="text-secondary mx-auto my-[80px] max-w-7xl">
+    <div className="text-secondary mx-auto my-[150px] max-w-7xl">
       <h2 className="text-h2 mb-10 font-[300]">Roadmap</h2>
       <div className="relative">
         {/* Fade overlays */}

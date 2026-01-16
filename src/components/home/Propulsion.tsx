@@ -7,7 +7,7 @@ import {
 
 export function Propulsion() {
   return (
-    <div className="mx-auto flex max-h-[600px] max-w-7xl justify-between py-20">
+    <div className="mx-auto flex max-h-[600px] max-w-7xl justify-between pt-20">
       {/* Left */}
       <div className="w-1/2">
         <h3 className="text-h4 text-secondary w-[70%] leading-10 font-thin">

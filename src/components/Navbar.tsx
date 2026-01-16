@@ -113,7 +113,7 @@ export default function Navbar() {
           <TransitionLinks
             prefetch
             href="/contact"
-            className="flex items-center gap-2 rounded-lg bg-white/50 px-3 py-1"
+            className="flex items-center gap-2 rounded-lg bg-linear-65 from-purple-700 to-teal-400 px-3 py-1"
           >
             <span>Contact Us</span>
           </TransitionLinks>

@@ -12,41 +12,41 @@ export function Benefits() {
       </div>
       <div className="mx-auto flex max-w-5xl items-center">
         {/* left */}
-        <div className="grid w-1/2 grid-cols-2 grid-rows-2">
+        <div className="grid w-1/2 grid-cols-2 grid-rows-2 gap-2">
           <div>
-            <h4 className="text-secondary mx-auto w-fit text-[18px] font-[300]">
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
               HYROCKEN
             </h4>
             <img
               src="/images/home/Benefit01.avif"
-              className="mx-auto h-[164] w-[164]"
+              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
             />
           </div>
           <div>
-            <h4 className="text-secondary mx-auto w-fit text-[18px] font-[300]">
-              HYROCKEN
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+              GIT-RF
             </h4>
             <img
-              src="/images/home/Benefit01.avif"
-              className="mx-auto h-[164] w-[164]"
+              src="/images/home/Benefit02.avif"
+              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
             />
           </div>
           <div>
-            <h4 className="text-secondary mx-auto w-fit text-[18px] font-[300]">
-              HYROCKEN
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+              NETWORK ROUTING
             </h4>
             <img
-              src="/images/home/Benefit01.avif"
-              className="mx-auto h-[164] w-[164]"
+              src="/images/home/Benefit03.avif"
+              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
             />
           </div>
           <div>
-            <h4 className="text-secondary mx-auto w-fit text-[18px] font-[300]">
-              HYROCKEN
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+              SPACE TRAVEL
             </h4>
             <img
-              src="/images/home/Benefit01.avif"
-              className="mx-auto h-[164] w-[164]"
+              src="/images/home/Benefit04.avif"
+              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
             />
           </div>
         </div>
