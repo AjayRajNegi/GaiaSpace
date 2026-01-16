@@ -1,10 +1,7 @@
 "use client";
 
-import "@/src/app/globals.css";
-import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import { CustomScrollbar } from "./CustomScrollbar";
-import clsx from "clsx";
 
 export function Roadmap() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -24,9 +21,7 @@ export function Roadmap() {
 
         <div
           ref={scrollContainerRef}
-          className={clsx(
-            "scrollbar-hide flex w-full gap-10 overflow-x-scroll",
-          )}
+          className="scrollbar-hide flex w-full gap-10 overflow-x-scroll"
           style={{
             scrollBehavior: "smooth",
             WebkitOverflowScrolling: "touch",
