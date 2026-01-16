@@ -110,6 +110,11 @@ export default function Basic() {
       setRoutes(filteredRoutes);
     });
   }, []);
+  useEffect(() => {
+    if (!globeEl.current) return;
+    const camera = globeEl.current.camera();
+    camera.position.set(0, 110, 150);
+  }, []);
 
   const handleGlobeReady = () => {
     if (!globeEl.current) return;
@@ -144,28 +149,28 @@ export default function Basic() {
     }
 
     //====================== Clouds ======================//
-    const globe = globeEl.current;
+    // const globe = globeEl.current;
 
-    const CLOUDS_IMG_URL = "/textures/earth/clouds.png";
-    const CLOUDS_ALT = 0.006;
-    const CLOUDS_ROTATION_SPEED = -0.02;
+    // const CLOUDS_IMG_URL = "/textures/earth/clouds.png";
+    // const CLOUDS_ALT = 0.006;
+    // const CLOUDS_ROTATION_SPEED = -0.02;
 
-    new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
-      const clouds = new THREE.Mesh(
-        new THREE.SphereGeometry(
-          globe.getGlobeRadius() * (1 + CLOUDS_ALT),
-          75,
-          75,
-        ),
-        new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
-      );
-      globe.scene().add(clouds);
+    // new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
+    //   const clouds = new THREE.Mesh(
+    //     new THREE.SphereGeometry(
+    //       globe.getGlobeRadius() * (1 + CLOUDS_ALT),
+    //       75,
+    //       75,
+    //     ),
+    //     new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
+    //   );
+    //   globe.scene().add(clouds);
 
-      (function rotateClouds() {
-        clouds.rotation.y += (CLOUDS_ROTATION_SPEED * Math.PI) / 180;
-        requestAnimationFrame(rotateClouds);
-      })();
-    });
+    //   (function rotateClouds() {
+    //     clouds.rotation.y += (CLOUDS_ROTATION_SPEED * Math.PI) / 180;
+    //     requestAnimationFrame(rotateClouds);
+    //   })();
+    // });
 
     //====================== Animations ======================//
     gsap.registerPlugin(ScrollTrigger);
@@ -193,8 +198,8 @@ export default function Basic() {
         camera.position,
         {
           x: 0,
-          y: 0,
-          z: 500,
+          y: -30,
+          z: 700,
           duration: 2,
           ease: "power1.inOut",
         },
@@ -237,7 +242,7 @@ export default function Basic() {
     const satelliteTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".last",
-        start: "top 80%",
+        start: "top top",
         end: "bottom 20%",
         scrub: 3,
       },
@@ -256,8 +261,8 @@ export default function Basic() {
       .to(
         camera.position,
         {
-          x: -80,
-          y: 80,
+          x: -100,
+          y: 90,
           z: 200,
           duration: 2,
           ease: "power1.inOut",
@@ -280,31 +285,28 @@ export default function Basic() {
     <Globe
       ref={globeEl}
       animateIn={false}
-      globeImageUrl="/textures/earth/day.jpg"
+      globeImageUrl="/textures/earth/earth-night.jpg"
       showAtmosphere={true}
       backgroundColor="rgba(0,0,0,0)"
       rendererConfig={{
         antialias: true,
         alpha: true,
       }}
+      hexPolygonUseDots={true}
+      hexPolygonResolution={2}
       onGlobeReady={handleGlobeReady}
-      arcsData={routes}
-      arcStartLat={(d) => +d.srcAirport.lat}
-      arcStartLng={(d) => +d.srcAirport.lng}
-      arcEndLat={(d) => +d.dstAirport.lat}
-      arcEndLng={(d) => +d.dstAirport.lng}
-      arcDashLength={0}
-      arcDashGap={1}
-      arcDashInitialGap={() => Math.random()}
-      arcDashAnimateTime={4000}
-      arcsTransitionDuration={0}
-      arcStroke={null}
-      arcColor={() => "#88602333"}
-      pointsData={airports}
-      pointColor={() => "orange"}
-      pointAltitude={0}
-      pointRadius={0.02}
-      pointsMerge={true}
+      // arcsData={routes}
+      // arcStartLat={(d) => +d.srcAirport.lat}
+      // arcStartLng={(d) => +d.srcAirport.lng}
+      // arcEndLat={(d) => +d.dstAirport.lat}
+      // arcEndLng={(d) => +d.dstAirport.lng}
+      // arcDashLength={0.5}
+      // arcDashGap={1}
+      // arcDashInitialGap={() => Math.random()}
+      // arcDashAnimateTime={4000}
+      // arcsTransitionDuration={0}
+      // arcStroke={null}
+      // arcColor={() => "#88602333"}
     />
   );
 }
