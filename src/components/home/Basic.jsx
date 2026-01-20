@@ -1,16 +1,20 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
-import * as THREE from "three";
-import { ScrollTrigger } from "gsap/all";
-import { useState, useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import indexBy from "index-array-by";
 import { csvParseRows } from "d3-dsv";
 import dynamic from "next/dynamic";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
 const COUNTRY = "United States";
+
+/* ------------------ Parsers ------------------ */
 
 const airportParse = ([
   airportId,
@@ -67,12 +71,17 @@ const routeParse = ([
 });
 
 export default function Basic() {
-  const globeEl = useRef();
+  const globeEl = useRef(null);
+  const containerRef = useRef(null);
+
+  const cameraRef = useRef(null);
+  const sceneRef = useRef(null);
+
   const [airports, setAirports] = useState([]);
   const [routes, setRoutes] = useState([]);
+  const [isGlobeReady, setIsGlobeReady] = useState(false);
 
   useEffect(() => {
-    // load data
     Promise.all([
       fetch(
         "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
@@ -89,17 +98,13 @@ export default function Basic() {
 
       const filteredRoutes = routes
         .filter(
-          (d) =>
-            byIata.hasOwnProperty(d.srcIata) &&
-            byIata.hasOwnProperty(d.dstIata),
+          (d) => byIata[d.srcIata] && byIata[d.dstIata] && d.stops === "0",
         )
-        .filter((d) => d.stops === "0")
-        .map((d) =>
-          Object.assign(d, {
-            srcAirport: byIata[d.srcIata],
-            dstAirport: byIata[d.dstIata],
-          }),
-        )
+        .map((d) => ({
+          ...d,
+          srcAirport: byIata[d.srcIata],
+          dstAirport: byIata[d.dstIata],
+        }))
         .filter(
           (d) =>
             d.srcAirport.country === COUNTRY &&
@@ -110,203 +115,134 @@ export default function Basic() {
       setRoutes(filteredRoutes);
     });
   }, []);
-  useEffect(() => {
-    if (!globeEl.current) return;
-    const camera = globeEl.current.camera();
-    camera.position.set(0, 110, 150);
-  }, []);
 
   const handleGlobeReady = () => {
     if (!globeEl.current) return;
 
-    const scene = globeEl.current.scene();
     const camera = globeEl.current.camera();
+    const scene = globeEl.current.scene();
     const controls = globeEl.current.controls();
-
-    const size = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      pixelRatio: window.devicePixelRatio,
-    };
 
     camera.fov = 30;
     camera.near = 0.1;
     camera.far = 10000;
-    camera.aspect = size.width / size.height;
-
     camera.position.set(0, 110, 150);
-    //camera.position.set(0, 0, 500);
-    console.log("asdfsadfs", globeEl.current.getGlobeRadius());
-
     const lookAtPoint = camera.position.clone();
     lookAtPoint.z -= 100;
     camera.lookAt(lookAtPoint);
-
     camera.updateProjectionMatrix();
 
-    if (controls) {
-      controls.enabled = false;
-    }
+    if (controls) controls.enabled = false;
 
-    //====================== Clouds ======================//
-    // const globe = globeEl.current;
+    cameraRef.current = camera;
+    sceneRef.current = scene;
 
-    // const CLOUDS_IMG_URL = "/textures/earth/clouds.png";
-    // const CLOUDS_ALT = 0.006;
-    // const CLOUDS_ROTATION_SPEED = -0.02;
-
-    // new THREE.TextureLoader().load(CLOUDS_IMG_URL, (cloudsTexture) => {
-    //   const clouds = new THREE.Mesh(
-    //     new THREE.SphereGeometry(
-    //       globe.getGlobeRadius() * (1 + CLOUDS_ALT),
-    //       75,
-    //       75,
-    //     ),
-    //     new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true }),
-    //   );
-    //   globe.scene().add(clouds);
-
-    //   (function rotateClouds() {
-    //     clouds.rotation.y += (CLOUDS_ROTATION_SPEED * Math.PI) / 180;
-    //     requestAnimationFrame(rotateClouds);
-    //   })();
-    // });
-
-    //====================== Animations ======================//
-    gsap.registerPlugin(ScrollTrigger);
-    //Hero section animation
-    const heroTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero_pin",
-        start: "top top",
-        end: "+=80%",
-        scrub: 3,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-
-    heroTimeline
-      .to(".content", {
-        filter: "blur(40px)",
-        autoAlpha: 0,
-        scale: 0.5,
-        duration: 2,
-        ease: "power1.inOut",
-      })
-      .to(
-        camera.position,
-        {
-          x: 0,
-          y: -30,
-          z: 700,
-          duration: 2,
-          ease: "power1.inOut",
-        },
-        "<",
-      );
-
-    // Lines simulation animation
-    const linesTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".after_hero",
-        //start: "top 80%",
-        //end: "bottom 40%",
-        end: "bottom 40%",
-        scrub: 3,
-      },
-    });
-
-    linesTimeline
-      .fromTo(
-        ".lines-simulation",
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power1.inOut",
-        },
-      )
-      .to(".lines-simulation", {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power1.inOut",
-      })
-      .to(".lines-simulation", {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power1.inOut",
-      });
-
-    // Satellite and final camera animation
-    const satelliteTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".last",
-        start: "top top",
-        end: "bottom 20%",
-        scrub: 3,
-      },
-    });
-
-    satelliteTimeline
-      .fromTo(
-        ".satellite",
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power1.inOut",
-        },
-      )
-      .to(
-        camera.position,
-        {
-          x: -100,
-          y: 90,
-          z: 200,
-          duration: 2,
-          ease: "power1.inOut",
-        },
-        "<",
-      )
-      .to(".satellite", {
-        opacity: 0,
-        duration: 0.5,
-      });
-
-    // Scene rotation
-    gsap.ticker.add((time) => {
-      scene.rotation.y = time * 0.2;
-    });
-    gsap.ticker.lagSmoothing(0);
+    setIsGlobeReady(true);
   };
 
+  useGSAP(
+    () => {
+      if (!isGlobeReady) return;
+
+      const camera = cameraRef.current;
+      const scene = sceneRef.current;
+
+      /* ================= HERO ================= */
+      const heroTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero_pin",
+          start: "top top",
+          end: "+=80%",
+          scrub: 3,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
+
+      heroTimeline
+        .to(".content", {
+          filter: "blur(40px)",
+          autoAlpha: 0,
+          scale: 0.5,
+          ease: "power1.inOut",
+        })
+        .to(
+          camera.position,
+          {
+            x: 0,
+            y: -30,
+            z: 700,
+            ease: "power1.inOut",
+          },
+          "<",
+        );
+
+      /* ================= LINES ================= */
+      const linesTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".after_hero",
+          end: "bottom 40%",
+          scrub: 3,
+        },
+      });
+
+      linesTimeline
+        .fromTo(".lines-simulation", { opacity: 0 }, { opacity: 1 })
+        .to(".lines-simulation", { opacity: 0 });
+
+      /* ================= SATELLITE ================= */
+      const satelliteTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".last",
+          start: "top top",
+          end: "bottom 20%",
+          scrub: 3,
+        },
+      });
+
+      satelliteTimeline
+        .fromTo(".satellite", { opacity: 0 }, { opacity: 1 })
+        .to(
+          camera.position,
+          {
+            x: -100,
+            y: 90,
+            z: 200,
+            ease: "power1.inOut",
+          },
+          "<",
+        )
+        .to(".satellite", { opacity: 0 });
+
+      /* ================= SCENE ROTATION ================= */
+      const rotateScene = (time) => {
+        scene.rotation.y = time * 0.2;
+      };
+
+      gsap.ticker.add(rotateScene);
+      gsap.ticker.lagSmoothing(0);
+
+      return () => {
+        gsap.ticker.remove(rotateScene);
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
+    },
+    { dependencies: [isGlobeReady] },
+  );
+
   return (
-    <Globe
-      ref={globeEl}
-      animateIn={false}
-      globeImageUrl="/textures/earth/earth-night.jpg"
-      showAtmosphere={true}
-      backgroundColor="rgba(0,0,0,0)"
-      rendererConfig={{
-        antialias: true,
-        alpha: true,
-      }}
-      hexPolygonUseDots={true}
-      hexPolygonResolution={2}
-      onGlobeReady={handleGlobeReady}
-      // arcsData={routes}
-      // arcStartLat={(d) => +d.srcAirport.lat}
-      // arcStartLng={(d) => +d.srcAirport.lng}
-      // arcEndLat={(d) => +d.dstAirport.lat}
-      // arcEndLng={(d) => +d.dstAirport.lng}
-      // arcDashLength={0.5}
-      // arcDashGap={1}
-      // arcDashInitialGap={() => Math.random()}
-      // arcDashAnimateTime={4000}
-      // arcsTransitionDuration={0}
-      // arcStroke={null}
-      // arcColor={() => "#88602333"}
-    />
+    <div ref={containerRef}>
+      <Globe
+        ref={globeEl}
+        animateIn={false}
+        globeImageUrl="/textures/earth/earth-night.jpg"
+        backgroundColor="rgba(0,0,0,0)"
+        showAtmosphere
+        rendererConfig={{ antialias: true, alpha: true }}
+        hexPolygonUseDots
+        hexPolygonResolution={2}
+        onGlobeReady={handleGlobeReady}
+      />
+    </div>
   );
 }
