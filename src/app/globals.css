@@ -293,7 +293,7 @@ svg text.dot {
   background-color: hsl(0, 0%, 0%);
   background-image: radial-gradient(
     ellipse farthest-side at center top,
-    hsl(0, 0%, 24%) 0%,
+    hsl(0, 0%, 18%) 0%,
     hsl(0, 0%, 0%) 100%
   );
 }
