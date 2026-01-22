@@ -1,5 +1,6 @@
 "use client";
 
+import { TeamCarousel } from "@/src/components/about/TeamCarousel";
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 
@@ -129,8 +130,8 @@ export default function About() {
               <Image
                 src="/icon/InstaIcon.png"
                 alt="logo"
-                width={40}
-                height={40}
+                width={35}
+                height={35}
               />
             </div>
             <div className="bg-highlight col-span-2 row-span-2 flex flex-col items-center justify-between rounded-lg py-2">
@@ -148,8 +149,8 @@ export default function About() {
               <Image
                 src="/icon/InstaIcon.png"
                 alt="logo"
-                width={40}
-                height={40}
+                width={35}
+                height={35}
               />
             </div>
             <div className="bg-highlight col-span-2 row-span-2 flex flex-col items-center justify-between rounded-lg py-2">
@@ -167,12 +168,14 @@ export default function About() {
               <Image
                 src="/icon/InstaIcon.png"
                 alt="logo"
-                width={40}
-                height={40}
+                width={35}
+                height={35}
               />
             </div>
           </div>
         </section>
+
+        <TeamCarousel />
       </main>
     </>
   );
