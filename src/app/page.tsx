@@ -62,7 +62,7 @@ export default function LoadingScreen() {
             </svg>
             <div className="hidden">
               <TransitionLinks
-                href="/engineering"
+                href="/home"
                 prefetch={true}
                 autoNavigate={true}
                 delay={2000}
