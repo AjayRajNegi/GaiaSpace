@@ -1,6 +1,7 @@
 "use client";
 
 import { AboutHero } from "@/src/components/about/AboutHero";
+import { Newsroom } from "@/src/components/about/Newsroom";
 import { Partners } from "@/src/components/about/Partners";
 import { TeamSection } from "@/src/components/about/TeamSection";
 import Navbar from "@/src/components/Navbar";
@@ -13,6 +14,7 @@ export default function About() {
         <AboutHero />
         <TeamSection />
         <Partners />
+        <Newsroom />
       </main>
     </>
   );
