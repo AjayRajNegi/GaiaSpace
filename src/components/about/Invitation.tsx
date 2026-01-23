@@ -1,6 +1,6 @@
 export function Invitation() {
   return (
-    <section className="mx-auto my-[100px] flex max-w-6xl flex-col items-center text-[#cbcbcb]">
+    <section className="mx-auto mt-[100px] flex max-w-6xl flex-col items-center text-[#cbcbcb]">
       <div className="flex justify-evenly bg-[#090b0e] px-10 py-6">
         {/* Left */}
         <div className="flex w-[30%] flex-col items-center gap-4">
