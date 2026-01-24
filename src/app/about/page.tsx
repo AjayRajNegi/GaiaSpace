@@ -13,7 +13,7 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="grad h-full w-full">
+      <main className="grad max-w-8xl mx-auto overflow-x-hidden">
         <AboutHero />
         <TeamSection />
         <Partners />
