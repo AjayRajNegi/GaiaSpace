@@ -48,7 +48,7 @@ export function JourneySection() {
                 className="mb-2 flex items-center gap-4 text-sm font-thin"
               >
                 <Image
-                  src="/./Icon/ArrowHead.png"
+                  src="/icon/ArrowHead.png"
                   height={13}
                   width={13}
                   alt="ArrowHead"
@@ -71,7 +71,7 @@ export function JourneySection() {
           className="relative mx-auto max-w-[100%] lg:mr-[3vw] lg:max-w-[60%]"
         >
           <Image
-            src="/Images/CareersPageJourneySection.png"
+            src="/images/CareersPageJourneySection.png"
             height={300}
             width={600}
             alt="Journey"

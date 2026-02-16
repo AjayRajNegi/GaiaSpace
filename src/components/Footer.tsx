@@ -23,19 +23,19 @@ export default function Footer() {
               </div>
               <div className="mt-6 flex gap-[0.65rem]">
                 <Image
-                  src="/Icon/TwitterIcon.png"
+                  src="/icon/TwitterIcon.png"
                   alt="logo"
                   width={40}
                   height={40}
                 />
                 <Image
-                  src="/Icon/FacebookIcon.png"
+                  src="/icon/FacebookIcon.png"
                   alt="logo"
                   width={40}
                   height={40}
                 />
                 <Image
-                  src="/Icon/InstaIcon.png"
+                  src="/icon/InstaIcon.png"
                   alt="logo"
                   width={40}
                   height={40}
