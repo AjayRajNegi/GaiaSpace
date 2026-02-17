@@ -13,7 +13,7 @@ export default function Home() {
       <main className="bg-background relative">
         {/* Earth */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
-          <Basic />
+          {/* <Basic /> */}
         </section>
 
         {/* =========== Absolute Components Blocks =========== */}
@@ -63,7 +63,7 @@ export default function Home() {
             <h1 className="text-secondary text-h1 text-shadown-lg leading-0 tracking-tight">
               PROPELLING TO THE BEYOND
             </h1>
-            <p className="text-primary text-h6 text-shadown-lg pt-3">
+            <p className="text-primary text-h6 text-shadown-lg pt-3 font-[300]">
               Together, we can shape a stronger, more adaptable space.
             </p>
             {/* <button className="cta_btn">Get started.</button> */}

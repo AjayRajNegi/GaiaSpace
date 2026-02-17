@@ -1,3 +1,4 @@
+import Capabilities from "@/src/components/missions/Capabilities";
 import Globe from "@/src/components/missions/Globe";
 import Navbar from "@/src/components/Navbar";
 export default function page() {
@@ -7,7 +8,7 @@ export default function page() {
       <main className="bg-background relative">
         {/* Globe */}
         <section className="fixed inset-0 z-20 m-auto min-h-screen">
-          <Globe />
+          {/* <Globe /> */}
         </section>
 
         {/* =========== Absolute Components Blocks =========== */}
@@ -17,7 +18,7 @@ export default function page() {
             <h1 className="text-secondary text-h1 text-shadown-lg leading-0 tracking-tight">
               Worldwide ATS Intelligence
             </h1>
-            <p className="text-primary text-h6 text-shadown-lg pt-3">
+            <p className="text-primary text-h6 text-shadown-lg pt-3 font-[300]">
               Precision Data for Aircrafts Navigation and Surveillance
             </p>
             {/* <button className="cta_btn">Get started.</button> */}
@@ -25,7 +26,8 @@ export default function page() {
         </section>
 
         {/* =========== Screens =========== */}
-        <section className="relative z-[99] mt-[100vh] min-h-screen w-full bg-red-200"></section>
+        {/* Capabilities */}
+        <Capabilities />
       </main>
     </>
   );
