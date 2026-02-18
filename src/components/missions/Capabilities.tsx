@@ -14,7 +14,7 @@ const cards = [
 
 export default function Capabilities() {
   return (
-    <section className="bg-background text-secondary relative z-[99] mx-auto mt-[100vh] min-h-screen w-full max-w-7xl font-[300]">
+    <section className="bg-background text-secondary relative z-[99] mx-auto mt-[100vh] w-full max-w-7xl font-[300]">
       {/* Header */}
       <div>
         <h1 className="text-h2 leading-12 tracking-tight">

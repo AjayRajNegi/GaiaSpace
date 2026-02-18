@@ -1,5 +1,6 @@
 import Capabilities from "@/src/components/missions/Capabilities";
 import Globe from "@/src/components/missions/Globe";
+import Technology from "@/src/components/missions/Technology";
 import Navbar from "@/src/components/Navbar";
 export default function page() {
   return (
@@ -26,8 +27,14 @@ export default function page() {
         </section>
 
         {/* =========== Screens =========== */}
-        {/* Capabilities */}
-        <Capabilities />
+
+        <section className="bg-background relative z-[99] w-full">
+          {/* Capabilities */}
+          <Capabilities />
+
+          {/*Technology */}
+          <Technology />
+        </section>
       </main>
     </>
   );
