@@ -31,9 +31,9 @@ export default function page() {
         <section className="bg-background relative z-[99] w-full">
           {/* Capabilities */}
           <Capabilities />
-
           {/*Technology */}
           <Technology />
+          {/*  */}
         </section>
       </main>
     </>
