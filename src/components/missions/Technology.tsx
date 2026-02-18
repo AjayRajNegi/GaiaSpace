@@ -58,7 +58,7 @@ export default function Technology() {
 
       {/* Bottom section */}
       <section className="flex justify-between font-thin tracking-tight">
-        <article className="flex items-center justify-center">
+        <article className="flex w-[50%] items-center justify-start">
           <div>
             <p className="text-[42px] leading-14">
               <span className="text-primary">Precision </span> Flight <br />
@@ -68,11 +68,11 @@ export default function Technology() {
           </div>
           <div></div>
         </article>
-        <article className="flex flex-col items-start text-right text-[#acacad]">
+        <article className="flex w-[45%] flex-col items-start text-right text-[#acacad]">
           <p className="text-left">
             We deliver real-time global surveillance data, setting a new
-            standard in aviation <br /> intelligence. Our advanced services
-            empower aircraft operators to:
+            standard in aviation intelligence. Our advanced services empower
+            aircraft operators to:
           </p>
           <div className="my-6">
             {points.map((point, id) => (
