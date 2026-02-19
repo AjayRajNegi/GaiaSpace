@@ -14,7 +14,7 @@ export default function page() {
 
         {/* =========== Absolute Components Blocks =========== */}
         {/* Titles */}
-        <section className="hero_pin fixed inset-0 h-[100vh] overflow-hidden pt-0">
+        <section className="hero_pin fixed inset-0 h-[100vh] overflow-hidden">
           <div className="content absolute top-[40%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
             <h1 className="text-secondary text-h1 text-shadown-lg leading-0 tracking-tight">
               Worldwide ATS Intelligence

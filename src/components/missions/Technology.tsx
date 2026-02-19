@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const cards = [
-  { title: "Real-Time Position", src: "/images/missions/1.png" },
-  { title: "Global Airspace Coverage", src: "/images/missions/2.png" },
-  { title: "Defense Surveillance", src: "/images/missions/3.png" },
+  { title: "Real-Time Position", src: "/images/missions/P1.png" },
+  { title: "Global Airspace Coverage", src: "/images/missions/P2.png" },
+  { title: "Defense Surveillance", src: "/images/missions/P3.png" },
 ];
 
 const points = [
@@ -58,7 +58,7 @@ export default function Technology() {
 
       {/* Bottom section */}
       <section className="flex justify-between font-thin tracking-tight">
-        <article className="flex w-[50%] items-center justify-start">
+        <article className="flex w-[50%] items-center justify-center">
           <div>
             <p className="text-[42px] leading-14">
               <span className="text-primary">Precision </span> Flight <br />

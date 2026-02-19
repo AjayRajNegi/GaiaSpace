@@ -1,20 +1,20 @@
 import Image from "next/image";
 
 const cards = [
-  { title: "GNSS-independent tracking", src: "/images/missions/Card1.svg" },
-  { title: "Global Coverage", src: "/images/missions/Card1.svg" },
-  { title: "Defence reconnaissance", src: "/images/missions/Card1.svg" },
-  { title: "Hypersonic surveillance", src: "/images/missions/Card1.svg" },
-  { title: "Route Optimization", src: "/images/missions/Card1.svg" },
-  { title: "Space Traffic Monitoring", src: "/images/missions/Card1.svg" },
-  { title: "UAS / AAM integration", src: "/images/missions/Card1.svg" },
-  { title: "Situational awareness", src: "/images/missions/Card1.svg" },
-  { title: "Fuel Efficiency", src: "/images/missions/Card1.svg" },
+  { title: "GNSS-independent tracking", src: "/images/missions/1.png" },
+  { title: "Global Coverage", src: "/images/missions/2.png" },
+  { title: "Defence reconnaissance", src: "/images/missions/3.png" },
+  { title: "Hypersonic surveillance", src: "/images/missions/4.png" },
+  { title: "Route Optimization", src: "/images/missions/5.png" },
+  { title: "Space Traffic Monitoring", src: "/images/missions/6.png" },
+  { title: "UAS / AAM integration", src: "/images/missions/7.png" },
+  { title: "Situational awareness", src: "/images/missions/8.png" },
+  { title: "Fuel Efficiency", src: "/images/missions/9.png" },
 ];
 
 export default function Capabilities() {
   return (
-    <section className="bg-background text-secondary relative z-[99] mx-auto mt-[100vh] w-full max-w-7xl font-[300]">
+    <section className="bg-background text-secondary relative z-[99] mx-auto mt-[100vh] w-full max-w-7xl pt-20 font-[300]">
       {/* Header */}
       <div>
         <h1 className="text-h2 leading-12 tracking-tight">
