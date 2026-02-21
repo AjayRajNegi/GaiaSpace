@@ -103,10 +103,13 @@ export default function Navbar() {
                           </p>
                         </TransitionLinks>
 
-                        <button className="block w-full rounded-xl px-2 py-3 text-left text-white transition-colors hover:bg-white/10">
+                        <TransitionLinks
+                          href="/hy-rocen"
+                          className="block w-full rounded-xl px-2 py-3 text-left text-white transition-colors hover:bg-white/10"
+                        >
                           <p className="text-secondary text-sm">Hy-RocEn</p>
                           <p className="text-primary">HYBRID ROCKET ENGINE</p>
-                        </button>
+                        </TransitionLinks>
                       </motion.div>
                     )}
                   </AnimatePresence>
