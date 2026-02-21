@@ -4,6 +4,7 @@ import Image from "next/image";
 import Nav from "./Nav";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
   {
@@ -92,12 +93,15 @@ export default function Navbar() {
                         transition={{ duration: 0.18, ease: "easeOut" }}
                         className="absolute top-full left-0 z-[9999] mt-2 w-60 rounded-2xl border border-white/10 bg-black/60 p-2 shadow-xl backdrop-blur-3xl"
                       >
-                        <button className="block w-full rounded-xl px-2 py-3 text-left text-white transition-colors hover:bg-white/10">
+                        <TransitionLinks
+                          href="/git-rf-200"
+                          className="block w-full rounded-xl px-2 py-3 text-left text-white transition-colors hover:bg-white/10"
+                        >
                           <p className="text-secondary text-sm">GIT-RF 200</p>
                           <p className="text-primary">
                             RADION FREQUENCY GRIDDED ION THRUSTER
                           </p>
-                        </button>
+                        </TransitionLinks>
 
                         <button className="block w-full rounded-xl px-2 py-3 text-left text-white transition-colors hover:bg-white/10">
                           <p className="text-secondary text-sm">Hy-RocEn</p>
