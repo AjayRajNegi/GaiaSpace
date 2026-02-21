@@ -20,7 +20,7 @@ export function Propulsion() {
         <div className="mt-10 w-[70%]">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
                 Advancing Core Propulsion Techonologies
               </AccordionTrigger>
               <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-[300] text-balance">
