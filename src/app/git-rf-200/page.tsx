@@ -1,5 +1,3 @@
-import Footer from "@/src/components/Footer";
-import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 
 const cards = [
@@ -26,7 +24,6 @@ const cards = [
 export default function page() {
   return (
     <>
-      <Navbar />
       <main className="bg-background">
         {/* Intro Section */}
         <section className="text-secondary mx-auto my-20 w-full max-w-7xl pt-20 font-[300]">
@@ -168,7 +165,6 @@ export default function page() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

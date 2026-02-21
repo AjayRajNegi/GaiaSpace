@@ -1,11 +1,9 @@
 import Capabilities from "@/src/components/missions/Capabilities";
 import Globe from "@/src/components/missions/Globe";
 import Technology from "@/src/components/missions/Technology";
-import Navbar from "@/src/components/Navbar";
 export default function page() {
   return (
     <>
-      <Navbar />
       <main className="bg-background relative">
         {/* Globe */}
         <section className="fixed inset-0 z-20 m-auto min-h-screen">
