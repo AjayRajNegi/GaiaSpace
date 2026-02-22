@@ -3,10 +3,13 @@ import { Benefits } from "@/src/components/home/Benefits";
 import { Propulsion } from "@/src/components/home/Propulsion";
 import { Roadmap } from "@/src/components/home/Roadmap";
 import Basic from "@/src/components/home/Basic";
+import Navbar from "@/src/components/Navbar";
+import Footer from "@/src/components/Footer";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <main className="bg-background relative">
         {/* Earth */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
@@ -95,6 +98,7 @@ export default function Home() {
           <CTA />
         </section>
       </main>
+      <Footer />
     </>
   );
 }

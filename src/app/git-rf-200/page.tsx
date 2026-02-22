@@ -110,10 +110,10 @@ export default function page() {
           <article className="flex gap-2">
             <div className="flex h-[415] w-[315] flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center">
               <Image
-                src="/images/engineering/ClipA2.png"
+                src="/images/engineering/D2.svg"
                 alt="cip1"
-                height={100}
-                width={100}
+                height={80}
+                width={80}
               />
               <h5 className="text-primary mt-4 text-[18px] font-[400]">
                 Engineering Support
@@ -127,10 +127,10 @@ export default function page() {
             </div>
             <div className="flex h-[415] w-[315] flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center">
               <Image
-                src="/images/engineering/ClipA3.png"
+                src="/images/engineering/D1.svg"
                 alt="cip1"
-                height={100}
-                width={100}
+                height={80}
+                width={80}
               />
               <h5 className="text-primary mt-4 text-[18px] font-[400]">
                 Mission Design

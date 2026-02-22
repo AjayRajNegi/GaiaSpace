@@ -114,7 +114,7 @@ export default function EngineSpecs() {
                   defaultValue="item-1"
                 >
                   <AccordionItem value="item-1" className="pb-5">
-                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
                       Advancing Core Propulsion Techonologies
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-[300] text-balance">
@@ -132,7 +132,7 @@ export default function EngineSpecs() {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2" className="pb-5">
-                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
                       Enhancing Orbital Agility
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
@@ -150,7 +150,7 @@ export default function EngineSpecs() {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3" className="pb-5">
-                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
                       Extending Reach Beyond Earth Orbit
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
