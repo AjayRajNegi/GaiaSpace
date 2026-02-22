@@ -1,6 +1,27 @@
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 
+const card = [
+  {
+    review:
+      "“Investor connections!  Found the perfect match, thanks for simplifying the search”",
+    name: "Sarah Jones,",
+    company: "GreenTech Solution",
+  },
+  {
+    review:
+      "“Investor connections!  Found the perfect match, thanks for simplifying the search”",
+    name: "Sarah Jones,",
+    company: "GreenTech Solution",
+  },
+  {
+    review:
+      "“Investor connections!  Found the perfect match, thanks for simplifying the search”",
+    name: "Sarah Jones,",
+    company: "GreenTech Solution",
+  },
+];
+
 export default function TrainingPrograms() {
   return (
     <>
@@ -60,6 +81,41 @@ export default function TrainingPrograms() {
             <button className="flex w-[450px] items-center justify-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 py-1">
               Register Here
             </button>
+          </div>
+        </section>
+
+        {/* Reviews */}
+        <section className="mx-auto mt-40 max-w-7xl font-thin">
+          {/* Header */}
+          <h4 className="text-h4 mx-auto w-fit">
+            Our Previous Training Session
+          </h4>
+          <h5 className="my-10 w-[45%] text-[22px]">
+            Engineering{" "}
+            <span className="text-primary">
+              Tomorrow&apos;s Space Scientists
+            </span>{" "}
+            Through Knowledge, Training, and Innovation
+          </h5>
+
+          {/* Card */}
+          <h5 className="text-h5 mx-auto mt-15 w-fit">
+            Hear it from our students
+          </h5>
+          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-3 items-stretch gap-10">
+            {card.map((card, id) => (
+              <div
+                key={id}
+                className="group col-span-1 rounded-xl border-[0.5px] border-[#262727] bg-[#050505] p-4 transition-transform duration-300 hover:scale-105"
+              >
+                <Image src="/icon/apst.png" alt="apst" height={40} width={40} />
+                <p className="p-4 text-sm tracking-tight">{card.review}</p>
+                <div className="p-4 text-sm tracking-tight text-[#585858] transition-all duration-300 group-hover:text-[16px]">
+                  <p>{card.name}</p>
+                  <p>{card.company}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </main>
