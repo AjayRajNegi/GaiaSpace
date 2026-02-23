@@ -65,7 +65,7 @@ export default function LoadingScreen() {
                 href="/home"
                 prefetch={true}
                 autoNavigate={true}
-                delay={2000}
+                delay={5000}
               >
                 Home
               </TransitionLinks>

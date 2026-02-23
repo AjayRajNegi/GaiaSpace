@@ -118,6 +118,41 @@ export default function TrainingPrograms() {
             ))}
           </div>
         </section>
+
+        {/* Last */}
+        <section
+          className="mx-auto my-40 max-w-[1600px] font-thin"
+          style={{
+            backgroundImage: `url("/images/training/ElevateDiscovery.png")`,
+            backgroundSize: "cover",
+          }}
+        >
+          <div className="mx-auto flex max-w-7xl flex-col items-end">
+            <div>
+              <h6 className="text-h5">Be a Pioneer</h6>
+              <h3 className="text-[40px] leading-12">
+                Elevate Discovery, <br /> Transform Our World
+              </h3>
+            </div>
+          </div>
+
+          <section className="text-secondary mx-auto my-20 mt-[40vh] flex max-w-7xl items-center justify-between rounded-xl bg-[#090b0e]/60 p-15 text-[28px] font-thin tracking-tight backdrop-blur-sm">
+            <div className="text-h4 leading-14 font-thin">
+              <p>Required further assistance, reach out to us.</p>
+            </div>
+
+            <div className="w-[30%]">
+              <p className="text-p mb-5">
+                Reach out to our training coordinator directly to understand the
+                program, and address your quires one on one.
+              </p>
+
+              <button className="flex w-full items-center justify-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 px-3 py-1 text-lg">
+                Reach Out
+              </button>
+            </div>
+          </section>
+        </section>
       </main>
     </>
   );
