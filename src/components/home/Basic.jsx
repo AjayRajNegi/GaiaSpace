@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -11,7 +11,6 @@ import dynamic from "next/dynamic";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
-
 const COUNTRY = "United States";
 
 /* ------------------ Parsers ------------------ */
@@ -80,6 +79,8 @@ export default function Basic() {
   const [airports, setAirports] = useState([]);
   const [routes, setRoutes] = useState([]);
   const [isGlobeReady, setIsGlobeReady] = useState(false);
+  const [routeLimit, setRouteLimit] = useState(0);
+  const routeLimitRef = useRef(0);
 
   useEffect(() => {
     Promise.all([
@@ -115,6 +116,11 @@ export default function Basic() {
       setRoutes(filteredRoutes);
     });
   }, []);
+
+  const filteredRoutes = useMemo(
+    () => routes.slice(0, routeLimit),
+    [routes, routeLimit],
+  );
 
   const handleGlobeReady = () => {
     if (!globeEl.current) return;
@@ -176,6 +182,28 @@ export default function Basic() {
           },
           "<",
         );
+
+      /* ================= ROUTE PROGRESSIVE LOAD ================= */
+      const routeLoader = { value: 0 };
+      const MAX_ROUTES = 1000;
+
+      gsap.to(routeLoader, {
+        value: MAX_ROUTES,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".after_hero",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 2,
+        },
+        onUpdate: () => {
+          const nextLimit = Math.floor(routeLoader.value);
+          if (nextLimit !== routeLimitRef.current) {
+            routeLimitRef.current = nextLimit;
+            setRouteLimit(nextLimit);
+          }
+        },
+      });
 
       /* ================= LINES ================= */
       const linesTimeline = gsap.timeline({
@@ -242,6 +270,27 @@ export default function Basic() {
         hexPolygonUseDots
         hexPolygonResolution={2}
         onGlobeReady={handleGlobeReady}
+        //
+        //arcsData={routes}
+        arcsData={filteredRoutes}
+        arcStartLat={(d) => +d.srcAirport.lat}
+        arcStartLng={(d) => +d.srcAirport.lng}
+        arcEndLat={(d) => +d.dstAirport.lat}
+        arcEndLng={(d) => +d.dstAirport.lng}
+        arcAltitude={0.15}
+        arcDashLength={1}
+        arcDashGap={1}
+        arcDashInitialGap={() => Math.random()}
+        arcDashAnimateTime={3000}
+        arcsTransitionDuration={0.5}
+        arcStroke={null}
+        arcColor={() => "#00a8e8"}
+        //arcColor={() => "#e09f3e"}
+        // pointsData={airports}
+        // pointColor={() => "orange"}
+        // pointAltitude={0}
+        // pointRadius={0.02}
+        // pointsMerge={true}
       />
     </div>
   );

@@ -5,6 +5,12 @@ import { Roadmap } from "@/src/components/home/Roadmap";
 import Basic from "@/src/components/home/Basic";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   return (
@@ -34,6 +40,7 @@ export default function Home() {
             Annual passengers Scale: ~600 million
           </div>
         </div>
+
         {/* Satellites */}
         <div className="satellite fixed top-[30%] left-1/2 z-40 w-[1300] -translate-x-1/2 opacity-0">
           <p className="text-h5 text-primary">
@@ -42,16 +49,62 @@ export default function Home() {
           <h2 className="text-h2 text-secondary mt-6 leading-14 font-medium">
             Space-powered intelligence <br /> for tomorrow&apos;s airspace.
           </h2>
-          <div className="mt-8">
-            <p className="border-primary text-secondary text-h6 mt-4 border-l-2 px-4 leading-6">
-              Global, uninterrupted airspace activity tracking
-            </p>
-            <p className="border-primary text-secondary text-h6 mt-4 border-l-2 px-4 leading-6">
-              Safer and optimized airspace operations
-            </p>
-            <p className="border-primary text-secondary text-h6 mt-4 border-l-2 px-4 leading-6">
-              Economic & Efficiency Benefits
-            </p>
+          {/* Accordian */}
+          <div className="mt-5">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full"
+              defaultValue="item-1"
+            >
+              <AccordionItem value="item-1" className="pb-3">
+                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-[400]">
+                  Global, uninterrupted airspace activity tracking
+                </AccordionTrigger>
+                <AccordionContent className="flex w-[50%] flex-col gap-4 px-4 text-[16px] leading-4.5 font-[400] text-[#aaaaaa]">
+                  <p>
+                    ATLAS ensures the skies are always visible. With worldwide
+                    coverage that reaches oceans, polar regions, and the most
+                    remote airspaces, it delivers uninterrupted and accurate
+                    tracking of aircraft across the globe. Built for safety,
+                    efficiency, and security, ATLAS brings the future of air
+                    traffic and aerospace monitoring within reach.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="pb-3">
+                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-thin">
+                  Safer airspace operation
+                </AccordionTrigger>
+                <AccordionContent className="flex w-[50%] flex-col gap-4 px-4 text-[16px] leading-4.5 font-[400] text-[#aaaaaa]">
+                  <p>
+                    ATLAS enhances the safety of global aviation by providing
+                    continuous, real-time awareness of aircraft movements. By
+                    closing surveillance gaps over oceans, poles, and remote
+                    regions, ATLAS empowers air traffic controllers, airlines,
+                    and defence agencies with the data they need to prevent
+                    risks, respond more quickly, and ensure secure and efficient
+                    skies.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="pb-5">
+                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-[400]">
+                  Economic & Efficiency Benefits
+                </AccordionTrigger>
+                <AccordionContent className="flex w-[50%] flex-col gap-4 px-4 text-[16px] leading-4.5 font-[400] text-[#aaaaaa]">
+                  <p>
+                    ATLAS drives economic and operational efficiency by enabling
+                    more direct flight routes, reducing delays, and lowering
+                    fuel consumption. Real-time global surveillance optimizes
+                    airspace use, minimizes congestion, and supports faster
+                    recovery from disruptions, helping airlines and air traffic
+                    agencies reduce costs, improve scheduling, and enhance
+                    overall aviation productivity worldwide.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
 
