@@ -19,7 +19,7 @@ export default function Home() {
       <main className="bg-background relative">
         {/* Earth */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
-          <Basic />
+          {/* <Basic /> */}
         </section>
 
         {/* =========== Absolute Components Blocks =========== */}
@@ -148,7 +148,7 @@ export default function Home() {
           {/* Benefits */}
           <Benefits />
           {/* CTA */}
-          <CTA />
+          {/* <CTA /> */}
         </section>
       </main>
       <Footer />

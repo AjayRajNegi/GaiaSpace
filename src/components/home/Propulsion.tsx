@@ -7,23 +7,23 @@ import {
 
 export function Propulsion() {
   return (
-    <div className="mx-auto flex max-h-[600px] max-w-7xl justify-between pt-20">
+    <div className="mx-auto flex flex-col justify-between px-4 pt-20 lg:max-h-[600px] lg:max-w-7xl lg:flex-row xl:px-0">
       {/* Left */}
-      <div className="w-1/2">
-        <h3 className="text-h4 text-secondary w-[70%] leading-10 font-thin">
+      <div className="w-full lg:w-1/2">
+        <h3 className="text-h4 text-secondary leading-10 font-thin md:w-[90%] lg:w-[70%]">
           Enabling Orbital Stewardship Through Next-Generation Propulsion
         </h3>
-        <p className="text-p text-primary mt-2 leading-5">
-          We&apos;re also laying the groundwork to sustain space infrastructure{" "}
-          <br /> with capabilities in space propulsion.
+        <p className="text-p text-primary mt-2 w-[95%] leading-5 md:w-[70%]">
+          We&apos;re also laying the groundwork to sustain space infrastructure
+          with capabilities in space propulsion.
         </p>
-        <div className="mt-10 w-[70%]">
+        <div className="mt-5 w-full md:mt-10 md:w-[70%]">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
                 Advancing Core Propulsion Techonologies
               </AccordionTrigger>
-              <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-[300] text-balance">
+              <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-[300] text-balance">
                 <p>
                   We design and deliver state-of-the-art ABEP, electric, and
                   green propellant chemical thrusters to extend satellite
@@ -37,10 +37,10 @@ export function Propulsion() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
                 Enhancing Orbital Agility
               </AccordionTrigger>
-              <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
+              <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-thin text-balance">
                 <p>
                   By integrating advanced guidance, navigation, and control
                   (GNC) algorithms, our propulsion systems enable autonomous
@@ -54,10 +54,10 @@ export function Propulsion() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
                 Extending Reach Beyond Earth Orbit
               </AccordionTrigger>
-              <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
+              <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-thin text-balance">
                 <p>
                   High thrust and specific impulse solutions combine scalable
                   propulsion modules, mission adaptable architectures to support
@@ -71,15 +71,19 @@ export function Propulsion() {
           </Accordion>
         </div>
       </div>
-      {/* Right */}
-      <div className="grid max-h-[410px] grid-cols-2 grid-rows-2 gap-2.5">
+
+      {/* Right — card grid */}
+      <div className="mt-8 grid grid-cols-2 gap-3 md:mt-0 md:grid-cols-4 md:grid-rows-2 md:gap-2.5 lg:max-h-[410px] lg:grid-cols-2">
         {/* GIT-RF */}
-        <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
           <h6 className="text-secondary text-xs font-light">
             Electric Propulsion
           </h6>
           <div className="mx-auto w-fit">
-            <img src="/images/home/GIT-RF.avif" className="h-[125px]" />
+            <img
+              src="/images/home/GIT-RF.avif"
+              className="h-[130px] md:h-[120px] lg:h-[125px]"
+            />
             <p className="text-secondary -mt-2 text-center text-xs font-light">
               GIT-RF
             </p>
@@ -91,12 +95,15 @@ export function Propulsion() {
           </p>
         </div>
         {/* HPGP */}
-        <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
           <h6 className="text-secondary text-xs font-light">
             High Performance Green Propulsion
           </h6>
           <div className="mx-auto w-fit">
-            <img src="/images/home/HPGP.avif" className="h-[125px]" />
+            <img
+              src="/images/home/HPGP.avif"
+              className="h-[130px] md:h-[120px] lg:h-[125px]"
+            />
             <p className="text-secondary -mt-2 text-center text-xs font-light">
               HPGP
             </p>
@@ -108,12 +115,15 @@ export function Propulsion() {
           </p>
         </div>
         {/* HyRocEn */}
-        <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
           <h6 className="text-secondary text-xs font-light">
             Hybrid Propulsion
           </h6>
           <div className="mx-auto w-fit">
-            <img src="/images/home/HyRocEn.avif" className="h-[125px]" />
+            <img
+              src="/images/home/HyRocEn.avif"
+              className="h-[130px] md:h-[120px] lg:h-[125px]"
+            />
             <p className="text-secondary -mt-2 text-center text-xs font-light">
               HyRocEn
             </p>
@@ -125,12 +135,15 @@ export function Propulsion() {
           </p>
         </div>
         {/* VAC-LP */}
-        <div className="bg-highlight flex h-[200px] w-[250px] flex-col justify-between rounded-lg p-2">
+        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
           <h6 className="text-secondary text-xs font-light">
             Liquid Propulsion
           </h6>
           <div className="mx-auto w-fit">
-            <img src="/images/home/VAC-LP.avif" className="h-[125px]" />
+            <img
+              src="/images/home/VAC-LP.avif"
+              className="h-[130px] md:h-[120px] lg:h-[125px]"
+            />
             <p className="text-secondary -mt-2 text-center text-xs font-light">
               VAC-LP
             </p>

@@ -1,61 +1,67 @@
 export function Benefits() {
   return (
-    <div className="mx-auto max-w-7xl">
-      <div className="mb-20 text-center">
-        <h3 className="text-secondary text-[40px] font-[400]">
+    <div className="mx-auto max-w-7xl px-4 xl:px-0">
+      {/* header */}
+      <div className="mb-10 text-center md:mb-20">
+        <h3 className="text-secondary text-h5 leading-5 font-[400] md:text-[40px] md:leading-15">
           We help Earth benefit from space
         </h3>
-        <h5 className="text-primary text-base font-[400]">
+        <h5 className="text-primary mt-3 text-[15px] leading-4 font-[400] text-pretty md:mt-0">
           Discover how GAIA SPACE transforms innovation in orbit into real-world
           impact on Earth.
         </h5>
       </div>
-      <div className="mx-auto flex max-w-5xl items-center">
+      {/* content */}
+      <div className="mx-auto flex max-w-5xl flex-col items-center px-4 md:flex-row md:px-0">
         {/* left */}
-        <div className="grid w-1/2 grid-cols-2 grid-rows-2 gap-2">
+        <div className="grid w-full grid-cols-2 grid-rows-2 gap-2 md:w-1/2">
           <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
               HYROCKEN
             </h4>
             <img
               src="/images/home/Benefit01.avif"
-              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
+              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
             />
           </div>
           <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
               GIT-RF
             </h4>
             <img
               src="/images/home/Benefit02.avif"
-              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
+              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
             />
           </div>
           <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
               NETWORK ROUTING
             </h4>
             <img
               src="/images/home/Benefit03.avif"
-              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
+              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
             />
           </div>
           <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[18px] font-[300]">
+            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
               SPACE TRAVEL
             </h4>
             <img
               src="/images/home/Benefit04.avif"
-              className="mx-auto h-[164] w-[164] transition-all duration-300 hover:brightness-200"
+              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
             />
           </div>
         </div>
-        {/* center */}
-        <div className="bg-secondary h-[360] w-0.5" />
+
+        {/* divider — horizontal on mobile, vertical on desktop */}
+        <div className="bg-secondary my-6 h-0.5 w-full flex-shrink-0 md:mx-6 md:my-0 md:h-[360px] md:w-0.5" />
+
         {/* right */}
-        <div className="ml-10 w-1/2">
-          <h3 className="text-secondary text-[40px] font-[400]">Who are we?</h3>
-          <p className="text-secondary text-[18px] leading-[22px] font-[100] tracking-tighter">
+        <div className="w-full md:ml-4 md:w-1/2">
+          <h3 className="text-secondary text-[28px] font-[400] sm:text-[34px] md:text-[40px]">
+            Who are we?
+          </h3>
+          <p className="text-secondary text-[14px] leading-[20px] font-[100] tracking-tighter sm:text-[16px] md:text-[18px] md:leading-[22px]">
             At GAIA SPACE, we see space not as a distant frontier, from
             next-generation in-space propulsion to real-time air traffic
             insights from orbit, we create technologies that keep satellites
@@ -67,7 +73,7 @@ export function Benefits() {
             insights from orbit, we create technologies that keep satellites
             moving efficiently, skies safer, and global networks more connected.
           </p>
-          <button className="w-full">
+          <button className="mt-4 w-full">
             <p className="text-secondary text-h6 border-secondary ml-auto w-fit rounded-sm border-[1] px-2 py-1">
               Get In Touch
             </p>
