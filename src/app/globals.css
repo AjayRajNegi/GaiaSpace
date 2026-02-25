@@ -297,3 +297,15 @@ svg text.dot {
     hsl(0, 0%, 0%) 100%
   );
 }
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg) translate(-100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-100px) rotate(-360deg);
+  }
+}
+.circle {
+  animation: circle 4s linear infinite;
+}

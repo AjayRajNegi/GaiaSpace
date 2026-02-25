@@ -5,6 +5,29 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const cards = [
+  {
+    title: "Electric Propulsion",
+    imageSrc: "/images/home/GIT-RF.avif",
+    description: "GIT-RF",
+  },
+  {
+    title: "High Performance Green Propulsion",
+    imageSrc: "/images/home/HPGP.avif",
+    description: "HPGP",
+  },
+  {
+    title: "Hybrid Propulsion",
+    imageSrc: "/images/home/HyRocEn.avif",
+    description: "HyRocEn",
+  },
+  {
+    title: "Liquid Propulsion",
+    imageSrc: "/images/home/VAC-LP.avif",
+    description: "VAC-LP",
+  },
+];
+
 export function Propulsion() {
   return (
     <div className="mx-auto flex flex-col justify-between px-4 pt-20 lg:max-h-[600px] lg:max-w-7xl lg:flex-row xl:px-0">
@@ -74,86 +97,28 @@ export function Propulsion() {
 
       {/* Right — card grid */}
       <div className="mt-8 grid grid-cols-2 gap-3 md:mt-0 md:grid-cols-4 md:grid-rows-2 md:gap-2.5 lg:max-h-[410px] lg:grid-cols-2">
-        {/* GIT-RF */}
-        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
-          <h6 className="text-secondary text-xs font-light">
-            Electric Propulsion
-          </h6>
-          <div className="mx-auto w-fit">
-            <img
-              src="/images/home/GIT-RF.avif"
-              className="h-[130px] md:h-[120px] lg:h-[125px]"
-            />
-            <p className="text-secondary -mt-2 text-center text-xs font-light">
-              GIT-RF
+        {cards.map((card, id) => (
+          <div
+            key={id}
+            className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]"
+          >
+            <h6 className="text-secondary text-xs font-light">{card.title}</h6>
+            <div className="mx-auto w-fit">
+              <img
+                src={card.imageSrc}
+                className="h-[130px] md:h-[120px] lg:h-[125px]"
+              />
+              <p className="text-secondary -mt-2 text-center text-xs font-light">
+                {card.description}
+              </p>
+            </div>
+            <p className="text-secondary flex items-end pr-2 text-sm font-light">
+              <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
+                Know more
+              </button>
             </p>
           </div>
-          <p className="text-secondary flex items-end pr-2 text-sm font-light">
-            <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
-              Know more
-            </button>
-          </p>
-        </div>
-        {/* HPGP */}
-        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
-          <h6 className="text-secondary text-xs font-light">
-            High Performance Green Propulsion
-          </h6>
-          <div className="mx-auto w-fit">
-            <img
-              src="/images/home/HPGP.avif"
-              className="h-[130px] md:h-[120px] lg:h-[125px]"
-            />
-            <p className="text-secondary -mt-2 text-center text-xs font-light">
-              HPGP
-            </p>
-          </div>
-          <p className="text-secondary flex items-end pr-2 text-sm font-light">
-            <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
-              Know more
-            </button>
-          </p>
-        </div>
-        {/* HyRocEn */}
-        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
-          <h6 className="text-secondary text-xs font-light">
-            Hybrid Propulsion
-          </h6>
-          <div className="mx-auto w-fit">
-            <img
-              src="/images/home/HyRocEn.avif"
-              className="h-[130px] md:h-[120px] lg:h-[125px]"
-            />
-            <p className="text-secondary -mt-2 text-center text-xs font-light">
-              HyRocEn
-            </p>
-          </div>
-          <p className="text-secondary flex items-end pr-2 text-sm font-light">
-            <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
-              Know more
-            </button>
-          </p>
-        </div>
-        {/* VAC-LP */}
-        <div className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]">
-          <h6 className="text-secondary text-xs font-light">
-            Liquid Propulsion
-          </h6>
-          <div className="mx-auto w-fit">
-            <img
-              src="/images/home/VAC-LP.avif"
-              className="h-[130px] md:h-[120px] lg:h-[125px]"
-            />
-            <p className="text-secondary -mt-2 text-center text-xs font-light">
-              VAC-LP
-            </p>
-          </div>
-          <p className="text-secondary flex items-end pr-2 text-sm font-light">
-            <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
-              Know more
-            </button>
-          </p>
-        </div>
+        ))}
       </div>
     </div>
   );

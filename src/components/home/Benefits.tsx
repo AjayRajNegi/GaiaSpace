@@ -1,3 +1,22 @@
+const benefits = [
+  {
+    title: "HYROCKEN",
+    imageSrc: "/images/home/Benefit01.avif",
+  },
+  {
+    title: "GIT-RF",
+    imageSrc: "/images/home/Benefit02.avif",
+  },
+  {
+    title: "NETWORK ROUTING",
+    imageSrc: "/images/home/Benefit03.avif",
+  },
+  {
+    title: "SPACE TRAVEL",
+    imageSrc: "/images/home/Benefit04.avif",
+  },
+];
+
 export function Benefits() {
   return (
     <div className="mx-auto max-w-7xl px-4 xl:px-0">
@@ -15,42 +34,17 @@ export function Benefits() {
       <div className="mx-auto flex max-w-5xl flex-col items-center px-4 md:flex-row md:px-0">
         {/* left */}
         <div className="grid w-full grid-cols-2 grid-rows-2 gap-2 md:w-1/2">
-          <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
-              HYROCKEN
-            </h4>
-            <img
-              src="/images/home/Benefit01.avif"
-              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
-            />
-          </div>
-          <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
-              GIT-RF
-            </h4>
-            <img
-              src="/images/home/Benefit02.avif"
-              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
-            />
-          </div>
-          <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
-              NETWORK ROUTING
-            </h4>
-            <img
-              src="/images/home/Benefit03.avif"
-              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
-            />
-          </div>
-          <div>
-            <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
-              SPACE TRAVEL
-            </h4>
-            <img
-              src="/images/home/Benefit04.avif"
-              className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
-            />
-          </div>
+          {benefits.map((benefit, id) => (
+            <div key={id}>
+              <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
+                {benefit.title}
+              </h4>
+              <img
+                src={benefit.imageSrc}
+                className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
+              />
+            </div>
+          ))}
         </div>
 
         {/* divider — horizontal on mobile, vertical on desktop */}

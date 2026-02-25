@@ -148,7 +148,7 @@ export default function Home() {
           {/* Benefits */}
           <Benefits />
           {/* CTA */}
-          {/* <CTA /> */}
+          <CTA />
         </section>
       </main>
       <Footer />
