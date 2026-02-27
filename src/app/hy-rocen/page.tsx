@@ -1,4 +1,6 @@
+import { CTA } from "@/src/components/CTA";
 import EngineSpecs from "@/src/components/engineering/EngineSpecs";
+import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 
@@ -27,7 +29,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <main className="bg-background text-secondary">
+      <main className="bg-background text-secondary text-shadow-xs">
         <main className="relative mx-auto flex h-screen max-w-[1400px]">
           <Image
             src="/images/engineering/main.png"
@@ -35,7 +37,7 @@ export default function Page() {
             alt="main"
             className="z-0 object-cover"
           />
-          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-thin">
+          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-[400] text-shadow-xs md:font-thin">
             <span className="text-primary">Engineering</span> Thrust, <br />
             Enabling
             <span className="text-primary"> Exploration</span>
@@ -46,7 +48,7 @@ export default function Page() {
         <EngineSpecs />
 
         {/* Cards */}
-        <section className="text-secondary mx-auto max-w-7xl py-20">
+        <section className="text-secondary mx-auto max-w-7xl py-10 pb-0 md:py-20">
           {/* Header */}
           <div className="text-center">
             <h1 className="text-h4 my-4 leading-12 font-thin tracking-tight">
@@ -54,7 +56,7 @@ export default function Page() {
             </h1>
           </div>
           {/* card */}
-          <div className="mx-auto my-10 flex max-w-4xl items-center justify-between text-[14px] font-[300] text-[#acacad]">
+          <div className="mx-auto my-10 flex max-w-4xl flex-col items-center justify-between gap-4 text-[14px] font-[300] text-[#acacad] md:flex-row md:gap-0">
             {cards.map((card, id) => (
               <div
                 key={id}
@@ -80,7 +82,9 @@ export default function Page() {
             ))}
           </div>
         </section>
+        <CTA />
       </main>
+      <Footer />
     </>
   );
 }

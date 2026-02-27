@@ -13,23 +13,26 @@ export default function EngineSpecs() {
   const [toggleSpecs, setToggleSpecs] = useState(true);
   return (
     <>
-      <section className="text-secondary">
+      <section className="text-secondary px-4 md:px-6">
         {/* Header */}
         <div className="text-secondary text-center font-thin">
-          <h1 className="my-4 text-[40px] leading-12 tracking-tight">
+          <h1 className="my-4 text-[28px] leading-tight tracking-tight md:text-[40px]">
             <span className="text-primary">Precision</span> Thrust, Efficient
-            <span className="text-primary">Combustion</span>
+            <span className="text-primary"> Combustion</span>
           </h1>
-          <p className="text-center text-[18px] leading-5 tracking-tight text-[#acacad]">
+          <p className="text-center text-[16px] leading-5 tracking-tight text-[#acacad] md:text-[18px]">
             Engineering Hybrid Propulsion Propulsion Solutions for
             Tomorrow&apos;s Missions
           </p>
-          <h6 className="mt-14 text-[18px] text-[600]">Engine Specification</h6>
+          <h6 className="mt-10 text-[18px] text-[600] md:mt-14">
+            Engine Specification
+          </h6>
         </div>
 
         {/* Specifications */}
-        <div className="mx-auto mt-14 flex h-[500px] max-w-6xl items-center rounded-3xl border-1 border-x-0 border-[#646464] bg-[#0c0c0c]">
-          <div className="relative h-[400px] w-[35%]">
+        <div className="mx-auto mt-10 flex h-auto max-w-6xl flex-col items-center rounded-3xl border-1 border-x-0 border-[#646464] bg-[#0c0c0c] p-5 md:mt-14 md:h-[500px] md:flex-row md:p-0">
+          {/* Engine Image */}
+          <div className="relative h-[340px] w-full shrink-0 md:h-[400px] md:w-[35%]">
             <Image
               src="/images/engineering/Engine.png"
               alt="Engine"
@@ -37,8 +40,11 @@ export default function EngineSpecs() {
               objectFit="contain"
             />
           </div>
-          <div className="flex h-[80%] w-full flex-col pr-[2%] font-thin text-[#acacad]">
-            <div className="mb-10 flex items-center gap-4 text-[18px]">
+
+          {/* Content */}
+          <div className="flex h-auto w-full flex-col px-4 pb-6 font-thin text-[#acacad] md:h-[80%] md:pr-[2%] md:pb-0 md:pl-0">
+            {/* Toggle Buttons */}
+            <div className="mb-6 flex items-center gap-4 text-[16px] md:mb-10 md:text-[18px]">
               <button
                 onClick={() => setToggleSpecs(true)}
                 className={toggleSpecs ? "text-primary" : ""}
@@ -54,7 +60,7 @@ export default function EngineSpecs() {
               </button>
             </div>
 
-            <div className="relative flex-1 overflow-hidden">
+            <div className="relative min-h-[500px] flex-1 justify-center overflow-hidden md:min-h-0">
               {/* Overview panel */}
               <div
                 className={`absolute inset-0 flex flex-col justify-evenly transition-opacity duration-500 ${
@@ -63,34 +69,34 @@ export default function EngineSpecs() {
                     : "pointer-events-none opacity-0"
                 }`}
               >
-                <p className="text-[16px] text-[#d5d5d5]">
+                <p className="text-[15px] text-[#d5d5d5] md:text-[16px]">
                   Our Hybrid Rocket Motor designs are optimised for
                   manufacturing while delivering full performance.
                 </p>
-                <div className="mt-6 grid grid-cols-2 gap-2">
+                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-2">
                   <div>
-                    <h6 className="text-primary text-[18px] font-[400]">
+                    <h6 className="text-primary text-[17px] font-[400] md:text-[18px]">
                       Surge Capability
                     </h6>
-                    <p className="mt-3 text-[16px] text-[#d5d5d5]">
+                    <p className="text-[15px] text-[#d5d5d5] md:mt-3 md:text-[16px]">
                       Rapidly scale motor production leveraging common
                       manufacturing production equipment and minimal tooling.
                     </p>
                   </div>
                   <div>
-                    <h6 className="text-primary text-[18px] font-[400]">
+                    <h6 className="text-primary text-[17px] font-[400] md:text-[18px]">
                       Adapdibility
                     </h6>
-                    <p className="mt-3 text-[16px] text-[#d5d5d5]">
+                    <p className="text-[15px] text-[#d5d5d5] md:mt-3 md:text-[16px]">
                       Easy changeover to different casings and sounding launch
                       vehicle frame.
                     </p>
                   </div>
-                  <div className="col-span-2 mt-4">
-                    <h6 className="text-primary text-[18px] font-[400]">
+                  <div className="mt-2 sm:col-span-2 md:mt-4">
+                    <h6 className="text-primary text-[17px] font-[400] md:text-[18px]">
                       Lower Cost & Fewer Parts
                     </h6>
-                    <p className="mt-3 text-[16px] text-[#d5d5d5]">
+                    <p className="text-[15px] text-[#d5d5d5] md:mt-3 md:text-[16px]">
                       Our processes have simplified the complex and labour
                       intensive process of rocket motor manufacturing, reducing
                       both part count and assembly tasks.
@@ -101,7 +107,7 @@ export default function EngineSpecs() {
 
               {/* Technical Specification panel */}
               <div
-                className={`absolute inset-0 transition-opacity duration-500 ${
+                className={`absolute inset-0 overflow-y-auto transition-opacity duration-500 ${
                   toggleSpecs
                     ? "pointer-events-none opacity-0"
                     : "pointer-events-auto opacity-100"
@@ -114,7 +120,7 @@ export default function EngineSpecs() {
                   defaultValue="item-1"
                 >
                   <AccordionItem value="item-1" className="pb-5">
-                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-base leading-snug font-thin md:text-lg">
                       Advancing Core Propulsion Techonologies
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-[300] text-balance">
@@ -132,7 +138,7 @@ export default function EngineSpecs() {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2" className="pb-5">
-                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-base leading-snug font-thin md:text-lg">
                       Enhancing Orbital Agility
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
@@ -150,7 +156,7 @@ export default function EngineSpecs() {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3" className="pb-5">
-                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-lg leading-2 font-thin">
+                    <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-base leading-snug font-thin md:text-lg">
                       Extending Reach Beyond Earth Orbit
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-thin text-balance">
