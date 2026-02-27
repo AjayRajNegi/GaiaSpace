@@ -300,12 +300,26 @@ svg text.dot {
 
 @keyframes circle {
   0% {
-    transform: rotate(0deg) translate(-100px) rotate(0deg);
+    transform: rotate(0deg) translate(-200px);
   }
   100% {
-    transform: rotate(360deg) translate(-100px) rotate(-360deg);
+    transform: rotate(200deg) translate(-200px);
   }
 }
+
+@keyframes circle-mobile {
+  0% {
+    transform: rotate(0deg) translate(-100px);
+  }
+  100% {
+    transform: rotate(200deg) translate(-100px);
+  }
+}
+
 .circle {
   animation: circle 4s linear infinite;
+
+  @media (max-width: 768px) {
+    animation-name: circle-mobile;
+  }
 }
