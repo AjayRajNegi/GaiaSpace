@@ -9,48 +9,42 @@ import {
 
 const teamMembers = [
   {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
+    name: "Rishab Sharma",
+    role: "Supplier Relations Manger",
+    image: "/images/about/team/SupplierRelationsManager.png",
+    instagram: "/icon/InstaIcon.png",
+    link: "https://www.linkedin.com/in/dr-rajeshsingh/",
+  },
+  {
+    name: "Sannapareddy Meghana",
+    role: "Researcher",
+    image: "/images/about/team/Researcher.png",
     instagram: "/icon/InstaIcon.png",
   },
   {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
+    name: "Helisha Kukdeja",
+    role: "Jr. Researcher",
+    image: "/images/about/team/JuniorResearcher.png",
     instagram: "/icon/InstaIcon.png",
   },
   {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
+    name: "Helisha Kukdeja",
+    role: "Jr. Researcher",
+    image: "/images/about/team/JrResearcher.png",
     instagram: "/icon/InstaIcon.png",
   },
   {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
+    name: "Dev Kumar",
+    role: "Jr. Researcher",
+    image: "/images/about/team/JrResearcher2.png",
     instagram: "/icon/InstaIcon.png",
   },
   {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
+    name: "Prabhat Sharma",
+    role: "Jr. Researcher",
+    image: "/images/about/team/TL.png",
     instagram: "/icon/InstaIcon.png",
   },
-  {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
-    instagram: "/icon/InstaIcon.png",
-  },
-  {
-    name: "Bhagyashree Singh",
-    role: "Strategic Business Advisor",
-    image: "/images/about/SBA.avif",
-    instagram: "/icon/InstaIcon.png",
-  },
-  // add as many as you want
 ];
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
@@ -69,20 +63,22 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         <p className="text-sm text-[#cbcbcb]">{member.role}</p>
       </div>
 
-      <Image
-        src={member.instagram}
-        alt="Instagram"
-        width={28}
-        height={28}
-        className="opacity-70 transition group-hover:opacity-100"
-      />
+      <a href={member.link} target="_blank">
+        <Image
+          src={member.instagram}
+          alt="Instagram"
+          width={28}
+          height={28}
+          className="opacity-70 transition group-hover:opacity-100"
+        />
+      </a>
     </div>
   );
 }
 
 export function TeamCarousel() {
   return (
-    <section className="mx-auto mt-4 w-3xl rounded-xl bg-[#0f0f0f] px-4 py-6 text-[#cbcbcb]">
+    <section className="mx-4 mt-4 rounded-xl bg-[#0f0f0f] px-4 py-6 text-[#cbcbcb] md:mx-auto md:w-3xl">
       <Carousel
         opts={{
           align: "start",
@@ -90,11 +86,11 @@ export function TeamCarousel() {
         }}
         className="relative"
       >
-        <CarouselContent className="pl-2">
+        <CarouselContent className="ml-2 pl-2 md:ml-0">
           {teamMembers.map((member, index) => (
             <CarouselItem
               key={index}
-              className="basis-full pl-2 sm:basis-1/2 lg:basis-1/3"
+              className="basis-full pl-0 sm:basis-1/2 md:pl-2 lg:basis-1/3"
             >
               <div className="flex justify-center">
                 <TeamCard member={member} />
@@ -103,8 +99,8 @@ export function TeamCarousel() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="bg-black/60 p-8 hover:bg-black lg:-left-24" />
-        <CarouselNext className="bg-black/60 p-8 hover:bg-black lg:-right-24" />
+        <CarouselPrevious className="left-0 bg-black/60 p-4 hover:bg-black sm:p-6 md:p-8 lg:-left-24" />
+        <CarouselNext className="right-0 bg-black/60 p-4 hover:bg-black sm:p-6 md:p-8 lg:-right-24" />
       </Carousel>
     </section>
   );

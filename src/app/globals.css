@@ -290,12 +290,11 @@ svg text.dot {
 /* Aboutttttttttttt */
 
 .grad {
-  background-color: hsl(0, 0%, 0%);
-  background-image: radial-gradient(
-    ellipse farthest-side at center top,
-    hsl(0, 0%, 18%) 0%,
-    hsl(0, 0%, 0%) 100%
-  );
+  background: radial-gradient(ellipse at 50% 0%, #202020 0%, #000000 100%);
+
+  @media (max-width: 768px) {
+    background: radial-gradient(ellipse at 50% 0%, #151515 0%, #000000 100%);
+  }
 }
 
 @keyframes circle {

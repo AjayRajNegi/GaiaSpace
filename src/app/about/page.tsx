@@ -6,11 +6,14 @@ import { Newsroom } from "@/src/components/about/Newsroom";
 import { Partners } from "@/src/components/about/Partners";
 import { TeamSection } from "@/src/components/about/TeamSection";
 import { CTA } from "@/src/components/CTA";
+import Footer from "@/src/components/Footer";
+import Navbar from "@/src/components/Navbar";
 
 export default function About() {
   return (
     <>
-      <main className="grad max-w-8xl mx-auto overflow-x-hidden">
+      <Navbar />
+      <main className="max-w-8xl mx-auto overflow-x-hidden">
         <AboutHero />
         <TeamSection />
         <Partners />
@@ -18,6 +21,7 @@ export default function About() {
         <Invitation />
         <CTA />
       </main>
+      <Footer />
     </>
   );
 }
