@@ -3,7 +3,7 @@ import Image from "next/image";
 export function CareersHero() {
   return (
     <section
-      className="relative mx-auto flex min-h-[60vh] max-w-7xl flex-col items-center justify-around bg-transparent px-4 pt-[70px] pb-20 text-[#cbcbcb] md:min-h-[80vh] md:px-0 md:pb-0"
+      className="relative mx-auto flex min-h-[60vh] max-w-7xl flex-col items-center justify-around bg-transparent px-4 pt-[70px] pb-20 text-[#cbcbcb] md:min-h-[80vh] md:pb-0 lg:px-0"
       style={{
         backgroundImage: `url(/images/careersMainImage.avif)`,
         backgroundSize: "cover",

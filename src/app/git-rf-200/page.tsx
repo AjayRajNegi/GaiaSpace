@@ -96,8 +96,8 @@ export default function page() {
         {/* Model */}
 
         {/* Support */}
-        <section className="text-secondary mx-auto flex max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:flex-row md:items-stretch md:gap-6 md:px-6 md:pt-20">
-          <article className="flex w-full flex-col justify-evenly gap-6 md:w-[30%] md:gap-0">
+        <section className="text-secondary mx-auto flex max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
+          <article className="flex w-full flex-col justify-evenly gap-6 md:gap-0 lg:w-[30%]">
             <div>
               <h4 className="text-h3 leading-9">
                 <span className="text-primary">Design,</span> Delivery and

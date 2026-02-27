@@ -48,7 +48,7 @@ export default function Page() {
         <EngineSpecs />
 
         {/* Cards */}
-        <section className="text-secondary mx-auto max-w-7xl py-10 pb-0 md:py-20">
+        <section className="text-secondary mx-auto max-w-7xl px-4 py-10 pb-0 md:py-20 lg:px-0">
           {/* Header */}
           <div className="text-center">
             <h1 className="text-h4 my-4 leading-12 font-thin tracking-tight">

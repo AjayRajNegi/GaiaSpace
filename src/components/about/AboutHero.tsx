@@ -1,6 +1,6 @@
 export function AboutHero() {
   return (
-    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[70px] text-[#cbcbcb] md:px-0">
+    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[70px] text-[#cbcbcb] lg:px-0">
       {/* Header and Information */}
       <h1 className="text-h6 md:text-h2 my-5 mt-10 font-[400] tracking-tight text-white md:my-0 md:font-[300]">
         Building A{" "}
@@ -9,7 +9,7 @@ export function AboutHero() {
       <h5 className="my-5 text-[22px] font-[100] tracking-tight text-white">
         About Us
       </h5>
-      <p className="max-w-5xl text-justify text-sm font-[300] tracking-tighter">
+      <p className="max-w-4xl text-justify text-sm font-[300] tracking-tighter">
         Incorporated in the INDIA in 2024, GAIA SPACE is at the forefront of
         advancing sustainable space technologies. Our journey began with
         pioneering research in efficient propulsion systems, laying the
@@ -26,7 +26,7 @@ export function AboutHero() {
         Advancement.
       </p>
       {/* Cards */}
-      <div className="mt-5 flex flex-col gap-10 md:flex-row md:gap-14">
+      <div className="mt-5 flex flex-col gap-10 lg:flex-row lg:gap-14">
         <div className="mx-auto w-[90%] rounded-3xl bg-[#0f0f0f] p-7 ring-white/30 transition-all duration-300 hover:ring-[0.5px] md:h-[300] md:w-[420] md:p-9">
           <h5 className="text-h6 mb-4 text-center text-white">Our Vision</h5>
           <p className="text-justify text-sm/4 font-[300]">

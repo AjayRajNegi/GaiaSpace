@@ -214,7 +214,7 @@ export const AccordianCareer = () => {
   };
 
   return (
-    <section className="bg-[#030709]bg-[#030709] mx-4 -mt-[100px] max-w-6xl rounded-[30px] border-[0.5px] border-[#26292c] md:mx-auto">
+    <section className="bg-[#030709]bg-[#030709] mx-4 -mt-[100px] max-w-6xl rounded-[30px] border-[0.5px] border-[#26292c] lg:mx-auto">
       {data.map((item, index) => (
         <AccordionItem
           key={item.title}

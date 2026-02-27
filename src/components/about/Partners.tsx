@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Partners() {
   return (
-    <section className="mx-auto my-20 flex max-w-7xl flex-col px-4 text-[#cbcbcb] md:px-0">
+    <section className="mx-auto my-20 flex max-w-7xl flex-col px-4 text-[#cbcbcb] lg:px-0">
       <div>
         <h6 className="text-h6">
           Our <span className="text-primary">PARTNERS</span> and{" "}

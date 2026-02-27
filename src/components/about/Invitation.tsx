@@ -4,7 +4,7 @@ export function Invitation() {
       <div className="flex w-full flex-col items-center gap-8 rounded-xl bg-[#090b0e] px-6 py-8 sm:px-10 md:flex-row md:justify-evenly md:gap-0 md:py-6">
         {/* Left */}
         <div className="flex w-full flex-col items-center gap-4 md:w-[30%]">
-          <h3 className="text-[32px] sm:text-[40px]">
+          <h3 className="text-[32px] lg:text-[40px]">
             An <span className="text-primary">Invitation</span>
           </h3>
           <p className="text-[14px] font-[300]">Join us in our mission</p>

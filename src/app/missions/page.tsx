@@ -30,7 +30,7 @@ export default function page() {
 
         {/* =========== Screens =========== */}
 
-        <section className="bg-background relative z-[99] w-full px-4 md:px-0">
+        <section className="bg-background relative z-[99] w-full px-4 lg:px-0">
           {/* Capabilities */}
           <Capabilities />
           {/*Technology */}
