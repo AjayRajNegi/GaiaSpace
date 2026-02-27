@@ -1,3 +1,6 @@
+import { CTA } from "@/src/components/CTA";
+import Footer from "@/src/components/Footer";
+import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 
 const cards = [
@@ -24,22 +27,24 @@ const cards = [
 export default function page() {
   return (
     <>
+      <Navbar />
+
       <main className="bg-background">
         {/* Intro Section */}
-        <section className="text-secondary mx-auto my-20 w-full max-w-7xl pt-20 font-[300]">
+        <section className="text-secondary mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-[300] md:my-20 md:px-6 md:pt-20">
           <div>
-            <h3 className="text-[40px] leading-10 font-thin tracking-tight">
+            <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
               GIT-RF-200
             </h3>
-            <h5 className="text-primary text-[22px] font-[400] tracking-tight">
+            <h5 className="text-primary text-[16px] font-[400] tracking-tight md:text-[22px]">
               RADIO FREQUENCY GRIDDED ION THRUSTER
             </h5>
           </div>
           <div className="mt-20 text-center">
-            <h4 className="text-h4 font-thin tracking-tight">
+            <h4 className="text-h4 leading-8 font-thin tracking-tight">
               Meet Our First Gen RF-Gridded Ion Thruster
             </h4>
-            <p className="mt-10 text-sm leading-4 tracking-tight text-[#acacad]">
+            <p className="mt-6 text-justify text-sm leading-4 tracking-tight text-[#acacad] md:mt-10">
               We are revolutionizing electric propulsion with cutting-edge
               RF-gridded ion thrusters that offer unmatched performance and
               efficiency. Our innovative designs prioritize extended lifespan,
@@ -51,31 +56,33 @@ export default function page() {
         </section>
 
         {/* Cards */}
-        <section className="text-secondary mx-auto max-w-7xl pt-20">
+        <section className="text-secondary mx-auto max-w-7xl px-4 pt-10 md:px-6 md:pt-20">
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-h4 my-4 leading-12 font-thin tracking-tight">
+            <h1 className="text-h4 my-4 leading-tight font-thin tracking-tight">
               <span className="text-primary">Precision</span> Propulsion,
               Limitless <span className="text-primary">Possibilities</span>
             </h1>
-            <p className="text-center text-lg leading-5 font-thin tracking-tight text-[#acacad]">
+            <p className="text-center text-base leading-5 font-thin tracking-tight text-[#acacad] md:text-lg">
               Developing Advanced Ion Thrusters Pioneering the Future of
               Efficient and Precise Space Propulsion
             </p>
           </div>
           {/* card */}
-          <div className="mx-auto my-10 flex max-w-4xl items-center justify-between text-[14px] font-[300] text-[#acacad]">
+          <div className="mx-auto my-10 grid max-w-4xl grid-cols-1 gap-6 text-[14px] font-[300] text-[#acacad] sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((card, id) => (
               <div
                 key={id}
-                className="relative flex h-[280] w-[240] items-center justify-center rounded-2xl border-2 border-[#28282a] p-3 transition-all hover:scale-105 hover:border-1 hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
+                className="relative mx-auto flex h-[280px] w-[240px] items-center justify-center rounded-2xl border-2 border-[#28282a] p-3 transition-all hover:scale-105 hover:border-1 hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
                 style={{
                   backgroundImage: `url(${card.src})`,
                   backgroundSize: "cover",
                 }}
               >
                 <div className="flex flex-col items-center justify-center text-center font-[400]">
-                  <h1 className="text-secondary text-[80px]">{card.data}</h1>
+                  <h1 className="text-secondary text-[60px] md:text-[80px]">
+                    {card.data}
+                  </h1>
                   <p className="text-secondary">{card.title}</p>
                   <p className="pt-2 text-center text-[13px] leading-4 font-thin">
                     {card.desc}
@@ -89,8 +96,8 @@ export default function page() {
         {/* Model */}
 
         {/* Support */}
-        <section className="text-secondary mx-auto flex max-w-7xl items-stretch justify-between pt-20 font-thin">
-          <article className="flex w-[30%] flex-col justify-evenly">
+        <section className="text-secondary mx-auto flex max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:flex-row md:items-stretch md:gap-6 md:px-6 md:pt-20">
+          <article className="flex w-full flex-col justify-evenly gap-6 md:w-[30%] md:gap-0">
             <div>
               <h4 className="text-h3 leading-9">
                 <span className="text-primary">Design,</span> Delivery and
@@ -107,8 +114,8 @@ export default function page() {
               </p>
             </div>
           </article>
-          <article className="flex gap-2">
-            <div className="flex h-[415] w-[315] flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center">
+          <article className="flex w-full flex-col gap-4 sm:flex-row md:w-auto">
+            <div className="flex h-auto w-full flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center sm:h-[415px] sm:w-[315px]">
               <Image
                 src="/images/engineering/D2.svg"
                 alt="cip1"
@@ -125,7 +132,7 @@ export default function page() {
                 customer.
               </p>
             </div>
-            <div className="flex h-[415] w-[315] flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center">
+            <div className="flex h-auto w-full flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center sm:h-[415px] sm:w-[315px]">
               <Image
                 src="/images/engineering/D1.svg"
                 alt="cip1"
@@ -145,14 +152,14 @@ export default function page() {
         </section>
 
         {/* Get in touch section */}
-        <section className="text-secondary mx-auto my-20 flex max-w-7xl items-center justify-between rounded-2xl bg-[#090b0e] p-10 text-[28px] font-thin tracking-tight">
-          <div className="text-h2 leading-14 font-thin">
+        <section className="text-secondary mx-4 mt-10 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl bg-[#090b0e] p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
+          <div className="text-h4 md:text-h2 leading-tight font-thin md:leading-14">
             <p>Want to know more ?</p>
             <p>Reach out to us! </p>
           </div>
 
-          <div className="w-[50%]">
-            <p className="text-p">
+          <div className="w-full md:w-[50%]">
+            <p className="text-p leading-4">
               Reach out to our team directly to understand the program, and
               address your quires one on one.
             </p>
@@ -165,6 +172,8 @@ export default function page() {
           </div>
         </section>
       </main>
+      <CTA />
+      <Footer />
     </>
   );
 }

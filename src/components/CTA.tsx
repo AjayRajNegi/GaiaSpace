@@ -1,7 +1,7 @@
 import Image from "next/image";
 export function CTA() {
   return (
-    <main className="border-highlight mt-[100px] border-t-[1px] px-4 py-5 xl:px-0">
+    <main className="border-highlight mt-[50px] border-t-[1px] px-4 py-5 md:mt-[100px] xl:px-0">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center items-stretch justify-between gap-20 md:flex-row md:items-stretch md:gap-0">
           <div className="mx-auto flex w-fit flex-col items-center font-[300] md:w-full md:items-start">
