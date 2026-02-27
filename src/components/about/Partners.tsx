@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Partners() {
   return (
-    <section className="mx-auto my-20 flex max-w-7xl flex-col text-[#cbcbcb]">
+    <section className="mx-auto my-20 flex max-w-7xl flex-col px-4 text-[#cbcbcb] md:px-0">
       <div>
         <h6 className="text-h6">
           Our <span className="text-primary">PARTNERS</span> and{" "}
@@ -16,7 +16,7 @@ export function Partners() {
           ensure a thriving, future-ready space economy.
         </p>
       </div>
-      <div className="mt-5 flex w-full items-center justify-center gap-20">
+      <div className="from mt-5 flex w-full flex-col items-center justify-around gap-20 bg-linear-to-b from-[#111417] to-[#010a0c] py-10 md:flex-row md:justify-center md:py-0">
         <Image
           src="/images/about/partner1.png"
           alt="partner"

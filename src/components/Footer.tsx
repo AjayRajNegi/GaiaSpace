@@ -19,12 +19,12 @@ export default function Footer() {
           <button className="rounded-md bg-[#f8f3ea] px-14 py-1.5 text-[16px] text-black">
             Contact Us
           </button>
-          <p className="my-5 font-thin text-[#979798]">
+          <p className="mt-5 mb-2 font-thin text-[#979798]">
             © 2026 GaiaSpace and Co.
           </p>
         </div>
-        <div className="h-[1px] w-full bg-[#979798]" />
-        <div className="flex w-full flex-col py-8 text-sm font-thin text-[#d5d5d5] md:flex-row">
+        <div className="h-[1px] w-full bg-[#818181]" />
+        <div className="flex w-full flex-col py-8 text-sm font-thin text-[#bababd] md:flex-row">
           <div className="flex w-full justify-evenly gap-5 md:w-1/2 md:justify-start">
             <Link href="/about">About Us</Link>
             <Link href="/about">Careers</Link>

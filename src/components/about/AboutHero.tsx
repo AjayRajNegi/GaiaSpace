@@ -1,6 +1,6 @@
 export function AboutHero() {
   return (
-    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[70px] text-[#cbcbcb]">
+    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[70px] text-[#cbcbcb] md:px-0">
       {/* Header and Information */}
       <h1 className="text-h6 md:text-h2 my-5 mt-10 font-[400] tracking-tight text-white md:my-0 md:font-[300]">
         Building A{" "}
