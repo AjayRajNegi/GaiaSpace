@@ -16,16 +16,16 @@ const points = [
 
 export default function Technology() {
   return (
-    <section className="bg-background text-secondary relative z-[99] mx-auto min-h-screen max-w-7xl py-30">
+    <section className="bg-background text-secondary relative z-[99] mx-auto max-w-7xl md:py-30">
       {/* Top section */}
       <section className="mx-auto w-full max-w-5xl pb-15 font-[300]">
         {/* Header */}
         <div className="text-center">
-          <h6 className="text-primary text-[18px] font-[300]">
+          <h6 className="text-primary text-[16px] font-[300] md:text-[18px]">
             Proprietary Technology
           </h6>
 
-          <h1 className="my-4 text-[38px] leading-12 tracking-tight">
+          <h1 className="my-4 text-[24px] leading-7 tracking-tight md:text-[38px] md:leading-12">
             Space-Based Radar and Signal Intelligence Suite
           </h1>
           <p className="text-center leading-5 tracking-tight text-[#acacad]">
@@ -35,7 +35,7 @@ export default function Technology() {
         </div>
 
         {/* Cards */}
-        <div className="mx-auto my-10 flex max-w-4xl items-center justify-between text-[14px] font-[300] text-[#acacad]">
+        <div className="mx-auto my-10 flex max-w-4xl flex-col items-center justify-between gap-4 text-[14px] font-[300] text-[#acacad] md:flex-row md:gap-0">
           {cards.map((card, id) => (
             <div
               key={id}
@@ -57,24 +57,25 @@ export default function Technology() {
       </section>
 
       {/* Bottom section */}
-      <section className="flex justify-between font-thin tracking-tight">
-        <article className="flex w-[50%] items-center justify-center">
-          <div>
-            <p className="text-[42px] leading-14">
-              <span className="text-primary">Precision </span> Flight <br />
-              Boundless
-              <span className="text-primary"> Skies</span>
-            </p>
-          </div>
-          <div></div>
+      <section className="flex flex-col gap-10 font-thin tracking-tight md:flex-row md:justify-between md:gap-0">
+        {/* Left */}
+        <article className="flex w-full items-center justify-center md:w-[50%]">
+          <p className="text-center text-[32px] leading-tight sm:text-[42px] sm:leading-14 md:text-left">
+            <span className="text-primary">Precision </span> Flight <br />
+            Boundless
+            <span className="text-primary"> Skies</span>
+          </p>
         </article>
-        <article className="flex w-[45%] flex-col items-start text-right text-[#acacad]">
-          <p className="text-left">
+
+        {/* Right */}
+        <article className="flex w-full flex-col items-start text-[#acacad] md:w-[45%]">
+          <p className="text-left text-sm sm:text-base">
             We deliver real-time global surveillance data, setting a new
             standard in aviation intelligence. Our advanced services empower
             aircraft operators to:
           </p>
-          <div className="my-6">
+
+          <div className="my-6 w-full">
             {points.map((point, id) => (
               <div
                 key={id}
@@ -91,8 +92,8 @@ export default function Technology() {
             ))}
           </div>
 
-          <button className="rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400] text-white">
-            <span className="flex w-full rounded bg-gray-900 p-2 px-10 py-2 text-white">
+          <button className="w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400] text-white sm:w-auto">
+            <span className="flex w-full justify-center rounded bg-gray-900 px-6 py-2 text-white sm:px-10">
               Learn More about Our Technology
             </span>
           </button>
@@ -100,22 +101,26 @@ export default function Technology() {
       </section>
 
       {/* Get in touch section */}
-      <section className="mx-auto mt-20 flex max-w-6xl items-center justify-between border-1 border-gray-800 bg-gray-950 p-10 text-[28px] font-thin tracking-tight">
+      <section className="mx-auto mt-20 flex w-[70%] max-w-6xl flex-col items-center gap-8 border-1 border-gray-800 bg-gray-950 p-6 text-center text-[22px] font-thin tracking-tight sm:p-8 sm:text-[28px] md:w-full md:flex-row md:justify-between md:gap-0 md:p-10 md:text-left">
         <div>
-          <p className="mb-8">
-            Or want to know more about <br /> our mission ?
+          <p className="mb-6 md:mb-8">
+            Or want to know more about <br className="hidden sm:block" /> our
+            mission?
           </p>
-          <p>Reach out to us! </p>
+          <p>Reach out to us!</p>
         </div>
 
-        <div className="w-1 self-stretch rounded-2xl bg-[#666666]" />
-        <div>
+        {/* Divider */}
+        <div className="h-px w-full rounded-2xl bg-[#666666] md:h-auto md:w-1 md:self-stretch" />
+
+        <div className="flex flex-col items-center">
           <p className="text-center">
-            Reach out to our team directly to <br /> understand the program.
+            Reach out to our team directly to <br className="hidden sm:block" />{" "}
+            understand the program.
           </p>
 
-          <button className="text-secondary mt-4 w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400]">
-            <span className="text-secondary flex w-full justify-center rounded bg-gray-900 p-2 px-10 py-2 text-base">
+          <button className="text-secondary mt-4 w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400] sm:w-auto">
+            <span className="text-secondary flex w-full justify-center rounded bg-gray-900 px-10 py-2 text-base">
               Get In Touch
             </span>
           </button>

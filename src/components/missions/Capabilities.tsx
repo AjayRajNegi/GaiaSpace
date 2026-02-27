@@ -17,13 +17,13 @@ export default function Capabilities() {
     <section className="bg-background text-secondary relative z-[99] mx-auto mt-[100vh] w-full max-w-7xl pt-20 font-[300]">
       {/* Header */}
       <div>
-        <h1 className="text-h2 leading-12 tracking-tight">
+        <h1 className="md:text-h2 text-[26px] leading-8 tracking-tight md:leading-12">
           We are <span className="text-primary">Advancing</span> <br /> Global
           <span className="text-primary"> Aviation </span>
           and
           <span className="text-primary"> Airspace </span>
         </h1>
-        <p className="my-4 max-w-[55%] leading-5 text-[#acacad]">
+        <p className="my-4 leading-5 text-[#acacad] md:max-w-[55%]">
           GAIA SPACE is powering next-generation space technology for aircraft
           traffic management system and analysis for the global aviation
           industry.
@@ -32,7 +32,7 @@ export default function Capabilities() {
       </div>
 
       {/* Info Grid */}
-      <div className="mt-8 grid grid-cols-3 grid-rows-3 gap-2">
+      <div className="mt-8 grid grid-cols-2 grid-rows-3 gap-2 md:grid-cols-3">
         {cards.map((card, id) => (
           <div
             className="border-secondary col-span-1 flex flex-col items-center justify-center rounded-sm border-[0.5px] py-4"
