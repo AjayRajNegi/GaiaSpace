@@ -214,7 +214,7 @@ export const AccordianCareer = () => {
   };
 
   return (
-    <section className="mx-auto -mt-[100px] max-w-6xl rounded-[30px] border-[0.5px] border-[#26292c] bg-[#030709]">
+    <section className="bg-[#030709]bg-[#030709] mx-4 -mt-[100px] max-w-6xl rounded-[30px] border-[0.5px] border-[#26292c] md:mx-auto">
       {data.map((item, index) => (
         <AccordionItem
           key={item.title}
@@ -283,18 +283,18 @@ const MenuItem: React.FC<MenuItemProps> = ({
                     </li>
                   ))}
                 </ul>
-                <div className="mt-4 flex justify-between text-white">
-                  <div className="flex gap-4">
+                <div className="mt-4 flex flex-col justify-between gap-4 text-white md:flex-row md:gap-0">
+                  <div className="flex flex-col gap-2 md:flex-row md:gap-4">
                     {subItem.tags?.map((item, id) => (
                       <div
                         key={id}
-                        className="rounded-full bg-[#1b1b1a] px-4 py-2.5 text-[14px] font-[300] text-[#d5d5d5]"
+                        className="w-fit rounded-full bg-[#1b1b1a] px-4 py-2.5 text-[14px] font-[300] text-[#d5d5d5]"
                       >
                         {item}
                       </div>
                     ))}
                   </div>
-                  <button className="rounded-lg border-[1px] border-[#26292c] bg-black px-5">
+                  <button className="w-fit rounded-lg border-[1px] border-[#26292c] bg-black px-5 py-2">
                     Apply
                   </button>
                 </div>

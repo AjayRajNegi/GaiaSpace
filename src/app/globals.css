@@ -322,3 +322,34 @@ svg text.dot {
     animation-name: circle-mobile;
   }
 }
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.dot {
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  to {
+    --angle: -180deg;
+    --spin: 180deg;
+  }
+}
+
+.dot {
+  transform: translate(
+      calc(280px * cos(var(--angle))),
+      calc(160px * sin(var(--angle)))
+    )
+    rotate(var(--spin));
+}
