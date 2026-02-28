@@ -12,7 +12,7 @@ const roles = [
 export function JourneySection() {
   return (
     <>
-      <article className="mx-auto flex max-w-[1300px] flex-col items-center justify-around px-4 pt-16 text-[#cbcbcb] sm:pt-[100px] lg:flex-row lg:px-6">
+      <article className="mx-auto flex max-w-[1300px] flex-col items-center justify-around px-4 pt-16 text-[#cbcbcb] sm:pt-[100px] lg:flex-row lg:gap-8 lg:px-6">
         {/* Journey */}
         <motion.section
           initial={{ opacity: 0, y: 60 }}
@@ -92,7 +92,7 @@ export function JourneySection() {
       </article>
 
       <section className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-evenly gap-8 px-4 text-[#cbcbcb] sm:mt-20 sm:px-6 lg:flex-row lg:gap-[18%]">
-        <h2 className="text-h5 md:text-h3 text-center leading-6 font-thin tracking-tight text-white lg:text-left">
+        <h2 className="text-h5 md:text-h3 text-center leading-6 font-thin tracking-tight text-white md:leading-10 lg:text-left">
           Dont See Your <br /> Perfect Role?
         </h2>
 

@@ -251,7 +251,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
         <motion.img
           alt="Arrow"
           onClick={toggleDropdown}
-          src="/Icon/Arrow.png"
+          src="/icon/Arrow.png"
           style={{ width: 15, height: 15, cursor: "pointer" }}
           animate={{ rotate: open ? 90 : 0 }}
           transition={{ duration: 0.7, type: "spring" }}

@@ -34,7 +34,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="mx-auto mt-[200px] flex min-h-screen max-w-7xl items-center justify-center rounded-3xl border-[01px] border-[#252941] bg-[#03070a] p-4 text-[#cbcbcb]">
+    <div className="mx-4 mt-[200px] flex min-h-screen max-w-7xl items-center justify-center rounded-3xl border-[01px] border-[#252941] bg-[#03070a] p-4 text-[#cbcbcb] lg:mx-auto">
       <div className="w-full max-w-6xl">
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-5xl font-light text-white">
@@ -138,22 +138,6 @@ export default function ContactForm() {
             >
               Company Name<span className="text-red-500">*</span>
             </Label>
-            <Select
-              value={formData.companyName}
-              onValueChange={(value) => handleChange("companyName", value)}
-            >
-              <SelectTrigger className="w-full border-gray-700 bg-transparent text-white focus:border-blue-500">
-                <SelectValue placeholder="Select..." />
-              </SelectTrigger>
-
-              {/* make it a floating overlay, limit height and enable scrolling */}
-              <SelectContent className="absolute right-0 left-0 z-50 mt-2 max-h-60 w-full overflow-auto border-gray-700 bg-gray-900 text-white">
-                <SelectItem value="company1">Company 1</SelectItem>
-                <SelectItem value="company2">Company 2</SelectItem>
-                <SelectItem value="company3">Company 3</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
 
           {/* Designation and Reason Row */}
@@ -195,7 +179,7 @@ export default function ContactForm() {
           <div className="flex justify-center pt-6">
             <Button
               onClick={handleSubmit}
-              className="rounded-lg bg-blue-600 px-12 py-6 text-lg text-[#cbcbcb] hover:bg-blue-700"
+              className="w-full rounded-lg bg-blue-600 px-12 py-6 text-lg text-[#cbcbcb] hover:bg-blue-700"
             >
               Submit
             </Button>

@@ -104,7 +104,7 @@ export default function TrainingPrograms() {
           <h5 className="text-h6 md:text-h5 mx-auto mt-15 w-fit">
             Hear it from our students
           </h5>
-          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 items-stretch gap-10 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid min-h-[260px] max-w-5xl grid-cols-1 items-stretch gap-10 lg:grid-cols-3">
             {card.map((card, id) => (
               <div
                 key={id}
@@ -123,7 +123,7 @@ export default function TrainingPrograms() {
 
         {/* Last */}
         <section
-          className="mx-auto my-20 max-w-[1600px] bg-cover bg-center px-4 font-thin md:my-32 lg:my-40 lg:px-0"
+          className="mx-auto my-20 max-w-[1600px] bg-cover bg-center px-4 font-thin md:my-32 lg:my-30 lg:px-0"
           style={{
             backgroundImage: `url("/images/training/ElevateDiscovery.png")`,
           }}

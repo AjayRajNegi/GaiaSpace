@@ -11,7 +11,7 @@ export default function page() {
       <main className="bg-background relative">
         {/* Globe */}
         <section className="fixed inset-0 z-20 m-auto min-h-screen">
-          {/* <Globe /> */}
+          <Globe />
         </section>
 
         {/* =========== Absolute Components Blocks =========== */}
