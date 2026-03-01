@@ -28,7 +28,7 @@ const teamMembers = [
     instagram: "/icon/InstaIcon.png",
   },
   {
-    name: "Helisha Kukdeja",
+    name: "Kritika Singh",
     role: "Jr. Researcher",
     image: "/images/about/team/JrResearcher.png",
     instagram: "/icon/InstaIcon.png",
@@ -63,15 +63,15 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         <p className="text-sm text-[#cbcbcb]">{member.role}</p>
       </div>
 
-      <a href={member.link} target="_blank">
+      {/* <a href={member.link} target="_blank">
         <Image
-          src={member.instagram}
+          src="/icon/linkedin.png"
           alt="Instagram"
           width={28}
           height={28}
           className="opacity-70 transition group-hover:opacity-100"
         />
-      </a>
+      </a> */}
     </div>
   );
 }

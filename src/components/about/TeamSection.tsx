@@ -9,6 +9,7 @@ export function TeamSection() {
       alt: "MD",
       name: "Dr. Sachin Shrivastav",
       role: "Managing Director",
+      link: "https://www.linkedin.com/in/prof-dr-sachin-srivastava-70873692/",
       size: 200,
       featured: true,
     },
@@ -17,6 +18,7 @@ export function TeamSection() {
       alt: "CEO",
       name: "Shubham Haldar",
       role: "Chief Executive Officer",
+      link: "https://www.linkedin.com/in/subham-haldar-69794a1b7/",
       size: 200,
       featured: true,
     },
@@ -27,36 +29,42 @@ export function TeamSection() {
       src: "/images/about/team/ADM.avif",
       alt: "ADM",
       name: "Dr. Rajesh Singh",
+      link: "https://www.linkedin.com/in/dr-rajeshsingh/",
       role: "Advisory Board Member",
     },
     {
       src: "/images/about/team/SBA.avif",
       alt: "SBA1",
       name: "Bhagyashree Singh",
+      link: "",
       role: "Strategic Business Advisor",
     },
     {
       src: "/images/about/team/STA.png",
       alt: "SBA2",
       name: "Dr. Amit Thakur",
+      link: "https://www.linkedin.com/in/dr-amit-thakur-67a1a373/",
       role: "Senior Technical Advisor",
     },
     {
       src: "/images/about/team/HR.png",
       alt: "SBA3",
       name: "Deepak Rai",
+      link: "https://www.linkedin.com/in/deepak-rai-9b7a19253/",
       role: "Human Resource",
     },
     {
       src: "/images/about/OD.avif",
       alt: "OD",
       name: "Rajeeth Chetty",
+      link: "https://www.linkedin.com/in/rajeeth-chetty/",
       role: "Head of Operations",
     },
     {
       src: "/images/about/team/TechnicalLead.png",
       alt: "SBA4",
       name: "Divij Arora",
+      link: "https://www.linkedin.com/in/divij-aroraa/",
       role: "Technical Advisor",
     },
   ];
@@ -88,12 +96,14 @@ export function TeamSection() {
                 <p className="w-fit border-r-[2] border-l-[2] px-2 text-center leading-4 font-semibold">
                   {person.role}
                 </p>
-                <Image
-                  src="/icon/InstaIcon.png"
-                  alt="Instagram"
-                  width={40}
-                  height={40}
-                />
+                <a href={person.link} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/icon/linkedin.png"
+                    alt="Instagram"
+                    width={40}
+                    height={40}
+                  />
+                </a>
               </div>
             ))}
           </div>
@@ -118,13 +128,15 @@ export function TeamSection() {
                 <p className="w-fit px-2 text-center text-[12px] leading-4 font-[500] md:text-sm md:font-semibold">
                   {person.role}
                 </p>
-                <Image
-                  className="md:h-[35px] md:w-[35px]"
-                  src="/icon/InstaIcon.png"
-                  alt="Instagram"
-                  width={30}
-                  height={30}
-                />
+                <a href={person.link} target="_blank">
+                  <Image
+                    className="md:h-[35px] md:w-[35px]"
+                    src="/icon/linkedin.png"
+                    alt="Instagram"
+                    width={35}
+                    height={35}
+                  />
+                </a>
               </div>
             ))}
           </div>
