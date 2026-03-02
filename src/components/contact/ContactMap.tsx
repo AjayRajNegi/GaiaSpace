@@ -31,14 +31,24 @@ export default function ContactMap() {
             className="object-contain"
           />
           <MapPin
-            //className="text-primary absolute -translate-x-1/2 -translate-y-1/2 animate-bounce"
             className={
               location === "office"
-                ? "text-primary absolute top-[61%] right-[66.2%] -translate-x-1/2 -translate-y-1/2 animate-bounce"
-                : "text-primary absolute top-[31%] right-[64.8%] -translate-x-1/2 -translate-y-1/2 animate-bounce"
+                ? "text-primary absolute hidden -translate-x-1/2 -translate-y-1/2 animate-bounce md:block"
+                : "text-primary absolute hidden -translate-x-1/2 -translate-y-1/2 animate-bounce md:block"
             }
             style={{
               top: `${location === "office" ? "45%" : "31%"}`,
+              left: `${location === "office" ? "66.55%" : "64.8%"}`,
+            }}
+          />
+          <MapPin
+            className={
+              location === "office"
+                ? "text-primary absolute -translate-x-1/2 -translate-y-1/2 animate-bounce md:hidden"
+                : "text-primary absolute -translate-x-1/2 -translate-y-1/2 animate-bounce md:hidden"
+            }
+            style={{
+              top: `${location === "office" ? "40%" : "26%"}`,
               left: `${location === "office" ? "66.55%" : "64.8%"}`,
             }}
           />
@@ -65,7 +75,7 @@ export default function ContactMap() {
           </p>
         </div>
 
-        <div className="my-5 flex flex-col gap-3 md:flex-row md:gap-10">
+        <div className="my-5 flex flex-col gap-2 md:flex-row md:gap-10">
           <div className="rounded-xl bg-[#011019] p-5">
             <div
               className="flex items-center gap-2 text-[18px]"
