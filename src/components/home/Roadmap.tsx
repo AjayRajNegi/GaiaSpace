@@ -104,6 +104,7 @@ export function Roadmap() {
         >
           {timeline.map((time, id) => (
             <div
+              key={id}
               className={`${id === timeline.length ? "mr-4 h-auto w-[88vw] flex-shrink-0 sm:w-[600px] md:mr-10 md:h-[310px] md:w-[760px]" : "h-auto w-[88vw] flex-shrink-0 sm:w-[600px] md:h-[310px] md:w-[760px]"}`}
             >
               <div className="flex flex-col items-end gap-2 sm:flex-row md:gap-8">
