@@ -13,7 +13,7 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="max-w-8xl mx-auto overflow-x-hidden">
+      <main className="mx-auto overflow-x-hidden">
         <AboutHero />
         <TeamSection />
         <Partners />

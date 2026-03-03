@@ -323,6 +323,16 @@ svg text.dot {
   }
 }
 
+.dot {
+  animation: move 5s linear infinite;
+}
+
+@keyframes move {
+  to {
+    --angle: -180deg;
+    --spin: 180deg;
+  }
+}
 @property --angle {
   syntax: "<angle>";
   inherits: false;
@@ -336,20 +346,38 @@ svg text.dot {
 }
 
 .dot {
-  animation: move 10s linear infinite;
+  transform: translate(
+      calc(90vw * cos(var(--angle))),
+      calc(250px * sin(var(--angle)))
+    )
+    rotate(var(--spin));
 }
 
+/* dotMD */
+
+.dotMD {
+  animation: move 8s linear infinite;
+}
 @keyframes move {
   to {
     --angle: -180deg;
     --spin: 180deg;
   }
 }
-
-.dot {
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.dotMD {
   transform: translate(
-      calc(280px * cos(var(--angle))),
-      calc(160px * sin(var(--angle)))
+      calc(55vw * cos(var(--angle))),
+      calc(350px * sin(var(--angle)))
     )
     rotate(var(--spin));
 }

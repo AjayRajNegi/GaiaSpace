@@ -159,7 +159,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   };
 
   return (
-    <div className="accordionItem px-auto p-6 pb-0">
+    <div className="accordionItem px-auto p-3 pb-0 md:p-6">
       <h2 className="text-primary flex items-center gap-6 pb-2 text-xl text-[18px] font-[500]">
         {title}
         {/* <motion.img
@@ -184,7 +184,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.7, type: "spring" }}
-            className="desc px-3 md:px-6"
+            className="desc px-1 md:px-6"
           >
             {data.map((item, idx) => (
               <div key={idx} className="">
@@ -214,7 +214,7 @@ export const AccordianCareer = () => {
   };
 
   return (
-    <section className="bg-[#030709]bg-[#030709] mx-4 -mt-[100px] max-w-6xl rounded-[30px] border-[0.5px] border-[#26292c] lg:mx-auto">
+    <section className="bg-[#030709]bg-[#030709] relative z-20 mx-4 -mt-[200px] max-w-6xl rounded-2xl border-[0.5px] border-[#26292c] bg-black md:rounded-[30px] lg:mx-auto">
       {data.map((item, index) => (
         <AccordionItem
           key={item.title}
@@ -245,7 +245,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   toggleDropdown,
 }) => {
   return (
-    <div className="menuItem my-4 rounded-3xl bg-[#0c0f11] p-4 px-5">
+    <div className="menuItem my-4 rounded-xl bg-[#0c0f11] p-2 px-3 md:rounded-3xl md:p-4 md:px-5">
       <h3 className="text-primary flex items-center justify-between gap-6 pb-2 text-[18px]">
         {title}
         <motion.img

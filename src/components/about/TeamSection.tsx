@@ -54,7 +54,7 @@ export function TeamSection() {
       role: "Human Resource",
     },
     {
-      src: "/images/about/OD.avif",
+      src: "/images/about/team/OD.avif",
       alt: "OD",
       name: "Rajeeth Chetty",
       link: "https://www.linkedin.com/in/rajeeth-chetty/",

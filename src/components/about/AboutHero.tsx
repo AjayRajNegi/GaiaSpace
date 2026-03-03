@@ -1,6 +1,6 @@
 export function AboutHero() {
   return (
-    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[70px] text-[#cbcbcb] lg:px-0">
+    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[80px] text-[#cbcbcb] lg:px-0 lg:pt-[140px]">
       {/* Header and Information */}
       <h1 className="text-h6 md:text-h2 my-5 mt-10 font-[400] tracking-tight text-white md:my-0 md:font-[300]">
         Building A{" "}
@@ -9,7 +9,7 @@ export function AboutHero() {
       <h5 className="my-5 text-[22px] font-[100] tracking-tight text-white">
         About Us
       </h5>
-      <p className="max-w-4xl text-justify text-sm font-[300] tracking-tighter">
+      <p className="max-w-5xl text-justify text-sm leading-4 font-[300] tracking-tighter">
         Incorporated in the INDIA in 2024, GAIA SPACE is at the forefront of
         advancing sustainable space technologies. Our journey began with
         pioneering research in efficient propulsion systems, laying the
@@ -21,7 +21,7 @@ export function AboutHero() {
         Intelligence, advanced propulsion, and data driven insights to shape a
         safer and more efficient future.
       </p>
-      <p className="my-10 text-center font-[300] tracking-tighter md:my-5 md:text-left">
+      <p className="my-10 text-center font-[300] tracking-tighter md:text-left">
         Unlocking the Future of Space potential for Economic and Technological
         Advancement.
       </p>
