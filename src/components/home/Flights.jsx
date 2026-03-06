@@ -69,7 +69,88 @@ const routeParse = ([
   equipment,
 });
 
-export default function Basic() {
+export default function Flights({ onTimelineUpdate }) {
+  const timelineData = [
+    {
+      year: "1938",
+      label: "Global annual airline passengers: ~1 million",
+      passengers: "~1 million",
+      flights: "~2K",
+      routeLimit: 2,
+    },
+    {
+      year: "1950",
+      label: "Annual passengers worldwide: ~30 million",
+      passengers: "~30 million",
+      flights: "~100K",
+      routeLimit: 10,
+    },
+    {
+      year: "1970",
+      label: "Annual passengers: ~310 million",
+      passengers: "~310 million",
+      flights: "~1M",
+      routeLimit: 50,
+    },
+    {
+      year: "1980",
+      label: "Annual passengers: ~600 million",
+      passengers: "~600 million",
+      flights: "~2M",
+      routeLimit: 100,
+    },
+    {
+      year: "1990",
+      label: "Annual passengers: ~1 billion",
+      passengers: "~1 billion",
+      flights: "~3M",
+      routeLimit: 150,
+    },
+    {
+      year: "2000",
+      label: "Annual passengers: ~1.7 billion",
+      passengers: "~1.7 billion",
+      flights: "~5M",
+      routeLimit: 220,
+    },
+    {
+      year: "2010",
+      label: "Annual passengers: ~2.6 billion",
+      passengers: "~2.6 billion",
+      flights: "~8M",
+      routeLimit: 310,
+    },
+    {
+      year: "2019",
+      label: "Pre-pandemic peak: ~4.5 billion",
+      passengers: "~4.5 billion",
+      flights: "~12M",
+      routeLimit: 420,
+    },
+    {
+      year: "2020",
+      label: "Sharp COVID-19 decline: ~1.8 billion",
+      passengers: "~1.8 billion",
+      flights: "~6M",
+      routeLimit: 200,
+    },
+    {
+      year: "2023",
+      label: "Recovery to ~4.5 billion passengers",
+      passengers: "~4.5 billion",
+      flights: "~12M",
+      routeLimit: 420,
+    },
+    {
+      year: "2024",
+      label: "Record high: ~9.5 billion passengers",
+      passengers: "~9.5 billion",
+      flights: "~25M",
+      routeLimit: 500,
+    },
+  ];
+
+  const timelineIndexRef = useRef(0);
   const globeEl = useRef(null);
   const containerRef = useRef(null);
 
@@ -182,14 +263,26 @@ export default function Basic() {
           },
           "<",
         );
+      /* ================= PHASE 2: TIMELINE SCROLL ================= */
+      const timelineProxy = { index: 0 };
 
-      /* ================= ROUTE PROGRESSIVE LOAD ================= */
-      const routeLoader = { value: 0 };
-      const MAX_ROUTES = 500;
+      const phase2Timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".after_hero",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 3,
+        },
+      });
 
-      gsap.to(routeLoader, {
-        value: MAX_ROUTES,
-        ease: "power4.out",
+      // Fade the UI in at the start, out at the end
+      phase2Timeline
+        .fromTo(".phase-2", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15 })
+        .to(".phase-2", { autoAlpha: 0, duration: 0.15 }, 0.85);
+
+      gsap.to(timelineProxy, {
+        index: timelineData.length - 1,
+        ease: "none",
         scrollTrigger: {
           trigger: ".after_hero",
           start: "top bottom",
@@ -197,27 +290,16 @@ export default function Basic() {
           scrub: 3,
         },
         onUpdate: () => {
-          const nextLimit = Math.floor(routeLoader.value);
+          const idx = Math.round(timelineProxy.index);
+          onTimelineUpdate?.(idx);
+
+          const nextLimit = timelineData[idx].routeLimit;
           if (nextLimit !== routeLimitRef.current) {
             routeLimitRef.current = nextLimit;
             setRouteLimit(nextLimit);
           }
         },
       });
-
-      /* ================= LINES ================= */
-      const linesTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".after_hero",
-          end: "bottom top",
-          //end: "bottom 40%",
-          scrub: 3,
-        },
-      });
-
-      linesTimeline
-        .fromTo(".lines-simulation", { opacity: 0 }, { opacity: 1 })
-        .to(".lines-simulation", { opacity: 0 });
 
       /* ================= SATELLITE ================= */
       const satelliteTimeline = gsap.timeline({

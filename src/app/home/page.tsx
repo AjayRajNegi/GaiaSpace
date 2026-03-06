@@ -1,8 +1,10 @@
+"use client";
 import { CTA } from "@/src/components/CTA";
 import { Benefits } from "@/src/components/home/Benefits";
 import { Propulsion } from "@/src/components/home/Propulsion";
 import { Roadmap } from "@/src/components/home/Roadmap";
 import Basic from "@/src/components/home/Basic";
+import Flights from "@/src/components/home/Flights";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import {
@@ -11,33 +13,166 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState, useRef } from "react";
 
 export default function Home() {
+  const timelineData = [
+    {
+      year: "1938",
+      label: "Global annual airline passengers: ~1 million",
+      passengers: "~1 million",
+      flights: "~2K",
+      routeLimit: 2,
+    },
+    {
+      year: "1950",
+      label: "Annual passengers worldwide: ~30 million",
+      passengers: "~30 million",
+      flights: "~100K",
+      routeLimit: 10,
+    },
+    {
+      year: "1970",
+      label: "Annual passengers: ~310 million",
+      passengers: "~310 million",
+      flights: "~1M",
+      routeLimit: 50,
+    },
+    {
+      year: "1980",
+      label: "Annual passengers: ~600 million",
+      passengers: "~600 million",
+      flights: "~2M",
+      routeLimit: 100,
+    },
+    {
+      year: "1990",
+      label: "Annual passengers: ~1 billion",
+      passengers: "~1 billion",
+      flights: "~3M",
+      routeLimit: 150,
+    },
+    {
+      year: "2000",
+      label: "Annual passengers: ~1.7 billion",
+      passengers: "~1.7 billion",
+      flights: "~5M",
+      routeLimit: 220,
+    },
+    {
+      year: "2010",
+      label: "Annual passengers: ~2.6 billion",
+      passengers: "~2.6 billion",
+      flights: "~8M",
+      routeLimit: 310,
+    },
+    {
+      year: "2019",
+      label: "Pre-pandemic peak: ~4.5 billion",
+      passengers: "~4.5 billion",
+      flights: "~12M",
+      routeLimit: 420,
+    },
+    {
+      year: "2020",
+      label: "Sharp COVID-19 decline: ~1.8 billion",
+      passengers: "~1.8 billion",
+      flights: "~6M",
+      routeLimit: 200,
+    },
+    {
+      year: "2023",
+      label: "Recovery to ~4.5 billion passengers",
+      passengers: "~4.5 billion",
+      flights: "~12M",
+      routeLimit: 420,
+    },
+    {
+      year: "2024",
+      label: "Record high: ~9.5 billion passengers",
+      passengers: "~9.5 billion",
+      flights: "~25M",
+      routeLimit: 500,
+    },
+  ];
+  const [timelineIndex, setTimelineIndex] = useState(0);
+  const timelineIndexRef = useRef(0);
   return (
     <>
       <Navbar />
       <main className="bg-background relative">
         {/* Earth */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
-          <Basic />
+          {/* <Basic /> */}
+          <Flights
+            onTimelineUpdate={(idx: number) => {
+              if (idx !== timelineIndexRef.current) {
+                timelineIndexRef.current = idx;
+                setTimelineIndex(idx);
+              }
+            }}
+          />
         </section>
 
         {/* =========== Absolute Components Blocks =========== */}
 
-        {/* Flights Simulator */}
-        <div className="lines-simulation text-secondary fixed top-[45%] left-1/2 z-40 -translate-x-1/2 opacity-0">
-          <div className="flex min-w-[1200px] justify-between">
+        {/* Phase 2 — Flight Timeline */}
+        <div className="phase-2 text-secondary pointer-events-none fixed top-[70%] left-1/2 z-40 w-[min(1200px,90vw)] -translate-x-1/2 -translate-y-1/2 opacity-0">
+          {/* Top row: passenger + flight counts */}
+          <div className="flex items-start justify-between">
             <div>
-              <p className="text-h2">600 million</p>
-              <p className="text-h5 text-primary">Passengers Anually</p>
+              <p className="text-h2 tabular-nums transition-all duration-300">
+                {timelineData[timelineIndex].passengers}
+              </p>
+              <p className="text-h5 text-primary">Passengers Annually</p>
             </div>
-            <div>
-              <p className="text-h2 text-end">~2M</p>
-              <p className="text-h5 text-primary">No. of flights anually</p>
+            <div className="text-end">
+              <p className="text-h2 tabular-nums transition-all duration-300">
+                {timelineData[timelineIndex].flights}
+              </p>
+              <p className="text-h5 text-primary">Flights Annually</p>
             </div>
           </div>
-          <div className="mt-[200px] text-center">
-            Annual passengers Scale: ~600 million
+
+          {/* Timeline slider */}
+          <div className="mt-[100px]">
+            <div className="relative mx-auto w-[800px]">
+              {/* Track */}
+              <div className="relative h-[2px] w-full rounded-full bg-white/20">
+                <div
+                  className="absolute h-full rounded-full bg-white transition-all duration-300"
+                  style={{
+                    width: `${(timelineIndex / (timelineData.length - 1)) * 100}%`,
+                  }}
+                />
+                {/* Thumb dot */}
+                <div
+                  className="absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-white transition-all duration-300"
+                  style={{
+                    left: `${(timelineIndex / (timelineData.length - 1)) * 100}%`,
+                    top: "6px",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                />
+              </div>
+
+              {/* Year labels */}
+              <div className="mt-3 flex justify-between">
+                {timelineData.map((d, i) => (
+                  <span
+                    key={d.year}
+                    className={`w-8 max-w-8 text-xs transition-all duration-300 ${i === timelineIndex ? "font-semibold text-white" : "text-white/40"}`}
+                  >
+                    {d.year}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Descriptor */}
+            <p className="text-h5 text-secondary mt-6 text-center transition-all duration-300">
+              {timelineData[timelineIndex].label}
+            </p>
           </div>
         </div>
 
@@ -124,7 +259,7 @@ export default function Home() {
         </section>
 
         {/* Flights */}
-        <section className="after_hero relative min-h-[100vh]">
+        <section className="after_hero relative min-h-[300vh]">
           <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
@@ -132,7 +267,7 @@ export default function Home() {
         </section>
 
         {/* Satellites */}
-        <section className="last relative min-h-[300vh]">
+        <section className="last relative min-h-[400vh]">
           <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
