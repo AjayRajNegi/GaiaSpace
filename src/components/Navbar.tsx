@@ -40,7 +40,7 @@ export default function Navbar() {
     <>
       <nav className="absolute top-0 left-0 flex min-h-[70px] items-center justify-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] z-[999] hidden h-[70px] w-full -translate-x-[50%] items-center justify-between px-10 pt-5 text-white backdrop-blur-3xl md:flex">
+        <div className="navbar fixed left-[50%] z-999 hidden h-[70px] w-full -translate-x-[50%] items-center justify-between px-10 text-white backdrop-blur-3xl md:flex">
           <TransitionLinks
             prefetch
             href="/home"
@@ -91,7 +91,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -6 }}
                         transition={{ duration: 0.18, ease: "easeOut" }}
-                        className="absolute top-full left-0 z-[9999] mt-2 w-60 rounded-2xl border border-white/10 bg-black/60 p-2 shadow-xl backdrop-blur-3xl"
+                        className="absolute top-full left-0 z-9999 mt-2 w-60 rounded-2xl border border-white/10 bg-black/60 p-2 shadow-xl backdrop-blur-3xl"
                       >
                         <TransitionLinks
                           href="/git-rf-200"
@@ -120,23 +120,19 @@ export default function Navbar() {
           <TransitionLinks
             prefetch
             href="/contact"
-            className="flex items-center gap-2 rounded-lg bg-linear-65 from-purple-700 to-teal-400 px-3 py-1"
+            className="flex items-center gap-2 rounded-sm bg-linear-65 from-purple-700 to-teal-400 px-6 py-0.5 tracking-tight"
           >
             <span>Contact Us</span>
           </TransitionLinks>
         </div>
         {/* Navbar for small displays */}
-        <div className="fixed left-0 z-[999] flex w-full max-w-full flex-1 items-center justify-start text-white md:hidden">
-          <div className="w-[42%]">
+        <div className="fixed left-0 z-999 flex w-full max-w-full flex-1 items-center justify-between pl-4 text-white md:hidden">
+          <TransitionLinks href="/home" className="flex items-center gap-2">
+            <Image src="/icon/GIcon.png" alt="logo" width={35} height={35} />
+          </TransitionLinks>
+          <div>
             <Nav />
           </div>
-          <TransitionLinks
-            href="/home"
-            className="flex w-1/2 items-center gap-2"
-          >
-            <Image src="/logo.png" alt="logo" width={20} height={20} />
-            <span>GAIA</span>
-          </TransitionLinks>
         </div>
       </nav>
     </>
