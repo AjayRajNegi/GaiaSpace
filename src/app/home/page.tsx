@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState, useRef } from "react";
+import BackgroundCanvas from "@/src/components/BackgroundCanvas";
 
 export default function Home() {
   const timelineData = [
@@ -102,6 +103,7 @@ export default function Home() {
       <Navbar />
       <main className="bg-background relative">
         {/* Earth */}
+        {/* <BackgroundCanvas /> */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
           {/* <Basic /> */}
           <Flights

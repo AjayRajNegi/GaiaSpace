@@ -6,10 +6,13 @@ import { JourneySection } from "@/src/components/careers/JourneySection";
 import { CTA } from "@/src/components/CTA";
 import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
+import BackgroundCanvas from "../../components/BackgroundCanvas";
 
 export default function Careers() {
   return (
     <>
+      {/* <BackgroundCanvas /> */}
+
       <Navbar />
       <CareersHero />
       <AccordianCareer />

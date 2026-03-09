@@ -150,7 +150,6 @@ export default function Flights({ onTimelineUpdate }) {
     },
   ];
 
-  const timelineIndexRef = useRef(0);
   const globeEl = useRef(null);
   const containerRef = useRef(null);
 
@@ -161,6 +160,7 @@ export default function Flights({ onTimelineUpdate }) {
   const [routes, setRoutes] = useState([]);
   const [isGlobeReady, setIsGlobeReady] = useState(false);
   const [routeLimit, setRouteLimit] = useState(0);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
   const routeLimitRef = useRef(0);
 
   useEffect(() => {
@@ -198,6 +198,14 @@ export default function Flights({ onTimelineUpdate }) {
     });
   }, []);
 
+  useEffect(() => {
+    const BREAKPOINT = 786;
+
+    if (window.innerWidth < BREAKPOINT) {
+      setIsSmallDevice(true);
+    }
+  }, []);
+
   const filteredRoutes = useMemo(
     () => routes.slice(0, routeLimit),
     [routes, routeLimit],
@@ -213,9 +221,15 @@ export default function Flights({ onTimelineUpdate }) {
     camera.fov = 30;
     camera.near = 0.1;
     camera.far = 10000;
-    camera.position.set(0, 110, 150);
+
+    console.log(isSmallDevice);
+
+    isSmallDevice
+      ? camera.position.set(0, 110, 350)
+      : camera.position.set(0, 110, 150);
     const lookAtPoint = camera.position.clone();
-    lookAtPoint.z -= 100;
+    //isSmallDevice ? (lookAtPoint.z -= 0) : (lookAtPoint.z -= 100);
+    lookAtPoint.z -= 0;
     camera.lookAt(lookAtPoint);
     camera.updateProjectionMatrix();
 
@@ -258,7 +272,7 @@ export default function Flights({ onTimelineUpdate }) {
           {
             x: 0,
             y: -30,
-            z: 700,
+            z: isSmallDevice ? 1000 : 700,
             ease: "power1.inOut",
           },
           "<",
@@ -353,7 +367,6 @@ export default function Flights({ onTimelineUpdate }) {
         hexPolygonUseDots
         hexPolygonResolution={2}
         onGlobeReady={handleGlobeReady}
-        //arcsData={routes}
         arcsData={filteredRoutes}
         arcStartLat={(d) => +d.srcAirport.lat}
         arcStartLng={(d) => +d.srcAirport.lng}
@@ -367,12 +380,6 @@ export default function Flights({ onTimelineUpdate }) {
         arcsTransitionDuration={0.5}
         arcStroke={null}
         arcColor={() => "#00a8e8"}
-        //arcColor={() => "#e09f3e"}
-        // pointsData={airports}
-        // pointColor={() => "orange"}
-        // pointAltitude={0}
-        // pointRadius={0.02}
-        // pointsMerge={true}
       />
     </div>
   );

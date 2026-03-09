@@ -27,29 +27,50 @@ export function AboutHero() {
       </p>
       {/* Cards */}
       <div className="mt-5 flex flex-col gap-10 lg:flex-row lg:gap-14">
-        <div className="mx-auto w-[90%] rounded-3xl bg-[#0f0f0f] p-7 ring-white/30 transition-all duration-300 hover:ring-[0.5px] md:h-[300] md:w-[420] md:p-9">
-          <h5 className="text-h6 mb-4 text-center text-white">Our Vision</h5>
-          <p className="text-justify text-sm/4 font-[300]">
-            We are dedicated to for to advancing in-space propulsion and
-            next-generation satellite technologies that power a sustainable and
-            efficient space economy. As the demand for space-based intelligence
-            grows, we deliver innovative solutions that enhance satellite
-            mobility, strengthen global connectivity through space-enabled air
-            traffic management, and safeguard the long-term stability of
-            operations in both the skies and beyond.
-          </p>
+        <div className="group relative mx-auto w-[90%] md:h-[300px] md:w-[420px]">
+          <div className="relative h-full w-full overflow-hidden rounded-3xl bg-[#0f0f0f] p-7 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
+            {/* Top-left corner glow */}
+            <div className="absolute -top-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
+
+            {/* Bottom-right corner glow */}
+            <div className="absolute -right-3 -bottom-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
+
+            <h5 className="text-h6 relative mb-4 text-center text-white">
+              Our Vision
+            </h5>
+            <p className="relative text-justify text-sm/4 font-[300] text-white/80">
+              We are dedicated to for to advancing in-space propulsion and
+              next-generation satellite technologies that power a sustainable
+              and efficient space economy. As the demand for space-based
+              intelligence grows, we deliver innovative solutions that enhance
+              satellite mobility, strengthen global connectivity through
+              space-enabled air traffic management, and safeguard the long-term
+              stability of operations in both the skies and beyond.
+            </p>
+          </div>
         </div>
-        <div className="mx-auto w-[90%] rounded-3xl bg-[#0f0f0f] p-7 ring-white/30 transition-all duration-300 hover:ring-[0.5px] md:h-[300] md:w-[420] md:p-9">
-          <h5 className="text-h6 mb-4 text-center text-white">Our Mission</h5>
-          <p className="text-justify text-sm/4 font-[300]">
-            Our mission is to advance space mobility and intelligence through
-            next-generation propulsion systems and real-time air traffic
-            management. By integrating AI-driven analytics with sustainable
-            engineering, we enable precise satellite maneuverability, optimize
-            aerospace operations, and expand global connectivity. Through these
-            innovations, we are building a resilient space economy that ensures
-            long-term stability, efficiency, and opportunity beyond Earth.
-          </p>
+        <div className="group relative mx-auto w-[90%] md:h-[300px] md:w-[420px]">
+          <div className="relative h-full w-full overflow-hidden rounded-3xl bg-[#0f0f0f] p-7 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
+            {/* Top-left corner glow */}
+            <div className="absolute -top-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-all duration-300 group-hover:opacity-100" />
+
+            {/* Bottom-right corner glow */}
+            <div className="absolute -right-3 -bottom-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
+
+            <h5 className="text-h6 relative mb-4 text-center text-white">
+              Our Vision
+            </h5>
+            <p className="relative text-justify text-sm/4 font-[300] text-white/80">
+              Our mission is to advance space mobility and intelligence through
+              next-generation propulsion systems and real-time air traffic
+              management. By integrating AI-driven analytics with sustainable
+              engineering, we enable precise satellite maneuverability, optimize
+              aerospace operations, and expand global connectivity. Through
+              these innovations, we are building a resilient space economy that
+              ensures long-term stability, efficiency, and opportunity beyond
+              Earth.
+            </p>
+          </div>
         </div>
       </div>
 

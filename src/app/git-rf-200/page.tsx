@@ -115,38 +115,53 @@ export default function page() {
             </div>
           </article>
           <article className="flex w-full flex-col gap-4 sm:flex-row md:w-auto">
-            <div className="flex h-auto w-full flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center sm:h-[415px] sm:w-[315px]">
-              <Image
-                src="/images/engineering/D2.svg"
-                alt="cip1"
-                height={80}
-                width={80}
-              />
-              <h5 className="text-primary mt-4 text-[18px] font-[400]">
-                Engineering Support
-              </h5>
-              <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
-                Although our systems are built on a unified architecture, we
-                recognize that each satellite builder has distinct requirements.
-                That's why we offer personalized engineering support to every
-                customer.
-              </p>
+            <div className="group relative flex h-auto w-full flex-col rounded-2xl bg-[#101010] text-center sm:h-[415px] sm:w-[315px]">
+              <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#0f0f0f] p-5 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
+                {/* Top-left corner glow */}
+                <div className="absolute -bottom-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-all duration-300 group-hover:opacity-100" />
+
+                {/* Bottom-right corner glow */}
+                <div className="absolute -top-3 -right-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+                <Image
+                  src="/images/engineering/D2.svg"
+                  alt="cip1"
+                  height={80}
+                  width={80}
+                />
+                <h5 className="text-primary mt-4 text-[18px] font-[400]">
+                  Engineering Support
+                </h5>
+                <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
+                  Although our systems are built on a unified architecture, we
+                  recognize that each satellite builder has distinct
+                  requirements. That's why we offer personalized engineering
+                  support to every customer.
+                </p>
+              </div>
             </div>
-            <div className="flex h-auto w-full flex-col items-center justify-center rounded-2xl bg-[#101010] p-5 text-center sm:h-[415px] sm:w-[315px]">
-              <Image
-                src="/images/engineering/D1.svg"
-                alt="cip1"
-                height={80}
-                width={80}
-              />
-              <h5 className="text-primary mt-4 text-[18px] font-[400]">
-                Mission Design
-              </h5>
-              <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
-                Whether it's orbit insertion, phasing, station keeping, debris
-                avoidance, life extension, momentum management, de-orbiting, or
-                all of the above, we're here to ensure your mission's success.
-              </p>
+            <div className="group relative flex h-auto w-full flex-col rounded-2xl bg-[#101010] text-center sm:h-[415px] sm:w-[315px]">
+              <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#0f0f0f] p-5 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
+                {/* Top-left corner glow */}
+                <div className="absolute -bottom-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-all duration-300 group-hover:opacity-100" />
+
+                {/* Bottom-right corner glow */}
+                <div className="absolute -top-3 -right-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+                <Image
+                  src="/images/engineering/D1.svg"
+                  alt="cip1"
+                  height={80}
+                  width={80}
+                />
+                <h5 className="text-primary mt-4 text-[18px] font-[400]">
+                  Mission Design
+                </h5>
+                <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
+                  Whether it's orbit insertion, phasing, station keeping, debris
+                  avoidance, life extension, momentum management, de-orbiting,
+                  or all of the above, we're here to ensure your mission's
+                  success.
+                </p>
+              </div>
             </div>
           </article>
         </section>
