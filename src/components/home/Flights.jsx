@@ -201,17 +201,6 @@ export default function Flights({ onTimelineUpdate }) {
   }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("api/routes");
-      const { airports, routes } = await res.json();
-      setAirports(airports);
-      setRoutes(routes);
-    };
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     const BREAKPOINT = 786;
 
     if (window.innerWidth < BREAKPOINT) {
