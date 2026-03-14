@@ -2,6 +2,7 @@ import { CTA } from "@/src/components/CTA";
 import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
+import V from "@/src/components/engineering/V";
 
 const cards = [
   {
@@ -94,7 +95,7 @@ export default function page() {
         </section>
 
         {/* Model */}
-
+        <V />
         {/* Support */}
         <section className="text-secondary mx-auto flex max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
           <article className="flex w-full flex-col justify-evenly gap-6 md:gap-0 lg:w-[30%]">

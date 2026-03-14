@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import indexBy from "index-array-by";
 import { csvParseRows } from "d3-dsv";
 import dynamic from "next/dynamic";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -162,6 +163,7 @@ export default function Flights({ onTimelineUpdate }) {
   const [routeLimit, setRouteLimit] = useState(0);
   const [isSmallDevice, setIsSmallDevice] = useState(false);
   const routeLimitRef = useRef(0);
+  const sputnikRef = useRef(null);
 
   useEffect(() => {
     Promise.all([
@@ -196,6 +198,17 @@ export default function Flights({ onTimelineUpdate }) {
       setAirports(airports);
       setRoutes(filteredRoutes);
     });
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("api/routes");
+      const { airports, routes } = await res.json();
+      setAirports(airports);
+      setRoutes(routes);
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -237,6 +250,16 @@ export default function Flights({ onTimelineUpdate }) {
 
     cameraRef.current = camera;
     sceneRef.current = scene;
+
+    const loader = new GLTFLoader();
+    loader.load("/sputnik.glb", (gltf) => {
+      const sputnik = gltf.scene;
+      sputnik.scale.set(3, 3, 3);
+      sputnik.position.set(-100, 50, 100);
+      sputnik.visible = true;
+      scene.add(sputnik);
+      sputnikRef.current = sputnik;
+    });
 
     setIsGlobeReady(true);
   };
