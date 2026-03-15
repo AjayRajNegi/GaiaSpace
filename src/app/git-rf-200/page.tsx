@@ -55,7 +55,6 @@ export default function page() {
             </p>
           </div>
         </section>
-
         {/* Cards */}
         <section className="text-secondary mx-auto max-w-7xl px-4 pt-10 md:px-6 md:pt-20">
           {/* Header */}
@@ -93,11 +92,13 @@ export default function page() {
             ))}
           </div>
         </section>
-
         {/* Model */}
-        <V />
+        <div className="sticky top-0 z-[3]">
+          <V />
+        </div>
+
         {/* Support */}
-        <section className="text-secondary mx-auto flex max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
+        <section className="text-secondary relative z-[99] mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
           <article className="flex w-full flex-col justify-evenly gap-6 md:gap-0 lg:w-[30%]">
             <div>
               <h4 className="text-h3 leading-9">
@@ -166,7 +167,6 @@ export default function page() {
             </div>
           </article>
         </section>
-
         {/* Get in touch section */}
         <section className="text-secondary mx-4 mt-10 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl bg-[#090b0e] p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
           <div className="text-h4 md:text-h2 leading-tight font-thin md:leading-14">

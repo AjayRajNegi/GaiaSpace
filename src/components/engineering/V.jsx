@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-const TOTAL_FRAMES = 265;
+const TOTAL_FRAMES = 257;
 
 //ffmpeg -i SV.mp4 -start_number 1 -r 15 -q:v 1 frames/frame_%04d.jpg
 
 export default function V() {
   const canvasRef = useRef(null);
+  const containerRef = useRef(null);
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -55,8 +56,9 @@ export default function V() {
       snap: "frame",
       ease: "none",
       scrollTrigger: {
-        start: "top top",
-        end: "3000px",
+        trigger: containerRef.current,
+        start: "top 50%",
+        end: "+=1000px",
         scrub: true,
       },
       onUpdate: render,
@@ -66,9 +68,9 @@ export default function V() {
     if (images[0].complete) render();
   }, [images]);
   return (
-    <div className="relative h-[3000px] w-full">
-      <div className="sticky top-[15vh] z-10 flex h-[50vh] items-center justify-center">
-        <canvas ref={canvasRef} className="aspect-video h-full" />
+    <div ref={containerRef} className="w-ful relative h-[2000px]">
+      <div className="sticky top-0 flex h-screen items-center justify-center bg-blue-500">
+        <canvas ref={canvasRef} className="aspect-video h-[50vh]" />
       </div>
     </div>
   );

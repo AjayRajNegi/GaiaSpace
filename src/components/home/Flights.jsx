@@ -243,14 +243,25 @@ export default function Flights({ onTimelineUpdate }) {
     const loader = new GLTFLoader();
     loader.load("/sputnik.glb", (gltf) => {
       const sputnik = gltf.scene;
-      sputnik.scale.set(3, 3, 3);
+      sputnik.scale.set(0.3, 0.3, 0.3);
       sputnik.position.set(-100, 50, 100);
+
+      sputnik.rotation.x = -Math.PI / 8;
+      sputnik.rotation.y = -Math.PI / 8;
+
       sputnik.visible = true;
       scene.add(sputnik);
       sputnikRef.current = sputnik;
     });
 
     setIsGlobeReady(true);
+    const animate = (time) => {
+      requestAnimationFrame(animate);
+      if (sputnikRef.current) {
+        sputnikRef.current.rotation.z += 0.005;
+      }
+    };
+    animate();
   };
 
   useGSAP(
@@ -337,23 +348,24 @@ export default function Flights({ onTimelineUpdate }) {
         },
       });
 
-      satelliteTimeline
-        .fromTo(".satellite", { opacity: 0 }, { opacity: 1 })
-        .to(
-          camera.position,
-          {
-            x: -100,
-            y: 90,
-            z: 200,
-            ease: "power1.inOut",
-          },
-          "<",
-        )
-        .to(".satellite", { opacity: 0 });
+      satelliteTimeline.fromTo(".satellite", { opacity: 0 }, { opacity: 1 }).to(
+        camera.position,
+        {
+          x: -100,
+          y: 90,
+          z: 200,
+          ease: "power1.inOut",
+        },
+        "<",
+      );
 
       /* ================= SCENE ROTATION ================= */
       const rotateScene = (time) => {
         scene.rotation.y = time * 0.2;
+
+        if (sputnikRef.current) {
+          sputnikRef.current.position.y = 50 + Math.sin(time * 1.2) * 8;
+        }
       };
 
       gsap.ticker.add(rotateScene);
