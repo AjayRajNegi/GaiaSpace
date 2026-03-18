@@ -348,16 +348,19 @@ export default function Flights({ onTimelineUpdate }) {
         },
       });
 
-      satelliteTimeline.fromTo(".satellite", { opacity: 0 }, { opacity: 1 }).to(
-        camera.position,
-        {
-          x: -100,
-          y: 90,
-          z: 200,
-          ease: "power1.inOut",
-        },
-        "<",
-      );
+      satelliteTimeline
+        .fromTo(".satellite", { opacity: 0 }, { opacity: 1 })
+        .to(
+          camera.position,
+          {
+            x: -100,
+            y: 90,
+            z: 200,
+            ease: "power1.inOut",
+          },
+          "<",
+        )
+        .to(".satellite", { opacity: 0 });
 
       /* ================= SCENE ROTATION ================= */
       const rotateScene = (time) => {

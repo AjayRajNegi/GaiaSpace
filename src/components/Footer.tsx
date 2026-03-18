@@ -33,25 +33,25 @@ export default function Footer() {
           </div>
           <div className="mt-4 flex w-full justify-center gap-2 md:mt-0 md:w-1/2 md:justify-end">
             <Image
-              src="/icon/TwitterIcon.png"
+              src="/icon/Youtube.png"
               alt="twitter"
               height={40}
               width={40}
             />
             <Image
-              src="/icon/TwitterIcon.png"
+              src="/icon/Instagram.png"
               alt="twitter"
               height={40}
               width={40}
             />
             <Image
-              src="/icon/TwitterIcon.png"
+              src="/icon/Facebook.png"
               alt="twitter"
               height={40}
               width={40}
             />
             <Image
-              src="/icon/TwitterIcon.png"
+              src="/icon/Linkedin.png"
               alt="twitter"
               height={40}
               width={40}

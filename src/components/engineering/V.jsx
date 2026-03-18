@@ -57,8 +57,8 @@ export default function V() {
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 50%",
-        end: "+=1000px",
+        start: "top top",
+        end: "+=1200px",
         scrub: true,
       },
       onUpdate: render,
@@ -68,8 +68,8 @@ export default function V() {
     if (images[0].complete) render();
   }, [images]);
   return (
-    <div ref={containerRef} className="w-ful relative h-[2000px]">
-      <div className="sticky top-0 flex h-screen items-center justify-center bg-blue-500">
+    <div ref={containerRef} className="w-ful relative h-[1200px]">
+      <div className="sticky top-0 flex h-screen items-center justify-center">
         <canvas ref={canvasRef} className="aspect-video h-[50vh]" />
       </div>
     </div>

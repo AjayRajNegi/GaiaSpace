@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Space_Grotesk } from "next/font/google";
-
 import { ReactLenis } from "lenis/react";
 
 const spaceGrotesk = Space_Grotesk({
@@ -25,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.className}>
       <body>
-        <ReactLenis root options={{ smoothWheel: true, lerp: 0.1 }} />
+        {/* <ReactLenis root options={{ smoothWheel: true, lerp: 0.1 }} /> */}
         {children}
         <SpeedInsights />
         <Analytics />

@@ -92,101 +92,104 @@ export default function page() {
             ))}
           </div>
         </section>
+
         {/* Model */}
-        <div className="sticky top-0 z-[3]">
+        <div className="sticky top-0 z-3">
           <V />
         </div>
 
         {/* Support */}
-        <section className="text-secondary relative z-[99] mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
-          <article className="flex w-full flex-col justify-evenly gap-6 md:gap-0 lg:w-[30%]">
-            <div>
-              <h4 className="text-h3 leading-9">
-                <span className="text-primary">Design,</span> Delivery and
-                <span className="text-primary"> Support</span>
-              </h4>
-              <h5 className="text-h5 mt-5 leading-6">
-                Mission & Engineering Excellence:
-              </h5>
+        <div className="bg-background z-99 mx-auto w-full">
+          <section className="text-secondary relative z-99 mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
+            <article className="flex w-full flex-col justify-evenly gap-6 md:gap-0 lg:w-[30%]">
+              <div>
+                <h4 className="text-h3 leading-9">
+                  <span className="text-primary">Design,</span> Delivery and
+                  <span className="text-primary"> Support</span>
+                </h4>
+                <h5 className="text-h5 mt-5 leading-6">
+                  Mission & Engineering Excellence:
+                </h5>
+              </div>
+              <div>
+                <p className="text-[#acacad]">
+                  Strategic design and expert support for optimized satellite
+                  performance.
+                </p>
+              </div>
+            </article>
+            <article className="flex w-full flex-col gap-4 sm:flex-row md:w-auto">
+              <div className="group relative flex h-auto w-full flex-col rounded-2xl bg-[#101010] text-center sm:h-[415px] sm:w-[315px]">
+                <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#0f0f0f] p-5 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
+                  {/* Top-left corner glow */}
+                  <div className="absolute -bottom-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-all duration-300 group-hover:opacity-100" />
+
+                  {/* Bottom-right corner glow */}
+                  <div className="absolute -top-3 -right-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+                  <Image
+                    src="/images/engineering/D2.svg"
+                    alt="cip1"
+                    height={80}
+                    width={80}
+                  />
+                  <h5 className="text-primary mt-4 text-[18px] font-[400]">
+                    Engineering Support
+                  </h5>
+                  <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
+                    Although our systems are built on a unified architecture, we
+                    recognize that each satellite builder has distinct
+                    requirements. That's why we offer personalized engineering
+                    support to every customer.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative flex h-auto w-full flex-col rounded-2xl bg-[#101010] text-center sm:h-[415px] sm:w-[315px]">
+                <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#0f0f0f] p-5 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
+                  {/* Top-left corner glow */}
+                  <div className="absolute -bottom-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-all duration-300 group-hover:opacity-100" />
+
+                  {/* Bottom-right corner glow */}
+                  <div className="absolute -top-3 -right-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+                  <Image
+                    src="/images/engineering/D1.svg"
+                    alt="cip1"
+                    height={80}
+                    width={80}
+                  />
+                  <h5 className="text-primary mt-4 text-[18px] font-[400]">
+                    Mission Design
+                  </h5>
+                  <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
+                    Whether it's orbit insertion, phasing, station keeping,
+                    debris avoidance, life extension, momentum management,
+                    de-orbiting, or all of the above, we're here to ensure your
+                    mission's success.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </section>
+          {/* Get in touch section */}
+          <section className="text-secondary mx-4 mt-10 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl bg-[#090b0e] p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
+            <div className="text-h4 md:text-h2 leading-tight font-thin md:leading-14">
+              <p>Want to know more ?</p>
+              <p>Reach out to us! </p>
             </div>
-            <div>
-              <p className="text-[#acacad]">
-                Strategic design and expert support for optimized satellite
-                performance.
+
+            <div className="w-full md:w-[50%]">
+              <p className="text-p leading-4">
+                Reach out to our team directly to understand the program, and
+                address your quires one on one.
               </p>
+
+              <button className="text-secondary mt-4 w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400]">
+                <span className="text-secondary flex w-full justify-center rounded bg-gray-900 p-2 px-10 py-2 text-base">
+                  Get In Touch
+                </span>
+              </button>
             </div>
-          </article>
-          <article className="flex w-full flex-col gap-4 sm:flex-row md:w-auto">
-            <div className="group relative flex h-auto w-full flex-col rounded-2xl bg-[#101010] text-center sm:h-[415px] sm:w-[315px]">
-              <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#0f0f0f] p-5 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
-                {/* Top-left corner glow */}
-                <div className="absolute -bottom-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-all duration-300 group-hover:opacity-100" />
-
-                {/* Bottom-right corner glow */}
-                <div className="absolute -top-3 -right-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
-                <Image
-                  src="/images/engineering/D2.svg"
-                  alt="cip1"
-                  height={80}
-                  width={80}
-                />
-                <h5 className="text-primary mt-4 text-[18px] font-[400]">
-                  Engineering Support
-                </h5>
-                <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
-                  Although our systems are built on a unified architecture, we
-                  recognize that each satellite builder has distinct
-                  requirements. That's why we offer personalized engineering
-                  support to every customer.
-                </p>
-              </div>
-            </div>
-            <div className="group relative flex h-auto w-full flex-col rounded-2xl bg-[#101010] text-center sm:h-[415px] sm:w-[315px]">
-              <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#0f0f0f] p-5 ring-white/30 transition-all duration-300 group-hover:ring-[0.5px] md:p-9">
-                {/* Top-left corner glow */}
-                <div className="absolute -bottom-3 -left-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-all duration-300 group-hover:opacity-100" />
-
-                {/* Bottom-right corner glow */}
-                <div className="absolute -top-3 -right-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
-                <Image
-                  src="/images/engineering/D1.svg"
-                  alt="cip1"
-                  height={80}
-                  width={80}
-                />
-                <h5 className="text-primary mt-4 text-[18px] font-[400]">
-                  Mission Design
-                </h5>
-                <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
-                  Whether it's orbit insertion, phasing, station keeping, debris
-                  avoidance, life extension, momentum management, de-orbiting,
-                  or all of the above, we're here to ensure your mission's
-                  success.
-                </p>
-              </div>
-            </div>
-          </article>
-        </section>
-        {/* Get in touch section */}
-        <section className="text-secondary mx-4 mt-10 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl bg-[#090b0e] p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
-          <div className="text-h4 md:text-h2 leading-tight font-thin md:leading-14">
-            <p>Want to know more ?</p>
-            <p>Reach out to us! </p>
-          </div>
-
-          <div className="w-full md:w-[50%]">
-            <p className="text-p leading-4">
-              Reach out to our team directly to understand the program, and
-              address your quires one on one.
-            </p>
-
-            <button className="text-secondary mt-4 w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400]">
-              <span className="text-secondary flex w-full justify-center rounded bg-gray-900 p-2 px-10 py-2 text-base">
-                Get In Touch
-              </span>
-            </button>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
       <CTA />
       <Footer />

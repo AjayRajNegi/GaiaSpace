@@ -36,7 +36,7 @@ export function Benefits() {
         <div className="grid w-full grid-cols-2 grid-rows-2 gap-2 md:w-1/2">
           {benefits.map((benefit, id) => (
             <div key={id}>
-              <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-[300] sm:text-[18px]">
+              <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-light sm:text-[18px]">
                 {benefit.title}
               </h4>
               <img
@@ -48,14 +48,14 @@ export function Benefits() {
         </div>
 
         {/* divider — horizontal on mobile, vertical on desktop */}
-        <div className="bg-secondary my-6 h-0.5 w-full flex-shrink-0 md:mx-6 md:my-0 md:h-[360px] md:w-0.5" />
+        <div className="bg-secondary my-6 h-0.5 w-full shrink-0 md:mx-6 md:my-0 md:h-[360px] md:w-0.5" />
 
         {/* right */}
         <div className="w-full md:ml-4 md:w-1/2">
-          <h3 className="text-secondary text-[28px] font-[400] sm:text-[34px] md:text-[40px]">
+          <h3 className="text-secondary text-[28px] font-normal sm:text-[34px] md:text-[40px]">
             Who are we?
           </h3>
-          <p className="text-secondary text-[14px] leading-[20px] font-[100] tracking-tighter sm:text-[16px] md:text-[18px] md:leading-[22px]">
+          <p className="text-secondary sm:text-p text-[14px] leading-[20px] font-thin tracking-tighter md:text-[18px] md:leading-[22px]">
             At GAIA SPACE, we see space not as a distant frontier, from
             next-generation in-space propulsion to real-time air traffic
             insights from orbit, we create technologies that keep satellites
@@ -67,11 +67,13 @@ export function Benefits() {
             insights from orbit, we create technologies that keep satellites
             moving efficiently, skies safer, and global networks more connected.
           </p>
-          <button className="mt-4 w-full">
-            <p className="text-secondary text-h6 border-secondary ml-auto w-fit rounded-sm border-[1] px-2 py-1">
-              Get In Touch
-            </p>
-          </button>
+          <div className="mt-4 flex w-full justify-end">
+            <div className="flex w-fit rounded-sm bg-linear-to-r from-[#9139a5] to-[#520f9a] p-[2px] shadow-lg">
+              <button className="text-h6 rounded-sm bg-black px-2 py-1 text-white">
+                Get In Touch
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -277,7 +277,7 @@ export default function Home() {
         </section>
 
         {/* Propulsion  & Roadmap*/}
-        <section className="relative z-[99] bg-black">
+        <section className="relative z-999 bg-black">
           {/* Propulsion */}
           <Propulsion />
           {/* Roadmap */}
