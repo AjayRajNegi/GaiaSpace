@@ -3,7 +3,7 @@ import Image from "next/image";
 export function CareersHero() {
   return (
     <section
-      className="relative mx-auto mt-10 flex h-[600px] max-w-[1500px] flex-col items-center justify-around bg-transparent px-4 pt-[20px] pb-20 text-[#cbcbcb] md:h-[80vh] md:min-h-[700px] md:pt-[70px] md:pb-0 lg:px-0"
+      className="relative mx-auto mt-10 flex h-[600px] max-w-[1500px] flex-col items-center justify-around overflow-hidden bg-transparent px-4 pt-[20px] pb-20 text-[#cbcbcb] md:h-[80vh] md:min-h-[700px] md:pt-[70px] md:pb-0 lg:px-0"
       style={{
         backgroundImage: `url(/images/careersMain.png)`,
         backgroundSize: "contain",
@@ -30,7 +30,7 @@ export function CareersHero() {
         <span className="text-primary">Internship</span> and Co-Op
       </h5>
 
-      <div className="">
+      <div className="overflow-hidden">
         <Image
           src="/images/home/satellite.avif"
           alt="satellite"
