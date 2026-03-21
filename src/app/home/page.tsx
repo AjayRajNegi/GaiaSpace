@@ -181,11 +181,11 @@ export default function Home() {
         </div>
 
         {/* Satellites */}
-        <div className="satellite fixed top-[30%] left-1/2 z-40 w-[1300] -translate-x-1/2 opacity-0">
-          <p className="text-h5 text-primary">
+        <div className="satellite l:px-0 fixed top-[20%] left-1/2 z-40 w-full -translate-x-1/2 px-4 opacity-0 lg:top-[30%] lg:w-[1300]">
+          <p className="text-p lg:text-h5 text-primary">
             Meet our satellite constellation ATLAS !
           </p>
-          <h2 className="text-h2 text-secondary mt-6 leading-14 font-medium">
+          <h2 className="text-h4 lg:text-h2 text-secondary mt-4 leading-9 font-medium lg:mt-6 lg:leading-14">
             Space-powered intelligence <br /> for tomorrow&apos;s airspace.
           </h2>
           {/* Accordian */}
@@ -197,10 +197,10 @@ export default function Home() {
               defaultValue="item-1"
             >
               <AccordionItem value="item-1" className="pb-3">
-                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-normal">
+                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-4 font-normal">
                   Global, uninterrupted airspace activity tracking
                 </AccordionTrigger>
-                <AccordionContent className="text-p flex w-[50%] flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa]">
+                <AccordionContent className="text-p flex flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa] md:w-[50%]">
                   <p>
                     ATLAS ensures the skies are always visible. With worldwide
                     coverage that reaches oceans, polar regions, and the most
@@ -215,7 +215,7 @@ export default function Home() {
                 <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-thin">
                   Safer airspace operation
                 </AccordionTrigger>
-                <AccordionContent className="text-p flex w-[50%] flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa]">
+                <AccordionContent className="text-p flex flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa] md:w-[50%]">
                   <p>
                     ATLAS enhances the safety of global aviation by providing
                     continuous, real-time awareness of aircraft movements. By
@@ -231,7 +231,7 @@ export default function Home() {
                 <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-normal">
                   Economic & Efficiency Benefits
                 </AccordionTrigger>
-                <AccordionContent className="text-p flex w-[50%] flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa]">
+                <AccordionContent className="text-p flex flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa] md:w-[50%]">
                   <p>
                     ATLAS drives economic and operational efficiency by enabling
                     more direct flight routes, reducing delays, and lowering

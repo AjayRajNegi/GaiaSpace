@@ -353,9 +353,9 @@ export default function Flights({ onTimelineUpdate }) {
         .to(
           camera.position,
           {
-            x: -100,
-            y: 90,
-            z: 200,
+            x: isSmallDevice ? 0 : -100,
+            y: isSmallDevice ? 100 : 90,
+            z: isSmallDevice ? 400 : 200,
             ease: "power1.inOut",
           },
           "<",
