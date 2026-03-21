@@ -224,8 +224,6 @@ export default function Flights({ onTimelineUpdate }) {
     camera.near = 0.1;
     camera.far = 10000;
 
-    console.log(isSmallDevice);
-
     isSmallDevice
       ? camera.position.set(0, 110, 350)
       : camera.position.set(0, 110, 150);

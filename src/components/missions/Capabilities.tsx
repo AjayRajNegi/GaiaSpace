@@ -35,7 +35,7 @@ export default function Capabilities() {
       <div className="mt-8 grid grid-cols-2 grid-rows-3 gap-2 md:grid-cols-3">
         {cards.map((card, id) => (
           <div
-            className="border-secondary col-span-1 flex flex-col items-center justify-center rounded-sm border-[0.5px] py-4"
+            className="border-secondary col-span-1 flex flex-col items-center justify-center rounded-sm border-[0.5px] py-4 text-center"
             key={id}
           >
             <Image src={card.src} alt="Card" height={60} width={60} />

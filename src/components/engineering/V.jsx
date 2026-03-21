@@ -13,6 +13,15 @@ export default function V() {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [images, setImages] = useState([]);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+  useEffect(() => {
+    const BREAKPOINT = 786;
+
+    if (window.innerWidth < BREAKPOINT) {
+      setIsSmallDevice(true);
+    }
+  }, []);
 
   useEffect(() => {
     const frameImages = [];
@@ -57,8 +66,8 @@ export default function V() {
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
-        end: "+=1200px",
+        start: isSmallDevice ? "top 50%" : "top 30%",
+        end: "+=1500px",
         scrub: true,
       },
       onUpdate: render,
@@ -68,9 +77,12 @@ export default function V() {
     if (images[0].complete) render();
   }, [images]);
   return (
-    <div ref={containerRef} className="w-ful relative h-[1200px]">
-      <div className="sticky top-0 flex h-screen items-center justify-center">
-        <canvas ref={canvasRef} className="aspect-video h-[50vh]" />
+    <div ref={containerRef} className="w-ful relative h-[2000px]">
+      <div className="sticky top-0 flex h-screen items-center justify-center md:top-0">
+        <canvas
+          ref={canvasRef}
+          className="aspect-video max-h-[500px] w-full md:h-[50vh] md:w-auto"
+        />
       </div>
     </div>
   );

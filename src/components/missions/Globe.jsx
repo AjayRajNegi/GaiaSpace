@@ -80,6 +80,7 @@ export default function Basic() {
   const [airports, setAirports] = useState([]);
   const [routes, setRoutes] = useState([]);
   const [isGlobeReady, setIsGlobeReady] = useState(false);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -116,6 +117,14 @@ export default function Basic() {
     });
   }, []);
 
+  useEffect(() => {
+    const BREAKPOINT = 786;
+
+    if (window.innerWidth < BREAKPOINT) {
+      setIsSmallDevice(true);
+    }
+  }, []);
+
   const handleGlobeReady = () => {
     if (!globeEl.current) return;
 
@@ -126,7 +135,10 @@ export default function Basic() {
     camera.fov = 30;
     camera.near = 0.1;
     camera.far = 10000;
-    camera.position.set(0, 110, 150);
+
+    isSmallDevice
+      ? camera.position.set(0, 110, 350)
+      : camera.position.set(0, 110, 150);
     const lookAtPoint = camera.position.clone();
     lookAtPoint.z -= 100;
     camera.lookAt(lookAtPoint);
