@@ -119,26 +119,28 @@ export default function Home() {
         {/* =========== Absolute Components Blocks =========== */}
 
         {/* Phase 2 — Flight Timeline */}
-        <div className="phase-2 text-secondary pointer-events-none fixed top-[70%] left-1/2 z-40 w-[min(1200px,90vw)] -translate-x-1/2 -translate-y-1/2 opacity-0">
+        <div className="phase-2 text-secondary pointer-events-none fixed top-[60%] left-1/2 z-40 w-[min(1200px,90vw)] -translate-x-1/2 -translate-y-1/2 opacity-0 md:top-[70%]">
           {/* Top row: passenger + flight counts */}
-          <div className="flex items-start justify-between">
-            <div>
-              <p className="text-h2 tabular-nums transition-all duration-300">
+          <div className="flex flex-col items-center gap-[40vw] md:flex-row md:items-start md:justify-between md:gap-0">
+            <div className="text-center md:text-start">
+              <p className="text-h4 md:text-h2 tabular-nums transition-all duration-300">
                 {timelineData[timelineIndex].passengers}
               </p>
-              <p className="text-h5 text-primary">Passengers Annually</p>
+              <p className="text-p md:text-h5 text-primary">
+                Passengers Annually
+              </p>
             </div>
-            <div className="text-end">
-              <p className="text-h2 tabular-nums transition-all duration-300">
+            <div className="text-center md:text-end">
+              <p className="text-h4 md:text-h2 tabular-nums transition-all duration-300">
                 {timelineData[timelineIndex].flights}
               </p>
-              <p className="text-h5 text-primary">Flights Annually</p>
+              <p className="text-p md:text-h5 text-primary">Flights Annually</p>
             </div>
           </div>
 
           {/* Timeline slider */}
-          <div className="mt-[100px]">
-            <div className="relative mx-auto w-[800px]">
+          <div className="mt-5 md:mt-[100px]">
+            <div className="relative mx-auto max-w-[90vw] md:w-[800px]">
               {/* Track */}
               <div className="relative h-[2px] w-full rounded-full bg-white/20">
                 <div
@@ -159,7 +161,7 @@ export default function Home() {
               </div>
 
               {/* Year labels */}
-              <div className="mt-3 flex justify-between">
+              <div className="mt-3 flex max-w-[100vh] justify-between">
                 {timelineData.map((d, i) => (
                   <span
                     key={d.year}
@@ -172,7 +174,7 @@ export default function Home() {
             </div>
 
             {/* Descriptor */}
-            <p className="text-h5 text-secondary mt-6 text-center transition-all duration-300">
+            <p className="text-p md:text-h5 text-secondary mt-6 text-center transition-all duration-300">
               {timelineData[timelineIndex].label}
             </p>
           </div>
@@ -195,10 +197,10 @@ export default function Home() {
               defaultValue="item-1"
             >
               <AccordionItem value="item-1" className="pb-3">
-                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-[400]">
+                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-normal">
                   Global, uninterrupted airspace activity tracking
                 </AccordionTrigger>
-                <AccordionContent className="flex w-[50%] flex-col gap-4 px-4 text-[16px] leading-4.5 font-[400] text-[#aaaaaa]">
+                <AccordionContent className="text-p flex w-[50%] flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa]">
                   <p>
                     ATLAS ensures the skies are always visible. With worldwide
                     coverage that reaches oceans, polar regions, and the most
@@ -213,7 +215,7 @@ export default function Home() {
                 <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-thin">
                   Safer airspace operation
                 </AccordionTrigger>
-                <AccordionContent className="flex w-[50%] flex-col gap-4 px-4 text-[16px] leading-4.5 font-[400] text-[#aaaaaa]">
+                <AccordionContent className="text-p flex w-[50%] flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa]">
                   <p>
                     ATLAS enhances the safety of global aviation by providing
                     continuous, real-time awareness of aircraft movements. By
@@ -226,10 +228,10 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="pb-5">
-                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-[400]">
+                <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-3 border-l-[#555555] pb-2 pl-3 text-lg leading-2 font-normal">
                   Economic & Efficiency Benefits
                 </AccordionTrigger>
-                <AccordionContent className="flex w-[50%] flex-col gap-4 px-4 text-[16px] leading-4.5 font-[400] text-[#aaaaaa]">
+                <AccordionContent className="text-p flex w-[50%] flex-col gap-4 px-4 leading-4.5 font-normal text-[#aaaaaa]">
                   <p>
                     ATLAS drives economic and operational efficiency by enabling
                     more direct flight routes, reducing delays, and lowering
@@ -248,12 +250,12 @@ export default function Home() {
         {/* =========== Screens =========== */}
 
         {/* Main */}
-        <section className="hero_pin relative h-[100vh] overflow-hidden pt-0">
+        <section className="hero_pin relative h-screen overflow-hidden pt-0">
           <div className="content absolute top-[40%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
-            <h1 className="text-secondary text-h1 text-shadown-lg leading-0 tracking-tight">
+            <h1 className="text-secondary md:text-h1 text-shadown-lg text-[40px] leading-10 tracking-tight md:leading-0">
               PROPELLING TO THE BEYOND
             </h1>
-            <p className="text-primary text-h6 text-shadown-lg pt-3 font-[300]">
+            <p className="text-primary md:text-h6 text-shadown-lg text-p pt-3 leading-5 font-light">
               Together, we can shape a stronger, more adaptable space.
             </p>
             {/* <button className="cta_btn">Get started.</button> */}
