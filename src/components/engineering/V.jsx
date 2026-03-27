@@ -81,7 +81,8 @@ export default function V() {
       <div className="sticky top-0 flex h-screen items-center justify-center md:top-0">
         <canvas
           ref={canvasRef}
-          className="aspect-video max-h-[500px] w-full md:h-[50vh] md:w-auto"
+          // className="aspect-video max-h-[500px] w-full md:h-[50vh] md:w-auto"
+          className="aspect-video max-h-[500px] w-[70vw] bg-red-300"
         />
       </div>
     </div>
