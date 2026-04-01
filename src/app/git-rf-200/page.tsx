@@ -3,6 +3,7 @@ import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 import V from "@/src/components/engineering/V";
+import EngineSpecs2 from "@/src/components/engineering/EngineSpecs2";
 
 const cards = [
   {
@@ -32,7 +33,7 @@ export default function page() {
 
       <main className="bg-background">
         {/* Intro Section */}
-        <section className="text-secondary mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-[300] md:my-20 md:px-6 md:pt-20">
+        <section className="text-secondary mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-light md:my-20 md:px-6 md:pt-20">
           <div>
             <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
               GIT-RF-200
@@ -93,9 +94,9 @@ export default function page() {
           </div>
         </section>
         {/* Model */}
-        <div className="sticky top-0 z-3">
-          <V />
-        </div>
+        {/* <div className="sticky top-0 z-3"> */}
+        <EngineSpecs2 />
+        {/* </div> */}
         {/* Support */}
         <div className="bg-background relative z-99 mx-auto w-full">
           <section className="text-secondary relative z-99 mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 bg-black px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
@@ -130,7 +131,7 @@ export default function page() {
                     height={80}
                     width={80}
                   />
-                  <h5 className="text-primary mt-4 text-[18px] font-[400]">
+                  <h5 className="text-primary mt-4 text-[18px] font-normal">
                     Engineering Support
                   </h5>
                   <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">

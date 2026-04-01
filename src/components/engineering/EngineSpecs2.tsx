@@ -9,8 +9,9 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 
-export default function EngineSpecs() {
-  const [toggleSpecs, setToggleSpecs] = useState(true);
+export default function EngineSpecs2() {
+  const [activeTab, setActiveTab] = useState("overview");
+
   return (
     <>
       <section className="text-secondary px-4 md:px-6">
@@ -21,8 +22,7 @@ export default function EngineSpecs() {
             <span className="text-primary"> Combustion</span>
           </h1>
           <p className="text-p text-center leading-5 tracking-tight text-[#acacad] md:text-[18px]">
-            Engineering Hybrid Propulsion Propulsion Solutions for
-            Tomorrow&apos;s Missions
+            Engineering Hybrid Propulsion Solutions for Tomorrow&apos;s Missions
           </p>
           <h6 className="mt-10 text-[18px] text-[600] md:mt-14">
             Engine Specification
@@ -46,17 +46,24 @@ export default function EngineSpecs() {
             {/* Toggle Buttons */}
             <div className="text-p mb-6 flex items-center gap-4 md:mb-10 md:text-[18px]">
               <button
-                onClick={() => setToggleSpecs(true)}
-                className={toggleSpecs ? "text-primary" : ""}
+                onClick={() => setActiveTab("overview")}
+                className={activeTab === "overview" ? "text-primary" : ""}
               >
                 Overview
               </button>
               <div className="bg-secondary h-4.5 w-[2px]" />
               <button
-                onClick={() => setToggleSpecs(false)}
-                className={toggleSpecs ? "" : "text-primary"}
+                onClick={() => setActiveTab("technical")}
+                className={activeTab === "technical" ? "text-primary" : ""}
               >
                 Technical Specification
+              </button>
+              <div className="bg-secondary h-4.5 w-[2px]" />
+              <button
+                onClick={() => setActiveTab("structural")}
+                className={activeTab === "structural" ? "text-primary" : ""}
+              >
+                Structural & System Design
               </button>
             </div>
 
@@ -64,7 +71,7 @@ export default function EngineSpecs() {
               {/* Overview panel */}
               <div
                 className={`absolute inset-0 flex flex-col justify-evenly transition-opacity duration-500 ${
-                  toggleSpecs
+                  activeTab === "overview"
                     ? "pointer-events-auto opacity-100"
                     : "pointer-events-none opacity-0"
                 }`}
@@ -85,7 +92,7 @@ export default function EngineSpecs() {
                   </div>
                   <div>
                     <h6 className="text-primary text-[17px] font-normal md:text-[18px]">
-                      Adapdibility
+                      Adaptability
                     </h6>
                     <p className="md:text-p text-[15px] text-[#d5d5d5] md:mt-3">
                       Easy changeover to different casings and sounding launch
@@ -93,7 +100,7 @@ export default function EngineSpecs() {
                     </p>
                   </div>
                   <div className="mt-2 sm:col-span-2 md:mt-4">
-                    <h6 className="text-primary font- [400] text-[17px] md:text-[18px]">
+                    <h6 className="text-primary text-[17px] font-normal md:text-[18px]">
                       Lower Cost & Fewer Parts
                     </h6>
                     <p className="md:text-p text-[15px] text-[#d5d5d5] md:mt-3">
@@ -108,9 +115,9 @@ export default function EngineSpecs() {
               {/* Technical Specification panel */}
               <div
                 className={`absolute inset-0 overflow-y-auto transition-opacity duration-500 ${
-                  toggleSpecs
-                    ? "pointer-events-none opacity-0"
-                    : "pointer-events-auto opacity-100"
+                  activeTab === "technical"
+                    ? "pointer-events-auto opacity-100"
+                    : "pointer-events-none opacity-0"
                 }`}
               >
                 <Accordion
@@ -121,7 +128,7 @@ export default function EngineSpecs() {
                 >
                   <AccordionItem value="item-1" className="pb-5">
                     <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary mb-2 border-l-2 pb-2 pl-3 text-base leading-snug font-thin md:text-lg">
-                      Advancing Core Propulsion Techonologies
+                      Advancing Core Propulsion Technologies
                     </AccordionTrigger>
                     <AccordionContent className="text-secondary flex flex-col gap-4 text-sm font-light text-balance">
                       <p>
@@ -133,7 +140,7 @@ export default function EngineSpecs() {
                         reducing propellant mass. Leveraging non-toxic,
                         high-performance propellants to minimise environmental
                         impact, simplify ground handling, and enhance mission
-                        flexibility
+                        flexibility.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -172,6 +179,84 @@ export default function EngineSpecs() {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
+              </div>
+
+              {/* Structural & System Design panel */}
+              <div
+                className={`absolute inset-0 overflow-y-auto transition-opacity duration-500 ${
+                  activeTab === "structural"
+                    ? "pointer-events-auto opacity-100"
+                    : "pointer-events-none opacity-0"
+                }`}
+              >
+                <p className="md:text-p text-[15px] text-[#d5d5d5]">
+                  Built for efficiency and scalability, our GIT RF thrusters
+                  maximize propulsion performance while minimizing manufacturing
+                  complexity.
+                </p>
+
+                <ul className="mt-4 flex flex-col gap-2 text-[14px] text-[#d5d5d5] md:text-[15px]">
+                  {[
+                    "Cathode-less architecture (no hollow cathode required)",
+                    "Reduced internal erosion due to RF plasma generation",
+                    "Modular grid and coil assembly for scalability",
+                    "Compact cylindrical chamber for integration efficiency",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#acacad]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6">
+                  <h6 className="text-primary text-p font-normal md:text-[17px]">
+                    RF System Architecture
+                  </h6>
+                  <div className="mt-3 flex flex-col gap-1.5 text-[14px] md:text-[15px]">
+                    <p>
+                      <span className="text-[#acacad]">RF Coil: </span>
+                      <span className="font-normal text-[#d5d5d5]">
+                        External inductive coil sized for plasma coupling
+                      </span>
+                    </p>
+                    <p>
+                      <span className="text-[#acacad]">
+                        RF Power Coupling:{" "}
+                      </span>
+                      <span className="font-normal text-[#d5d5d5]">
+                        Tuned for efficient ionization rate
+                      </span>
+                    </p>
+                    <p>
+                      <span className="text-[#acacad]">
+                        Operating Frequency:{" "}
+                      </span>
+                      <span className="font-normal text-[#d5d5d5]">
+                        13.56 MHz
+                      </span>
+                    </p>
+                    <p>
+                      <span className="text-[#acacad]">
+                        RF Sheath Control:{" "}
+                      </span>
+                      <span className="font-normal text-[#d5d5d5]">
+                        Managed at chamber boundaries for stability
+                      </span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <h6 className="text-primary text-p font-normal md:text-[17px]">
+                    Propellant Compatibility
+                  </h6>
+                  <p className="mt-3 text-[14px] text-[#acacad] md:text-[15px]">
+                    Our system supports a range of noble gas propellants,
+                    including xenon and krypton, enabling flexibility in mission
+                    cost and performance optimization.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
