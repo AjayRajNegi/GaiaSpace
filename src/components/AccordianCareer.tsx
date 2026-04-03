@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface Data {
   title?: string | undefined;
@@ -160,7 +161,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
   return (
     <div className="accordionItem px-auto p-3 pb-0 md:p-6">
-      <h2 className="text-primary flex items-center gap-6 pb-2 text-xl text-[18px] font-[500]">
+      <h2 className="text-primary flex items-center gap-6 pb-2 text-xl text-[18px] font-medium">
         {title}
         {/* <motion.img
           alt="Arrow"
@@ -172,7 +173,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         /> */}
       </h2>
       {desc && (
-        <span className="text-[13px] leading-4 font-[300] text-[#d5d5d5]">
+        <span className="text-[13px] leading-4 font-light text-[#d5d5d5]">
           {desc}
         </span>
       )}
@@ -214,7 +215,7 @@ export const AccordianCareer = () => {
   };
 
   return (
-    <section className="bg-[#030709]bg-[#030709] relative z-20 mx-4 -mt-[200px] max-w-6xl rounded-2xl border-[0.5px] border-[#26292c] bg-black md:rounded-[30px] lg:mx-auto">
+    <section className="bg-[#030709]bg-[#030709] relative z-20 mx-4 -mt-[200px] max-w-[1000px] rounded-2xl border-[0.5px] border-[#26292c] bg-black md:rounded-[30px] lg:mx-auto xl:max-w-6xl">
       {data.map((item, index) => (
         <AccordionItem
           key={item.title}
@@ -257,7 +258,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
           transition={{ duration: 0.7, type: "spring" }}
         />
       </h3>
-      <span className="text-[13px] font-[300] text-[#d5d5d5]">{desc}</span>
+      <span className="text-[13px] font-light text-[#d5d5d5]">{desc}</span>
       {/* <hr
         style={{ marginTop: "10px" }}
         className="border-[0.2px] border-gray-500"
@@ -288,15 +289,18 @@ const MenuItem: React.FC<MenuItemProps> = ({
                     {subItem.tags?.map((item, id) => (
                       <div
                         key={id}
-                        className="w-fit rounded-full bg-[#1b1b1a] px-4 py-2.5 text-[14px] font-[300] text-[#d5d5d5]"
+                        className="w-fit rounded-full bg-[#1b1b1a] px-4 py-2.5 text-[14px] font-light text-[#d5d5d5]"
                       >
                         {item}
                       </div>
                     ))}
                   </div>
-                  <button className="w-fit rounded-lg border-[1px] border-[#26292c] bg-black px-5 py-2">
+                  <Link
+                    href="/contact"
+                    className="w-fit rounded-lg border border-[#26292c] bg-black px-5 py-2"
+                  >
                     Apply
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -45,7 +45,7 @@ export default function TrainingPrograms() {
         </section>
 
         {/* About */}
-        <section className="mx-auto max-w-7xl px-4 font-thin lg:px-0">
+        <section className="mx-auto max-w-7xl px-4 font-thin xl:px-0">
           <h4 className="text-h4 mx-auto mb-10 w-fit">
             About the Training Program
           </h4>
@@ -87,12 +87,12 @@ export default function TrainingPrograms() {
         </section>
 
         {/* Reviews */}
-        <section className="mx-auto mt-40 max-w-7xl px-4 font-thin lg:px-0">
+        <section className="mx-auto mt-40 max-w-7xl px-4 font-thin xl:px-0">
           {/* Header */}
           <h4 className="text-h4 mx-auto w-fit text-center md:text-left">
             Our Previous Training Session
           </h4>
-          <h5 className="my-10 w-full text-[20px] md:w-[45%] md:text-[22px]">
+          <h5 className="text-h6 my-10 w-full md:w-[45%] md:text-[22px]">
             Engineering{" "}
             <span className="text-primary">
               Tomorrow&apos;s Space Scientists
@@ -104,7 +104,7 @@ export default function TrainingPrograms() {
           <h5 className="text-h6 md:text-h5 mx-auto mt-15 w-fit">
             Hear it from our students
           </h5>
-          <div className="mx-auto mt-10 grid min-h-[260px] max-w-5xl grid-cols-1 items-stretch gap-10 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid min-h-[260px] max-w-5xl grid-cols-1 items-stretch gap-10 md:grid-cols-2 lg:grid-cols-3">
             {card.map((card, id) => (
               <div
                 key={id}
@@ -112,7 +112,7 @@ export default function TrainingPrograms() {
               >
                 <Image src="/icon/apst.png" alt="apst" height={40} width={40} />
                 <p className="p-4 text-sm tracking-tight">{card.review}</p>
-                <div className="p-4 text-sm tracking-tight text-[#585858] transition-all duration-300 group-hover:text-[16px]">
+                <div className="group-hover:text-p p-4 text-sm tracking-tight text-[#585858] transition-all duration-300">
                   <p>{card.name}</p>
                   <p>{card.company}</p>
                 </div>
@@ -123,7 +123,7 @@ export default function TrainingPrograms() {
 
         {/* Last */}
         <section
-          className="mx-auto my-20 max-w-[1600px] bg-cover bg-center px-4 font-thin md:my-32 lg:my-30 lg:px-0"
+          className="mx-auto max-w-[1600px] bg-cover bg-center px-4 font-thin lg:px-0 xl:my-30"
           style={{
             backgroundImage: `url("/images/training/ElevateDiscovery.png")`,
           }}
@@ -150,7 +150,7 @@ export default function TrainingPrograms() {
                 program, and address your queries one on one.
               </p>
 
-              <button className="flex w-full items-center justify-center gap-2 rounded bg-gradient-to-r from-purple-700 to-teal-400 px-4 py-2 text-base transition hover:opacity-90 md:text-lg">
+              <button className="flex w-full items-center justify-center gap-2 rounded bg-linear-to-r from-purple-700 to-teal-400 px-4 py-2 text-base transition hover:opacity-90 md:text-lg">
                 Reach Out
               </button>
             </div>
