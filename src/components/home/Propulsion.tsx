@@ -4,33 +4,38 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const cards = [
   {
     title: "Electric Propulsion",
     imageSrc: "/images/home/GIT-RF.avif",
     description: "GIT-RF",
+    href: "/git-rf-200",
   },
   {
     title: "High Performance Green Propulsion",
     imageSrc: "/images/home/HPGP.avif",
     description: "HPGP",
+    href: "",
   },
   {
     title: "Hybrid Propulsion",
     imageSrc: "/images/home/HyRocEn.avif",
     description: "HyRocEn",
+    href: "/hy-rocen",
   },
   {
     title: "Liquid Propulsion",
     imageSrc: "/images/home/VAC-LP.avif",
     description: "VAC-LP",
+    href: "",
   },
 ];
 
 export function Propulsion() {
   return (
-    <div className="mx-auto flex flex-col justify-between px-4 pt-20 lg:max-h-[600px] lg:max-w-7xl lg:flex-row xl:px-0">
+    <div className="mx-auto flex flex-col justify-between px-4 pt-20 lg:h-[600px] lg:max-h-[600px] lg:max-w-7xl lg:flex-row xl:px-0">
       {/* Left */}
       <div className="w-full lg:w-1/2">
         <h3 className="text-h4 text-secondary leading-10 font-thin md:w-[90%] lg:w-[70%]">
@@ -101,11 +106,11 @@ export function Propulsion() {
       </div>
 
       {/* Right — card grid */}
-      <div className="mt-8 grid grid-cols-2 gap-3 md:mt-0 md:grid-cols-4 md:grid-rows-2 md:gap-2.5 lg:max-h-[410px] lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-2 grid-rows-2 gap-3 md:mt-0 md:grid-cols-4 md:grid-rows-1 md:gap-2.5 lg:w-1/2 lg:grid-cols-2 lg:grid-rows-2">
         {cards.map((card, id) => (
           <div
             key={id}
-            className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-[200px] lg:w-[250px]"
+            className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-auto lg:w-auto"
           >
             <h6 className="text-secondary text-xs font-light">{card.title}</h6>
             <div className="mx-auto w-fit">
@@ -118,9 +123,12 @@ export function Propulsion() {
               </p>
             </div>
             <p className="text-secondary flex items-end pr-2 text-sm font-light">
-              <button className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700">
+              <Link
+                href={card.href}
+                className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700"
+              >
                 Know more
-              </button>
+              </Link>
             </p>
           </div>
         ))}

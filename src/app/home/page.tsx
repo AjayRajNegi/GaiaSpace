@@ -17,6 +17,7 @@ import {
 import { useState, useRef, useEffect } from "react";
 import BackgroundCanvas from "@/src/components/BackgroundCanvas";
 import Image from "next/image";
+import TransitionLinks from "@/src/components/TransitionLinks";
 
 export default function Home() {
   const timelineData = [
@@ -398,6 +399,34 @@ export default function Home() {
             <button className="font- mt-10 rounded-[10px] border-[0.5] border-white/60 px-30 py-2 text-lg text-white">
               Read More
             </button>
+          </section>
+
+          {/* Get in touch section */}
+          <section className="mx-auto mt-20 flex w-[70%] max-w-6xl flex-col items-center gap-8 border border-gray-800 bg-gray-950 p-6 text-center text-[22px] font-thin tracking-tight text-[#cbcbcb] sm:p-8 sm:text-[28px] md:w-full md:flex-row md:justify-around md:gap-0 md:p-10">
+            <div className="flex md:w-1/2 md:max-w-1/2">
+              <p className="text-center md:text-left">
+                Curious what we can <br className="block md:hidden" /> do for
+                you?
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px w-full rounded-2xl bg-[#666666] md:h-auto md:w-0.5 md:self-stretch" />
+
+            <div className="flex flex-col items-center md:w-1/2 md:max-w-1/2">
+              <p className="text-center text-sm">
+                Reach out to our team directly and address <br /> your quires
+                one on one.
+              </p>
+
+              <TransitionLinks
+                prefetch
+                href="/contact"
+                className="text-p mt-2 flex items-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 px-6 py-0.5 tracking-tight"
+              >
+                <span>Contact Us</span>
+              </TransitionLinks>
+            </div>
           </section>
           {/* CTA */}
           <CTA />
