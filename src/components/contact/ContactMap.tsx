@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function ContactMap() {
   const [location, setLocation] = useState("office");
   return (
-    <div className="overflow-clip px-4 lg:px-0">
+    <div className="overflow-clip px-4 xl:px-0">
       <section className="text-secondary mx-auto max-w-7xl font-thin">
         {/* Header */}
         <h3 className="text-h4 md:text-h3 text-center">

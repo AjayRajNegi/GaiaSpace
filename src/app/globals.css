@@ -167,7 +167,7 @@ svg text.dot {
   .underlineAnimationLinks {
     display: block;
     position: relative;
-    padding: 0.2em 0;
+    padding: 0 0;
     overflow: hidden;
   }
 

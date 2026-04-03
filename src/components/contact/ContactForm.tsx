@@ -279,7 +279,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-background flex min-h-screen items-center justify-center p-6">
+    <div className="bg-background flex items-center justify-center p-6 pb-0">
       <div className="w-full max-w-7xl rounded-2xl border border-[#1e2128] bg-[#03070a] p-8 font-thin shadow-2xl md:p-12">
         {/* Header */}
         <div className="mb-10 text-center">
