@@ -1,15 +1,15 @@
 export function AboutHero() {
   return (
-    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[80px] text-[#cbcbcb] lg:px-0 lg:pt-[140px]">
+    <section className="grad mx-auto flex max-w-7xl flex-col items-center px-4 pt-[80px] text-[#cbcbcb] lg:pt-[140px]">
       {/* Header and Information */}
-      <h1 className="text-h6 md:text-h2 my-5 mt-10 font-[400] tracking-tight text-white md:my-0 md:font-[300]">
+      <h1 className="text-h6 md:text-h4 lg:text-h2 my-5 mt-10 font-normal tracking-tight text-white md:my-0 md:font-light">
         Building A{" "}
         <span className="text-primary">Sustainable Space Economy</span>
       </h1>
-      <h5 className="my-5 text-[22px] font-[100] tracking-tight text-white">
+      <h5 className="my-5 text-[22px] font-thin tracking-tight text-white">
         About Us
       </h5>
-      <p className="max-w-5xl text-justify text-sm leading-4 font-[300] tracking-tighter">
+      <p className="max-w-[1120px] text-justify text-sm leading-4 font-light tracking-tighter">
         Incorporated in the INDIA in 2024, GAIA SPACE is at the forefront of
         advancing sustainable space technologies. Our journey began with
         pioneering research in efficient propulsion systems, laying the
@@ -21,7 +21,7 @@ export function AboutHero() {
         Intelligence, advanced propulsion, and data driven insights to shape a
         safer and more efficient future.
       </p>
-      <p className="my-10 text-center font-[300] tracking-tighter md:text-left">
+      <p className="my-10 text-center font-light tracking-tighter md:text-left">
         Unlocking the Future of Space potential for Economic and Technological
         Advancement.
       </p>
@@ -38,7 +38,7 @@ export function AboutHero() {
             <h5 className="text-h6 relative mb-4 text-center text-white">
               Our Vision
             </h5>
-            <p className="relative text-justify text-sm/4 font-[300] text-white/80">
+            <p className="relative text-justify text-sm/4 font-light text-white/80">
               We are dedicated to for to advancing in-space propulsion and
               next-generation satellite technologies that power a sustainable
               and efficient space economy. As the demand for space-based
@@ -58,9 +58,9 @@ export function AboutHero() {
             <div className="absolute -right-3 -bottom-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
 
             <h5 className="text-h6 relative mb-4 text-center text-white">
-              Our Vision
+              Mission
             </h5>
-            <p className="relative text-justify text-sm/4 font-[300] text-white/80">
+            <p className="relative text-justify text-sm/4 font-light text-white/80">
               Our mission is to advance space mobility and intelligence through
               next-generation propulsion systems and real-time air traffic
               management. By integrating AI-driven analytics with sustainable
@@ -74,7 +74,7 @@ export function AboutHero() {
         </div>
       </div>
 
-      <h5 className="md:text-h5 mt-10 text-center text-[20px] leading-7 font-[300] tracking-tighter">
+      <h5 className="md:text-h5 text-h6 mt-10 text-center leading-7 font-light tracking-tighter">
         <span className="text-primary">Together</span>, we'll traverse the space
         frontier, forging a better future.
       </h5>

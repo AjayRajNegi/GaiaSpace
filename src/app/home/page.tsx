@@ -238,7 +238,7 @@ export default function Home() {
         </div>
 
         {/* Satellites */}
-        <div className="satellite l:px-0 fixed top-[20%] left-1/2 z-40 w-full -translate-x-1/2 px-4 opacity-0 lg:top-[30%] lg:w-[1300]">
+        <div className="satellite fixed top-[20%] left-1/2 z-40 w-full -translate-x-1/2 px-4 opacity-0 lg:top-[30%] lg:w-[1000] lg:px-0 xl:w-[1300]">
           <p className="text-p lg:text-h5 text-primary">
             Meet our satellite constellation ATLAS !
           </p>
@@ -309,7 +309,7 @@ export default function Home() {
         {/* Main */}
         <section className="hero_pin relative h-screen overflow-hidden pt-0">
           <div className="content absolute top-[40%] left-[50%] z-0 flex w-[90%] max-w-[1000px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[1.4rem] text-center">
-            <h1 className="text-secondary md:text-h1 text-shadown-lg text-[40px] leading-10 tracking-tight md:leading-0">
+            <h1 className="text-secondary lg:text-h1 text-shadown-lg text-[40px] leading-10 tracking-tight md:leading-0">
               PROPELLING TO THE BEYOND
             </h1>
             <p className="text-primary md:text-h6 text-shadown-lg text-p pt-3 leading-5 font-light">

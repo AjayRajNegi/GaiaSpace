@@ -53,7 +53,7 @@ export function Propulsion() {
             defaultValue="item-1"
           >
             <AccordionItem value="item-1" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin xl:leading-2">
                 Advancing Core Propulsion Techonologies
               </AccordionTrigger>
               <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-light text-balance">
@@ -70,7 +70,7 @@ export function Propulsion() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
                 Enhancing Orbital Agility
               </AccordionTrigger>
               <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-thin text-balance">
@@ -87,7 +87,7 @@ export function Propulsion() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="pb-3">
-              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
+              <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
                 Extending Reach Beyond Earth Orbit
               </AccordionTrigger>
               <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-thin text-balance">

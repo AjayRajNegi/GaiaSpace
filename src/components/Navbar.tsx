@@ -40,7 +40,7 @@ export default function Navbar() {
     <>
       <nav className="absolute top-0 left-0 flex min-h-[70px] items-center justify-center bg-transparent">
         {/* Navbar for large displays */}
-        <div className="navbar fixed left-[50%] z-999 hidden h-[70px] w-full -translate-x-[50%] items-center justify-between px-10 text-white backdrop-blur-3xl md:flex">
+        <div className="navbar fixed left-[50%] z-999 hidden h-[70px] w-full -translate-x-[50%] items-center justify-between px-10 text-white backdrop-blur-3xl md:flex md:px-4 lg:px-10">
           <TransitionLinks
             prefetch
             href="/home"
@@ -48,7 +48,7 @@ export default function Navbar() {
           >
             <Image src="/icon/GIcon.png" alt="GIcon" height={40} width={40} />
           </TransitionLinks>
-          <ul className="flex gap-3">
+          <ul className="flex lg:pl-20">
             {navLinks.map((link) => (
               <li
                 key={link.id}
