@@ -90,9 +90,7 @@ export function TeamSection() {
                   height={person.size}
                   className="aspect-square h-36 w-36 rounded-full object-cover object-top-right sm:h-44 sm:w-44 md:h-[200px] md:w-[200px]"
                 />
-                <p className="text-center text-[16px] font-[300]">
-                  {person.name}
-                </p>
+                <p className="text-p text-center font-light">{person.name}</p>
                 <p className="w-fit border-r-[2] border-l-[2] px-2 text-center leading-4 font-semibold">
                   {person.role}
                 </p>
@@ -122,10 +120,10 @@ export function TeamSection() {
                   height={130}
                   className="aspect-square h-32 w-32 rounded-full object-cover object-top-right md:h-[130px] md:w-[130px]"
                 />
-                <p className="text-center text-[12px] font-[300] sm:text-[16px] md:text-sm">
+                <p className="sm:text-p text-center text-[12px] font-light md:text-sm">
                   {person.name}
                 </p>
-                <p className="w-fit px-2 text-center text-[12px] leading-4 font-[500] md:text-sm md:font-semibold">
+                <p className="w-fit px-2 text-center text-[12px] leading-4 font-medium md:text-sm md:font-semibold">
                   {person.role}
                 </p>
                 <a href={person.link} target="_blank">

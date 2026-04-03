@@ -49,7 +49,7 @@ const teamMembers = [
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group flex h-[280px] w-full flex-col items-center justify-between rounded-xl bg-[#161616] px-4 py-6 text-center">
+    <div className="group flex h-[255px] w-full flex-col items-center justify-between rounded-xl bg-[#161616] px-4 py-6 text-center xl:h-[240px]">
       <Image
         src={member.image}
         alt={member.name}
@@ -58,8 +58,8 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
         className="aspect-square rounded-full border border-white/10 object-cover"
       />
 
-      <div className="space-y-1">
-        <p className="text-[16px] font-medium text-white">{member.name}</p>
+      <div className="-mt-2">
+        <p className="text-p font-medium text-white">{member.name}</p>
         <p className="text-sm text-[#cbcbcb]">{member.role}</p>
       </div>
 
@@ -78,7 +78,7 @@ function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
 
 export function TeamCarousel() {
   return (
-    <section className="mx-4 mt-4 rounded-xl bg-[#0f0f0f] px-4 py-6 text-[#cbcbcb] lg:mx-auto lg:w-5xl xl:w-6xl">
+    <section className="mx-4 mt-4 rounded-xl bg-[#0f0f0f] px-4 py-6 text-[#cbcbcb] lg:mx-auto lg:w-[1000px] xl:w-6xl">
       <Carousel
         opts={{
           align: "start",
@@ -99,8 +99,8 @@ export function TeamCarousel() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="left-0 bg-black/60 p-4 hover:bg-black sm:p-6 md:p-8 lg:-left-24" />
-        <CarouselNext className="right-0 bg-black/60 p-4 hover:bg-black sm:p-6 md:p-8 lg:-right-24" />
+        <CarouselPrevious className="left-0 bg-black/60 p-4 hover:bg-black sm:p-6 xl:-left-24" />
+        <CarouselNext className="right-0 bg-black/60 p-4 hover:bg-black sm:p-6 xl:-right-24" />
       </Carousel>
     </section>
   );
