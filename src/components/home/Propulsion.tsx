@@ -41,12 +41,17 @@ export function Propulsion() {
           with capabilities in space propulsion.
         </p>
         <div className="mt-5 w-full md:mt-10 md:w-[70%]">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full"
+            defaultValue="item-1"
+          >
             <AccordionItem value="item-1" className="pb-3">
               <AccordionTrigger className="data-[state=open]:text-primary text-secondary border-secondary data-[state=open]:border-primary border-l-2 pb-2 pl-3 text-lg leading-4 font-thin md:leading-2">
                 Advancing Core Propulsion Techonologies
               </AccordionTrigger>
-              <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-[300] text-balance">
+              <AccordionContent className="text-secondary flex flex-col gap-4 pl-4 text-sm font-light text-balance">
                 <p>
                   We design and deliver state-of-the-art ABEP, electric, and
                   green propellant chemical thrusters to extend satellite

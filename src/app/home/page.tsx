@@ -1,4 +1,5 @@
 "use client";
+
 import { CTA } from "@/src/components/CTA";
 import { Benefits } from "@/src/components/home/Benefits";
 import { Propulsion } from "@/src/components/home/Propulsion";
@@ -13,8 +14,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import BackgroundCanvas from "@/src/components/BackgroundCanvas";
+import Image from "next/image";
 
 export default function Home() {
   const timelineData = [
@@ -96,8 +98,63 @@ export default function Home() {
       routeLimit: 500,
     },
   ];
+  const timelineDataMobile = [
+    {
+      year: "1938",
+      label: "Global annual airline passengers: ~1 million",
+      passengers: "~1 million",
+      flights: "~2K",
+      routeLimit: 2,
+    },
+    {
+      year: "1970",
+      label: "Annual passengers: ~310 million",
+      passengers: "~310 million",
+      flights: "~1M",
+      routeLimit: 50,
+    },
+    {
+      year: "1990",
+      label: "Annual passengers: ~1 billion",
+      passengers: "~1 billion",
+      flights: "~3M",
+      routeLimit: 150,
+    },
+    {
+      year: "2010",
+      label: "Annual passengers: ~2.6 billion",
+      passengers: "~2.6 billion",
+      flights: "~8M",
+      routeLimit: 310,
+    },
+    {
+      year: "2020",
+      label: "Sharp COVID-19 decline: ~1.8 billion",
+      passengers: "~1.8 billion",
+      flights: "~6M",
+      routeLimit: 200,
+    },
+    {
+      year: "Present",
+      label: "Record high: ~9.5 billion passengers",
+      passengers: "~9.5 billion",
+      flights: "~25M",
+      routeLimit: 500,
+    },
+  ];
   const [timelineIndex, setTimelineIndex] = useState(0);
   const timelineIndexRef = useRef(0);
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+  const activeTimeline = isSmallDevice ? timelineDataMobile : timelineData;
+
+  useEffect(() => {
+    const BREAKPOINT = 786;
+    if (window.innerWidth < BREAKPOINT) {
+      setIsSmallDevice(true);
+      setTimelineIndex((prev) => Math.min(prev, timelineDataMobile.length - 1));
+    }
+  }, []);
   return (
     <>
       <Navbar />
@@ -105,7 +162,6 @@ export default function Home() {
         {/* Earth */}
         {/* <BackgroundCanvas /> */}
         <section className="basic-canvas pointer-events-none fixed inset-0 z-20 m-auto">
-          {/* <Basic /> */}
           <Flights
             onTimelineUpdate={(idx: number) => {
               if (idx !== timelineIndexRef.current) {
@@ -124,7 +180,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-[40vw] md:flex-row md:items-start md:justify-between md:gap-0">
             <div className="text-center md:text-start">
               <p className="text-h4 md:text-h2 tabular-nums transition-all duration-300">
-                {timelineData[timelineIndex].passengers}
+                {activeTimeline[timelineIndex].passengers}
               </p>
               <p className="text-p md:text-h5 text-primary">
                 Passengers Annually
@@ -132,7 +188,7 @@ export default function Home() {
             </div>
             <div className="text-center md:text-end">
               <p className="text-h4 md:text-h2 tabular-nums transition-all duration-300">
-                {timelineData[timelineIndex].flights}
+                {activeTimeline[timelineIndex].flights}
               </p>
               <p className="text-p md:text-h5 text-primary">Flights Annually</p>
             </div>
@@ -146,14 +202,14 @@ export default function Home() {
                 <div
                   className="absolute h-full rounded-full bg-white transition-all duration-300"
                   style={{
-                    width: `${(timelineIndex / (timelineData.length - 1)) * 100}%`,
+                    width: `${(timelineIndex / (activeTimeline.length - 1)) * 100}%`,
                   }}
                 />
                 {/* Thumb dot */}
                 <div
                   className="absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-white transition-all duration-300"
                   style={{
-                    left: `${(timelineIndex / (timelineData.length - 1)) * 100}%`,
+                    left: `${(timelineIndex / (activeTimeline.length - 1)) * 100}%`,
                     top: "6px",
                     transform: "translate(-50%, -50%)",
                   }}
@@ -162,7 +218,7 @@ export default function Home() {
 
               {/* Year labels */}
               <div className="mt-3 flex max-w-[100vh] justify-between">
-                {timelineData.map((d, i) => (
+                {activeTimeline.map((d, i) => (
                   <span
                     key={d.year}
                     className={`w-8 max-w-8 text-xs transition-all duration-300 ${i === timelineIndex ? "font-semibold text-white" : "text-white/40"}`}
@@ -175,7 +231,7 @@ export default function Home() {
 
             {/* Descriptor */}
             <p className="text-p md:text-h5 text-secondary mt-6 text-center transition-all duration-300">
-              {timelineData[timelineIndex].label}
+              {activeTimeline[timelineIndex].label}
             </p>
           </div>
         </div>
@@ -286,6 +342,63 @@ export default function Home() {
           <Roadmap />
           {/* Benefits */}
           <Benefits />
+
+          <section className="mx-6 mt-20 flex max-w-7xl flex-col items-center text-[#cbcbcb] md:mx-auto">
+            <h3 className="text-h5 font-thin md:text-[40px]">In The News</h3>
+            <p className="text-center text-[14px] leading-3 font-thin text-[#b7b8b8]">
+              Our mission has garnered substantial media attention, including
+              major journals such as
+            </p>
+            {/* News */}
+            <div className="mt-5 grid grid-cols-2 gap-10 text-sm md:w-[80%]">
+              {/* First */}
+              <a
+                href="https://news.uudoon.in/2025/03/uttaranchal-university-signs-mou-with.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="col-span-2 md:col-span-1"
+              >
+                <div className="relative h-[250] md:h-[300]">
+                  <Image
+                    src="/images/about/newsroom1.png"
+                    alt="news"
+                    fill
+                    objectFit="cover"
+                    className="rounded-xl"
+                  />
+                </div>
+                <h6 className="mt-1">20 March, 2025</h6>
+                <p>
+                  Interactive session with the founder of Gaia Space Pvt. Ltd
+                </p>
+              </a>
+              {/* Second */}
+              <a
+                href="https://news.uudoon.in/2025/03/interactive-session-with-founder-of.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="col-span-2 md:col-span-1"
+              >
+                <div className="relative h-[250] md:h-[300]">
+                  <Image
+                    src="/images/about/newsroom2.png"
+                    alt="news"
+                    fill
+                    objectFit="cover"
+                    className="rounded-xl"
+                  />
+                </div>
+                <h6 className="mt-1">20 March, 2025</h6>
+                <p>
+                  Interactive session with the founder of Gaia Space Pvt. Ltd
+                </p>
+              </a>
+            </div>
+            {/* Button */}
+            <button className="font- mt-10 rounded-[10px] border-[0.5] border-white/60 px-30 py-2 text-lg text-white">
+              Read More
+            </button>
+          </section>
           {/* CTA */}
           <CTA />
         </section>

@@ -1,19 +1,21 @@
+import Link from "next/link";
+
 const benefits = [
   {
     title: "HYROCKEN",
-    imageSrc: "/images/home/Benefit01.avif",
+    imageSrc: "/images/home/Benefit01.png",
   },
   {
     title: "GIT-RF",
-    imageSrc: "/images/home/Benefit02.avif",
+    imageSrc: "/images/home/Benefit01.png",
   },
   {
     title: "NETWORK ROUTING",
-    imageSrc: "/images/home/Benefit03.avif",
+    imageSrc: "/images/home/Benefit01.png",
   },
   {
     title: "SPACE TRAVEL",
-    imageSrc: "/images/home/Benefit04.avif",
+    imageSrc: "/images/home/Benefit01.png",
   },
 ];
 
@@ -36,12 +38,12 @@ export function Benefits() {
         <div className="grid w-full grid-cols-2 grid-rows-2 gap-2 md:w-1/2">
           {benefits.map((benefit, id) => (
             <div key={id}>
-              <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-light sm:text-[18px]">
+              {/* <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-light sm:text-[18px]">
                 {benefit.title}
-              </h4>
+              </h4> */}
               <img
                 src={benefit.imageSrc}
-                className="mx-auto h-[100px] w-[100px] transition-all duration-300 hover:brightness-200 sm:h-[130px] sm:w-[130px] md:h-[164px] md:w-[164px]"
+                className={`mx-auto h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] md:h-[180px] md:w-[180px] ${id === 0 ? "transition-all duration-300 hover:brightness-200" : "blur-md"}`}
               />
             </div>
           ))}
@@ -69,9 +71,12 @@ export function Benefits() {
           </p>
           <div className="mt-4 flex w-full justify-end">
             <div className="flex w-fit rounded-sm bg-linear-to-r from-[#9139a5] to-[#520f9a] p-[2px] shadow-lg">
-              <button className="text-h6 rounded-sm bg-black px-2 py-1 text-white">
+              <Link
+                href="/contact"
+                className="text-h6 rounded-sm bg-black px-2 py-1 text-white"
+              >
                 Get In Touch
-              </button>
+              </Link>
             </div>
           </div>
         </div>

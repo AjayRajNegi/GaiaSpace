@@ -150,6 +150,50 @@ export default function Flights({ onTimelineUpdate }) {
       routeLimit: 600,
     },
   ];
+  const timelineDataMobile = [
+    {
+      year: "1938",
+      label: "Global annual airline passengers: ~1 million",
+      passengers: "~1 million",
+      flights: "~2K",
+      routeLimit: 2,
+    },
+    {
+      year: "1970",
+      label: "Annual passengers: ~310 million",
+      passengers: "~310 million",
+      flights: "~1M",
+      routeLimit: 50,
+    },
+    {
+      year: "1990",
+      label: "Annual passengers: ~1 billion",
+      passengers: "~1 billion",
+      flights: "~3M",
+      routeLimit: 150,
+    },
+    {
+      year: "2010",
+      label: "Annual passengers: ~2.6 billion",
+      passengers: "~2.6 billion",
+      flights: "~8M",
+      routeLimit: 310,
+    },
+    {
+      year: "2020",
+      label: "Sharp COVID-19 decline: ~1.8 billion",
+      passengers: "~1.8 billion",
+      flights: "~6M",
+      routeLimit: 200,
+    },
+    {
+      year: "Present",
+      label: "Record high: ~9.5 billion passengers",
+      passengers: "~9.5 billion",
+      flights: "~25M",
+      routeLimit: 500,
+    },
+  ];
 
   const globeEl = useRef(null);
   const containerRef = useRef(null);
@@ -164,6 +208,7 @@ export default function Flights({ onTimelineUpdate }) {
   const [isSmallDevice, setIsSmallDevice] = useState(false);
   const routeLimitRef = useRef(0);
   const sputnikRef = useRef(null);
+  const activeTimeline = isSmallDevice ? timelineDataMobile : timelineData;
 
   useEffect(() => {
     Promise.all([
@@ -316,7 +361,7 @@ export default function Flights({ onTimelineUpdate }) {
         .to(".phase-2", { autoAlpha: 0, duration: 0.15 }, 0.85);
 
       gsap.to(timelineProxy, {
-        index: timelineData.length - 1,
+        index: activeTimeline.length - 1,
         ease: "none",
         scrollTrigger: {
           trigger: ".after_hero",
@@ -328,7 +373,7 @@ export default function Flights({ onTimelineUpdate }) {
           const idx = Math.round(timelineProxy.index);
           onTimelineUpdate?.(idx);
 
-          const nextLimit = timelineData[idx].routeLimit;
+          const nextLimit = activeTimeline[idx].routeLimit;
           if (nextLimit !== routeLimitRef.current) {
             routeLimitRef.current = nextLimit;
             setRouteLimit(nextLimit);
