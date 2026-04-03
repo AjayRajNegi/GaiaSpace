@@ -16,16 +16,16 @@ const points = [
 
 export default function Technology() {
   return (
-    <section className="bg-background text-secondary relative z-[99] mx-auto max-w-7xl md:py-30">
+    <section className="bg-background text-secondary relative z-99 mx-auto max-w-7xl pt-10">
       {/* Top section */}
-      <section className="mx-auto w-full max-w-5xl pb-15 font-[300]">
+      <section className="mx-auto w-full max-w-5xl pb-15 font-light">
         {/* Header */}
         <div className="text-center">
-          <h6 className="text-primary text-[16px] font-[300] md:text-[18px]">
+          <h6 className="text-primary text-p font-light md:text-[18px]">
             Proprietary Technology
           </h6>
 
-          <h1 className="my-4 text-[24px] leading-7 tracking-tight md:text-[38px] md:leading-12">
+          <h1 className="text-h5 my-4 leading-7 tracking-tight md:text-[38px] md:leading-12">
             Space-Based Radar and Signal Intelligence Suite
           </h1>
           <p className="text-center leading-5 tracking-tight text-[#acacad]">
@@ -35,11 +35,11 @@ export default function Technology() {
         </div>
 
         {/* Cards */}
-        <div className="mx-auto my-10 flex max-w-4xl flex-col items-center justify-between gap-4 text-[14px] font-[300] text-[#acacad] md:flex-row md:gap-0">
+        <div className="mx-auto my-10 flex max-w-4xl flex-col items-center justify-between gap-4 text-[14px] font-light text-[#acacad] md:flex-row md:gap-0">
           {cards.map((card, id) => (
             <div
               key={id}
-              className="group relative flex h-[280] w-[240] items-end justify-center rounded-2xl border-2 border-[#28282a] pb-10 transition-all hover:scale-105 hover:border-1 hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
+              className="group relative flex h-[280] w-[240] items-end justify-center rounded-2xl border-2 border-[#28282a] pb-10 transition-all hover:scale-105 hover:border hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
               style={{
                 backgroundImage: `url(${card.src})`,
                 backgroundSize: "cover",
@@ -47,7 +47,7 @@ export default function Technology() {
             >
               <div className="flex flex-col items-center justify-center transition-transform duration-300 group-hover:-translate-y-17">
                 <p>{card.title}</p>
-                <button className="text-secondary mt-2 rounded-full bg-linear-65 from-purple-700 to-teal-400 px-2 py-[1px] text-[12px] font-[500]">
+                <button className="text-secondary mt-2 rounded-full bg-linear-65 from-purple-700 to-teal-400 px-2 py-px text-[12px] font-medium">
                   Learn more
                 </button>
               </div>
@@ -101,9 +101,9 @@ export default function Technology() {
       </section>
 
       {/* Get in touch section */}
-      <section className="mx-auto mt-20 flex w-[70%] max-w-6xl flex-col items-center gap-8 border-1 border-gray-800 bg-gray-950 p-6 text-center text-[22px] font-thin tracking-tight sm:p-8 sm:text-[28px] md:w-full md:flex-row md:justify-between md:gap-0 md:p-10 md:text-left">
+      <section className="mx-auto mt-20 flex w-[70%] max-w-6xl flex-col items-center gap-8 border border-gray-800 bg-gray-950 p-6 text-center text-[22px] font-thin tracking-tight sm:p-8 sm:text-[28px] lg:w-full lg:flex-row lg:justify-between lg:gap-0 lg:p-10 lg:text-left">
         <div>
-          <p className="mb-6 md:mb-8">
+          <p className="mb-6 lg:mb-8">
             Or want to know more about <br className="hidden sm:block" /> our
             mission?
           </p>
@@ -111,7 +111,7 @@ export default function Technology() {
         </div>
 
         {/* Divider */}
-        <div className="h-px w-full rounded-2xl bg-[#666666] md:h-auto md:w-1 md:self-stretch" />
+        <div className="h-px w-full rounded-2xl bg-[#666666] lg:h-auto lg:w-1 lg:self-stretch" />
 
         <div className="flex flex-col items-center">
           <p className="text-center">

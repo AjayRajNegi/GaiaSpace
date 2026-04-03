@@ -37,7 +37,7 @@ export default function Page() {
             alt="main"
             className="z-0 object-cover"
           />
-          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-[400] text-shadow-xs md:font-thin">
+          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-normal text-shadow-xs md:font-thin">
             <span className="text-primary">Engineering</span> Thrust, <br />
             Enabling
             <span className="text-primary"> Exploration</span>
@@ -48,7 +48,7 @@ export default function Page() {
         <EngineSpecs />
 
         {/* Cards */}
-        <section className="text-secondary mx-auto max-w-7xl px-4 py-10 pb-0 md:py-20 lg:px-0">
+        <section className="text-secondary mx-auto max-w-7xl px-4 pt-10 pb-0 md:pt-20 lg:px-0">
           {/* Header */}
           <div className="text-center">
             <h1 className="text-h4 my-4 leading-12 font-thin tracking-tight">
@@ -56,17 +56,17 @@ export default function Page() {
             </h1>
           </div>
           {/* card */}
-          <div className="mx-auto my-10 flex max-w-4xl flex-col items-center justify-between gap-4 text-[14px] font-[300] text-[#acacad] md:flex-row md:gap-0">
+          <div className="mx-auto my-10 flex max-w-4xl flex-col items-center justify-between gap-4 text-[14px] font-light text-[#acacad] md:flex-row md:gap-0">
             {cards.map((card, id) => (
               <div
                 key={id}
-                className="relative flex h-[280] w-[240] items-center justify-center rounded-2xl border-2 border-[#28282a] p-2 transition-all hover:scale-105 hover:border-1 hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
+                className="relative flex h-[280] w-[240] items-center justify-center rounded-2xl border-2 border-[#28282a] p-2 transition-all hover:scale-105 hover:border hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)] lg:h-[300] lg:w-[270]"
                 style={{
                   backgroundImage: `url(${card.src})`,
                   backgroundSize: "cover",
                 }}
               >
-                <div className="flex flex-col items-center justify-center text-center font-[400]">
+                <div className="flex flex-col items-center justify-center text-center font-normal">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -74,7 +74,7 @@ export default function Page() {
                     width={130}
                   />
                   <p className="text-secondary">{card.title}</p>
-                  <p className="pt-2 text-center text-[13px] leading-4 font-thin">
+                  <p className="pt-2 text-center text-[14px] leading-4 font-thin">
                     {card.desc}
                   </p>
                 </div>
