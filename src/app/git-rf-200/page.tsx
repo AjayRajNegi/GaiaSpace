@@ -94,9 +94,7 @@ export default function page() {
           </div>
         </section>
         {/* Model */}
-        {/* <div className="sticky top-0 z-3"> */}
         <EngineSpecs2 />
-        {/* </div> */}
         {/* Support */}
         <div className="bg-background relative z-99 mx-auto w-full">
           <section className="text-secondary relative z-99 mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 bg-black px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
@@ -188,7 +186,6 @@ export default function page() {
             </div>
           </section>
         </div>
-        {/* Get in touch section */}
       </main>
 
       <CTA />

@@ -7,6 +7,7 @@ import {
   ReactNode,
   KeyboardEvent,
 } from "react";
+import { toast } from "sonner";
 
 interface SelectOption {
   value: string;
@@ -194,7 +195,7 @@ function CustomSelect({
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 left-0 z-[9999] mt-1 overflow-hidden rounded-md border border-[#2a2d35] bg-[#1a1d24] shadow-xl"
+          className="absolute right-0 left-0 z-9999 mt-1 overflow-hidden rounded-md border border-[#2a2d35] bg-[#1a1d24] shadow-xl"
         >
           {options.map((opt) => (
             <li
@@ -256,26 +257,59 @@ const INITIAL_FORM: ContactFormData = {
 
 export default function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(INITIAL_FORM);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  /** Handler for standard text inputs */
   function handleInput(field: StringFormField) {
     return (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setForm((prev) => ({ ...prev, [field]: e.target.value }));
     };
   }
 
-  /** Handler for custom select dropdowns */
   function handleSelect(field: SelectFormField) {
     return (value: string) => {
       setForm((prev) => ({ ...prev, [field]: value }));
     };
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Type-safe: `form` is fully typed as ContactFormData here
-    console.log("Form submitted:", form);
-    // Hook up your API call here
+
+    if (!form.designation || !form.reason) {
+      toast.error("Please complete all required fields", {
+        description:
+          "Fill in every field marked with * and choose designation and reason.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        //const data = await res.json().catch(() => ({}));
+        //throw new Error(data?.error || "Failed to send message");
+        toast.error("Couldn’t send message", {
+          description: "Please try again.",
+        });
+      }
+
+      toast.success("Message sent", {
+        description: "We’ll get back to you soon.",
+      });
+      setForm(INITIAL_FORM);
+    } catch (err) {
+      toast.error("Couldn’t send message", {
+        description: err instanceof Error ? err.message : "Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -412,9 +446,10 @@ export default function ContactForm() {
           {/* Submit */}
           <button
             type="submit"
+            disabled={isSubmitting}
             className="w-full rounded-md bg-[#0580c8] py-2.5 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0d0f14] focus:outline-none active:bg-blue-700"
           >
-            Submit
+            {isSubmitting ? "Sending..." : "Submit"}
           </button>
         </form>
       </div>
