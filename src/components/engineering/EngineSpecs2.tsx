@@ -27,12 +27,6 @@ export default function EngineSpecs2() {
         <div className="bg-background mx-auto mt-10 flex h-auto max-w-6xl flex-col items-center rounded-3xl border-2 border-[#1d1d1d] p-5 md:mt-14 md:flex-row lg:py-8">
           {/* Engine Image */}
           <div className="relative flex w-full shrink-0 items-center justify-center md:h-[400px] md:w-[35%]">
-            {/* <Image
-              src="/images/engineering/Engine.png"
-              alt="Engine"
-              fill
-              objectFit="contain"
-            /> */}
             <video
               src={`${activeTab === "overview" ? "/images/engineering/v1.mp4" : activeTab === "structural" ? "/images/engineering/v2.mp4" : "/images/engineering/v1.mp4"}`}
               autoPlay

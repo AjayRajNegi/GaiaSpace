@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Space_Grotesk } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import Head from "next/head";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -23,6 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={spaceGrotesk.className}>
+      <Head>
+        <link rel="preload" as="video" href="/images/engineering/v1.mp4" />
+        <link rel="preload" as="video" href="/images/engineering/v2.mp4" />
+      </Head>
       <body>
         {/* <ReactLenis root options={{ smoothWheel: true, lerp: 0.1 }} /> */}
         {children}
