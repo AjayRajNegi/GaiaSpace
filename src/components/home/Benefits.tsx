@@ -4,18 +4,27 @@ const benefits = [
   {
     title: "HYROCKEN",
     imageSrc: "/images/home/Benefit01.png",
+    visible: true,
+  },
+  {
+    title: "VAC-LP",
+    imageSrc: "/images/home/Benefit01.png",
+    visible: false,
   },
   {
     title: "GIT-RF",
     imageSrc: "/images/home/Benefit01.png",
+    visible: false,
   },
   {
-    title: "NETWORK ROUTING",
+    title: "HPGP",
     imageSrc: "/images/home/Benefit01.png",
+    visible: false,
   },
   {
-    title: "SPACE TRAVEL",
+    title: "ATLAS",
     imageSrc: "/images/home/Benefit01.png",
+    visible: false,
   },
 ];
 
@@ -24,27 +33,36 @@ export function Benefits() {
     <div className="mx-auto max-w-7xl px-4 xl:px-0">
       {/* header */}
       <div className="mb-10 text-center md:mb-20">
-        <h3 className="text-secondary text-h5 leading-5 font-[400] md:text-[40px] md:leading-15">
+        <h3 className="text-secondary text-h5 leading-5 font-normal md:text-[40px] md:leading-15">
           We help Earth benefit from space
         </h3>
-        <h5 className="text-primary mt-3 text-[15px] leading-4 font-[400] text-pretty md:mt-0">
+        <h5 className="text-primary fon t-[400] mt-3 text-[15px] leading-4 text-pretty md:mt-0">
           Discover how GAIA SPACE transforms innovation in orbit into real-world
           impact on Earth.
         </h5>
       </div>
       {/* content */}
-      <div className="mx-auto flex max-w-5xl flex-col items-center px-4 md:flex-row md:px-0">
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 md:flex-row md:px-0">
         {/* left */}
-        <div className="grid w-full grid-cols-2 grid-rows-2 gap-2 md:w-1/2">
+        <div className="grid w-full grid-cols-4 grid-rows-2 gap-2 md:w-1/2 md:grid-cols-3 lg:grid-cols-4">
           {benefits.map((benefit, id) => (
             <div key={id}>
-              {/* <h4 className="text-secondary mx-auto mb-2 w-fit text-[14px] font-light sm:text-[18px]">
+              <div className="relative mx-auto h-[100px] w-[100px] sm:h-[130px] sm:w-[130px]">
+                <img
+                  src={benefit.imageSrc}
+                  className={`h-full w-full ${benefit.visible === true ? "transition-all duration-300 hover:brightness-200" : "blur-sm"}`}
+                />
+                <p
+                  className={`${benefit.visible === false ? "flex" : "hidden"} absolute inset-0 items-center justify-center text-center text-[12px] font-thin text-white`}
+                >
+                  {benefit.title}
+                </p>
+              </div>
+              <p
+                className={`${benefit.visible === true ? "block" : "hidden"} text-center text-[12px] font-thin text-white`}
+              >
                 {benefit.title}
-              </h4> */}
-              <img
-                src={benefit.imageSrc}
-                className={`mx-auto h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] md:h-[180px] md:w-[180px] ${id === 0 ? "transition-all duration-300 hover:brightness-200" : "blur-md"}`}
-              />
+              </p>
             </div>
           ))}
         </div>
