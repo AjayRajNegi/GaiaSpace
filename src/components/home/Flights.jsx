@@ -449,7 +449,7 @@ export default function Flights({ onTimelineUpdate }) {
         arcDashAnimateTime={3000}
         arcsTransitionDuration={0.5}
         arcStroke={null}
-        arcColor={() => "#00a8e8"}
+        arcColor={() => "#068bbe"}
       />
     </div>
   );

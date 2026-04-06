@@ -1,3 +1,4 @@
+import { StepForwardIcon } from "lucide-react";
 import Image from "next/image";
 
 const cards = [
@@ -57,7 +58,83 @@ export default function Technology() {
       </section>
 
       {/* Bottom section */}
-      <section className="flex flex-col gap-10 font-thin tracking-tight md:flex-row md:justify-between md:gap-0">
+      <section className="relative flex flex-col gap-10 overflow-hidden font-thin tracking-tight md:flex-row md:justify-between md:gap-0">
+        {/* Diagonal line — mobile (shallow slope) */}
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full md:hidden"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0"
+            y1="70%"
+            x2="100%"
+            y2="30%"
+            stroke="#6366f1"
+            strokeWidth="1"
+            strokeOpacity="0.3"
+            strokeDasharray="8 5"
+          />
+        </svg>
+
+        {/* Diagonal line — desktop (full corner-to-corner) */}
+        <svg
+          className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0"
+            y1="95%"
+            x2="100%"
+            y2="0"
+            stroke="#6366f1"
+            strokeWidth="1"
+            strokeOpacity="0.3"
+            strokeDasharray="8 5"
+          />
+        </svg>
+
+        {/* Keyframes for both slopes */}
+        <style>{`
+    @keyframes flyDiagonalMobile {
+      0%   { left: -4%; top: 65%; }
+      100% { left: 104%; top: 25%; }
+    }
+    @keyframes flyDiagonalDesktop {
+      0%   { left: -4%; bottom: -4%; }
+      100% { left: 104%; bottom: 104%; }
+    }
+  `}</style>
+
+        {/* Mobile plane */}
+        <Image
+          src="/images/missions/airplane.png"
+          width={24}
+          height={24}
+          alt="plane"
+          className="md:hidden"
+          style={{
+            position: "absolute",
+            animation: "flyDiagonalMobile 6s linear infinite",
+            transform: "rotate(60deg)",
+          }}
+        />
+
+        {/* Desktop plane */}
+        <Image
+          src="/images/missions/airplane.png"
+          width={24}
+          height={24}
+          alt="plane"
+          className="hidden md:block"
+          style={{
+            position: "absolute",
+            animation: "flyDiagonalDesktop 10s linear infinite",
+            transform: "rotate(70deg)",
+          }}
+        />
+
         {/* Left */}
         <article className="flex w-full items-center justify-center md:w-[50%]">
           <p className="text-center text-[32px] leading-tight sm:text-[42px] sm:leading-14 md:text-left">
