@@ -70,14 +70,14 @@ export default function Technology() {
             y1="70%"
             x2="100%"
             y2="30%"
-            stroke="#6366f1"
+            stroke="#484848"
             strokeWidth="1"
             strokeOpacity="0.3"
-            strokeDasharray="8 5"
+            //strokeDasharray="8 5"
           />
         </svg>
 
-        {/* Diagonal line — desktop (full corner-to-corner) */}
+        {/* Diagonal line */}
         <svg
           className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
           preserveAspectRatio="none"
@@ -85,25 +85,67 @@ export default function Technology() {
         >
           <line
             x1="0"
-            y1="95%"
+            y1="100%"
             x2="100%"
             y2="0"
-            stroke="#6366f1"
+            stroke="#484848"
             strokeWidth="1"
-            strokeOpacity="0.3"
-            strokeDasharray="8 5"
+            //strokeOpacity="0.3"
           />
         </svg>
 
-        {/* Keyframes for both slopes */}
+        {/* Center line — mobile */}
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full md:hidden"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0"
+            y1="55%"
+            x2="100%"
+            y2="45%"
+            stroke="#484848"
+            strokeWidth="1"
+            strokeOpacity="0.3"
+            //strokeDasharray="8 5"
+          />
+        </svg>
+
+        {/* Center line — desktop */}
+        <svg
+          className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0"
+            y1="60%"
+            x2="100%"
+            y2="40%"
+            stroke="#484848"
+            strokeWidth="1"
+            //strokeOpacity="0.3"
+          />
+        </svg>
+
+        {/* Keyframes for all slopes */}
         <style>{`
     @keyframes flyDiagonalMobile {
       0%   { left: -4%; top: 65%; }
       100% { left: 104%; top: 25%; }
     }
     @keyframes flyDiagonalDesktop {
-      0%   { left: -4%; bottom: -4%; }
-      100% { left: 104%; bottom: 104%; }
+  0%   { left: -4%; top: 99%; }
+  100% { left: 104%; top: -5%; }
+}
+    @keyframes flyCenterMobile {
+      0%   { left: -4%; top: 53%; }
+      100% { left: 104%; top: 43%; }
+    }
+    @keyframes flyCenterDesktop {
+      0%   { left: -4%; top: 58%; }
+      100% { left: 104%; top: 35%; }
     }
   `}</style>
 
@@ -134,6 +176,40 @@ export default function Technology() {
             transform: "rotate(70deg)",
           }}
         />
+
+        {/* Center plane — mobile */}
+        <Image
+          src="/images/missions/airplane.png"
+          width={24}
+          height={24}
+          alt="plane"
+          className="md:hidden"
+          style={{
+            position: "absolute",
+            animation: "flyCenterMobile 9s linear infinite",
+            animationDelay: "3s",
+            transform: "rotate(90deg)",
+          }}
+        />
+
+        {/* Center plane — desktop */}
+        <Image
+          src="/images/missions/airplane.png"
+          width={24}
+          height={24}
+          alt="plane"
+          className="hidden md:block"
+          style={{
+            position: "absolute",
+            animation: "flyCenterDesktop 15s linear infinite",
+            animationDelay: "5s",
+            transform: "rotate(90deg)",
+          }}
+        />
+        <div className="pointer-events-none absolute inset-0">
+          <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
+          <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
+        </div>
 
         {/* Left */}
         <article className="flex w-full items-center justify-center md:w-[50%]">
