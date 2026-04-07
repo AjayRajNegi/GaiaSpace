@@ -23,14 +23,14 @@ const timeline = [
     scope: "GAIA SPACE Foundation",
     year: 2024,
     desc: "GAIA SPACE was founded in May 2024 with a mission to push the boundaries of in-space propulsion and space-based intelligence. Building on years of experimental research, the foundation focuses on developing advanced propulsion systems and autonomous technologies that will shape the future of deep space exploration and operations.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/timelineAll.webp",
   },
   {
     title: ">GS_004",
     scope: "Grants and Collaborations",
     year: 2025,
-    desc: "lorem ipsum",
-    img: "/images/home/Roadmap01.avif",
+    desc: "",
+    img: "/images/home/timeline2025.webp",
   },
   {
     title: ">GS_005",
@@ -44,35 +44,35 @@ const timeline = [
     scope: "GIT-RF",
     year: 2027,
     desc: "The GIT-RF, currently under development, represents a significant step in electric propulsion technology aimed at high-efficiency Inspace mobilitiy application. The program aims to conduct a full-scale vacuum-simulated test in 2027, a key milestone toward validating the thruster’s readiness for in-space operation and integration into future deep-space and orbital missions.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/timelineAll.webp",
   },
   {
     title: ">GS_007",
     scope: "GIT-RF Space Commissioning and Further R&D for ABEP",
     year: 2029,
     desc: "The GIT-RF Space Commissioning Mission will be the first in-orbit demonstration of our GIT technology, marking a key step toward operational electric propulsion. Scheduled after successful vacuum-simulated testing in 2027, the mission will validate in-space performance and readiness for integration into future technology development for air breathing electric propulsion.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/timelineAll.webp",
   },
   {
     title: ">GS_008",
     scope: "ATLAS Technology Demonstration",
     year: 2030,
     desc: "The ATLAS Technology Demonstration Mission will serve as the validation of a satellite-based air traffic management system designed to enhance global flight monitoring and safety. ATLAS ecosystem aims to provide seamless tracking of aircraft across oceanic, remote, and underserved regions where ground-based radar coverage is limited or nonexistent.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/timelineAll.webp",
   },
   {
     title: ">GS_009",
     scope: "ATLAS Satellite Launch and Services",
     year: 2035,
     desc: "The deployment phase of the ATLAS system, designed to revolutionize global air traffic management through space based surveillance. The mission will launch the first ATLAS satellite into low Earth orbit, equipped with advanced ADS-B and ADS-C reception capabilities to provide persistent, real-time aircraft tracking over oceanic, polar, and remote regions.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/timelineAll.webp",
   },
   {
     title: ">GS_010",
     scope: "Further R&D for interplanetary economics",
     year: 2037,
     desc: "As humanity extends its reach beyond Earth, the development of a robust interplanetary economy becomes essential. Our future research and development efforts will focus on the foundational technologies, governance frameworks, and economic models required to enable sustainable trade, resource utilization, and value exchange across planetary bodies.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/timelineAll.webp",
   },
 ];
 
@@ -105,20 +105,23 @@ export function Roadmap() {
           {timeline.map((time, id) => (
             <div
               key={id}
-              className={`${id === timeline.length ? "mr-4 h-auto w-[88vw] shrink-0 sm:w-[600px] md:mr-10 md:h-[310px] md:w-[760px]" : "h-auto w-[88vw] shrink-0 sm:w-[600px] md:h-[310px] md:w-[760px]"}`}
+              className={`${id === timeline.length ? "mr-4 h-auto w-[88vw] shrink-0 sm:w-[600px] md:mr-10 md:h-[330px] md:w-[760px]" : "h-auto w-[88vw] shrink-0 sm:w-[600px] md:h-[330px] md:w-[760px]"}`}
             >
               <div className="flex flex-col items-end gap-2 sm:flex-row md:gap-8">
                 <img
                   src={time.img}
-                  className="h-auto w-full rounded-md object-cover sm:h-[280px] sm:w-[500px]"
+                  className="aspect-video h-auto w-full rounded-md object-cover sm:h-[280px] sm:w-[500px]"
                   alt=""
                 />
                 <p className="text-secondary bg-highlight h-fit w-fit p-3 text-xs leading-[17px] font-light tracking-tighter text-balance sm:text-sm">
                   {time.desc}
                 </p>
               </div>
-              <div className="mt-2 flex justify-between text-sm font-light md:text-base">
-                <span>{`"${time.title}"`}</span>
+              <div className="mt-2 flex justify-between font-light md:text-base">
+                <div className="flex flex-col">
+                  <span className="text-[14px]">{`"${time.title}"`}</span>
+                  <span className="text-[15px] font-semibold">{`${time.scope}`}</span>
+                </div>
                 <span>{time.year}</span>
               </div>
             </div>

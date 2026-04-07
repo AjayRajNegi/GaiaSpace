@@ -72,20 +72,19 @@ export function Benefits() {
 
         {/* right */}
         <div className="w-full md:ml-4 md:w-1/2">
-          <h3 className="text-secondary text-[28px] font-normal sm:text-[34px] md:text-[40px]">
-            Who are we?
+          <h3 className="text-secondary md:text-h3 mb-5 text-[28px] font-thin sm:text-[34px]">
+            Who are we ?
           </h3>
-          <p className="text-secondary sm:text-p text-[14px] leading-[20px] font-thin tracking-tighter md:text-[18px] md:leading-[22px]">
+          <p className="text-secondary sm:text-p text-[14px] leading-[20px] font-light tracking-tighter md:text-[18px] md:leading-[22px]">
             At GAIA SPACE, we see space not as a distant frontier, from
             next-generation in-space propulsion to real-time air traffic
             insights from orbit, we create technologies that keep satellites
             moving efficiently, skies safer, and global networks more connected.
             <br />
             <br />
-            At GAIA SPACE, we see space not as a distant frontier, from
-            next-generation in-space propulsion to real-time air traffic
-            insights from orbit, we create technologies that keep satellites
-            moving efficiently, skies safer, and global networks more connected.
+            Guided by innovation and sustainability, we use advanced engineering
+            to turn space technology into real-world solutions, protecting our
+            environment and shaping a smarter, more resilient future for Earth.
           </p>
           <div className="mt-4 flex w-full justify-end">
             <div className="flex w-fit rounded-sm bg-linear-to-r from-[#9139a5] to-[#520f9a] p-[2px] shadow-lg">

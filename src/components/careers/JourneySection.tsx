@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const roles = [
   { id: 1, desc: "Passionate about space technology." },
@@ -59,30 +60,50 @@ export function JourneySection() {
         </div>
       </article>
 
-      <section className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-evenly gap-8 px-4 text-[#cbcbcb] sm:mt-20 sm:px-6 lg:flex-row lg:gap-[18%]">
-        <h2 className="text-h5 md:text-h3 text-center leading-6 font-thin tracking-tight text-white md:leading-10 lg:text-left">
+      <section className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-evenly gap-8 rounded-3xl bg-[#06080b] px-4 py-10 text-[#cbcbcb] sm:mt-20 sm:px-6 lg:flex-row lg:gap-[18%]">
+        <h2 className="text-h5 text-center leading-6 font-thin tracking-tight text-white md:text-[42px] md:leading-10 lg:text-left">
           Dont See Your <br /> Perfect Role?
         </h2>
 
         <div className="w-full max-w-sm sm:max-w-md lg:max-w-[30%]">
-          <span className="block text-center text-sm leading-4 font-thin">
+          <span className="block text-center text-[12px] leading-4 font-thin">
             <p>
               We're always looking for exceptional talent. Send your resume and
               with a brief introduction about yourself to <br />
-              careers@gmail.com
             </p>
+            <div className="mt-2 flex justify-between">
+              <p className="text-sm underline">careers@gmail.co.in</p>
+              <p className="text-secondary flex items-end pr-2 text-sm font-light">
+                <Link
+                  href="/contact"
+                  className="ml-auto w-fit cursor-pointer rounded-full bg-[#1b1b1a] px-2 py-0.5"
+                >
+                  Contact Us
+                </Link>
+              </p>
+            </div>
           </span>
           <div className="my-4 flex items-center justify-between">
             <div className="border-primary w-[40%] border-t"></div>
             <span className="text-h2 text-primary">OR</span>
             <div className="border-primary w-[40%] border-t"></div>
           </div>
-          <span className="block text-center text-sm leading-4 font-thin tracking-tighter">
+          <span className="block text-center text-[12px] leading-4 font-thin tracking-tighter">
             <p>
               Join our exclusive training program, designed to align your skills
               and expertise with the rigorous standards of the global space
               industry.
             </p>
+            <div className="mt-2 flex justify-end">
+              <p className="text-secondary flex items-end pr-2 text-sm font-light">
+                <Link
+                  href="/training_program"
+                  className="ml-auto w-fit cursor-pointer rounded-full bg-[#1b1b1a] px-2 py-0.5"
+                >
+                  Training Program
+                </Link>
+              </p>
+            </div>
           </span>
         </div>
       </section>

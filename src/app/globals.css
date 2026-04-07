@@ -290,7 +290,7 @@ svg text.dot {
 /* Aboutttttttttttt */
 
 .grad {
-  background: radial-gradient(ellipse at 50% 0%, #202020 0%, #000000 100%);
+  background: radial-gradient(ellipse at 50% 0%, #202020 0%, #000000 40%);
 
   @media (max-width: 768px) {
     background: radial-gradient(ellipse at 50% 0%, #151515 0%, #000000 100%);
