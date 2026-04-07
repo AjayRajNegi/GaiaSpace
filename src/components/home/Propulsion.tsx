@@ -110,13 +110,13 @@ export function Propulsion() {
         {cards.map((card, id) => (
           <div
             key={id}
-            className="bg-highlight flex h-[220px] flex-col justify-between rounded-lg p-2 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-auto lg:w-auto"
+            className="bg-highlight group flex h-[220px] flex-col justify-between rounded-lg p-2 transition-all hover:brightness-150 sm:h-[260px] md:h-[195px] md:w-[180px] lg:h-auto lg:w-auto"
           >
             <h6 className="text-secondary text-xs font-light">{card.title}</h6>
             <div className="mx-auto w-fit">
               <img
                 src={card.imageSrc}
-                className="h-[130px] md:h-[120px] lg:h-[125px]"
+                className="h-[130px] md:h-[120px] lg:h-[145px]"
               />
               <p className="text-secondary -mt-2 text-center text-xs font-light">
                 {card.description}
@@ -125,7 +125,7 @@ export function Propulsion() {
             <p className="text-secondary flex items-end pr-2 text-sm font-light">
               <Link
                 href={card.href}
-                className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors hover:bg-gray-700"
+                className="ml-auto w-fit cursor-pointer rounded-full px-2 py-1 transition-colors group-hover:bg-black/50 md:px-3"
               >
                 Know more
               </Link>

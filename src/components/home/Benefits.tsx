@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const benefits = [
   {
-    title: "HYROCKEN",
+    title: "HYROCEN",
     imageSrc: "/images/home/Benefit01.png",
     visible: true,
   },

@@ -2,6 +2,7 @@ import { CTA } from "@/src/components/CTA";
 import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 const card = [
   {
@@ -30,19 +31,32 @@ export default function TrainingPrograms() {
       <Navbar />
       <main className="bg-background text-secondary">
         {/* Header */}
-        <section className="relative mx-auto flex h-screen max-w-[1400px]">
-          <Image
-            src="/images/engineering/main.png"
-            fill
-            alt="main"
-            className="z-0 object-cover"
+        <main className="relative mx-auto flex h-screen max-w-[1400px]">
+          <video
+            src="/thrusterVideo.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="h-full w-full scale-x-[-1] object-cover"
           />
-          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-thin text-shadow-md">
+
+          {/* Edge fade overlays */}
+          <div className="pointer-events-none absolute inset-0">
+            {/* <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" /> */}
+            {/* <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" /> */}
+            <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
+            <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
+          </div>
+
+          {/* Heading */}
+          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-normal text-shadow-xs md:font-thin">
             <span className="text-primary">Engineering</span> Thrust, <br />
             Enabling
             <span className="text-primary"> Exploration</span>
           </h3>
-        </section>
+        </main>
 
         {/* About */}
         <section className="mx-auto max-w-7xl px-4 font-thin xl:px-0">
@@ -80,9 +94,12 @@ export default function TrainingPrograms() {
                 Brochure
               </span>
             </button>
-            <button className="flex items-center justify-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 px-8 py-1 lg:w-[450px]">
+            <Link
+              href="/contact"
+              className="flex items-center justify-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 px-8 py-1 lg:w-[450px]"
+            >
               Register Here
-            </button>
+            </Link>
           </div>
         </section>
 

@@ -31,12 +31,25 @@ export default function Page() {
       <Navbar />
       <main className="bg-background text-secondary text-shadow-xs">
         <main className="relative mx-auto flex h-screen max-w-[1400px]">
-          <Image
-            src="/images/engineering/main.png"
-            fill
-            alt="main"
-            className="z-0 object-cover"
+          <video
+            src="/thrusterVideo.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="h-full w-full scale-x-[-1] object-cover"
           />
+
+          {/* Edge fade overlays */}
+          <div className="pointer-events-none absolute inset-0">
+            {/* <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" /> */}
+            {/* <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" /> */}
+            <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
+            <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
+          </div>
+
+          {/* Heading */}
           <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-normal text-shadow-xs md:font-thin">
             <span className="text-primary">Engineering</span> Thrust, <br />
             Enabling
@@ -88,3 +101,14 @@ export default function Page() {
     </>
   );
 }
+
+<div className="pointer-events-none absolute inset-0">
+  {/* Top */}
+  {/* <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" /> */}
+  {/* Bottom */}
+  {/* <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" /> */}
+  {/* Left */}
+  <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
+  {/* Right */}
+  <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
+</div>;

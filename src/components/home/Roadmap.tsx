@@ -37,7 +37,7 @@ const timeline = [
     scope: "HyRocEN 1kN",
     year: 2026,
     desc: "The HyRocEn 1kN, scheduled for testing in early 2026, following the success of the HyRocEn 500. Designed to deliver 1000 N of thrust with restartable capabilities and upgraded paraffin-based solid fuel grain. The upcoming test campaign aims to validate performance under extended burn durations, assess scalability, and advance hybrid propulsion toward operational readiness for small satellite launch systems and upper-stage applications.",
-    img: "/images/home/HyRocEn500.jpg",
+    img: "/images/home/timelineAll.webp",
   },
   {
     title: ">GS_006",
@@ -113,7 +113,7 @@ export function Roadmap() {
                   className="aspect-video h-auto w-full rounded-md object-cover sm:h-[280px] sm:w-[500px]"
                   alt=""
                 />
-                <p className="text-secondary bg-highlight h-fit w-fit p-3 text-xs leading-[17px] font-light tracking-tighter text-balance sm:text-sm">
+                <p className="text-secondary bg-highlight flex-1 self-stretch p-3 text-xs leading-[17px] font-light tracking-tighter text-balance sm:text-sm">
                   {time.desc}
                 </p>
               </div>

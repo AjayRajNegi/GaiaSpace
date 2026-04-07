@@ -36,19 +36,6 @@ export default function Footer() {
           </div>
           <div className="mt-4 flex w-full justify-center gap-2 md:mt-0 md:w-1/2 md:justify-end">
             <a
-              href="https://x.com/GaiaSpace_2024"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/icon/Youtube.png"
-                alt="twitter"
-                height={40}
-                width={40}
-              />
-            </a>
-
-            <a
               href="https://www.instagram.com/gaiaspace.india?igsh=MTBwdTVoYm14N201"
               target="_blank"
               rel="noopener noreferrer"
@@ -60,12 +47,6 @@ export default function Footer() {
                 width={40}
               />
             </a>
-            <Image
-              src="/icon/Facebook.png"
-              alt="twitter"
-              height={40}
-              width={40}
-            />
             <a
               href="https://www.linkedin.com/company/gaia-space/
             "
@@ -78,6 +59,20 @@ export default function Footer() {
                 height={40}
                 width={40}
               />
+            </a>
+            <a
+              href="https://x.com/GaiaSpace_2024"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src="/icon/X.png" alt="twitter" height={40} width={40} />
+            </a>
+            <a
+              href="https://www.crunchbase.com/organization/gaia-space"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src="/icon/CB.png" alt="twitter" height={40} width={40} />
             </a>
           </div>
         </div>

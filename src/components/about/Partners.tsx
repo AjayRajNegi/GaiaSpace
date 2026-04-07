@@ -16,9 +16,9 @@ export function Partners() {
           ensure a thriving, future-ready space economy.
         </p>
       </div>
-      <div className="relative mt-5 flex w-full flex-col items-center justify-around gap-20 bg-linear-to-b from-[#111417] to-[#010a0c] py-10 md:flex-row md:justify-center md:py-0">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-black to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-black to-transparent" />
+      <div className="from-background relative mt-5 flex w-full flex-col items-center justify-around gap-20 bg-linear-to-b to-[#101316] py-10 md:flex-row md:justify-center md:py-0">
+        <div className="from-background pointer-events-none absolute inset-y-0 left-0 z-10 w-[40vw] bg-linear-to-r to-transparent" />
+        <div className="from-background pointer-events-none absolute inset-y-0 right-0 z-10 w-[40vw] bg-linear-to-l to-transparent" />
 
         <Image
           src="/images/about/partner1.png"
