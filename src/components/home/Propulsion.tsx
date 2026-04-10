@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
+import ParticleCanvas from "@/src/components/ParticleCanvas";
 
 const cards = [
   {
@@ -35,9 +36,16 @@ const cards = [
 
 export function Propulsion() {
   return (
-    <div className="mx-auto flex flex-col justify-between px-4 pt-20 lg:h-[600px] lg:max-h-[600px] lg:max-w-7xl lg:flex-row xl:px-0">
+    <div className="relative mx-auto flex flex-col justify-between px-4 pt-20 lg:h-[600px] lg:max-h-[600px] lg:max-w-7xl lg:flex-row xl:px-0">
+      {/* Background particle canvas */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden="true"
+      >
+        <ParticleCanvas />
+      </div>
       {/* Left */}
-      <div className="w-full lg:w-1/2">
+      <div className="relative z-10 w-full lg:w-1/2">
         <h3 className="text-h4 text-secondary leading-10 font-thin md:w-[90%] lg:w-[70%]">
           Enabling Orbital Stewardship Through Next-Generation Propulsion
         </h3>

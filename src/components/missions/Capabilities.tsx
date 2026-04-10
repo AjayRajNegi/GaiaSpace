@@ -14,7 +14,7 @@ const cards = [
 
 export default function Capabilities() {
   return (
-    <section className="bg-background text-secondary relative z-[99] mx-auto mt-[100vh] w-full max-w-7xl pt-20 font-[300]">
+    <section className="bg-background text-secondary relative z-99 mx-auto mt-[100vh] w-full max-w-7xl pt-20 font-light">
       {/* Header */}
       <div>
         <h1 className="md:text-h2 text-[26px] leading-8 tracking-tight md:leading-12">
@@ -28,7 +28,7 @@ export default function Capabilities() {
           traffic management system and analysis for the global aviation
           industry.
         </p>
-        <h6 className="text-primary text-h6 font-[400]">CAPABILITIES</h6>
+        <h6 className="text-primary text-h6 font-normal">CAPABILITIES</h6>
       </div>
 
       {/* Info Grid */}

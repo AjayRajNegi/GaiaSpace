@@ -321,18 +321,18 @@ export default function Home() {
 
         {/* Flights */}
         <section className="after_hero relative min-h-[300vh]">
-          <div>
+          {/* <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
-          </div>
+          </div> */}
         </section>
 
         {/* Satellites */}
         <section className="last relative min-h-[400vh]">
-          <div>
+          {/* <div>
             <h2>Now we scroll normally</h2>
             <p>This is standard document flow.</p>
-          </div>
+          </div> */}
         </section>
 
         {/* Propulsion  & Roadmap*/}

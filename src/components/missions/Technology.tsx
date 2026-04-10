@@ -152,13 +152,13 @@ export default function Technology() {
         {/* Mobile plane */}
         <Image
           src="/images/missions/airplane.png"
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="plane"
           className="md:hidden"
           style={{
             position: "absolute",
-            animation: "flyDiagonalMobile 6s linear infinite",
+            animation: "flyDiagonalMobile 9s linear infinite",
             transform: "rotate(60deg)",
           }}
         />
@@ -166,13 +166,13 @@ export default function Technology() {
         {/* Desktop plane */}
         <Image
           src="/images/missions/airplane.png"
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="plane"
           className="hidden md:block"
           style={{
             position: "absolute",
-            animation: "flyDiagonalDesktop 10s linear infinite",
+            animation: "flyDiagonalDesktop 16s linear infinite",
             transform: "rotate(70deg)",
           }}
         />
@@ -180,13 +180,13 @@ export default function Technology() {
         {/* Center plane — mobile */}
         <Image
           src="/images/missions/airplane.png"
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="plane"
           className="md:hidden"
           style={{
             position: "absolute",
-            animation: "flyCenterMobile 9s linear infinite",
+            animation: "flyCenterMobile 12s linear infinite",
             animationDelay: "3s",
             transform: "rotate(90deg)",
           }}
@@ -195,14 +195,14 @@ export default function Technology() {
         {/* Center plane — desktop */}
         <Image
           src="/images/missions/airplane.png"
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="plane"
           className="hidden md:block"
           style={{
             position: "absolute",
-            animation: "flyCenterDesktop 15s linear infinite",
-            animationDelay: "5s",
+            animation: "flyCenterDesktop 20s linear infinite",
+            //animationDelay: "",
             transform: "rotate(90deg)",
           }}
         />
@@ -212,7 +212,7 @@ export default function Technology() {
         </div>
 
         {/* Left */}
-        <article className="flex w-full items-center justify-center md:w-[50%]">
+        <article className="z-99 flex w-full items-center justify-center md:w-[50%]">
           <p className="text-center text-[32px] leading-tight sm:text-[42px] sm:leading-14 md:text-left">
             <span className="text-primary">Precision </span> Flight <br />
             Boundless
@@ -221,7 +221,7 @@ export default function Technology() {
         </article>
 
         {/* Right */}
-        <article className="flex w-full flex-col items-start text-[#acacad] md:w-[45%]">
+        <article className="z-99 flex w-full flex-col items-start text-[#acacad] md:w-[45%]">
           <p className="text-left text-sm sm:text-base">
             We deliver real-time global surveillance data, setting a new
             standard in aviation intelligence. Our advanced services empower
@@ -245,7 +245,7 @@ export default function Technology() {
             ))}
           </div>
 
-          <button className="w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400] text-white sm:w-auto">
+          <button className="w-full rounded bg-linear-to-r from-blue-500 to-purple-500 p-px font-normal text-white sm:w-auto">
             <span className="flex w-full justify-center rounded bg-gray-900 px-6 py-2 text-white sm:px-10">
               Learn More about Our Technology
             </span>
@@ -264,7 +264,7 @@ export default function Technology() {
         </div>
 
         {/* Divider */}
-        <div className="h-px w-full rounded-2xl bg-[#666666] lg:h-auto lg:w-1 lg:self-stretch" />
+        <div className="h-px w-full rounded-2xl bg-[#666666] lg:h-auto lg:w-px lg:self-stretch" />
 
         <div className="flex flex-col items-center">
           <p className="text-center">
@@ -272,7 +272,7 @@ export default function Technology() {
             understand the program.
           </p>
 
-          <button className="text-secondary mt-4 w-full rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400] sm:w-auto">
+          <button className="text-secondary mt-4 w-full rounded bg-linear-to-r from-blue-500 to-purple-500 p-px font-normal sm:w-auto">
             <span className="text-secondary flex w-full justify-center rounded bg-gray-900 px-10 py-2 text-base">
               Get In Touch
             </span>
