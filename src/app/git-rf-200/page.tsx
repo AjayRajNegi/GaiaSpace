@@ -4,6 +4,7 @@ import Navbar from "@/src/components/Navbar";
 import Image from "next/image";
 import V from "@/src/components/engineering/V";
 import EngineSpecs2 from "@/src/components/engineering/EngineSpecs2";
+import ParticleCanvas from "@/src/components/ParticleCanvas";
 
 const cards = [
   {
@@ -33,12 +34,18 @@ export default function page() {
 
       <main className="bg-background">
         {/* Intro Section */}
-        <section className="text-secondary mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-light md:my-20 md:px-6 md:pt-20">
-          <div>
+        <section className="text-secondary relative mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-light md:my-20 md:px-6 md:pt-20">
+          <div
+            className="pointer-events-none absolute inset-0 z-0"
+            aria-hidden="true"
+          >
+            <ParticleCanvas />
+          </div>
+          <div className="relative z-10">
             <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
               GIT-RF-200
             </h3>
-            <h5 className="text-primary text-[16px] font-[400] tracking-tight md:text-[22px]">
+            <h5 className="text-primary text-p font-normal tracking-tight md:text-[22px]">
               RADIO FREQUENCY GRIDDED ION THRUSTER
             </h5>
           </div>
@@ -57,9 +64,15 @@ export default function page() {
           </div>
         </section>
         {/* Cards */}
-        <section className="text-secondary mx-auto max-w-7xl px-4 pt-10 md:px-6 md:pt-20">
+        <section className="text-secondary relative mx-auto max-w-7xl px-4 pt-10 md:px-6 md:pt-20">
+          <div
+            className="pointer-events-none absolute inset-0 z-0"
+            aria-hidden="true"
+          >
+            <ParticleCanvas />
+          </div>
           {/* Header */}
-          <div className="text-center">
+          <div className="relative z-10 text-center">
             <h1 className="text-h4 my-4 leading-tight font-thin tracking-tight">
               <span className="text-primary">Precision</span> Propulsion,
               Limitless <span className="text-primary">Possibilities</span>
@@ -70,18 +83,18 @@ export default function page() {
             </p>
           </div>
           {/* card */}
-          <div className="mx-auto my-10 grid max-w-4xl grid-cols-1 gap-6 text-[14px] font-[300] text-[#acacad] sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto my-10 grid max-w-4xl grid-cols-1 gap-6 text-[14px] font-light text-[#acacad] sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((card, id) => (
               <div
                 key={id}
-                className="relative mx-auto flex h-[280px] w-[240px] items-center justify-center rounded-2xl border-2 border-[#28282a] p-3 transition-all hover:scale-105 hover:border-1 hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
+                className="relative mx-auto flex h-[280px] w-[240px] items-center justify-center rounded-2xl border-2 border-[#28282a] p-3 transition-all hover:scale-105 hover:border hover:shadow-[0_10px_70px_rgba(14,35,60,1.00)]"
                 style={{
                   backgroundImage: `url(${card.src})`,
                   backgroundSize: "cover",
                 }}
               >
-                <div className="flex flex-col items-center justify-center text-center font-[400]">
-                  <h1 className="text-secondary text-[60px] md:text-[80px]">
+                <div className="flex flex-col items-center justify-center text-center font-normal">
+                  <h1 className="text-secondary text-h1 md:text-[80px]">
                     {card.data}
                   </h1>
                   <p className="text-secondary">{card.title}</p>
@@ -97,7 +110,7 @@ export default function page() {
         <EngineSpecs2 />
         {/* Support */}
         <div className="bg-background relative z-99 mx-auto w-full">
-          <section className="text-secondary relative z-99 mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 bg-black px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
+          <section className="text-secondary bg-background relative z-99 mx-auto flex h-fit max-w-7xl flex-col items-start justify-between gap-10 px-4 pt-10 font-thin md:items-stretch md:gap-6 md:px-6 md:pt-20 lg:flex-row">
             <article className="flex w-full flex-col justify-evenly gap-6 md:gap-0 lg:w-[30%]">
               <div>
                 <h4 className="text-h3 leading-9">

@@ -43,18 +43,24 @@ export default function Page() {
 
           {/* Edge fade overlays */}
           <div className="pointer-events-none absolute inset-0">
-            {/* <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" /> */}
-            {/* <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" /> */}
+            <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
             <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
             <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
           </div>
 
           {/* Heading */}
-          <h3 className="text-h3 absolute top-1/2 z-20 -translate-y-1/2 px-10 leading-10 font-normal text-shadow-xs md:font-thin">
-            <span className="text-primary">Engineering</span> Thrust, <br />
-            Enabling
-            <span className="text-primary"> Exploration</span>
-          </h3>
+          <div className="absolute top-1/2 z-20 -translate-y-1/2 px-10 font-normal text-shadow-xs md:font-thin">
+            <h3 className="text-[40px] leading-10 font-medium">HY-RocEn </h3>
+            <h6 className="text-primary mt-4 text-[22px]">
+              HYBRID ROCKET ENGINE
+            </h6>
+            <p className="text-sm md:w-[45%]">
+              We are redefining hybrid propulsion that deliver exceptional
+              performance, reliability, and efficiency prioritizing safety,
+              cost-effectiveness, and environmental sustainability.
+            </p>
+          </div>
         </main>
 
         {/* Engine Specification */}

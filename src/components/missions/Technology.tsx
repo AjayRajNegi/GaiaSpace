@@ -17,7 +17,7 @@ const points = [
 
 export default function Technology() {
   return (
-    <section className="bg-background text-secondary relative z-99 mx-auto max-w-7xl pt-10">
+    <section className="text-secondary bg-background relative z-99 mx-auto max-w-7xl pt-10">
       {/* Top section */}
       <section className="mx-auto w-full max-w-5xl pb-15 font-light">
         {/* Header */}
