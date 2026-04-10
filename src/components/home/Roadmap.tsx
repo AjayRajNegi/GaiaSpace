@@ -36,8 +36,8 @@ const timeline = [
     title: ">GS_005",
     scope: "HyRocEN 1kN",
     year: 2026,
-    desc: "The HyRocEn 1kN, scheduled for testing in early 2026, following the success of the HyRocEn 500. Designed to deliver 1000 N of thrust with restartable capabilities and upgraded paraffin-based solid fuel grain. The upcoming test campaign aims to validate performance under extended burn durations, assess scalability, and advance hybrid propulsion toward operational readiness for small satellite launch systems and upper-stage applications.",
-    img: "/images/home/timelineAll.webp",
+    desc: "HyRocEn 1kN, set for testing in early 2026, builds on the success of the 500 model. It delivers 1000 N of thrust with restart capability and an improved paraffin-based fuel grain. The campaign will test longer burns, scalability, and readiness for small launch and upper-stage use.",
+    img: "/images/home/hyrocenTimeline.png",
   },
   {
     title: ">GS_006",
@@ -96,7 +96,7 @@ export function Roadmap() {
 
         <div
           ref={scrollContainerRef}
-          className="scrollbar-hide flex w-full gap-4 overflow-x-scroll md:gap-10"
+          className="scrollbar-hide flex w-[98%] gap-4 overflow-x-scroll md:gap-6"
           style={{
             scrollBehavior: "smooth",
             WebkitOverflowScrolling: "touch",
@@ -105,15 +105,15 @@ export function Roadmap() {
           {timeline.map((time, id) => (
             <div
               key={id}
-              className={`${id === timeline.length ? "mr-4 h-auto w-[88vw] shrink-0 sm:w-[600px] md:mr-10 md:h-[330px] md:w-[760px]" : "h-auto w-[88vw] shrink-0 sm:w-[600px] md:h-[330px] md:w-[760px]"}`}
+              className={`${id === timeline.length ? "mr-4 h-auto w-[88vw] shrink-0 sm:w-[600px] md:mr-10 md:h-[330px] md:w-[760px]" : "ml-4 h-auto w-[88vw] shrink-0 sm:w-[600px] md:h-[330px] md:w-[760px]"}`}
             >
-              <div className="flex flex-col items-end gap-2 sm:flex-row md:gap-8">
+              <div className="flex flex-col items-end gap-2 sm:flex-row md:gap-3">
                 <img
                   src={time.img}
                   className="aspect-video h-auto w-full rounded-md object-cover sm:h-[280px] sm:w-[500px]"
                   alt=""
                 />
-                <p className="text-secondary bg-highlight flex-1 self-stretch p-3 text-xs leading-[17px] font-light tracking-tighter text-balance sm:text-sm">
+                <p className="text-secondary bg-highlight flex-1 overflow-auto p-3 text-xs leading-[17px] font-light tracking-tighter text-balance sm:h-[252px] sm:text-sm">
                   {time.desc}
                 </p>
               </div>

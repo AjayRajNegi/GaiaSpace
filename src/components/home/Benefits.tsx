@@ -42,12 +42,12 @@ export function Benefits() {
         </h5>
       </div>
       {/* content */}
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 md:flex-row md:px-0">
+      <div className="mx-auto flex max-w-7xl flex-col items-center px-4 md:flex-row md:px-0">
         {/* left */}
         <div className="grid w-full grid-cols-4 grid-rows-2 gap-2 md:w-1/2 md:grid-cols-3 lg:grid-cols-4">
           {benefits.map((benefit, id) => (
             <div key={id}>
-              <div className="relative mx-auto h-[100px] w-[100px] sm:h-[130px] sm:w-[130px]">
+              <div className="relative mx-auto h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] xl:h-[150px] xl:w-[150px]">
                 <img
                   src={benefit.imageSrc}
                   className={`h-full w-full ${benefit.visible === true ? "transition-all duration-300 hover:brightness-200" : "blur-sm"}`}
