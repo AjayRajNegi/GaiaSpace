@@ -246,7 +246,10 @@ const MenuItem: React.FC<MenuItemProps> = ({
   toggleDropdown,
 }) => {
   return (
-    <div className="menuItem my-4 rounded-xl bg-[#0c0f11] p-2 px-3 md:rounded-3xl md:p-4 md:px-5">
+    <div
+      className="menuItem my-4 rounded-xl bg-[#0c0f11] p-2 px-3 md:rounded-3xl md:p-4 md:px-5"
+      onClick={toggleDropdown}
+    >
       <h3 className="text-primary flex items-center justify-between gap-6 pb-2 text-[18px]">
         {title}
         <motion.img

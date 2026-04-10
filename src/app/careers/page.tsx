@@ -12,7 +12,6 @@ export default function Careers() {
   return (
     <>
       {/* <BackgroundCanvas /> */}
-
       <Navbar />
       <CareersHero />
       <AccordianCareer />

@@ -13,7 +13,7 @@ const roles = [
 export function JourneySection() {
   return (
     <>
-      <article className="mx-auto flex max-w-[1300px] flex-col items-center justify-around px-4 pt-16 text-[#cbcbcb] sm:pt-[100px] lg:flex-row lg:gap-8 lg:px-6">
+      <article className="mx-auto flex max-w-[1300px] flex-col items-start justify-around px-4 pt-16 text-[#cbcbcb] sm:pt-[100px] lg:flex-row lg:gap-8 lg:px-6">
         {/* Journey */}
         <section className="flex w-full max-w-full flex-col items-center text-center lg:ml-[3vw] lg:max-w-[45%] lg:items-start lg:text-left">
           <h2 className="text-h3 mb-5 text-left font-thin text-white">
@@ -54,18 +54,18 @@ export function JourneySection() {
             alt="Journey"
             className="h-auto w-full"
           />
-          <h2 className="text-h5 md:text-h3 mt-5 hidden text-center font-thin md:block">
+          <h2 className="text-h5 md:text-h3 mt-2 hidden text-center font-thin md:block">
             Who <span className="text-primary">We're Looking</span> For?
           </h2>
         </div>
       </article>
 
-      <section className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-evenly gap-8 rounded-3xl bg-[#06080b] px-4 py-10 text-[#cbcbcb] sm:mt-20 sm:px-6 lg:flex-row lg:gap-[18%]">
+      <section className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-evenly gap-8 rounded-3xl bg-[#06080b] px-4 py-6 text-[#cbcbcb] sm:mt-20 sm:px-6 lg:flex-row lg:gap-[18%]">
         <h2 className="text-h5 text-center leading-6 font-thin tracking-tight text-white md:text-[42px] md:leading-10 lg:text-left">
           Dont See Your <br /> Perfect Role?
         </h2>
 
-        <div className="w-full max-w-sm sm:max-w-md lg:max-w-[30%]">
+        <div className="w-full max-w-sm sm:max-w-md lg:max-w-[40%]">
           <span className="block text-center text-[12px] leading-4 font-thin">
             <p>
               We're always looking for exceptional talent. Send your resume and
@@ -83,9 +83,9 @@ export function JourneySection() {
               </p>
             </div>
           </span>
-          <div className="my-4 flex items-center justify-between">
+          <div className="my-2 flex items-center justify-between">
             <div className="border-primary w-[40%] border-t"></div>
-            <span className="text-h2 text-primary">OR</span>
+            <span className="text-h3 text-primary">OR</span>
             <div className="border-primary w-[40%] border-t"></div>
           </div>
           <span className="block text-center text-[12px] leading-4 font-thin tracking-tighter">

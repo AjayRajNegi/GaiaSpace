@@ -8,7 +8,7 @@ export default function EngineSpecs2() {
 
   return (
     <>
-      <section className="text-secondary bg-black px-4 md:px-6">
+      <section className="text-secondary bg-background px-4 md:px-6">
         {/* Header */}
         <div className="text-secondary text-center font-thin">
           <h1 className="my-4 text-[28px] leading-tight tracking-tight md:text-[40px]">

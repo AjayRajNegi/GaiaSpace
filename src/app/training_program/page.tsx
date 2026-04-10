@@ -44,8 +44,8 @@ export default function TrainingPrograms() {
 
           {/* Edge fade overlays */}
           <div className="pointer-events-none absolute inset-0">
-            {/* <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" /> */}
-            {/* <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" /> */}
+            <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
             <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
             <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
           </div>
@@ -77,7 +77,7 @@ export default function TrainingPrograms() {
             engineering, and advanced thrust systems.
           </p>
 
-          <h5 className="text-h5 mb-5 font-[500]">
+          <h5 className="text-h5 mb-5 font-medium">
             WHY <span className="text-primary">ITSP</span> ?
           </h5>
 
@@ -89,7 +89,7 @@ export default function TrainingPrograms() {
             expertise in space propulsion.
           </p>
           <div className="mt-15 flex w-full justify-between md:justify-evenly">
-            <button className="text-secondary rounded bg-gradient-to-r from-blue-500 to-purple-500 p-[1px] font-[400] lg:w-[450px]">
+            <button className="text-secondary rounded bg-linear-to-r from-blue-500 to-purple-500 p-px font-normal lg:w-[450px]">
               <span className="text-secondary flex w-full justify-center rounded bg-gray-900 p-2 px-12 py-2 text-base lg:px-30">
                 Brochure
               </span>

@@ -11,6 +11,13 @@ export function CareersHero() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Edge fade overlays */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
+        <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
+        <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
+      </div>
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-around md:flex-row">
         <h4 className="text-h6 md:text-h5 mb-4 w-full text-center font-light md:mb-0 md:w-[40%] md:text-left xl:text-[28px]">
           Let's Shape{" "}

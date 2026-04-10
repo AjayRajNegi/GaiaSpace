@@ -324,7 +324,7 @@ svg text.dot {
 }
 
 .dot {
-  animation: move 5s linear infinite;
+  animation: move 10s linear infinite;
 }
 
 @keyframes move {
@@ -339,24 +339,24 @@ svg text.dot {
   initial-value: 0deg;
 }
 
-@property --spin {
+/* @property --spin {
   syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
-}
+} */
 
 .dot {
   transform: translate(
-      calc(90vw * cos(var(--angle))),
-      calc(250px * sin(var(--angle)))
-    )
-    rotate(var(--spin));
+    calc(90vw * cos(var(--angle))),
+    calc(250px * sin(var(--angle)))
+  );
+  /* rotate(var(--spin)); */
 }
 
 /* dotMD */
 
 .dotMD {
-  animation: move 8s linear infinite;
+  animation: move 16s linear infinite;
 }
 @keyframes move {
   to {
@@ -376,10 +376,10 @@ svg text.dot {
 }
 .dotMD {
   transform: translate(
-      calc(55vw * cos(var(--angle))),
-      calc(350px * sin(var(--angle)))
-    )
-    rotate(var(--spin));
+    calc(55vw * cos(var(--angle))),
+    calc(350px * sin(var(--angle)))
+  );
+  /* rotate(var(--spin)); */
 }
 
 /* .canvas-bg {
