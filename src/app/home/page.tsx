@@ -336,7 +336,7 @@ export default function Home() {
         </section>
 
         {/* Propulsion  & Roadmap*/}
-        <section className="relative z-999 bg-black">
+        <section className="bg-background relative z-999">
           {/* Propulsion */}
           <Propulsion />
           {/* Roadmap */}
@@ -351,9 +351,9 @@ export default function Home() {
               major journals such as
             </p>
             {/* News */}
-            <div className="from-background relative mt-10 flex w-full items-center justify-around gap-20 bg-linear-to-b to-[#101316] py-10 md:py-0">
-              <div className="from-background pointer-events-none absolute inset-y-0 left-0 z-10 w-[40vw] bg-linear-to-r to-transparent" />
-              <div className="from-background pointer-events-none absolute inset-y-0 right-0 z-10 w-[40vw] bg-linear-to-l to-transparent" />
+            <div className="from-background relative mt-10 flex w-full items-center justify-around gap-20 bg-gradient-to-b to-[#101316] py-10 md:py-0">
+              <div className="from-background pointer-events-none absolute inset-y-0 left-0 z-10 w-[40vw] bg-gradient-to-r to-transparent" />
+              <div className="from-background pointer-events-none absolute inset-y-0 right-0 z-10 w-[40vw] bg-gradient-to-l to-transparent" />
               <Image
                 src="/images/about/partner2.png"
                 alt="partner"

@@ -23,7 +23,7 @@ const timeline = [
     scope: "GAIA SPACE Foundation",
     year: 2024,
     desc: "GAIA SPACE was founded in May 2024 with a mission to push the boundaries of in-space propulsion and space-based intelligence. Building on years of experimental research, the foundation focuses on developing advanced propulsion systems and autonomous technologies that will shape the future of deep space exploration and operations.",
-    img: "/images/home/timelineAll.webp",
+    img: "/images/home/pitch_deck.png",
   },
   {
     title: ">GS_004",
