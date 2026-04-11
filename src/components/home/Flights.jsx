@@ -289,8 +289,12 @@ export default function Flights({ onTimelineUpdate }) {
       sputnik.scale.set(0.3, 0.3, 0.3);
       sputnik.position.set(-100, 50, 100);
 
-      sputnik.rotation.x = -Math.PI / 8;
-      sputnik.rotation.y = -Math.PI / 8;
+      // sputnik.rotation.x = Math.PI / 180;
+      // sputnik.rotation.y = Math.PI / 10;
+
+      sputnik.rotation.x = Math.PI / 3.5;
+      sputnik.rotation.y = 0;
+      sputnik.rotation.z = Math.PI / 5;
 
       sputnik.visible = true;
       scene.add(sputnik);
@@ -300,9 +304,9 @@ export default function Flights({ onTimelineUpdate }) {
     setIsGlobeReady(true);
     const animate = (time) => {
       requestAnimationFrame(animate);
-      if (sputnikRef.current) {
-        sputnikRef.current.rotation.z += 0.005;
-      }
+      // if (sputnikRef.current) {
+      //   sputnikRef.current.rotation.z += 0.005;
+      // }
     };
     animate();
   };

@@ -91,12 +91,12 @@ export function Roadmap() {
       </h2>
       <div className="relative">
         {/* Fade overlays */}
-        <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-4 bg-gradient-to-r from-black to-transparent sm:w-16 md:w-32" />
-        <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-4 bg-gradient-to-l from-black to-transparent sm:w-16 md:w-32" />
+        <div className="from-background pointer-events-none absolute top-0 left-0 z-10 h-full w-4 bg-gradient-to-r to-transparent sm:w-16 md:w-32" />
+        <div className="from-background pointer-events-none absolute top-0 right-0 z-10 h-full w-4 bg-gradient-to-l to-transparent sm:w-16 md:w-32" />
 
         <div
           ref={scrollContainerRef}
-          className="scrollbar-hide flex w-[98%] gap-4 overflow-x-scroll md:gap-6"
+          className="scrollbar-hide bg-background flex w-[98%] gap-4 overflow-x-scroll md:gap-6"
           style={{
             scrollBehavior: "smooth",
             WebkitOverflowScrolling: "touch",
