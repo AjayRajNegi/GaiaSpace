@@ -35,7 +35,7 @@ export default function page() {
       <main className="bg-background">
         {/* Intro Section */}
         <section
-          className="text-secondary mx-auto flex h-screen w-full max-w-[1440px] flex-col justify-center px-4 font-light md:px-6"
+          className="text-secondary relative mx-auto flex h-screen w-full max-w-[1440px] flex-col justify-center px-4 font-light md:px-6"
           style={{
             backgroundImage: `url('/images/engineering/gitBG.png')`,
             backgroundSize: "cover",
@@ -43,6 +43,12 @@ export default function page() {
             backgroundRepeat: "no-repeat",
           }}
         >
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
+            {/* <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
+            <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" /> */}
+          </div>
           <div className="mx-auto max-w-7xl">
             <div>
               <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
