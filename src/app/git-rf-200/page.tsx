@@ -44,13 +44,13 @@ export default function page() {
           }}
         >
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
-            {/* <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
-            <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" /> */}
+            <div className="from-background absolute inset-x-0 top-0 h-24 bg-linear-to-b to-transparent" />
+            <div className="from-background absolute inset-x-0 bottom-0 h-24 bg-linear-to-t to-transparent" />
+            <div className="from-background absolute inset-y-0 left-0 hidden w-[5vw] bg-linear-to-r to-transparent md:block" />
+            <div className="from-background absolute inset-y-0 right-0 hidden w-[5vw] bg-linear-to-l to-transparent md:block" />
           </div>
-          <div className="mx-auto max-w-7xl">
-            <div>
+          <div className="mx-auto h-full max-w-7xl">
+            <div className="flex h-[30%] flex-col justify-end">
               <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
                 GIT-RF-200
               </h3>
@@ -183,7 +183,7 @@ export default function page() {
               </div>
             </article>
           </section>
-          <section className="text-secondary bg-background z-99 mx-4 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
+          <section className="text-secondary z-99 mx-4 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl bg-[#090b0e] p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
             <div className="text-h4 md:text-h2 leading-tight font-thin md:leading-14">
               <p>Want to know more ?</p>
               <p>Reach out to us! </p>

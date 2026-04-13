@@ -156,7 +156,7 @@ export default function TrainingPrograms() {
             </div>
           </div>
 
-          <section className="text-secondary bg-background mx-auto mt-20 mb-20 flex max-w-7xl flex-col gap-10 rounded-xl p-6 text-lg font-thin tracking-tight backdrop-blur-sm sm:p-8 md:mt-32 md:flex-row md:items-center md:justify-between md:p-12 md:text-xl lg:mt-40 lg:p-15 lg:text-[28px]">
+          <section className="text-secondary bg-background/40 mx-auto mt-20 mb-20 flex max-w-7xl flex-col gap-10 rounded-xl border border-white/10 p-6 text-lg font-thin tracking-tight shadow-xl backdrop-blur-md sm:p-8 md:mt-32 md:flex-row md:items-center md:justify-between md:p-12 md:text-xl lg:mt-40 lg:p-15 lg:text-[28px]">
             <div className="text-h4 leading-snug md:w-1/2 md:leading-14">
               <p>
                 Required further <br className="hidden md:block" /> assistance,

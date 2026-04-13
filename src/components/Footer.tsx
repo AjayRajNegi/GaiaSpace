@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="bg-background relative z-99 w-full">
-      <main className="text-secondary bg-background mx-auto w-full max-w-7xl px-4 md:pt-10">
+    <div className="relative z-99 w-full bg-[#0a0b0e]">
+      <main className="text-secondary mx-auto w-full max-w-7xl bg-[#0a0b0e] px-4 md:pt-10">
         <div className="mx-auto w-fit text-center">
           <h4 className="text-[22px] font-thin text-[#979798]">
             Throttling to the Beyond

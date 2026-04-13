@@ -69,10 +69,12 @@ export function JourneySection() {
           <span className="block text-center text-[12px] leading-4 font-thin">
             <p>
               We're always looking for exceptional talent. Send your resume and
-              with a brief introduction about yourself to <br />
+              with a brief introduction about yourself to{" "}
+              <a href="mailto:hr@gaiaspace.co.in" className="text-sm underline">
+                hr@gaiaspace.co.in
+              </a>
             </p>
-            <div className="mt-2 flex justify-between">
-              <p className="text-sm underline">careers@gmail.co.in</p>
+            <div className="mt-2 flex justify-end">
               <p className="text-secondary flex items-end pr-2 text-sm font-light">
                 <Link
                   href="/contact"

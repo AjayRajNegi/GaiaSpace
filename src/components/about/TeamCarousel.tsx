@@ -41,7 +41,7 @@ const teamMembers = [
   },
   {
     name: "Prabhat Sharma",
-    role: "Jr. Researcher",
+    role: "Sr. Researcher",
     image: "/images/about/team/TL.png",
     instagram: "/icon/InstaIcon.png",
   },

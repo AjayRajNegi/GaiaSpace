@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -141,7 +135,7 @@ export default function EngineSpecs() {
                         <p className="md:text-p text-[15px] text-[#999999] md:mt-3">
                           Propellant Mass Fraction: <br />
                           Chamber Pressure: 30 bar <br />
-                          Efficiency:
+                          Efficiency: 84.67%
                         </p>
                       </div>
                       <div className="mt-2 sm:col-span-2 md:mt-4">
