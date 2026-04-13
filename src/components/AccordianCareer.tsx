@@ -299,7 +299,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
                     ))}
                   </div>
                   <Link
-                    href="/contact"
+                    href="/form"
                     className="w-fit rounded-lg border border-[#26292c] bg-black px-5 py-2"
                   >
                     Apply

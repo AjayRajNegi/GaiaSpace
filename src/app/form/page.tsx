@@ -207,7 +207,7 @@ function CustomSelect({
           {selected ? selected.label : placeholder}
         </span>
         <svg
-          className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-4 max-w-4 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
