@@ -47,11 +47,12 @@ export function Benefits() {
         <div className="grid w-full grid-cols-4 grid-rows-2 gap-2 md:w-1/2 md:grid-cols-3 lg:grid-cols-4">
           {benefits.map((benefit, id) => (
             <div key={id}>
-              <div className="relative mx-auto h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] xl:h-[150px] xl:w-[150px]">
+              <div className="relative mx-auto h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] xl:h-[140px] xl:w-[140px]">
                 <img
                   src={benefit.imageSrc}
                   className={`h-full w-full ${benefit.visible === true ? "transition-all duration-300 hover:brightness-200" : "blur-sm"}`}
                 />
+
                 <p
                   className={`${benefit.visible === false ? "flex" : "hidden"} absolute inset-0 items-center justify-center text-center text-[12px] font-thin text-white`}
                 >

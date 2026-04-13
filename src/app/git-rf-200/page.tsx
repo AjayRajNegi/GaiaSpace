@@ -35,13 +35,7 @@ export default function page() {
       <main className="bg-background">
         {/* Intro Section */}
         <section className="text-secondary relative mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-light md:my-20 md:px-6 md:pt-20">
-          <div
-            className="pointer-events-none absolute inset-0 z-0"
-            aria-hidden="true"
-          >
-            <ParticleCanvas />
-          </div>
-          <div className="relative z-10">
+          <div className="relative">
             <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
               GIT-RF-200
             </h3>

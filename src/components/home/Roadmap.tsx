@@ -29,7 +29,7 @@ const timeline = [
     title: ">GS_004",
     scope: "Grants and Collaborations",
     year: 2025,
-    desc: "",
+    desc: "Partnered with the Department of Aerospace Engineering at Uttaranchal University to advance research in satellite engineering and space propulsion systems. This collaboration focuses on joint innovation, skill development, and industry-aligned education to empower future space professionals and strengthen India’s global aerospace footprint.",
     img: "/images/home/timeline2025.webp",
   },
   {

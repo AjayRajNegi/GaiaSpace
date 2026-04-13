@@ -21,13 +21,13 @@ export default function EngineSpecs2() {
         </div>
 
         {/* Specifications */}
-        <div className="bg-background mx-auto mt-10 h-auto max-w-6xl flex-col items-center rounded-3xl border-2 border-[#1d1d1d] p-5 md:mt-14 lg:pt-0 lg:pb-8">
+        <div className="bg-background mx-auto mt-10 max-w-6xl flex-col items-center rounded-3xl border-2 border-[#1d1d1d] p-5 md:mt-14 lg:pt-0 lg:pb-8">
           <h6 className="text-h6 my-8 text-center text-[600]">
             Engine Specification
           </h6>
-          <div className="flex flex-col items-center md:flex-row">
+          <div className="flex h-auto flex-col md:flex-row lg:h-[520px]">
             {/* Engine Image */}
-            <div className="relative flex w-full shrink-0 items-center justify-center md:h-[400px] md:w-[35%]">
+            <div className="relative flex w-full items-center justify-center md:w-[35%]">
               <video
                 src={`${activeTab === "overview" ? "/images/engineering/v1.mp4" : activeTab === "structural" ? "/images/engineering/v2.mp4" : "/images/engineering/v1.mp4"}`}
                 autoPlay
@@ -36,7 +36,7 @@ export default function EngineSpecs2() {
             </div>
 
             {/* Content */}
-            <div className="flex h-auto w-full flex-col px-4 pb-6 font-thin text-[#acacad] md:pr-[2%] md:pb-0 md:pl-0">
+            <div className="flex w-full flex-col px-4 pb-6 font-thin text-[#acacad] md:pr-[2%] md:pb-0 md:pl-0">
               {/* Toggle Buttons */}
               <div className="text-p mb-6 flex flex-wrap items-center gap-2 md:mb-10 md:text-[18px] lg:gap-4">
                 <button
@@ -76,9 +76,9 @@ export default function EngineSpecs2() {
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={activeTab}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                   style={{ overflow: "hidden" }}
                 >
@@ -112,7 +112,8 @@ export default function EngineSpecs2() {
                             levels, and spacecraft platforms.
                           </p>
                         </div>
-                        {/* <div>
+
+                        <div className="mt-2 sm:col-span-2 md:mt-4">
                           <h6 className="text-[17px] font-normal text-[#0088ff] md:text-[18px]">
                             Lower Cost & Fewer Parts
                           </h6>
@@ -122,7 +123,7 @@ export default function EngineSpecs2() {
                             complexity and improve overall reliability.
                           </p>
                         </div>
-                        <div>
+                        <div className="mt-2 sm:col-span-2 md:mt-4">
                           <h6 className="text-[17px] font-normal text-[#0088ff] md:text-[18px]">
                             Electrode-Free Longevity
                           </h6>
@@ -131,16 +132,6 @@ export default function EngineSpecs2() {
                             thrusters eliminate electrode erosion, enabling
                             extended mission lifetimes, improved reliability,
                             and significantly reduced maintenance requirements.
-                          </p>
-                        </div> */}
-                        <div className="mt-2 sm:col-span-2 md:mt-4">
-                          <h6 className="text-[17px] font-normal text-[#0088ff] md:text-[18px]">
-                            Lower Cost & Fewer Parts
-                          </h6>
-                          <p className="md:text-p text-[15px] text-[#999999] md:mt-3">
-                            With fewer critical components and streamlined
-                            design, GIT RF systems lower manufacturing
-                            complexity and improve overall reliability.
                           </p>
                         </div>
                       </div>
