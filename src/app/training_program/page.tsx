@@ -156,20 +156,29 @@ export default function TrainingPrograms() {
             </div>
           </div>
 
-          <section className="text-secondary mx-auto mt-20 mb-20 flex max-w-7xl flex-col gap-10 rounded-xl bg-[#090b0e]/60 p-6 text-lg font-thin tracking-tight backdrop-blur-sm sm:p-8 md:mt-32 md:flex-row md:items-center md:justify-between md:p-12 md:text-xl lg:mt-40 lg:p-15 lg:text-[28px]">
+          <section className="text-secondary bg-background mx-auto mt-20 mb-20 flex max-w-7xl flex-col gap-10 rounded-xl p-6 text-lg font-thin tracking-tight backdrop-blur-sm sm:p-8 md:mt-32 md:flex-row md:items-center md:justify-between md:p-12 md:text-xl lg:mt-40 lg:p-15 lg:text-[28px]">
             <div className="text-h4 leading-snug md:w-1/2 md:leading-14">
-              <p>Required further assistance, reach out to us.</p>
+              <p>
+                Required further <br className="hidden md:block" /> assistance,
+                reach out to us.
+              </p>
             </div>
 
-            <div className="md:w-1/2 lg:w-[40%]">
+            {/* Divider */}
+            <div className="h-px w-full rounded-2xl bg-[#666666] md:h-auto md:w-px md:self-stretch" />
+
+            <div className="md:w-1/2">
               <p className="md:text-p mb-5 text-base">
                 Reach out to our training coordinator directly to understand the
                 program, and address your queries one on one.
               </p>
 
-              <button className="flex w-full items-center justify-center gap-2 rounded bg-linear-to-r from-purple-700 to-teal-400 px-4 py-2 text-base transition hover:opacity-90 md:text-lg">
+              <Link
+                href="/contact"
+                className="flex w-full items-center justify-center gap-2 rounded bg-linear-to-r from-purple-700 to-teal-400 px-4 py-2 text-base transition hover:opacity-90 md:text-lg"
+              >
                 Reach Out
-              </button>
+              </Link>
             </div>
           </section>
         </section>

@@ -290,10 +290,10 @@ svg text.dot {
 /* Aboutttttttttttt */
 
 .grad {
-  background: radial-gradient(ellipse at 50% 0%, #202020 0%, #000000 40%);
+  background: radial-gradient(ellipse at 50% 0%, #202020 0%, #000407 40%);
 
   @media (max-width: 768px) {
-    background: radial-gradient(ellipse at 50% 0%, #151515 0%, #000000 100%);
+    background: radial-gradient(ellipse at 50% 0%, #151515 0%, #000407 100%);
   }
 }
 
@@ -308,10 +308,10 @@ svg text.dot {
 
 @keyframes circle-mobile {
   0% {
-    transform: rotate(0deg) translate(-100px);
+    transform: rotate(0deg) translate(-120px);
   }
   100% {
-    transform: rotate(200deg) translate(-100px);
+    transform: rotate(200deg) translate(-120px);
   }
 }
 

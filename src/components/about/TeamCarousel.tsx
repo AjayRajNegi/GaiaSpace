@@ -49,7 +49,7 @@ const teamMembers = [
 
 function TeamCard({ member }: { member: (typeof teamMembers)[0] }) {
   return (
-    <div className="group flex h-[255px] w-full flex-col items-center justify-between rounded-xl bg-[#161616] px-4 py-6 text-center xl:h-[240px]">
+    <div className="group bg-highlight flex h-[255px] w-full flex-col items-center justify-between rounded-xl px-4 py-6 text-center xl:h-[240px]">
       <Image
         src={member.image}
         alt={member.name}

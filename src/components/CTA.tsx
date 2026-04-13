@@ -45,11 +45,12 @@ export function CTA() {
               className="mx-auto h-full w-[300] object-cover lg:w-full"
             />
             <Image
-              src="/images/home/satellite.avif"
+              src="/icon/footerSat.png"
               alt="satellite"
-              width={30}
-              height={30}
-              className="circle absolute left-1/2 -translate-x-1/2 sm:w-[40] lg:mx-0 lg:w-[50]"
+              width={60}
+              height={60}
+              quality={50}
+              className="circle absolute left-1/2 -translate-x-1/2 lg:mx-0 lg:w-[90]"
             />
           </div>
         </div>

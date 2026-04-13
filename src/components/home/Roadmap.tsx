@@ -119,7 +119,7 @@ export function Roadmap() {
               </div>
               <div className="mt-2 flex justify-between font-light md:text-base">
                 <div className="flex flex-col">
-                  <span className="text-[14px]">{`"${time.title}"`}</span>
+                  <span className="text-[14px]">{`${time.title}`}</span>
                   <span className="text-[15px] font-semibold">{`${time.scope}`}</span>
                 </div>
                 <span>{time.year}</span>

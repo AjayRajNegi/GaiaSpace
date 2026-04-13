@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function ContactMap() {
@@ -115,12 +116,18 @@ export default function ContactMap() {
 
         <div className="mx-auto my-10 flex max-w-7xl flex-col-reverse items-center gap-8 rounded-xl bg-[#090b0e] px-6 py-8 text-[#cbcbcb] sm:px-10 md:flex-row-reverse md:justify-evenly md:gap-0 md:py-6">
           <div className="flex flex-col justify-center gap-2 text-[18px]">
-            <p className="rounded-full bg-[#1b1b1a] px-4 py-2 text-center">
+            <Link
+              href="/contact"
+              className="rounded-full bg-[#1b1b1a] px-4 py-2 text-center"
+            >
               Learn More
-            </p>
-            <p className="rounded-full bg-[#1b1b1a] px-4 py-2">
+            </Link>
+            <Link
+              href="/training_program"
+              className="rounded-full bg-[#1b1b1a] px-4 py-2"
+            >
               Training Program
-            </p>
+            </Link>
           </div>
 
           {/* Divider — horizontal on mobile, vertical on md+ */}

@@ -96,7 +96,7 @@ export function TeamSection() {
                 </p>
                 <a href={person.link} target="_blank" rel="noopener noreferrer">
                   <Image
-                    src="/icon/linkedin.png"
+                    src="/icon/Linkedin.png"
                     alt="Instagram"
                     width={40}
                     height={40}

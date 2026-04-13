@@ -109,9 +109,9 @@ export function CustomScrollbar({
           ref={scrollerRef}
           className="bg-primary absolute -top-1 left-0 z-10 h-2 w-2 cursor-pointer rounded-full shadow-[0px_0px_212px_1px_rgba(111,203,255,1)] ring-2 ring-white md:h-3 md:w-3"
         />
-        <div className="bg-highlight absolute -top-3 left-0 h-2 w-2 rounded-full md:left-5" />
+        <div className="bg-highlight absolute -top-3 left-0 h-2 w-2 rounded-full" />
         <div className="bg-highlight absolute -top-3 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full" />
-        <div className="bg-highlight absolute -top-3 right-0 h-2 w-2 rounded-full md:right-5" />
+        <div className="bg-highlight absolute -top-3 right-0 h-2 w-2 rounded-full" />
         <div className="mt-1 text-[12px] md:text-base">2019</div>
         <div className="mt-1 text-[12px] md:text-base">2022</div>
         <div className="mt-1 text-[12px] md:text-base">2024</div>
