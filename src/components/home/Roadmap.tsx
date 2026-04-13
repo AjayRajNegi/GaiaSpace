@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { CustomScrollbar } from "./CustomScrollbar";
+import ParticleCanvas from "../ParticleCanvas";
 
 const timeline = [
   {
@@ -86,6 +87,12 @@ export function Roadmap() {
 
   return (
     <div className="text-secondary mx-auto my-30 max-w-7xl px-1 md:my-[150px] xl:px-0">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden="true"
+      >
+        <ParticleCanvas />
+      </div>
       <h2 className="md:text-h2 mb-2 text-[42px] font-light md:mb-10">
         Roadmap
       </h2>

@@ -90,7 +90,7 @@ body,
 /* ------------------------------CSS for page-transition---------------------------------- */
 .page-transition {
   opacity: 0;
-  background: black;
+  background: #000407;
   transform: translatey(-80px);
   filter: blur(12px);
 }
@@ -99,7 +99,7 @@ body,
 .loader-container {
   position: fixed;
   inset: 0;
-  background-color: black;
+  background-color: #000407;
   display: grid;
   place-content: center;
   transition:
@@ -196,7 +196,7 @@ svg text.dot {
 #menu-button span {
   width: 25px;
   height: 2.5px;
-  background-color: black;
+  background-color: #000407;
   border-radius: 2px;
   transition:
     transform 0.3s ease-in-out,
@@ -283,7 +283,7 @@ svg text.dot {
   border-radius: 11px;
   box-shadow:
     inset 0 4px 2px -1px rgba(255, 255, 255, 0.2),
-    inset 0 -3px 1px black;
+    inset 0 -3px 1px #000407;
   outline: 1.5px solid rgba(0, 0, 0, 0.2);
 }
 

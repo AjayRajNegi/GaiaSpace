@@ -36,7 +36,7 @@ export function AboutHero() {
             <div className="absolute -right-3 -bottom-3 h-24 w-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
 
             <h5 className="text-h6 relative mb-4 text-center text-white">
-              Our Vision
+              Vision
             </h5>
             <p className="relative text-justify text-sm/4 font-light text-white/80">
               We are dedicated to for to advancing in-space propulsion and

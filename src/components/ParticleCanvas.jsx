@@ -29,7 +29,8 @@ const ParticleCanvas = () => {
         this.size = 1.5;
         this.vx = (Math.random() - 0.5) * 0.4;
         this.vy = (Math.random() - 0.5) * 0.4;
-        this.color = "#208BC9";
+        // this.color = "#208BC9";
+        this.color = "#fff";
 
         // Life Cycle Properties
         this.opacity = 0;

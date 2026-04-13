@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ParticleCanvas from "../ParticleCanvas";
 
 const benefits = [
   {
@@ -31,6 +32,12 @@ const benefits = [
 export function Benefits() {
   return (
     <div className="mx-auto max-w-7xl px-4 xl:px-0">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden="true"
+      >
+        <ParticleCanvas />
+      </div>
       {/* header */}
       <div className="mb-10 text-center md:mb-20">
         <h3 className="text-secondary text-h5 leading-5 font-normal md:text-[40px] md:leading-15">

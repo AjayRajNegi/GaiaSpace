@@ -34,39 +34,43 @@ export default function page() {
 
       <main className="bg-background">
         {/* Intro Section */}
-        <section className="text-secondary relative mx-auto my-10 w-full max-w-7xl px-4 pt-10 font-light md:my-20 md:px-6 md:pt-20">
-          <div className="relative">
-            <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
-              GIT-RF-200
-            </h3>
-            <h5 className="text-primary text-p font-normal tracking-tight md:text-[22px]">
-              RADIO FREQUENCY GRIDDED ION THRUSTER
-            </h5>
-          </div>
-          <div className="mt-20 text-center">
-            <h4 className="text-h4 leading-8 font-thin tracking-tight">
-              Meet Our First Gen RF-Gridded Ion Thruster
-            </h4>
-            <p className="mt-6 text-justify text-sm leading-4 tracking-tight text-[#acacad] md:mt-10">
-              We are revolutionizing electric propulsion with cutting-edge
-              RF-gridded ion thrusters that offer unmatched performance and
-              efficiency. Our innovative designs prioritize extended lifespan,
-              cost-effectiveness, and weight reduction, making them ideal for a
-              wide range of satellite applications, from station-keeping to
-              interplanetary maneuvers.
-            </p>
+        <section
+          className="text-secondary mx-auto flex h-screen w-full max-w-[1440px] flex-col justify-center px-4 font-light md:px-6"
+          style={{
+            backgroundImage: `url('/images/engineering/gitBG.png')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="mx-auto max-w-7xl">
+            <div>
+              <h3 className="text-[28px] leading-tight font-thin tracking-tight md:text-[40px]">
+                GIT-RF-200
+              </h3>
+              <h5 className="text-primary text-p font-normal tracking-tight md:text-[22px]">
+                RADIO FREQUENCY GRIDDED ION THRUSTER
+              </h5>
+            </div>
+            <div className="mt-20 text-center">
+              <h4 className="text-h4 leading-8 font-thin tracking-tight">
+                Meet Our First Gen RF-Gridded Ion Thruster
+              </h4>
+              <p className="mt-6 text-justify text-sm leading-4 tracking-tight text-[#acacad] md:mt-10">
+                We are revolutionizing electric propulsion with cutting-edge
+                RF-gridded ion thrusters that offer unmatched performance and
+                efficiency. Our innovative designs prioritize extended lifespan,
+                cost-effectiveness, and weight reduction, making them ideal for
+                a wide range of satellite applications, from station-keeping to
+                interplanetary maneuvers.
+              </p>
+            </div>
           </div>
         </section>
         {/* Cards */}
-        <section className="text-secondary relative mx-auto max-w-7xl px-4 pt-10 md:px-6 md:pt-20">
-          <div
-            className="pointer-events-none absolute inset-0 z-0"
-            aria-hidden="true"
-          >
-            <ParticleCanvas />
-          </div>
+        <section className="text-secondary mx-auto max-w-7xl px-4 pt-10 md:px-6 md:pt-20">
           {/* Header */}
-          <div className="relative z-10 text-center">
+          <div className="text-center">
             <h1 className="text-h4 my-4 leading-tight font-thin tracking-tight">
               <span className="text-primary">Precision</span> Propulsion,
               Limitless <span className="text-primary">Possibilities</span>
@@ -160,7 +164,7 @@ export default function page() {
                     height={80}
                     width={80}
                   />
-                  <h5 className="text-primary mt-4 text-[18px] font-[400]">
+                  <h5 className="text-primary mt-4 text-[18px] font-normal">
                     Mission Design
                   </h5>
                   <p className="mt-4 text-sm leading-4 font-thin text-[#acacad]">
@@ -173,7 +177,7 @@ export default function page() {
               </div>
             </article>
           </section>
-          <section className="text-secondary relative z-99 mx-4 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl bg-[#090b0e] p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
+          <section className="text-secondary bg-background z-99 mx-4 flex max-w-7xl flex-col items-start justify-between gap-6 rounded-2xl p-10 text-[22px] font-thin tracking-tight md:mx-auto md:my-20 md:flex-row md:items-center md:gap-0 md:p-10 md:text-[28px]">
             <div className="text-h4 md:text-h2 leading-tight font-thin md:leading-14">
               <p>Want to know more ?</p>
               <p>Reach out to us! </p>
