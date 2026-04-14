@@ -129,7 +129,7 @@ export function TeamSection() {
                 <a href={person.link} target="_blank">
                   <Image
                     className="md:h-[35px] md:w-[35px]"
-                    src="/icon/linkedin.png"
+                    src="/icon/LD.png"
                     alt="Instagram"
                     width={35}
                     height={35}
