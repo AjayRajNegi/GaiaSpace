@@ -21,6 +21,7 @@ type DesignationValue =
   | "executive"
   | "student"
   | "other";
+
 type ReasonValue =
   | "general"
   | "support"

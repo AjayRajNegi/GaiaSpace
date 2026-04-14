@@ -28,13 +28,12 @@ type DesignationValue =
   | "other";
 
 type PositionValue =
-  | "frontend"
-  | "backend"
-  | "fullstack"
-  | "design"
-  | "product"
-  | "data"
-  | "devops"
+  | "⁠Electric Propulsion"
+  | "⁠Liquid Propulsion"
+  | "⁠Satellite Structures "
+  | "⁠Orbital Mechanics and Control "
+  | "⁠Satellite Communication "
+  | "⁠Founder Office / General"
   | "other";
 
 interface ApplicantInfo {
@@ -265,13 +264,12 @@ const DESIGNATION_OPTIONS: SelectOption[] = [
 ];
 
 const POSITION_OPTIONS: SelectOption[] = [
-  { value: "frontend", label: "Frontend Engineer" },
-  { value: "backend", label: "Backend Engineer" },
-  { value: "fullstack", label: "Full-Stack Engineer" },
-  { value: "design", label: "UI/UX Designer" },
-  { value: "product", label: "Product Manager" },
-  { value: "data", label: "Data Scientist" },
-  { value: "devops", label: "DevOps Engineer" },
+  { value: "electric propulsion", label: "⁠Electric Propulsion" },
+  { value: "backend", label: "⁠Liquid Propulsion" },
+  { value: "fullstack", label: "⁠Satellite Structures" },
+  { value: "design", label: "Orbital Mechanics and Control" },
+  { value: "product", label: "Satellite Communication" },
+  { value: "data", label: "⁠Founder Office / General" },
   { value: "other", label: "Other" },
 ];
 
@@ -407,7 +405,23 @@ export default function Form() {
 
     setIsSubmitting(true);
     try {
-      await new Promise((res) => setTimeout(res, 1200));
+      const payload = new FormData();
+      payload.append("applicant", JSON.stringify(form.applicant));
+      payload.append("reference", JSON.stringify(form.reference));
+      payload.append("hasReference", String(form.hasReference));
+      payload.append("message", form.message);
+      payload.append("allowProcessing", String(form.allowProcessing));
+      payload.append("resume", resumeFile); // resumeFile already validated
+
+      const res = await fetch("/api/form", {
+        method: "POST",
+        body: payload,
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Failed to send application");
+      }
       toast.success("Application sent", {
         description: "We'll be in touch soon.",
       });
