@@ -58,157 +58,147 @@ export default function Technology() {
       </section>
 
       {/* Bottom section */}
-      <section className="relative flex flex-col gap-10 overflow-hidden font-thin tracking-tight md:flex-row md:justify-between md:gap-0">
-        {/* Diagonal line — mobile (shallow slope) */}
+      <section className="relative flex flex-col gap-10 overflow-hidden py-10 font-thin tracking-tight md:flex-row md:justify-between md:gap-0">
         <svg
-          className="pointer-events-none absolute inset-0 h-full w-full md:hidden"
+          viewBox="0 0 100 100"
           preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line
-            x1="0"
-            y1="70%"
-            x2="100%"
-            y2="30%"
-            stroke="#484848"
-            strokeWidth="1"
-            strokeOpacity="0.3"
-            //strokeDasharray="8 5"
-          />
-        </svg>
-
-        {/* Diagonal line */}
-        <svg
           className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
-          preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line
-            x1="0"
-            y1="100%"
-            x2="100%"
-            y2="0"
+          {/* Diagonal line */}
+          <path
+            id="mainLineDesktop"
+            d="M0,100 L100,0"
             stroke="#484848"
             strokeWidth="1"
-            //strokeOpacity="0.3"
+            vectorEffect="non-scaling-stroke"
+            fill="none"
+            strokeOpacity="0.6"
+          />
+
+          {/* Perfect horizontal center line */}
+          <path
+            id="centerLineDesktop"
+            d="M0,50 L100,50"
+            stroke="#484848"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+            fill="none"
+            strokeOpacity="0.6"
           />
         </svg>
 
-        {/* Center line — mobile */}
         <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
           className="pointer-events-none absolute inset-0 h-full w-full md:hidden"
-          preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <line
-            x1="0"
-            y1="55%"
-            x2="100%"
-            y2="45%"
+          <path
+            id="mainLineMobile"
+            d="M0,70 L100,30"
             stroke="#484848"
             strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+            fill="none"
             strokeOpacity="0.3"
-            //strokeDasharray="8 5"
           />
-        </svg>
-
-        {/* Center line — desktop */}
-        <svg
-          className="pointer-events-none absolute inset-0 hidden h-full w-full md:block"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line
-            x1="0"
-            y1="60%"
-            x2="100%"
-            y2="40%"
+          <path
+            id="centerLineMobile"
+            d="M0,50 L100,50"
             stroke="#484848"
             strokeWidth="1"
-            //strokeOpacity="0.3"
+            vectorEffect="non-scaling-stroke"
+            fill="none"
+            strokeOpacity="0.3"
           />
         </svg>
 
-        {/* Keyframes for all slopes */}
         <style>{`
-    @keyframes flyDiagonalMobile {
-      0%   { left: -4%; top: 65%; }
-      100% { left: 104%; top: 25%; }
-    }
-    @keyframes flyDiagonalDesktop {
-  0%   { left: -4%; top: 99%; }
-  100% { left: 104%; top: -5%; }
+/* Diagonal (desktop: M0,100 → 100,0) */
+@keyframes flyDiagonalDesktop {
+  0%   { left: 0%; top: 100%; }
+  100% { left: 100%; top: 2%; }
 }
-    @keyframes flyCenterMobile {
-      0%   { left: -4%; top: 53%; }
-      100% { left: 104%; top: 43%; }
-    }
-    @keyframes flyCenterDesktop {
-      0%   { left: -4%; top: 58%; }
-      100% { left: 104%; top: 35%; }
-    }
-  `}</style>
 
-        {/* Mobile plane */}
-        <Image
-          src="/images/missions/airplane.png"
-          width={20}
-          height={20}
-          alt="plane"
-          className="md:hidden"
-          style={{
-            position: "absolute",
-            animation: "flyDiagonalMobile 9s linear infinite",
-            transform: "rotate(60deg)",
-          }}
-        />
+/* Horizontal center (desktop: y = 50) */
+@keyframes flyHorizontalDesktop {
+  0%   { left: 0%; top: 50%; }
+  100% { left: 100%; top: 50%; }
+}
 
-        {/* Desktop plane */}
+/* Mobile diagonal (M0,70 → 100,30) */
+@keyframes flyDiagonalMobile {
+  0%   { left: 0%; top: 70%; }
+  100% { left: 100%; top: 30%; }
+}
+
+/* Mobile horizontal (approx center line) */
+@keyframes flyHorizontalMobile {
+  0%   { left: 0%; top: 50%; }
+  100% { left: 100%; top: 50%; }
+}
+`}</style>
+
+        {/* Desktop diagonal */}
         <Image
-          src="/images/missions/airplane.png"
-          width={20}
-          height={20}
+          src="/images/missions/airplaneArrowHead.png"
+          width={15}
+          height={15}
           alt="plane"
           className="hidden md:block"
           style={{
             position: "absolute",
-            animation: "flyDiagonalDesktop 16s linear infinite",
-            transform: "rotate(70deg)",
+            animation: "flyDiagonalDesktop 12s linear infinite",
+            transform: "translate(-50%, -50%) rotate(-55deg)",
           }}
         />
 
-        {/* Center plane — mobile */}
+        {/* Mobile diagonal */}
         <Image
-          src="/images/missions/airplane.png"
-          width={20}
-          height={20}
+          src="/images/missions/airplaneArrowHead.png"
+          width={15}
+          height={15}
           alt="plane"
           className="md:hidden"
           style={{
             position: "absolute",
-            animation: "flyCenterMobile 12s linear infinite",
-            animationDelay: "3s",
-            transform: "rotate(90deg)",
+            animation: "flyDiagonalMobile 10s linear infinite",
+            transform: "translate(-50%, -50%) rotate(-85deg)",
           }}
         />
 
-        {/* Center plane — desktop */}
+        {/* Desktop horizontal */}
         <Image
-          src="/images/missions/airplane.png"
-          width={20}
-          height={20}
+          src="/images/missions/airplaneArrowHead.png"
+          width={15}
+          height={15}
           alt="plane"
           className="hidden md:block"
           style={{
             position: "absolute",
-            animation: "flyCenterDesktop 20s linear infinite",
-            //animationDelay: "",
-            transform: "rotate(90deg)",
+            animation: "flyHorizontalDesktop 14s linear infinite",
+            transform: "translate(-50%, -50%) rotate(-45deg)",
           }}
         />
+
+        {/* Mobile horizontal */}
+        <Image
+          src="/images/missions/airplaneArrowHead.png"
+          width={15}
+          height={15}
+          alt="plane"
+          className="md:hidden"
+          style={{
+            position: "absolute",
+            animation: "flyHorizontalMobile 12s linear infinite",
+            transform: "translate(-50%, -50%) rotate(-45deg)",
+          }}
+        />
+
         <div className="pointer-events-none absolute inset-0">
-          <div className="from-background absolute inset-y-0 left-0 w-[20vw] bg-linear-to-r to-transparent" />
-          <div className="from-background absolute inset-y-0 right-0 w-[20vw] bg-linear-to-l to-transparent" />
+          <div className="from-background absolute inset-y-0 left-0 w-[15vw] bg-linear-to-r to-transparent" />
+          <div className="from-background absolute inset-y-0 right-0 w-[15vw] bg-linear-to-l to-transparent" />
         </div>
 
         {/* Left */}
