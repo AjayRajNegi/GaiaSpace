@@ -434,7 +434,7 @@ export default function Flights({ onTimelineUpdate }) {
       <Globe
         ref={globeEl}
         animateIn={false}
-        globeImageUrl="/textures/earth/earth-night.jpg"
+        globeImageUrl="/textures/earth/earth-night.webp"
         backgroundColor="rgba(0,0,0,0)"
         showAtmosphere
         rendererConfig={{ antialias: true, alpha: true }}

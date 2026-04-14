@@ -4,27 +4,27 @@ import ParticleCanvas from "../ParticleCanvas";
 const benefits = [
   {
     title: "HYROCEN",
-    imageSrc: "/images/home/Benefit01.png",
+    imageSrc: "/images/home/Benefit01.webp",
     visible: true,
   },
   {
     title: "VAC-LP",
-    imageSrc: "/images/home/Benefit01.png",
+    imageSrc: "/images/home/Benefit01.webp",
     visible: false,
   },
   {
     title: "GIT-RF",
-    imageSrc: "/images/home/Benefit01.png",
+    imageSrc: "/images/home/Benefit01.webp",
     visible: false,
   },
   {
     title: "HPGP",
-    imageSrc: "/images/home/Benefit01.png",
+    imageSrc: "/images/home/Benefit01.webp",
     visible: false,
   },
   {
     title: "ATLAS",
-    imageSrc: "/images/home/Benefit01.png",
+    imageSrc: "/images/home/Benefit01.webp",
     visible: false,
   },
 ];

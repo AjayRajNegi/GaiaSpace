@@ -10,21 +10,21 @@ const timeline = [
     scope: "Initial R&D",
     year: 2019,
     desc: "Even before GAIA SPACE was officially established, our team was engaged in small-scale experiments with various hybrid rocket fuels. These early tests, dating back to late 2019, served as the spark that ignited the passion and vision now driven forward by a dedicated team of experienced professionals and educators.",
-    img: "/images/home/Roadmap01.avif",
+    img: "/images/home/Roadmap01.webp",
   },
   {
     title: ">GS_002",
     scope: "HyRocEn 500",
     year: 2022,
     desc: "The HyRocEn 500, developed and tested in 2022, first hybrid rocket engine rated at 500 N of thrust. Utilizing a paraffin solid fuel grain in combination with a gaseous oxygen oxidizer, the engine demonstrated stable combustion, efficient thrust generation, and key insights into fuel regression dynamics paving the way for more advanced propulsion systems.",
-    img: "/images/home/HyRocEn500.jpg",
+    img: "/images/home/HyRocEn500.webp",
   },
   {
     title: ">GS_003",
     scope: "GAIA SPACE Foundation",
     year: 2024,
     desc: "GAIA SPACE was founded in May 2024 with a mission to push the boundaries of in-space propulsion and space-based intelligence. Building on years of experimental research, the foundation focuses on developing advanced propulsion systems and autonomous technologies that will shape the future of deep space exploration and operations.",
-    img: "/images/home/pitch_deck.png",
+    img: "/images/home/pitch_deck.webp",
   },
   {
     title: ">GS_004",
@@ -38,7 +38,7 @@ const timeline = [
     scope: "HyRocEN 1kN",
     year: 2026,
     desc: "HyRocEn 1kN, set for testing in early 2026, builds on the success of the 500 model. It delivers 1000 N of thrust with restart capability and an improved paraffin-based fuel grain. The campaign will test longer burns, scalability, and readiness for small launch and upper-stage use.",
-    img: "/images/home/hyrocenTimeline.png",
+    img: "/images/home/hyrocenTimeline.webp",
   },
   {
     title: ">GS_006",

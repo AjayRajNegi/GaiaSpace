@@ -36,14 +36,14 @@ export function CTA() {
           </div>
           <div className="relative w-full overflow-hidden">
             <Image
-              src="/images/EarthFooter.png"
+              src="/images/EarthFooter.webp"
               alt=""
               width={500}
               height={10}
               className="mx-auto h-full w-[300] object-cover lg:w-full"
             />
             <Image
-              src="/icon/footerSat.png"
+              src="/icon/footerSat.webp"
               alt="satellite"
               width={60}
               height={60}

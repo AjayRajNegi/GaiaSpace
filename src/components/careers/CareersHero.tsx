@@ -39,14 +39,14 @@ export function CareersHero() {
 
       <div className="overflow-hidden">
         <Image
-          src="/images/home/satellite.avif"
+          src="/images/home/satellite.webp"
           alt="satellite"
           width={60}
           height={60}
           className="dot absolute bottom-[20%] left-1/2 block -translate-x-1/2 -translate-y-1/2 sm:w-[40] md:mx-0 md:hidden lg:w-[50]"
         />
         <Image
-          src="/images/home/satellite.avif"
+          src="/images/home/satellite.webp"
           alt="satellite"
           width={60}
           height={60}
