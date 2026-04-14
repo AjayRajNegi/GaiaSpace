@@ -36,7 +36,7 @@ export function CTA() {
           </div>
           <div className="relative w-full overflow-hidden">
             <Image
-              src="/images/EarthFooter.webp"
+              src="/images/earthFooter.webp"
               alt=""
               width={500}
               height={10}
