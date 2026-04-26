@@ -2,6 +2,7 @@ import { CTA } from "@/src/components/CTA";
 import EngineSpecs from "@/src/components/engineering/EngineSpecs";
 import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
+import TransitionLinks from "@/src/components/TransitionLinks";
 import Image from "next/image";
 
 const cards = [
@@ -99,6 +100,42 @@ export default function Page() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Get in touch section */}
+        <section className="mx-auto mt-20 flex w-[70%] max-w-6xl flex-col items-center gap-8 border border-gray-800 bg-gray-950 p-6 text-center text-[22px] font-thin tracking-tight text-[#cbcbcb] sm:p-8 sm:text-[28px] md:w-full md:flex-row md:justify-around md:gap-0 md:p-10">
+          <div className="flex md:w-1/2 md:max-w-1/2">
+            <p className="text-center md:text-left">
+              Want to know more? <br /> Reach out to us!
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px w-full rounded-2xl bg-[#666666] md:h-auto md:w-0.5 md:self-stretch" />
+
+          <div className="flex flex-col items-center gap-2 md:w-1/2 md:max-w-1/2">
+            <p className="text-center text-sm">
+              Reach out to our team directly to understand the program <br />
+              and address your queries one on one.
+            </p>
+            <div className="flex gap-4">
+              <TransitionLinks
+                prefetch
+                href="/contact"
+                className="text-p mt-2 flex items-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 px-4 py-0 tracking-tight"
+              >
+                <span>Contact Us</span>
+              </TransitionLinks>
+
+              <TransitionLinks
+                prefetch
+                href="/training_program"
+                className="text-p mt-2 flex items-center gap-2 rounded bg-linear-65 from-purple-700 to-teal-400 px-4 py-0 tracking-tight"
+              >
+                <span>Training Program</span>
+              </TransitionLinks>
+            </div>
           </div>
         </section>
         <CTA />
