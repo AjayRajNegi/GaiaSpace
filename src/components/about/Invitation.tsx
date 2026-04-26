@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Invitation() {
   return (
     <section className="mx-auto mt-[100px] flex max-w-6xl flex-col items-center px-4 text-[#cbcbcb]">
@@ -8,16 +10,25 @@ export function Invitation() {
             An <span className="text-primary">Invitation</span>
           </h3>
           <p className="text-[14px] font-[300]">Join us in our mission</p>
-          <button className="w-full rounded-[10px] border-[0.5] border-white/50 py-2 text-center text-sm">
+          <Link
+            href="/contact"
+            className="w-full rounded-[10px] border-[0.5] border-white/50 py-2 text-center text-sm"
+          >
             Get In Touch
-          </button>
+          </Link>
           <div className="flex flex-wrap justify-center gap-2 text-sm">
-            <p className="rounded-full bg-[#1b1b1a] px-4 py-2">
+            <Link
+              href="/careers"
+              className="rounded-full bg-[#1b1b1a] px-4 py-2"
+            >
               Internship Co-op
-            </p>
-            <p className="rounded-full bg-[#1b1b1a] px-4 py-2">
+            </Link>
+            <Link
+              href="/training_program"
+              className="rounded-full bg-[#1b1b1a] px-4 py-2"
+            >
               Training Program
-            </p>
+            </Link>
           </div>
         </div>
 

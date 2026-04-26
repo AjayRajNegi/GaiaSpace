@@ -16,9 +16,9 @@ const teamMembers = [
     link: "https://www.linkedin.com/in/dr-rajeshsingh/",
   },
   {
-    name: "Sannapareddy Meghana",
-    role: "Researcher",
-    image: "/images/about/team/Researcher.png",
+    name: "Prabhat Sharma",
+    role: "Sr. Researcher",
+    image: "/images/about/team/TL.png",
     instagram: "/icon/InstaIcon.png",
   },
   {
@@ -37,12 +37,6 @@ const teamMembers = [
     name: "Dev Kumar",
     role: "Jr. Researcher",
     image: "/images/about/team/JrResearcher2.png",
-    instagram: "/icon/InstaIcon.png",
-  },
-  {
-    name: "Prabhat Sharma",
-    role: "Sr. Researcher",
-    image: "/images/about/team/TL.png",
     instagram: "/icon/InstaIcon.png",
   },
 ];
