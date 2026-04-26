@@ -30,9 +30,9 @@ export default function Footer() {
         <div className="flex w-full flex-col py-8 text-sm font-thin text-[#bababd] md:flex-row">
           <div className="flex w-full justify-evenly gap-5 md:w-1/2 md:justify-start">
             <Link href="/about">About Us</Link>
-            <Link href="/about">Careers</Link>
-            <Link href="/about">Mission</Link>
-            <Link href="/about">Training Program</Link>
+            <Link href="/careers">Careers</Link>
+            <Link href="/mission">Mission</Link>
+            <Link href="/training_program">Training Program</Link>
           </div>
           <div className="mt-4 flex w-full justify-center gap-2 md:mt-0 md:w-1/2 md:justify-end">
             <a

@@ -20,8 +20,8 @@ const cards = [
     src: "/images/engineering/2.png",
   },
   {
-    data: "<5x",
-    title: "Next Gen Climate and Weather Forecasting",
+    data: "<10x",
+    title: "Green and Affordable",
     desc: "The fuel is as safe to handle as common salt, requiring minimal safety precautions and significantly reducing infrastructure costs.",
     src: "/images/engineering/3.png",
   },

@@ -7,21 +7,27 @@ import Link from "next/link";
 const card = [
   {
     review:
-      "“Investor connections!  Found the perfect match, thanks for simplifying the search”",
-    name: "Sarah Jones,",
-    company: "GreenTech Solution",
+      "“An exceptionally well-structured program that simplifies complex hybrid propulsion conecpts and makes them highly applicable.”",
+    name: "Rahul Sharma,",
+    company: "Aerosopace Engineering Student",
   },
   {
     review:
-      "“Investor connections!  Found the perfect match, thanks for simplifying the search”",
-    name: "Sarah Jones,",
-    company: "GreenTech Solution",
+      "“A perfect blend of theoretical depth and practical insight, supported by highly knowledgeable mentors.”",
+    name: "Priya Nair,",
+    company: "Mechanical Engineering Undergraduate",
   },
   {
     review:
-      "“Investor connections!  Found the perfect match, thanks for simplifying the search”",
-    name: "Sarah Jones,",
-    company: "GreenTech Solution",
+      "“Effectively bridges academic learning with real-world rocket engineering applications.”",
+    name: "Sneha Verma,",
+    company: "Aerospace Engineering Intern",
+  },
+  {
+    review:
+      "“Insightful sessions with a strong emphasis on practical understanding and industry relevance.”",
+    name: "Karthik Iyer,",
+    company: "Mechanical Engineering Student",
   },
 ];
 
@@ -121,11 +127,11 @@ export default function TrainingPrograms() {
           <h5 className="text-h6 md:text-h5 mx-auto mt-15 w-fit">
             Hear it from our students
           </h5>
-          <div className="mx-auto mt-10 grid min-h-[260px] max-w-5xl grid-cols-1 items-stretch gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid min-h-[280px] max-w-5xl grid-cols-1 items-stretch gap-10 md:grid-cols-2 lg:grid-cols-3">
             {card.map((card, id) => (
               <div
                 key={id}
-                className="group col-span-1 mx-auto w-[280px] rounded-xl border-[0.5px] border-[#262727] bg-[#050505] p-4 transition-transform duration-300 hover:scale-105"
+                className={`group col-span-1 mx-auto w-[280px] rounded-xl border-[0.5px] border-[#262727] bg-[#050505] p-4 transition-transform duration-300 hover:scale-105 ${id === 3 ? "lg:col-start-2" : ""}`}
               >
                 <Image src="/icon/apst.png" alt="apst" height={40} width={40} />
                 <p className="p-4 text-sm tracking-tight">{card.review}</p>

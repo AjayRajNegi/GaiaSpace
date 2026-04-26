@@ -120,7 +120,7 @@ export default function ContactMap() {
               href="/contact"
               className="rounded-full bg-[#1b1b1a] px-4 py-2 text-center"
             >
-              Learn More
+              Explore Opportunities
             </Link>
             <Link
               href="/training_program"
