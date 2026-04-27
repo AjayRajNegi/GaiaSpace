@@ -22,6 +22,12 @@ const teamMembers = [
     instagram: "/icon/InstaIcon.png",
   },
   {
+    name: "Gaurish Anand",
+    role: "Jr. Engineer",
+    image: "/images/about/team/JE.png",
+    instagram: "/icon/InstaIcon.png",
+  },
+  {
     name: "Helisha Kukdeja",
     role: "Jr. Researcher",
     image: "/images/about/team/JuniorResearcher.png",
@@ -37,6 +43,12 @@ const teamMembers = [
     name: "Dev Kumar",
     role: "Jr. Researcher",
     image: "/images/about/team/JrResearcher2.png",
+    instagram: "/icon/InstaIcon.png",
+  },
+  {
+    name: "Himanshi Garg",
+    role: "Jr. Intern",
+    image: "/images/about/team/JI.jpg",
     instagram: "/icon/InstaIcon.png",
   },
 ];
